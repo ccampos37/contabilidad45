@@ -96,40 +96,40 @@ Friend Class frmMantSaldosInicialPlan
             FlagGrabado = True
         End If
     End Sub
-	
-	Private Sub frmMantSaldosInicialPlan_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-		If FlagGrabado = True Then Call RecalcularAcumulados()
-	End Sub
-	
-	'FIXIT: Declare 'LastRow' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
-	Private Sub TDBGrid1_RowColChange(ByVal eventSender As System.Object, ByVal eventArgs As AxTrueOleDBGrid70.TrueDBGridEvents_RowColChangeEvent) Handles TDBGrid1.RowColChange
-		If rs.RecordCount > 0 Then
-			Call Editar()
-		End If
-	End Sub
-	
-	Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
-		Dim Index As Short = cmdBotones.GetIndex(eventSender)
-		Select Case Index
-			Case 0
-				Call GrabarData()
-				cmdBotones(0).Enabled = False
-			Case 1
-				Me.Close()
-				'UPGRADE_NOTE: El objeto rs no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-				rs = Nothing
-				'UPGRADE_NOTE: El objeto rsSaldo no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-				rsSaldo = Nothing
-		End Select
-	End Sub
-	
-	Sub Config_TDBGrid1()
-		TDBGrid1.Columns(0).Width = 900
-		TDBGrid1.Columns(1).Width = 4800
-	End Sub
-	
-	'FIXIT: Declare 'Buscar' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
-    Sub Buscar()
+
+    Private Sub frmMantSaldosInicialPlan_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        If FlagGrabado = True Then Call RecalcularAcumulados()
+    End Sub
+
+    'FIXIT: Declare 'LastRow' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
+    Private Sub TDBGrid1_RowColChange(ByVal eventSender As System.Object, ByVal eventArgs As AxTrueOleDBGrid70.TrueDBGridEvents_RowColChangeEvent) Handles TDBGrid1.RowColChange
+        If rs.RecordCount > 0 Then
+            Call Editar()
+        End If
+    End Sub
+
+    Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
+        Dim Index As Short = cmdBotones.GetIndex(eventSender)
+        Select Case Index
+            Case 0
+                Call GrabarData()
+                cmdBotones(0).Enabled = False
+            Case 1
+                Me.Close()
+                'UPGRADE_NOTE: El objeto rs no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+                rs = Nothing
+                'UPGRADE_NOTE: El objeto rsSaldo no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+                rsSaldo = Nothing
+        End Select
+    End Sub
+
+    Sub Config_TDBGrid1()
+        TDBGrid1.Columns(0).Width = 900
+        TDBGrid1.Columns(1).Width = 4800
+    End Sub
+
+    'FIXIT: Declare 'Buscar' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
+    Function Buscar() As Object
         Dim SQL As String
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(txtBuscar.CtlText) = True Then
@@ -148,35 +148,31 @@ Friend Class frmMantSaldosInicialPlan
             End If
             TDBGrid1.DataSource = rs
         End If
-    End Sub
-	
-	Private Sub txt_Change(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txt.Change
-		Dim Index As Short = txt.GetIndex(eventSender)
-		cmdBotones(0).Enabled = True
-	End Sub
-	
-	Private Sub txtBuscar_Change(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txtBuscar.Change
-		Call Buscar()
-	End Sub
-	
-	Sub RecalcularAcumulados()
-		VGCommandoSP = New ADODB.Command
-		VGCommandoSP.let_ActiveConnection(VGGeneral)
-		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
-		VGCommandoSP.CommandText = "ct_recalacum_pro"
-		VGCommandoSP.Parameters.Refresh()
-		With VGCommandoSP
-			.Parameters("@base").Value = VGParamSistem.BDEmpresa
-			.Parameters("@anno").Value = VGParamSistem.Anoproceso
-			.Parameters("@empresa").Value = VGParametros.empresacodigo
-			.Parameters("@mespro").Value = "01"
-			.Parameters("@user").Value = VGParamSistem.Usuario
-		End With
-		VGCommandoSP.Execute()
-		
-	End Sub
+    End Function
 
-    Private Sub _txt_0_Change(sender As Object, e As EventArgs) Handles _txt_0.Change
+    Private Sub txt_Change(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txt.Change
+        Dim Index As Short = txt.GetIndex(eventSender)
+        cmdBotones(0).Enabled = True
+    End Sub
+
+    Private Sub txtBuscar_Change(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txtBuscar.Change
+        Call Buscar()
+    End Sub
+
+    Sub RecalcularAcumulados()
+        VGCommandoSP = New ADODB.Command
+        VGCommandoSP.let_ActiveConnection(VGGeneral)
+        VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
+        VGCommandoSP.CommandText = "ct_recalacum_pro"
+        VGCommandoSP.Parameters.Refresh()
+        With VGCommandoSP
+            .Parameters("@base").Value = VGParamSistem.BDEmpresa
+            .Parameters("@anno").Value = VGParamSistem.Anoproceso
+            .Parameters("@empresa").Value = VGParametros.empresacodigo
+            .Parameters("@mespro").Value = "01"
+            .Parameters("@user").Value = VGParamSistem.Usuario
+        End With
+        VGCommandoSP.Execute()
 
     End Sub
 End Class

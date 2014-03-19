@@ -1,13 +1,11 @@
 Option Strict Off
 Option Explicit On
-Friend Class frmMntCentroCosto
+Public Class frmMntCentroCosto
     Inherits System.Windows.Forms.Form
-    'FIXIT: Declare 'a_Array' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
     Dim a_Array(12, 12) As Object
 
     Private Sub frmMantCentroCosto_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-        'Me.Width = VB6.TwipsToPixelsX(7590) : Me.Height = VB6.TwipsToPixelsY(6390)
-        CentrarForm(MDIPrincipal, Me)
+
 
         a_Array(0, 0) = "empresacodigo"
         a_Array(0, 1) = "centrocostocodigo"

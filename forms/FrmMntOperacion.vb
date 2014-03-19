@@ -1,11 +1,11 @@
 ﻿Option Strict Off
 Option Explicit On
-Friend Class frmMantOperacion
+Imports Microsoft.VisualBasic
+Public Class FrmMntOperacion
     Inherits System.Windows.Forms.Form
-    Friend WithEvents TablasBasicas1 As TablasBasicas.TablasBasicas
     Dim a_Array(12, 12) As Object
-    Private Sub frmMantOperacion_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-        'CentrarForm MDIPrincipal, Me
+
+    Private Sub Form1_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 
 
         'Nombre Campos:
@@ -52,7 +52,7 @@ Friend Class frmMantOperacion
         a_Array(5, 1) = Nothing
         a_Array(5, 2) = Nothing
         a_Array(5, 3) = Nothing
-        a_Array(5, 4) = VGusuario
+        a_Array(5, 4) = VGUsuario
         a_Array(5, 5) = Today.ToString("dd/MM/yyyy")
 
         'Permite Nulos:
@@ -79,29 +79,5 @@ Friend Class frmMantOperacion
         Catch ex As Exception
             MsgBox("Error --> " + ex.Message)
         End Try
-    End Sub
-    'Private Sub TablasBasicas1_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxMantTablaBasica.__mTablaBasica_ClickEvent) Handles TablasBasicas1.ClickEvent
-    '    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto indice. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-    '    If eventArgs.indice = 3 Then Call Impresion("rptOperacion.rpt")
-    'End Sub
-
-    Private Sub InitializeComponent()
-        Me.TablasBasicas1 = New TablasBasicas.TablasBasicas()
-        Me.SuspendLayout()
-        '
-        'TablasBasicas1
-        '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(12, 12)
-        Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
-        Me.TablasBasicas1.TabIndex = 4
-        '
-        'frmMantOperacion
-        '
-        Me.ClientSize = New System.Drawing.Size(499, 445)
-        Me.Controls.Add(Me.TablasBasicas1)
-        Me.Name = "frmMantOperacion"
-        Me.ResumeLayout(False)
-
     End Sub
 End Class

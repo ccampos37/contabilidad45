@@ -67,7 +67,7 @@ Friend Class FrmMntEstructuraBalance
 			txttipolinea1.Text = rs.Fields("strucbalancedato1").Value
 			ChkN1.CheckState = IIf(rs.Fields("strucbalanceinvval1").Value, 1, 0)
 			txtCtas1.Text = rs.Fields("strucbalancenivel1").Value
-            Txtdesc1.Text = ESNULO(rs.Fields("strucbalancedescrip1"), "")
+			Txtdesc1.Text = rs.Fields("strucbalancedescrip1").Value
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Txtsigno1.Text = ESNULO(rs.Fields("strucbalancesigno1"), "")
 			
@@ -216,5 +216,4 @@ EliErr:
             .Refresh()
 		End With
 	End Sub
-
 End Class

@@ -1,15 +1,13 @@
-Option Strict Off
+ï»¿Option Strict Off
 Option Explicit On
-Friend Class frmEstructuraMantEstadoGanPer
-	Inherits System.Windows.Forms.Form
-	'FIXIT: Declare 'a_Array' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
-	Dim a_Array(12, 12) As Object
-	
-	Private Sub frmEstructuraMantEstadoGanPer_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-	
-        CentrarForm(MDIPrincipal, Me)
-		
-		'Nombre Campos:
+Public Class FrmMntEstructuraGana_perd
+
+    Inherits System.Windows.Forms.Form
+    Dim a_Array(12, 12) As Object
+
+    Private Sub Form1_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+
+        'Nombre Campos:
         a_Array(0, 0) = "EGP_LINEA"
         a_Array(0, 1) = "EGP_NIVEL"
         a_Array(0, 2) = "EGP_ACUMES"
@@ -19,19 +17,19 @@ Friend Class frmEstructuraMantEstadoGanPer
         a_Array(0, 6) = "EGP_SIGNO2"
         a_Array(0, 7) = "EGP_SALDO"
         a_Array(0, 8) = "EGP_GRUPO"
-       
-		'Etiquetas:
-        a_Array(1, 0) = "Línea"
+
+        'Etiquetas:
+        a_Array(1, 0) = "LÃ­nea"
         a_Array(1, 1) = "Nivel"
         a_Array(1, 2) = "Acum Mes"
         a_Array(1, 3) = "Signo 1"
         a_Array(1, 4) = "Descripcion"
-        a_Array(1, 5) = "Acum Año"
+        a_Array(1, 5) = "Acum AÃ±o"
         a_Array(1, 6) = "Signo 2"
         a_Array(1, 7) = "Saldo"
         a_Array(1, 8) = "Grupo"
-      
-		'Tipo de Dato:
+
+        'Tipo de Dato:
         a_Array(2, 0) = "C"
         a_Array(2, 1) = "C"
         a_Array(2, 2) = "N" 'Float
@@ -41,8 +39,8 @@ Friend Class frmEstructuraMantEstadoGanPer
         a_Array(2, 6) = "C"
         a_Array(2, 7) = "B" 'Bit
         a_Array(2, 8) = "C"
-      
-		'Ancho de campo:
+
+        'Ancho de campo:
         a_Array(3, 0) = 6
         a_Array(3, 1) = 2
         a_Array(3, 2) = Nothing
@@ -52,8 +50,8 @@ Friend Class frmEstructuraMantEstadoGanPer
         a_Array(3, 6) = 2
         a_Array(3, 7) = 1
         a_Array(3, 8) = 2
-        
-		'Campo Clave:
+
+        'Campo Clave:
         a_Array(4, 0) = True
         a_Array(4, 1) = False
         a_Array(4, 2) = False
@@ -63,8 +61,8 @@ Friend Class frmEstructuraMantEstadoGanPer
         a_Array(4, 6) = False
         a_Array(4, 7) = False
         a_Array(4, 8) = False
-    
-		'Valores Ingresados por el Sistema:
+
+        'Valores Ingresados por el Sistema:
         a_Array(5, 0) = Nothing
         a_Array(5, 1) = Nothing
         a_Array(5, 2) = Nothing
@@ -74,9 +72,9 @@ Friend Class frmEstructuraMantEstadoGanPer
         a_Array(5, 6) = Nothing
         a_Array(5, 7) = Nothing
         a_Array(5, 8) = Nothing
-        
-		'a_Array(5, 4) = Format(Now, "aaaa-mm-dd hh:mm:ss.000")
-		'Permite Nulos:
+
+        'a_Array(5, 4) = Format(Now, "aaaa-mm-dd hh:mm:ss.000")
+        'Permite Nulos:
         a_Array(6, 0) = False
         a_Array(6, 1) = False
         a_Array(6, 2) = True
@@ -86,8 +84,8 @@ Friend Class frmEstructuraMantEstadoGanPer
         a_Array(6, 6) = True
         a_Array(6, 7) = False
         a_Array(6, 8) = True
-      
-		
+
+
         TablasBasicas1.CadenaCone = VGCNxSql
         TablasBasicas1.NombreTabla = "ct_strucganper"
         TablasBasicas1.TitForm = "Estructura del Estado de Gan. y Perd."
@@ -95,10 +93,10 @@ Friend Class frmEstructuraMantEstadoGanPer
         TablasBasicas1.Setear_Controles()
         TablasBasicas1.Obtener_Campos()
         TablasBasicas1.cargar_datos()
-		
-	End Sub
-	
-	'FIXIT: Declare 'indice' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
+
+    End Sub
+
+    'FIXIT: Declare 'indice' con un tipo de datos de enlace en tiempo de compilaciÃ³n           FixIT90210ae-R1672-R1B8ZE
     Private Sub TablasBasicas1_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxMantTablaBasica.__mTablaBasica_ClickEvent)
         ' If indice = 3 Then
         '   MDIPrincipal.cryRpt.Destination = crptToWindow
@@ -109,33 +107,9 @@ Friend Class frmEstructuraMantEstadoGanPer
         '   MDIPrincipal.cryRpt.Action = 1
         ' End If
 
-        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto indice. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto indice. Haga clic aquÃ­ para obtener mÃ¡s informaciÃ³n: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If eventArgs.indice = 3 Then Call Impresion("rptEstruMantGanPer.rpt")
 
     End Sub
-    Friend WithEvents TablasBasicas1 As TablasBasicas.TablasBasicas
 
-    Private Sub frmEstructuraMantEstadoGanPer_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub InitializeComponent()
-        Me.TablasBasicas1 = New TablasBasicas.TablasBasicas()
-        Me.SuspendLayout()
-        '
-        'TablasBasicas1
-        '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(12, 12)
-        Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
-        Me.TablasBasicas1.TabIndex = 1
-        '
-        'frmEstructuraMantEstadoGanPer
-        '
-        Me.ClientSize = New System.Drawing.Size(500, 447)
-        Me.Controls.Add(Me.TablasBasicas1)
-        Me.Name = "frmEstructuraMantEstadoGanPer"
-        Me.ResumeLayout(False)
-
-    End Sub
 End Class

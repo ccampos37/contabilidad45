@@ -5,7 +5,6 @@ Public Class FrmMntTipocambio
     Dim a_Array(12, 12) As Object
     Private Sub FrmMntTipoCambio_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         Dim filtro As String = ""
-        CentrarForm(MDIPrincipal, Me)
 
         'Nombre Campos:
         a_Array(0, 0) = "Tipocambiofecha"

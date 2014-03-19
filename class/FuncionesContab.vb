@@ -4,10 +4,7 @@ Module ModFunciones
 	Dim ndiaMes(12) As Short
 	Dim cdesMes(12) As String
 	Private Declare Function GetComputerName Lib "kernel32"  Alias "GetComputerNameA"(ByVal lpBuffer As String, ByRef nSize As Integer) As Integer
-	Sub CentrarForm(ByRef nFormPrin As System.Windows.Forms.Form, ByRef nFormu As System.Windows.Forms.Form)
-		nFormu.Left = VB6.TwipsToPixelsX((VB6.PixelsToTwipsX(nFormPrin.Width) - VB6.PixelsToTwipsX(nFormu.Width)) / 2)
-		nFormu.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(nFormPrin.Height) - VB6.PixelsToTwipsY(nFormu.Height)) / 2) - 600)
-	End Sub
+
 	
 	'FIXIT: Declare 'aFormulas' con un tipo de datos de enlace en tiempo de compilación        FixIT90210ae-R1672-R1B8ZE
 	Function fReporte(ByVal sReportname As String, ByRef oRs As ADODB.Recordset, ByVal sTitulo As String, Optional ByRef aFormulas As Object = Nothing) As String

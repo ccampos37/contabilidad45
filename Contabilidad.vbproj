@@ -224,6 +224,54 @@
     <Compile Include="class\ClsMantenimientoMovimientos.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="forms\FrmMnttotalLineaEGP.Designer.vb">
+      <DependentUpon>FrmMnttotalLineaEGP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMnttotalLineaEGP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmMntEstructuraLineagastos.Designer.vb">
+      <DependentUpon>FrmMntEstructuraLineagastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMntEstructuraLineagastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmMntEstructuraBalance.designer.vb">
+      <DependentUpon>FrmMntEstructuraBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMntEstructuraBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmMntEstructuraGana_perd.Designer.vb">
+      <DependentUpon>FrmMntEstructuraGana_perd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMntEstructuraGana_perd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmMntTipoCuenta.Designer.vb">
+      <DependentUpon>FrmMntTipoCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMntTipoCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMntEstructuraParamkibrosAux.Designer.vb">
+      <DependentUpon>frmMntEstructuraParamkibrosAux.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMntEstructuraParamkibrosAux.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmMntMoneda.Designer.vb">
+      <DependentUpon>FrmMntMoneda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMntMoneda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FrmMntOperacion.Designer.vb">
+      <DependentUpon>FrmMntOperacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FrmMntOperacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\FrmAjusDiferxDoc.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmAjusDiferxDoc.vb</DependentUpon>
@@ -299,21 +347,6 @@
       <DependentUpon>frmError.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\frmError.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmEstructuraMantBalance.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmEstructuraMantEstadoGanPer.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmEstructuraMantParametrosGastos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmEstructuraMantParamLibAux.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmEstructuraMantTotalLineaEGP.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FrmgenerasaldosAnaliticos.Designer.vb">
@@ -456,12 +489,6 @@
     <Compile Include="forms\frmMantLibro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMantMoneda.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmMantOperacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\frmMantPlanCuentas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMantPlanCuentas.vb</DependentUpon>
@@ -516,13 +543,6 @@
       <DependentUpon>FrmMntDocumentos.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\FrmMntDocumentos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FrmMntEstructuraBalance.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>FrmMntEstructuraBalance.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FrmMntEstructuraBalance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FrmMntIndicadorOportunidad.Designer.vb">
@@ -700,9 +720,6 @@
     <Compile Include="forms\FrmSunat682.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmTipocuenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\frmUsuarios.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmUsuarios.vb</DependentUpon>
@@ -748,6 +765,24 @@
     <Compile Include="Otros\ValidacionSeries.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="forms\FrmMntEstructuraLineagastos.resx">
+      <DependentUpon>FrmMntEstructuraLineagastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmMntEstructuraBalance.resX">
+      <DependentUpon>FrmMntEstructuraBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmMntEstructuraGana_perd.resx">
+      <DependentUpon>FrmMntEstructuraGana_perd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMntEstructuraParamkibrosAux.resx">
+      <DependentUpon>frmMntEstructuraParamkibrosAux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmMntMoneda.resx">
+      <DependentUpon>FrmMntMoneda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmMntOperacion.resx">
+      <DependentUpon>FrmMntOperacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmAjusDiferxDoc.resX">
       <DependentUpon>FrmAjusDiferxDoc.vb</DependentUpon>
     </EmbeddedResource>
@@ -780,15 +815,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmError.resX">
       <DependentUpon>frmError.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmEstructuraMantBalance.resx">
-      <DependentUpon>frmEstructuraMantBalance.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmEstructuraMantParamLibAux.resx">
-      <DependentUpon>frmEstructuraMantParamLibAux.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmEstructuraMantTotalLineaEGP.resx">
-      <DependentUpon>frmEstructuraMantTotalLineaEGP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmgenerasaldosAnaliticos.resX">
       <DependentUpon>FrmgenerasaldosAnaliticos.vb</DependentUpon>
@@ -850,9 +876,6 @@
     <EmbeddedResource Include="forms\frmMantLibro.resX">
       <DependentUpon>frmMantLibro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantOperacion.resx">
-      <DependentUpon>frmMantOperacion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMantPlanCuentas.resX">
       <DependentUpon>frmMantPlanCuentas.vb</DependentUpon>
     </EmbeddedResource>
@@ -877,14 +900,17 @@
     <EmbeddedResource Include="forms\FrmMntDocumentos.resX">
       <DependentUpon>FrmMntDocumentos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntEstructuraBalance.resX">
-      <DependentUpon>FrmMntEstructuraBalance.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmMntIndicadorOportunidad.resX">
       <DependentUpon>FrmMntIndicadorOportunidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmMntTipoCambio.resX">
       <DependentUpon>FrmMntTipoCambio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmMntTipoCuenta.resx">
+      <DependentUpon>FrmMntTipoCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FrmMnttotalLineaEGP.resx">
+      <DependentUpon>FrmMnttotalLineaEGP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmParametros.resX">
       <DependentUpon>frmParametros.vb</DependentUpon>
@@ -954,9 +980,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmSunat682.resX">
       <DependentUpon>FrmSunat682.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmTipocuenta.resx">
-      <DependentUpon>FrmTipocuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmUsuarios.resX">
       <DependentUpon>frmUsuarios.vb</DependentUpon>

@@ -1,21 +1,16 @@
-Option Strict Off
-Option Explicit On
-Friend Class frmEstructuraMantParametrosGastos
-	Inherits System.Windows.Forms.Form
-    Friend WithEvents TablasBasicas1 As TablasBasicas.TablasBasicas
-    'FIXIT: Declare 'a_Array' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
-	Dim a_Array(12, 12) As Object
-	
-	Private Sub frmEstructuraMantParametrosGastos_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		
-        CentrarForm(MDIPrincipal, Me)
-		
-		'Nombre Campos:
+ï»¿Option Explicit On
+Public Class FrmMntEstructuraLineagastos
+    Inherits System.Windows.Forms.Form
+    Dim a_Array(12, 12) As Object
+
+    Private Sub FrmMntEstructuraLineagastos_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+
+        'Nombre Campos:
         a_Array(0, 0) = "paramgastoslinutil"
         a_Array(0, 1) = "paramgastosctautil"
         a_Array(0, 2) = "paramgastoslinventa"
         a_Array(0, 3) = "paramgastoslinadmin"
-		'a_Array(0, 4) = "paramgastoslindiv"
+        'a_Array(0, 4) = "paramgastoslindiv"
         a_Array(0, 4) = "paramgastosactivo"
         a_Array(0, 5) = "paramgastosgastoadmin"
         a_Array(0, 6) = "paramgastosgastoventa"
@@ -24,15 +19,15 @@ Friend Class frmEstructuraMantParametrosGastos
         a_Array(0, 9) = "paramgastosgastodiv"
         a_Array(0, 10) = "usuariocodigo"
         a_Array(0, 11) = "fechaact"
-		'Etiquetas:
-        a_Array(1, 0) = "Línea de Utilidad"
+        'Etiquetas:
+        a_Array(1, 0) = "LÃ­nea de Utilidad"
         a_Array(1, 1) = "Cuenta de Utilidad"
         a_Array(1, 2) = "Linea de Ventas"
-        a_Array(1, 3) = "Linea de Administración"
+        a_Array(1, 3) = "Linea de AdministraciÃ³n"
         a_Array(1, 4) = "Activo"
         a_Array(1, 5) = "Gastos de Adm."
         a_Array(1, 6) = "Gastos de Ventas"
-        a_Array(1, 7) = "Gastos de Producción"
+        a_Array(1, 7) = "Gastos de ProducciÃ³n"
         a_Array(1, 8) = "Gastos Financieros"
         a_Array(1, 9) = "Gastos Diversos"
         a_Array(1, 10) = Nothing
@@ -79,7 +74,7 @@ Friend Class frmEstructuraMantParametrosGastos
         a_Array(4, 9) = False
         a_Array(4, 10) = False
         a_Array(4, 11) = False
-		'Valores Ingresados por el Sistema:
+        'Valores Ingresados por el Sistema:
         a_Array(5, 0) = Nothing
         a_Array(5, 1) = Nothing
         a_Array(5, 2) = Nothing
@@ -90,10 +85,10 @@ Friend Class frmEstructuraMantParametrosGastos
         a_Array(5, 7) = Nothing
         a_Array(5, 8) = Nothing
         a_Array(5, 9) = Nothing
-        a_Array(5, 10) = VGusuario
+        a_Array(5, 10) = VGUsuario
         a_Array(5, 11) = Today.ToString("dd/MM/yyyy")
-		'a_Array(5, 4) = Format(Now, "aaaa-mm-dd hh:mm:ss.000")
-		'Permite Nulos:
+        'a_Array(5, 4) = Format(Now, "aaaa-mm-dd hh:mm:ss.000")
+        'Permite Nulos:
         a_Array(6, 0) = False
         a_Array(6, 1) = False
         a_Array(6, 2) = False
@@ -106,40 +101,21 @@ Friend Class frmEstructuraMantParametrosGastos
         a_Array(6, 9) = False
         a_Array(6, 10) = False
         a_Array(6, 11) = False
-		
+
         TablasBasicas1.CadenaCone = VGCNxSql
         TablasBasicas1.NombreTabla = "ct_paramgastos"
-        TablasBasicas1.TitForm = "Parámetros de Gastos"
+        TablasBasicas1.TitForm = "ParÃ¡metros de Gastos"
         TablasBasicas1.Arreglo = a_Array
         TablasBasicas1.Setear_Controles()
         TablasBasicas1.Obtener_Campos()
         TablasBasicas1.cargar_datos()
-		
-	End Sub
-	
-	'FIXIT: Declare 'indice' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
+
+    End Sub
+
+    'FIXIT: Declare 'indice' con un tipo de datos de enlace en tiempo de compilaciÃ³n           FixIT90210ae-R1672-R1B8ZE
     Private Sub TablasBasicas1_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxMantTablaBasica.__mTablaBasica_ClickEvent)
-        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto indice. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto indice. Haga clic aquÃ­ para obtener mÃ¡s informaciÃ³n: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If eventArgs.indice = 3 Then Call Impresion("rptEstruMantParGastos.rpt")
     End Sub
 
-    Private Sub InitializeComponent()
-        Me.TablasBasicas1 = New TablasBasicas.TablasBasicas()
-        Me.SuspendLayout()
-        '
-        'TablasBasicas1
-        '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(12, 12)
-        Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
-        Me.TablasBasicas1.TabIndex = 2
-        '
-        'frmEstructuraMantParametrosGastos
-        '
-        Me.ClientSize = New System.Drawing.Size(498, 447)
-        Me.Controls.Add(Me.TablasBasicas1)
-        Me.Name = "frmEstructuraMantParametrosGastos"
-        Me.ResumeLayout(False)
-
-    End Sub
 End Class
