@@ -30,15 +30,15 @@
         '
         Me.TablasBasicas1.Location = New System.Drawing.Point(2, 12)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(568, 425)
         Me.TablasBasicas1.TabIndex = 2
         '
         'FrmMantTipoAnalitico
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(481, 448)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(582, 466)
         Me.Controls.Add(Me.TablasBasicas1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Location = New System.Drawing.Point(8, 31)

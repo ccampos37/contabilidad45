@@ -37,15 +37,15 @@
         '
         Me.TablasBasicas1.Location = New System.Drawing.Point(0, 0)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(596, 437)
         Me.TablasBasicas1.TabIndex = 1
         '
         'frmMntCentroCosto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(474, 421)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(604, 449)
         Me.Controls.Add(Me.TablasBasicas1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

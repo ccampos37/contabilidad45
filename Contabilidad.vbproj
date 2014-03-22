@@ -71,12 +71,17 @@
     <Reference Include="AxInterop.TextFer">
       <HintPath>obj\Debug\AxInterop.TextFer.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Ctr_Ayuda">
       <HintPath>..\comun\dll\Ctr_Ayuda.dll</HintPath>
     </Reference>
     <Reference Include="Ctr_Txt">
       <HintPath>..\comun\dll\Ctr_Txt.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.VisualBasic.Compatibility">
       <Name>Microsoft.VisualBasic.Compatibility</Name>
     </Reference>
@@ -93,6 +98,8 @@
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
@@ -223,6 +230,12 @@
     </Compile>
     <Compile Include="class\ClsMantenimientoMovimientos.vb">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FrmMnttotalLineaEGP.Designer.vb">
       <DependentUpon>FrmMnttotalLineaEGP.vb</DependentUpon>
@@ -473,13 +486,6 @@
       <DependentUpon>frmMantEntidad.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\frmMantEntidad.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmMantEstadoGanPe.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>frmMantEstadoGanPe.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\frmMantEstadoGanPe.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmMantLibro.Designer.vb">
@@ -759,12 +765,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Otros\AssemblyInfo.vb" />
+    <Compile Include="Otros\FrmReports.Designer.vb">
+      <DependentUpon>FrmReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FrmReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Otros\ValidacionSeries.Designer.vb">
       <DependentUpon>ValidacionSeries.vb</DependentUpon>
     </Compile>
     <Compile Include="Otros\ValidacionSeries.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\ct_daoCompras.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ct_daoCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ct_DaoVentas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ct_DaoVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmMntEstructuraLineagastos.resx">
       <DependentUpon>FrmMntEstructuraLineagastos.vb</DependentUpon>
     </EmbeddedResource>
@@ -869,9 +896,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMantEntidad.resX">
       <DependentUpon>frmMantEntidad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantEstadoGanPe.resX">
-      <DependentUpon>frmMantEstadoGanPe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMantLibro.resX">
       <DependentUpon>frmMantLibro.vb</DependentUpon>
@@ -991,8 +1015,19 @@
       <DependentUpon>MDIPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <Content Include="Otros\Contabilidad.ico" />
+    <EmbeddedResource Include="Otros\FrmReports.resx">
+      <DependentUpon>FrmReports.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Otros\ValidacionSeries.resX">
       <DependentUpon>ValidacionSeries.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ct_daoCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ct_daoCompras.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ct_DaoVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ct_DaoVentas.vb</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\app.manifest" />
@@ -1043,6 +1078,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

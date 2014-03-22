@@ -29,12 +29,12 @@ Partial Class FrmMntTipoCuenta
         '
         Me.TablasBasicas1.Location = New System.Drawing.Point(16, 12)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(604, 439)
         Me.TablasBasicas1.TabIndex = 4
         '
         'FrmMntTipoCuenta
         '
-        Me.ClientSize = New System.Drawing.Size(493, 437)
+        Me.ClientSize = New System.Drawing.Size(650, 463)
         Me.Controls.Add(Me.TablasBasicas1)
         Me.Name = "FrmMntTipoCuenta"
         Me.ResumeLayout(false)

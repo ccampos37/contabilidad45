@@ -304,6 +304,7 @@
         Me.ImgListIcono = New System.Windows.Forms.ImageList(Me.components)
         Me.mnu00_01 = New Microsoft.VisualBasic.Compatibility.VB6.ToolStripMenuItemArray(Me.components)
         Me.mnu00_01_01 = New Microsoft.VisualBasic.Compatibility.VB6.ToolStripMenuItemArray(Me.components)
+        Me.PruebasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainMenu1.SuspendLayout()
         CType(Me.cryRpt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusBar1.SuspendLayout()
@@ -1000,7 +1001,7 @@
         '
         'mnu06
         '
-        Me.mnu06.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu06_01, Me.mnu06_02, Me.mnu06_04})
+        Me.mnu06.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu06_01, Me.mnu06_04, Me.mnu06_02, Me.PruebasToolStripMenuItem})
         Me.mnu06.MergeAction = System.Windows.Forms.MergeAction.Remove
         Me.mnu06.Name = "mnu06"
         Me.mnu06.Size = New System.Drawing.Size(49, 20)
@@ -1337,6 +1338,12 @@
         'mnu00_01_01
         '
         '
+        'PruebasToolStripMenuItem
+        '
+        Me.PruebasToolStripMenuItem.Name = "PruebasToolStripMenuItem"
+        Me.PruebasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.PruebasToolStripMenuItem.Text = "Pruebas"
+        '
         'MDIPrincipal
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -1368,5 +1375,6 @@
         Me.PerformLayout()
 
     End Sub
+    Friend WithEvents PruebasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 #End Region 
 End Class

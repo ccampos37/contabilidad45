@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmMntOperacion
+Partial Class FrmReports
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,26 +22,30 @@ Partial Class FrmMntOperacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TablasBasicas1 = New TablasBasicas.TablasBasicas()
+        Me.CRVPresentacion = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
-        'TablasBasicas1
+        'CRVPresentacion
         '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(12, 12)
-        Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(597, 443)
-        Me.TablasBasicas1.TabIndex = 3
+        Me.CRVPresentacion.ActiveViewIndex = -1
+        Me.CRVPresentacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CRVPresentacion.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CRVPresentacion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CRVPresentacion.Location = New System.Drawing.Point(0, 0)
+        Me.CRVPresentacion.Name = "CRVPresentacion"
+        Me.CRVPresentacion.Size = New System.Drawing.Size(533, 341)
+        Me.CRVPresentacion.TabIndex = 0
         '
-        'FrmMntOperacion
+        'FrmReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(619, 467)
-        Me.Controls.Add(Me.TablasBasicas1)
-        Me.Name = "FrmMntOperacion"
-        Me.Text = "Form1"
+        Me.ClientSize = New System.Drawing.Size(533, 341)
+        Me.Controls.Add(Me.CRVPresentacion)
+        Me.Name = "FrmReports"
+        Me.Text = "FrmReports"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents TablasBasicas1 As TablasBasicas.TablasBasicas
+    Friend WithEvents CRVPresentacion As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

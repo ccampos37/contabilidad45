@@ -27,16 +27,16 @@ Partial Class FrmMnttotalLineaEGP
         '
         'TablasBasicas1
         '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(-94, -82)
+        Me.TablasBasicas1.Location = New System.Drawing.Point(12, 12)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(595, 453)
         Me.TablasBasicas1.TabIndex = 4
         '
         'FrmMnttotalLineaEGP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(383, 358)
+        Me.ClientSize = New System.Drawing.Size(635, 458)
         Me.Controls.Add(Me.TablasBasicas1)
         Me.Name = "FrmMnttotalLineaEGP"
         Me.Text = "Form1"

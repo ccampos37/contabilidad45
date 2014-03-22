@@ -473,4 +473,8 @@ xx:
     Private Sub mnu01_02_01_Click(sender As Object, e As EventArgs) Handles mnu01_02_01.Click
         FrmMntIndicadorOportunidad.Show()
     End Sub
+
+    Private Sub PruebasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebasToolStripMenuItem.Click
+        Form1.Show()
+    End Sub
 End Class

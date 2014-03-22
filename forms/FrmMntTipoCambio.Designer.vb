@@ -29,14 +29,14 @@ Partial Class FrmMntTipocambio
         '
         Me.TablasBasicas1.Location = New System.Drawing.Point(51, 12)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(588, 439)
         Me.TablasBasicas1.TabIndex = 2
         '
         'FrmMntTipocambio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(506, 409)
+        Me.ClientSize = New System.Drawing.Size(645, 463)
         Me.Controls.Add(Me.TablasBasicas1)
         Me.Name = "FrmMntTipocambio"
         Me.Text = "FrmMntTipocambio"

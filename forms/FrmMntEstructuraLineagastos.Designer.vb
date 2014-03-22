@@ -29,16 +29,16 @@ Partial Class FrmMntEstructuraLineagastos
         '
         Me.TablasBasicas1.Location = New System.Drawing.Point(34, 17)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(568, 432)
         Me.TablasBasicas1.TabIndex = 4
         '
-        'FrmMntEstructuraLineagasyos
+        'FrmMntEstructuraLineagastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(540, 458)
+        Me.ClientSize = New System.Drawing.Size(614, 458)
         Me.Controls.Add(Me.TablasBasicas1)
-        Me.Name = "FrmMntEstructuraLineagasyos"
+        Me.Name = "FrmMntEstructuraLineagastos"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 

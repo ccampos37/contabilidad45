@@ -29,16 +29,16 @@ Partial Class FrmMntMoneda
         '
         Me.TablasBasicas1.Location = New System.Drawing.Point(38, 27)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(589, 449)
         Me.TablasBasicas1.TabIndex = 3
         '
-        'Form1
+        'FrmMntMoneda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(548, 479)
+        Me.ClientSize = New System.Drawing.Size(650, 479)
         Me.Controls.Add(Me.TablasBasicas1)
-        Me.Name = "Form1"
+        Me.Name = "FrmMntMoneda"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 

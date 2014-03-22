@@ -101,10 +101,10 @@ Partial Class FrmMntDocumentos
         'DbGrid1
         '
         Me.DbGrid1.DataSource = Nothing
-        Me.DbGrid1.Location = New System.Drawing.Point(8, 43)
+        Me.DbGrid1.Location = New System.Drawing.Point(5, 43)
         Me.DbGrid1.Name = "DbGrid1"
         Me.DbGrid1.OcxState = CType(resources.GetObject("DbGrid1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.DbGrid1.Size = New System.Drawing.Size(527, 358)
+        Me.DbGrid1.Size = New System.Drawing.Size(527, 289)
         Me.DbGrid1.TabIndex = 10
         '
         'frame5
@@ -127,7 +127,7 @@ Partial Class FrmMntDocumentos
         Me.Frame1.Controls.Add(Me.CmdGrabar)
         Me.Frame1.Controls.Add(Me.Cmdcancelar)
         Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame1.Location = New System.Drawing.Point(97, 307)
+        Me.Frame1.Location = New System.Drawing.Point(91, 307)
         Me.Frame1.Name = "Frame1"
         Me.Frame1.Padding = New System.Windows.Forms.Padding(0)
         Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -265,7 +265,7 @@ Partial Class FrmMntDocumentos
         Me.Frame3.Controls.Add(Me.Framelinea)
         Me.Frame3.Controls.Add(Me.Frameactivo)
         Me.Frame3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame3.Location = New System.Drawing.Point(97, 13)
+        Me.Frame3.Location = New System.Drawing.Point(69, 13)
         Me.Frame3.Name = "Frame3"
         Me.Frame3.Padding = New System.Windows.Forms.Padding(0)
         Me.Frame3.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -286,7 +286,7 @@ Partial Class FrmMntDocumentos
         Me.Frameactivo.Controls.Add(Me.Label3)
         Me.Frameactivo.Controls.Add(Me.Label5)
         Me.Frameactivo.ForeColor = System.Drawing.Color.Blue
-        Me.Frameactivo.Location = New System.Drawing.Point(16, 79)
+        Me.Frameactivo.Location = New System.Drawing.Point(28, 79)
         Me.Frameactivo.Name = "Frameactivo"
         Me.Frameactivo.Padding = New System.Windows.Forms.Padding(0)
         Me.Frameactivo.RightToLeft = System.Windows.Forms.RightToLeft.No

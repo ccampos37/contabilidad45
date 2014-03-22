@@ -27,16 +27,16 @@ Partial Class FrmMntEstructuraGana_perd
         '
         'TablasBasicas1
         '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(21, 27)
+        Me.TablasBasicas1.Location = New System.Drawing.Point(21, 20)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(473, 425)
+        Me.TablasBasicas1.Size = New System.Drawing.Size(580, 445)
         Me.TablasBasicas1.TabIndex = 3
         '
         'FrmMntEstructuraGana_perd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(515, 478)
+        Me.ClientSize = New System.Drawing.Size(632, 478)
         Me.Controls.Add(Me.TablasBasicas1)
         Me.Name = "FrmMntEstructuraGana_perd"
         Me.Text = "Form1"
