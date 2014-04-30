@@ -89,30 +89,44 @@ Friend Class frmRepEstadosFinancieros
 		Call ImpresionRptProc("ct_EstadoGanPedNat.rpt", arrform, arrparm)
 	End Sub
 	
-	Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
-		Dim Index As Short = cmdBotones.GetIndex(eventSender)
-		
-		If Index = 0 Then
-			If optTipo(0).Checked = True Then
-				Call ImpresionEGPFuncion()
-			ElseIf optTipo(1).Checked = True Then 
-				Call ImpresionEGPNaturaleza()
-			ElseIf optTipo(2).Checked = True Then 
-				Call ImpresionBalanceGeneral()
-			Else
-				Call ImpresionEFE()
-			End If
-		Else
-			Me.Close()
-		End If
-	End Sub
-	
-	'UPGRADE_WARNING: El evento optTipo.CheckedChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub optTipo_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optTipo.CheckedChanged
-		If eventSender.Checked Then
-			Dim Index As Short = optTipo.GetIndex(eventSender)
-			Frame3.Visible = False
-			If Index = 2 Then Frame3.Visible = True
-		End If
-	End Sub
+
+    Private Sub cmdBotones0_Click(sender As Object, e As EventArgs) Handles cmdBotones0.Click
+        If optTipo0.Checked = True Then
+            Call ImpresionEGPFuncion()
+        ElseIf optTipo1.Checked = True Then
+            Call ImpresionEGPNaturaleza()
+
+        ElseIf optTipo2.Checked = True Then
+            Call ImpresionBalanceGeneral()
+
+        ElseIf optTipo3.Checked = True Then
+            Call ImpresionEFE()
+        Else
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub optTipo2_CheckedChanged(sender As Object, e As EventArgs) Handles optTipo2.CheckedChanged
+        If optTipo2.Checked = True Then
+            Frame3.Visible = True
+        Else
+            Frame3.Visible = False
+        End If
+
+    End Sub
+
+    Private Sub optTipo0_CheckedChanged(sender As Object, e As EventArgs) Handles optTipo0.CheckedChanged
+        Frame3.Visible = False
+
+    End Sub
+
+    Private Sub optTipo1_CheckedChanged(sender As Object, e As EventArgs) Handles optTipo1.CheckedChanged
+        Frame3.Visible = False
+
+    End Sub
+
+    Private Sub optTipo3_CheckedChanged(sender As Object, e As EventArgs) Handles optTipo3.CheckedChanged
+        Frame3.Visible = False
+
+    End Sub
 End Class

@@ -1,7 +1,7 @@
 Option Strict Off
 Option Explicit On
-Imports VB = Microsoft.VisualBasic
 Imports System.Data
+Imports Func = Contabilidad.ModFuncionesGen
 
 Friend Class frmMantEntidad
     Inherits System.Windows.Forms.Form
@@ -143,7 +143,7 @@ Friend Class frmMantEntidad
                     SQL = "DELETE FROM ct_entidad WHERE entidadcodigo='" & Trim(TDBGrid1.Item(0, n).Value) & "'"
                     VGCNx.Execute(SQL)
                     VGCNx.CommitTrans()
-                    Call MuestraDatos((txtbuscar.CtlText))
+                    Call MuestraDatos((txtbuscar.Text))
                 End If
 
             Case 3 'imprimir
@@ -171,7 +171,7 @@ X:
         n = TDBGrid1.CurrentRow.Index
         With TDBGrid1
             For i = 0 To 4
-                txt(i).CtlText = Trim(.Item(i, n).Value)
+                txt(i).Text = Trim(.Item(i, n).Value)
             Next
 
             If (Not IsNothing(Trim(.Item(5, n).Value))) And Trim(.Item(5, n).Value) <> "" Then
@@ -186,7 +186,7 @@ X:
     Public Sub LimpiarValores()
         Dim i As Short
         For i = 0 To 4
-            txt(i).CtlText = Nothing
+            txt(i).Text = Nothing
         Next
         cboTipoCont.Text = CStr(Nothing)
     End Sub
@@ -204,7 +204,7 @@ X:
         Dim i As Short
 
 
-        If IsNothing(txt(0).CtlText) Then
+        If IsNothing(txt(0).Text) Then
             MsgBox("Debe Registrar el Código de Analítico", MsgBoxStyle.Information, Text)
             ValidaData = False
             txt(4).Focus()
@@ -245,28 +245,23 @@ X:
         '    Exit Function
         '  End If
 
-        If Not IsNothing(txt(4).CtlText) Then
-            SQL = "SELECT count(entidadruc) FROM ct_entidad WHERE entidadruc='" & txt(4).CtlText & "'"
+        If Not IsNothing(txt(4).Text) Then
+            SQL = "SELECT count(entidadruc) FROM ct_entidad WHERE entidadruc='" & txt(4).Text & "'"
             rsX = New ADODB.Recordset
             rsX = VGCNx.Execute(SQL)
-            VGvardllgen = New dllgeneral.dll_general
-
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(rsX(0), 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            If modoedit = True And VGvardllgen.ESNULO(rsX.Fields(0), 0) = 1 Then
+            If modoedit = True And ESNULO(rsX.Fields(0), 0) = 1 Then
                 ValidaData = True
-                SQL = "SELECT count(entidadruc) FROM ct_entidad WHERE entidadruc='" & txt(4).CtlText & "'"
-                SQL = SQL & " AND entidadcodigo<>'" & txt(0).CtlText & "'"
+                SQL = "SELECT count(entidadruc) FROM ct_entidad WHERE entidadruc='" & txt(4).Text & "'"
+                SQL = SQL & " AND entidadcodigo<>'" & txt(0).Text & "'"
                 rsX = VGCNx.Execute(SQL)
-                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(rsX(0), 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                If VGvardllgen.ESNULO(rsX.Fields(0), 0) > 0 Then
+                 If ESNULO(rsX.Fields(0), 0) > 0 Then
                     MsgBox("Esta intentando registrar un numero de RUC existente", MsgBoxStyle.Information, Text)
                     ValidaData = False
                     txt(4).Focus()
                     Exit Function
                 End If
             Else
-                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(rsX(0), 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                If VGvardllgen.ESNULO(rsX.Fields(0), 0) > 0 Then
+                If ESNULO(rsX.Fields(0), 0) > 0 Then
                     MsgBox("Esta intentando registrar un número de RUC existente", MsgBoxStyle.Information, Text)
                     ValidaData = False
                     txt(4).Focus()
@@ -276,7 +271,6 @@ X:
                 End If
             End If
         End If
-
         ValidaData = True
     End Function
 
@@ -287,24 +281,24 @@ X:
 
         SSTab1.TabPages.Item(0).Enabled = True
 
-        xVarCbo = Trim(VB.Left(VB6.GetItemString(cboTipoCont, cboTipoCont.SelectedIndex), 2))
+        xVarCbo = Trim(Func.Left(VB6.GetItemString(cboTipoCont, cboTipoCont.SelectedIndex), 2))
 
         If modoinsert = True Then
             SQL = "INSERT CT_ENTIDAD(entidadcodigo,entidadrazonsocial,entidaddireccion,entidadtelefono,entidadruc,entidadtipocontri,usuariocodigo,fechaact) "
-            SQL = SQL & "VALUES ('" & UCase(txt(0).CtlText) & "','" & UCase(txt(1).CtlText) & "','" & UCase(txt(2).CtlText) & "','" & txt(3).CtlText & "','" & txt(4).CtlText & "','" & xVarCbo & "','" & VGusuario & "','" & Today & "')"
+            SQL = SQL & "VALUES ('" & UCase(txt(0).Text) & "','" & UCase(txt(1).Text) & "','" & UCase(txt(2).Text) & "','" & txt(3).Text & "','" & txt(4).Text & "','" & xVarCbo & "','" & VGusuario & "','" & Today & "')"
             VGCNx.BeginTrans()
             VGCNx.Execute(SQL)
             Call GrabaCheckTipoAnalitico()
             VGCNx.CommitTrans()
 
         ElseIf modoedit = True Then
-            SQL = "UPDATE CT_ENTIDAD SET entidadrazonsocial='" & Trim(UCase(txt(1).CtlText)) & "',"
-            SQL = SQL & "entidaddireccion='" & Trim(UCase(txt(2).CtlText)) & "',"
-            SQL = SQL & "entidadtelefono='" & txt(3).CtlText & "',"
-            SQL = SQL & "entidadruc='" & txt(4).CtlText & "',"
+            SQL = "UPDATE CT_ENTIDAD SET entidadrazonsocial='" & Trim(UCase(txt(1).Text)) & "',"
+            SQL = SQL & "entidaddireccion='" & Trim(UCase(txt(2).Text)) & "',"
+            SQL = SQL & "entidadtelefono='" & txt(3).Text & "',"
+            SQL = SQL & "entidadruc='" & txt(4).Text & "',"
             SQL = SQL & "entidadtipocontri='" & xVarCbo & "',"
             SQL = SQL & "usuariocodigo='" & VGusuario & "',fechaact='" & VB6.Format(Today, "dd/mm/yyyy") & "' "
-            SQL = SQL & "WHERE entidadcodigo='" & txt(0).CtlText & "'"
+            SQL = SQL & "WHERE entidadcodigo='" & txt(0).Text & "'"
             VGCNx.BeginTrans()
             VGCNx.Execute(SQL)
 
@@ -317,7 +311,7 @@ X:
 
         End If
 
-        Call MuestraDatos((txtbuscar.CtlText))
+        Call MuestraDatos((txtbuscar.Text))
         frmbotones.Visible = True
         modoinsert = False : modoedit = False : FLAG_CHECK = False
         i_filaorigen = -1
@@ -338,7 +332,7 @@ X:
         Dim rsX As ADODB.Recordset
         Dim i As Integer
         Dim SQL As String
-        SQL = "select tipoanaliticocodigo,analiticocodigo FROM ct_analitico WHERE entidadcodigo='" & txt(4).CtlText & "'"
+        SQL = "select tipoanaliticocodigo,analiticocodigo FROM ct_analitico WHERE entidadcodigo='" & txt(4).Text & "'"
         rsX = VGCNx.Execute(SQL)
 
         While Not rsX.EOF
@@ -357,7 +351,7 @@ X:
 
     Sub DeleteCheckTipoAnalitico()
         Dim SQL As String
-        SQL = "DELETE FROM ct_analitico WHERE entidadcodigo='" & txt(0).CtlText & "'"
+        SQL = "DELETE FROM ct_analitico WHERE entidadcodigo='" & txt(0).Text & "'"
         VGCNx.Execute(SQL)
     End Sub
 
@@ -369,12 +363,12 @@ X:
         rsX = New ADODB.Recordset
         For i = 0 To ListView1.Items.Count - 1
             If ListView1.Items.Item(i).Checked = True Then
-                xCodAnalitico = Trim(txt(0).CtlText) & Trim(ListView1.Items.Item(i).Text)
+                xCodAnalitico = Trim(txt(0).Text) & Trim(ListView1.Items.Item(i).Text)
                 SQL = "select count(*) from ct_analitico where analiticocodigo='" & xCodAnalitico & "'"
                 rsX = VGCNx.Execute(SQL)
                 If rsX.Fields(0).Value = 0 Then
                     SQL = "INSERT ct_analitico (analiticocodigo,entidadcodigo,tipoanaliticocodigo,usuariocodigo,fechaact) "
-                    SQL = SQL & "VALUES ('" & xCodAnalitico & "','" & Trim(txt(0).CtlText) & "','" & Trim(ListView1.Items.Item(i).Text) & "','" & VGusuario & "','" & Today & "')"
+                    SQL = SQL & "VALUES ('" & xCodAnalitico & "','" & Trim(txt(0).Text) & "','" & Trim(ListView1.Items.Item(i).Text) & "','" & VGusuario & "','" & Today & "')"
                     VGCNx.Execute(SQL)
                 End If
             End If
@@ -410,9 +404,9 @@ X:
     ''UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
     'If IsNothing(rs.Sort) Then
     '    rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
-    'ElseIf VB.Right(rs.Sort, 3) = "asc" Then
+    'ElseIf Right(rs.Sort, 3) = "asc" Then
     '    rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " desc"
-    'ElseIf VB.Right(rs.Sort, 4) = "desc" Then
+    'ElseIf Right(rs.Sort, 4) = "desc" Then
     '    rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
     'End If
     'Call ConfiguraTdbgrid()
@@ -434,7 +428,7 @@ X:
     Function ValidaDataIngreso() As Boolean
         Dim i As Short
         For i = 0 To 1
-            If IsNothing(txt(i).CtlText) Then
+            If IsNothing(txt(i).Text) Then
                 ValidaDataIngreso = False
                 Exit Function
             End If
@@ -450,8 +444,8 @@ X:
 
     Private Sub txt_Leave(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txt.Leave
         Dim Index As Short = txt.GetIndex(eventSender)
-        txt(Index).CtlText = UCase(txt(Index).CtlText)
-        If Index = 0 And modoedit = False Then txt(4).CtlText = txt(0).CtlText
+        txt(Index).Text = UCase(txt(Index).Text)
+        If Index = 0 And modoedit = False Then txt(4).Text = txt(0).Text
     End Sub
 
     'UPGRADE_WARNING: El evento cboTipoCont.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
@@ -468,7 +462,7 @@ X:
     End Sub
 
     Private Sub txtBuscar_Change(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txtbuscar.Change
-        Call MuestraDatos((txtbuscar.CtlText))
+        Call MuestraDatos((txtbuscar.Text))
     End Sub
 
 

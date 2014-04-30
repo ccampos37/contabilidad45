@@ -23,78 +23,62 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
-	Public WithEvents Ctr_Ayuda1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Frame3 As System.Windows.Forms.GroupBox
-	Public WithEvents cboNiveles As System.Windows.Forms.ComboBox
-	Public WithEvents _Option2_1 As System.Windows.Forms.RadioButton
-	Public WithEvents _Option2_0 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents _Option1_1 As System.Windows.Forms.RadioButton
-	Public WithEvents _Option1_0 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
-	Public WithEvents Option1 As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	Public WithEvents Option2 As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+    Public WithEvents cmdBotones0 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones1 As System.Windows.Forms.Button
+    Public WithEvents Ctr_Ayuda1 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Frame3 As System.Windows.Forms.GroupBox
+    Public WithEvents cboNiveles As System.Windows.Forms.ComboBox
+    Public WithEvents Option21 As System.Windows.Forms.RadioButton
+    Public WithEvents Option20 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents Option10 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRepPlanCuentas))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me._cmdBotones_0 = New System.Windows.Forms.Button()
-        Me._cmdBotones_1 = New System.Windows.Forms.Button()
+        Me.cmdBotones0 = New System.Windows.Forms.Button()
+        Me.cmdBotones1 = New System.Windows.Forms.Button()
         Me.Frame3 = New System.Windows.Forms.GroupBox()
         Me.Ctr_Ayuda1 = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Frame2 = New System.Windows.Forms.GroupBox()
         Me.cboNiveles = New System.Windows.Forms.ComboBox()
-        Me._Option2_1 = New System.Windows.Forms.RadioButton()
-        Me._Option2_0 = New System.Windows.Forms.RadioButton()
+        Me.Option21 = New System.Windows.Forms.RadioButton()
+        Me.Option20 = New System.Windows.Forms.RadioButton()
         Me.Frame1 = New System.Windows.Forms.GroupBox()
-        Me._Option1_1 = New System.Windows.Forms.RadioButton()
-        Me._Option1_0 = New System.Windows.Forms.RadioButton()
-        Me.Option1 = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
-        Me.Option2 = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
-        Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
+        Me.Option10 = New System.Windows.Forms.RadioButton()
         Me.Frame3.SuspendLayout()
         CType(Me.Ctr_Ayuda1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame2.SuspendLayout()
         Me.Frame1.SuspendLayout()
-        CType(Me.Option1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Option2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        '_cmdBotones_0
+        'cmdBotones0
         '
-        Me._cmdBotones_0.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_0, CType(0, Short))
-        Me._cmdBotones_0.Location = New System.Drawing.Point(105, 231)
-        Me._cmdBotones_0.Name = "_cmdBotones_0"
-        Me._cmdBotones_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_0.Size = New System.Drawing.Size(74, 23)
-        Me._cmdBotones_0.TabIndex = 9
-        Me._cmdBotones_0.Text = "&Aceptar"
-        Me._cmdBotones_0.UseVisualStyleBackColor = False
+        Me.cmdBotones0.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones0.Location = New System.Drawing.Point(105, 231)
+        Me.cmdBotones0.Name = "cmdBotones0"
+        Me.cmdBotones0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones0.Size = New System.Drawing.Size(74, 23)
+        Me.cmdBotones0.TabIndex = 9
+        Me.cmdBotones0.Text = "&Aceptar"
+        Me.cmdBotones0.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_1
+        'cmdBotones1
         '
-        Me._cmdBotones_1.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_1, CType(1, Short))
-        Me._cmdBotones_1.Location = New System.Drawing.Point(192, 231)
-        Me._cmdBotones_1.Name = "_cmdBotones_1"
-        Me._cmdBotones_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_1.Size = New System.Drawing.Size(74, 23)
-        Me._cmdBotones_1.TabIndex = 8
-        Me._cmdBotones_1.Text = "&Cancelar"
-        Me._cmdBotones_1.UseVisualStyleBackColor = False
+        Me.cmdBotones1.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones1.Location = New System.Drawing.Point(192, 231)
+        Me.cmdBotones1.Name = "cmdBotones1"
+        Me.cmdBotones1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones1.Size = New System.Drawing.Size(74, 23)
+        Me.cmdBotones1.TabIndex = 8
+        Me.cmdBotones1.Text = "&Cancelar"
+        Me.cmdBotones1.UseVisualStyleBackColor = False
         '
         'Frame3
         '
@@ -123,8 +107,8 @@
         '
         Me.Frame2.BackColor = System.Drawing.SystemColors.Control
         Me.Frame2.Controls.Add(Me.cboNiveles)
-        Me.Frame2.Controls.Add(Me._Option2_1)
-        Me.Frame2.Controls.Add(Me._Option2_0)
+        Me.Frame2.Controls.Add(Me.Option21)
+        Me.Frame2.Controls.Add(Me.Option20)
         Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Frame2.Location = New System.Drawing.Point(0, 92)
         Me.Frame2.Name = "Frame2"
@@ -146,41 +130,38 @@
         Me.cboNiveles.Size = New System.Drawing.Size(221, 21)
         Me.cboNiveles.TabIndex = 6
         '
-        '_Option2_1
+        'Option21
         '
-        Me._Option2_1.BackColor = System.Drawing.SystemColors.Control
-        Me._Option2_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Option2_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Option2.SetIndex(Me._Option2_1, CType(1, Short))
-        Me._Option2_1.Location = New System.Drawing.Point(6, 34)
-        Me._Option2_1.Name = "_Option2_1"
-        Me._Option2_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Option2_1.Size = New System.Drawing.Size(143, 20)
-        Me._Option2_1.TabIndex = 5
-        Me._Option2_1.TabStop = True
-        Me._Option2_1.Text = "Estructurado"
-        Me._Option2_1.UseVisualStyleBackColor = False
+        Me.Option21.BackColor = System.Drawing.SystemColors.Control
+        Me.Option21.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Option21.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Option21.Location = New System.Drawing.Point(6, 38)
+        Me.Option21.Name = "Option21"
+        Me.Option21.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Option21.Size = New System.Drawing.Size(143, 20)
+        Me.Option21.TabIndex = 5
+        Me.Option21.TabStop = True
+        Me.Option21.Text = "Estructurado"
+        Me.Option21.UseVisualStyleBackColor = False
         '
-        '_Option2_0
+        'Option20
         '
-        Me._Option2_0.BackColor = System.Drawing.SystemColors.Control
-        Me._Option2_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Option2_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Option2.SetIndex(Me._Option2_0, CType(0, Short))
-        Me._Option2_0.Location = New System.Drawing.Point(7, 17)
-        Me._Option2_0.Name = "_Option2_0"
-        Me._Option2_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Option2_0.Size = New System.Drawing.Size(143, 20)
-        Me._Option2_0.TabIndex = 4
-        Me._Option2_0.TabStop = True
-        Me._Option2_0.Text = "Niveles"
-        Me._Option2_0.UseVisualStyleBackColor = False
+        Me.Option20.BackColor = System.Drawing.SystemColors.Control
+        Me.Option20.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Option20.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Option20.Location = New System.Drawing.Point(7, 17)
+        Me.Option20.Name = "Option20"
+        Me.Option20.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Option20.Size = New System.Drawing.Size(143, 20)
+        Me.Option20.TabIndex = 4
+        Me.Option20.TabStop = True
+        Me.Option20.Text = "Niveles"
+        Me.Option20.UseVisualStyleBackColor = False
         '
         'Frame1
         '
         Me.Frame1.BackColor = System.Drawing.SystemColors.Control
-        Me.Frame1.Controls.Add(Me._Option1_1)
-        Me.Frame1.Controls.Add(Me._Option1_0)
+        Me.Frame1.Controls.Add(Me.Option10)
         Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Frame1.Location = New System.Drawing.Point(0, 16)
         Me.Frame1.Name = "Frame1"
@@ -191,41 +172,19 @@
         Me.Frame1.TabStop = False
         Me.Frame1.Text = "Tipo de Impresión"
         '
-        '_Option1_1
+        'Option10
         '
-        Me._Option1_1.BackColor = System.Drawing.SystemColors.Control
-        Me._Option1_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Option1_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Option1.SetIndex(Me._Option1_1, CType(1, Short))
-        Me._Option1_1.Location = New System.Drawing.Point(7, 44)
-        Me._Option1_1.Name = "_Option1_1"
-        Me._Option1_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Option1_1.Size = New System.Drawing.Size(154, 16)
-        Me._Option1_1.TabIndex = 2
-        Me._Option1_1.TabStop = True
-        Me._Option1_1.Text = "Plan de Cuentas Resumido"
-        Me._Option1_1.UseVisualStyleBackColor = False
-        '
-        '_Option1_0
-        '
-        Me._Option1_0.BackColor = System.Drawing.SystemColors.Control
-        Me._Option1_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Option1_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Option1.SetIndex(Me._Option1_0, CType(0, Short))
-        Me._Option1_0.Location = New System.Drawing.Point(8, 22)
-        Me._Option1_0.Name = "_Option1_0"
-        Me._Option1_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Option1_0.Size = New System.Drawing.Size(154, 16)
-        Me._Option1_0.TabIndex = 1
-        Me._Option1_0.TabStop = True
-        Me._Option1_0.Text = "Plan de Cuentas Total"
-        Me._Option1_0.UseVisualStyleBackColor = False
-        '
-        'Option2
-        '
-        '
-        'cmdBotones
-        '
+        Me.Option10.BackColor = System.Drawing.SystemColors.Control
+        Me.Option10.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Option10.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Option10.Location = New System.Drawing.Point(8, 22)
+        Me.Option10.Name = "Option10"
+        Me.Option10.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Option10.Size = New System.Drawing.Size(154, 16)
+        Me.Option10.TabIndex = 1
+        Me.Option10.TabStop = True
+        Me.Option10.Text = "Plan de Cuentas Total"
+        Me.Option10.UseVisualStyleBackColor = True
         '
         'frmRepPlanCuentas
         '
@@ -233,8 +192,8 @@
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(370, 265)
-        Me.Controls.Add(Me._cmdBotones_0)
-        Me.Controls.Add(Me._cmdBotones_1)
+        Me.Controls.Add(Me.cmdBotones0)
+        Me.Controls.Add(Me.cmdBotones1)
         Me.Controls.Add(Me.Frame3)
         Me.Controls.Add(Me.Frame2)
         Me.Controls.Add(Me.Frame1)
@@ -251,9 +210,6 @@
         CType(Me.Ctr_Ayuda1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame2.ResumeLayout(False)
         Me.Frame1.ResumeLayout(False)
-        CType(Me.Option1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Option2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

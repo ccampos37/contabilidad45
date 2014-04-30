@@ -117,10 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ToolTip1.Location" type="System.Drawing.Point, System.Drawing">
+  <metadata name="cmdg_archivoOpen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
+  </metadata>
   <data name="DTPPerido.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
@@ -132,7 +131,7 @@
         LQAgAHkAeQB5AHkAH97svQEABQB47XAOCw==
 </value>
   </data>
-  <data name="TxArchivo.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="TxArchivo1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
@@ -144,8 +143,5 @@
         PZH8qhwAAABsAG8AYwBrAGUAZAD//wAACAAEAHU6D5QYAAAAdABlAHgAdAAAAAAAAwAMAIdY9j4oAAAA
         YwBvAGwAbwByAGkAbAB1AG0AaQBuAGEA+ffdAAgABQDz0G231P7//3YAYQBsAG8AcgAAAAAAAAAL
 </value>
-  </data>
-  <data name="Opt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 17</value>
   </data>
 </root>

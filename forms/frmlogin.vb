@@ -2,14 +2,14 @@ Option Strict Off
 Option Explicit On
 Public Class frmlogin
     Inherits System.Windows.Forms.Form
-    Dim VGvardllgen As New dllgeneral.dll_general
+
 
     Private Sub CargarParametros()
         Dim rssql As New ADODB.Recordset
-        VGParamSistem.Anoproceso = Format(Year(DTPfecha._Value), "0000")
-        VGParamSistem.Mesproceso = Format(Month(DTPfecha._Value), "00")
-        VGParamSistem.TablaCabcomprob = "ct_cabcomprob" & Year(DTPfecha._Value)
-        VGParamSistem.TablaDetcomprob = "ct_detcomprob" & Year(DTPfecha._Value)
+        VGParamSistem.Anoproceso = Format(Year(DTPfecha.Value), "0000")
+        VGParamSistem.Mesproceso = Format(Month(DTPfecha.Value), "00")
+        VGParamSistem.TablaCabcomprob = "ct_cabcomprob" & Year(DTPfecha.Value)
+        VGParamSistem.TablaDetcomprob = "ct_detcomprob" & Year(DTPfecha.Value)
         VGParamSistem.FechaTrabajo = DTPfecha.Value
         rssql = VGCNx.Execute("select * from co_multiempresas where empresacodigo='" & VGParametros.empresacodigo & "'")
         If rssql.RecordCount > 0 Then VGParametros.RucEmpresa = ESNULO(rssql.Fields("empresaruc"), "")
@@ -108,8 +108,6 @@ ERRAR:
     Private Sub frmlogin_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         DTPfecha.Value = Today
         Call LlenarListBox()
-        CmdAceptar.Image = ImgList2.Images.Item("Entrar")
-        CmdCancelar.Image = ImgList2.Images.Item("Retornar")
     End Sub
     Private Function VERIFICAUSUARIO() As Boolean
         Dim RSPASS As New ADODB.Recordset
@@ -163,8 +161,7 @@ ERRAR:
         REG1 = VGConfig.Execute("Select * from EMPRESA where empresaflagcontabilidad= 1 order by EMP_CODIGO ")
         If REG1.BOF Then Exit Sub
         Do While Not REG1.EOF
-            'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
-            If Not IsDBNull(REG1.Fields("EMP_RAZON_NOMBRE").Value) Then
+             If Not IsDBNull(REG1.Fields("EMP_RAZON_NOMBRE").Value) Then
                 Combo1.Items.Add(REG1.Fields("EMP_RAZON_NOMBRE").Value)
             End If
             REG1.MoveNext()
@@ -194,15 +191,14 @@ ERRAR:
     End Sub
     Private Sub TxUser_KeyPressEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyPressEvent) Handles TxUser.KeyPressEvent
         If eventArgs.keyAscii = 13 Then
-            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             TxUser.CtlText = UCase(TxUser.CtlText)
             System.Windows.Forms.SendKeys.Send("{tab}")
         End If
     End Sub
     Private Sub CmdCancelar_Click(sender As Object, e As EventArgs) Handles CmdCancelar.Click
         VGSalir = True
-        Me.Close()
 
+        Me.Hide()
     End Sub
 
     Private Sub CmdAceptar_Click_1(sender As Object, e As EventArgs) Handles CmdAceptar.Click
@@ -210,17 +206,14 @@ ERRAR:
         Call CargarParametros()
         If Not Validaraño() Then
             framaño.Visible = True
-            framaño.Top = VB6.TwipsToPixelsY(4050)
-            CmdAceptar.Top = VB6.TwipsToPixelsY(5000)
-            CmdCancelar.Top = VB6.TwipsToPixelsY(5000)
-            Me.Height = VB6.TwipsToPixelsY(6500)
+
             Exit Sub
         Else
             framaño.Visible = False
-            framaño.Top = VB6.TwipsToPixelsY(6400)
+
         End If
         If Not VERIFICAUSUARIO() Then Exit Sub
-        tccambio = XRecuperaTipoCambio(CDate(VB6.Format(DTPfecha._Value, "dd/mm/yyyy")), ModificarCampos.tipocambio.Venta, VGCNx)
+        tccambio = XRecuperaTipoCambio(CDate(VB6.Format(DTPfecha.Value, "dd/mm/yyyy")), tipocambio.Venta, VGCNx)
         If tccambio = 0 Then
             MsgBox("No existe tipo de cambio para esta fecha", MsgBoxStyle.Information)
         End If
@@ -231,7 +224,7 @@ ERRAR:
         VGUsuario = UCase(TxUser.CtlText)
         Dim Clsmenu As New ClassMenu
         Clsmenu.Conexion = VGConfig
-        MainContab.VGtipo = ModificarCampos.TIPOSISTEMA.contab
+        MainContab.VGtipo = TIPOSISTEMA.contab
         Clsmenu.TablaMenu = "si_menu"
         Clsmenu.CrearTablaMenu()
         Clsmenu.TabaMenuDet = "si_menuusuarios"
@@ -248,4 +241,5 @@ ERRAR:
         End If
         Me.Close()
     End Sub
+
 End Class

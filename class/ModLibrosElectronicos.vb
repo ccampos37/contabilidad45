@@ -1,5 +1,6 @@
 Option Strict Off
 Option Explicit On
+Imports Contabilidad.ModFuncionesGen
 Module ModLibroselectronicos
 	Public Sub Generadiario(ByRef dato As String)
 		Dim RSQL As New ADODB.Recordset
@@ -99,7 +100,7 @@ Error_PDT:
 		Call GeneraArchivoDiarioSimplificado(RSQL, Archivo)
 	End Sub
 	Public Sub GeneraArchivoDiarioSimplificado(ByRef rs As ADODB.Recordset, ByRef Archivo As String)
-		Dim LBLNUMERO As Object
+        Dim LBLNUMERO As String = ""
 		Dim registro As Object
 		Dim li_aRC As Short
 		Dim reg As String
@@ -201,7 +202,7 @@ Error_PDT:
 				reg = Mid(Archivo, 14, 8) & "|" + rs.Fields("cabcomprobnumero").Value + "|" + dato3 + "|"
 				
 				dato1 = rs.Fields("detcomprobfechavencimiento").Value
-				dato3 = IIf(rs.Fields("documentocodigo").Value = "50", Right(rs.Fields("serie").Value, 3), rs.Fields("serie").Value)
+                dato3 = IIf(rs.Fields("documentocodigo").Value = "50", Right(rs.Fields("serie").Value, 3), rs.Fields("serie").Value)
 				reg = reg & dato1 & "|" + rs.Fields("documentocodigo").Value + "|" + dato3 + "|"
 				
 				'campos 7 para adelante
@@ -248,8 +249,8 @@ Error_PDT:
 				Else
 					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 					dato1 = ESNULO(.Fields("tipdocref"), "00")
-					dato2 = IIf(dato1 = "00", "-", Left(.Fields("detcomprobnumref").Value, 4))
-					dato3 = IIf(dato1 = "00", "-", Right(.Fields("detcomprobnumref").Value, 10))
+                    dato2 = IIf(dato1 = "00", "-", Left(.Fields("detcomprobnumref").Value, 4))
+                    dato3 = IIf(dato1 = "00", "-", Right(.Fields("detcomprobnumref").Value, 10))
 				End If
 				reg = reg & dato1 & "|" & dato2 & "|" & dato3 & "|"
 				
@@ -329,7 +330,7 @@ Error_PDT:
 	End Sub
 	
 	Public Sub GeneraArchivoVentas(ByRef rs As ADODB.Recordset, ByRef Archivo As String, ByRef li_arc1 As Short)
-		Dim detcomprobnumref As Object
+        Dim detcomprobnumref As String = ""
 		Dim registro As Object
 		Dim reg As String
 		Dim dato1 As String
@@ -351,7 +352,7 @@ Error_PDT:
 				reg = reg & dato1 & "|" + rs.Fields("documentocodigo").Value + "|" + rs.Fields("tdserie").Value + "|"
 				
 				'campos 7 para adelante
-				dato1 = Right(rs.Fields("detcomprobnumdocumento").Value, 10)
+                dato1 = Right(rs.Fields("detcomprobnumdocumento").Value, 10)
 				dato2 = "0"
 				dato3 = rs.Fields("identidadcodigo").Value
 				reg = reg & dato1 & "|" & dato2 & "|" & dato3 & "|"
@@ -402,9 +403,9 @@ Error_PDT:
 					dato2 = "-"
 				Else
 					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto detcomprobnumref. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					dato1 = IIf(dato1 = "00", "-", Left(detcomprobnumref, 4))
+                    dato1 = IIf(dato1 = "00", "-", Left(detcomprobnumref, 4))
 					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto detcomprobnumref. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					dato2 = IIf(dato1 = "00", "-", Right(detcomprobnumref, 10))
+                    dato2 = IIf(dato1 = "00", "-", Right(detcomprobnumref, 10))
 				End If
 				dato3 = IIf(.Fields("operaciondocumentoanulado").Value = True, "2", "1")
 				reg = reg & dato1 & "|" & dato2 & "|" & dato3 & "|"
@@ -433,17 +434,15 @@ err1:
 		Dim nombre As String
 		Dim dia As String
 		Dim codoportun As String
-		Dim llenadato As String
-		'UPGRADE_NOTE: El objeto rsql2 no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		rsql2 = Nothing
+        rsql2 = Nothing
 		rsql2 = VGCNx.Execute("select * from ct_librossunatcorrelativos where librocodigosunat='" & dato1 & "'")
 		If rsql2.Fields("diaproceso").Value = "DD" Then
-			dia = Left(CStr(fecha(1, CDate("01/" & VGParamSistem.Mesproceso & "/" & VGParamSistem.Anoproceso & ""))), 2)
+            dia = Left(CStr(Fecha(1, CDate("01/" & VGParamSistem.Mesproceso & "/" & VGParamSistem.Anoproceso & ""))), 2)
 		Else
 			dia = rsql2.Fields("diaproceso").Value
 		End If
 		If rsql2.Fields("codigoOportunidad").Value = "CC" Then
-			codoportun = Left(CStr(fecha(1, CDate("01/" & VGParamSistem.Mesproceso & "/" & VGParamSistem.Anoproceso & ""))), 2)
+            codoportun = Left(CStr(Fecha(1, CDate("01/" & VGParamSistem.Mesproceso & "/" & VGParamSistem.Anoproceso & ""))), 2)
 		Else
 			codoportun = rsql2.Fields("codigoOportunidad").Value
 		End If

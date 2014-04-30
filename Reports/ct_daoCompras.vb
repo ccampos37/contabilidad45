@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class ct_daoCompras
+Public Class ct_DaoCompras
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class ct_daoCompras
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "ct_daoCompras.rpt"
+            Return "ct_DaoCompras.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class ct_daoCompras
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Contabilidad.ct_daoCompras.rpt"
+            Return "Contabilidad.ct_DaoCompras.rpt"
         End Get
         Set
             'Do nothing
@@ -62,7 +62,7 @@ Public Class ct_daoCompras
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section2() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property Section4() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(1)
         End Get
@@ -70,7 +70,7 @@ Public Class ct_daoCompras
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section3() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property Section2() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(2)
         End Get
@@ -78,7 +78,7 @@ Public Class ct_daoCompras
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section4() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property Section3() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(3)
         End Get
@@ -89,6 +89,14 @@ Public Class ct_daoCompras
     Public ReadOnly Property Section5() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(4)
+        End Get
+    End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Section6() As CrystalDecisions.CrystalReports.Engine.Section
+        Get
+            Return Me.ReportDefinition.Sections(5)
         End Get
     End Property
     
@@ -150,7 +158,7 @@ Public Class ct_daoCompras
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class Cachedct_daoCompras
+Public Class Cachedct_DaoCompras
     Inherits Component
     Implements ICachedReport
     
@@ -192,7 +200,7 @@ Public Class Cachedct_daoCompras
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As ct_daoCompras = New ct_daoCompras()
+        Dim rpt As ct_DaoCompras = New ct_DaoCompras()
         rpt.Site = Me.Site
         Return rpt
     End Function

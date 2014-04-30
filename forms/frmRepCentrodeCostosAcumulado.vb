@@ -12,56 +12,56 @@ Friend Class frmRepCentrodeCostosAcumulado
 	Private Sub imprimir3()
 		Dim arrform(2) As Object
 		Dim arrparm(4) As Object
-		VGvardllgen = New dllgeneral.dll_general
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(0) = VGParamSistem.BDEmpresa
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(1) = VGParametros.empresacodigo
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(2) = VGParamSistem.Anoproceso
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(3) = VB6.Format(Month(DTPicker1.Value), "00")
-		
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(0) = "@mes='" & DesMes(VGParamSistem.Mesproceso) & "'"
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(1) = "@Tituloreporte='Acumulados por Centro de Costos '"
-		
-		If Option1.Checked = True Then
-			Call ImpresionRptProc("ct_listacentrocostosresumen.rpt", arrform, arrparm,  , "Reporte Centro de Costos x Cuentas Acumulado ")
-		Else
-			Call ImpresionRptProc("ct_cuentaxcentrocostodetallado.rpt", arrform, arrparm,  , "Reporte acumulado ")
-		End If
-	End Sub
-	
-	Private Sub imprimir4()
-		Dim arrform(2) As Object
-		Dim arrparm(5) As Object
-		VGvardllgen = New dllgeneral.dll_general
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(0) = VGParamSistem.BDEmpresa
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(1) = VGParametros.empresacodigo
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(2) = VGParamSistem.Anoproceso
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(3) = VB6.Format(Month(DTPicker1.Value), "00")
-		
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(0) = "@mes='" & DesMes(VGParamSistem.Mesproceso) & "'"
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(1) = "@Tituloreporte='Acumulados por Centro de Costos '"
-		
-		If Option1.Checked = True Then
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrparm(4) = 0
-			Call ImpresionRptProc("ct_listacentrocostoAcumMes.rpt", arrform, arrparm,  , "Reporte resumido ")
-		Else
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrparm(4) = 1
-			Call ImpresionRptProc("ct_listacentrocostoAcumxMeses.rpt", arrform, arrparm,  , "Reporte resumido ")
-		End If
-	End Sub
+        '  VGvardllgen = New dllgeneral.dll_general
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(0) = VGParamSistem.BDEmpresa
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(1) = VGParametros.empresacodigo
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(2) = VGParamSistem.Anoproceso
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(3) = VB6.Format(Month(DTPicker1.Value), "00")
+
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrform(0) = "@mes='" & DesMes(VGParamSistem.Mesproceso) & "'"
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrform(1) = "@Tituloreporte='Acumulados por Centro de Costos '"
+
+        If Option1.Checked = True Then
+            Call ImpresionRptProc("ct_listacentrocostosresumen.rpt", arrform, arrparm, , "Reporte Centro de Costos x Cuentas Acumulado ")
+        Else
+            Call ImpresionRptProc("ct_cuentaxcentrocostodetallado.rpt", arrform, arrparm, , "Reporte acumulado ")
+        End If
+    End Sub
+
+    Private Sub imprimir4()
+        Dim arrform(2) As Object
+        Dim arrparm(5) As Object
+        '  VGvardllgen = New dllgeneral.dll_general
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(0) = VGParamSistem.BDEmpresa
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(1) = VGParametros.empresacodigo
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(2) = VGParamSistem.Anoproceso
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(3) = VB6.Format(Month(DTPicker1.Value), "00")
+
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrform(0) = "@mes='" & DesMes(VGParamSistem.Mesproceso) & "'"
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrform(1) = "@Tituloreporte='Acumulados por Centro de Costos '"
+
+        If Option1.Checked = True Then
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            arrparm(4) = 0
+            Call ImpresionRptProc("ct_listacentrocostoAcumMes.rpt", arrform, arrparm, , "Reporte resumido ")
+        Else
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            arrparm(4) = 1
+            Call ImpresionRptProc("ct_listacentrocostoAcumxMeses.rpt", arrform, arrparm, , "Reporte resumido ")
+        End If
+    End Sub
 	
 	Private Sub cmdCancelar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancelar.Click
 		Me.Close()

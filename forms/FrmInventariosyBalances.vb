@@ -40,4 +40,6 @@ Friend Class FrmInventariosyBalances
 	Private Sub Command2_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Command2.Click
 		Me.Close()
 	End Sub
+
+
 End Class

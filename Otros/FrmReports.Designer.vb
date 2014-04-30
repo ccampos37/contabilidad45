@@ -28,23 +28,27 @@ Partial Class FrmReports
         'CRVPresentacion
         '
         Me.CRVPresentacion.ActiveViewIndex = -1
-        Me.CRVPresentacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CRVPresentacion.AutoSize = True
+        Me.CRVPresentacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.CRVPresentacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.CRVPresentacion.Cursor = System.Windows.Forms.Cursors.Default
         Me.CRVPresentacion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CRVPresentacion.Location = New System.Drawing.Point(0, 0)
         Me.CRVPresentacion.Name = "CRVPresentacion"
-        Me.CRVPresentacion.Size = New System.Drawing.Size(533, 341)
+        Me.CRVPresentacion.Size = New System.Drawing.Size(1048, 582)
         Me.CRVPresentacion.TabIndex = 0
         '
         'FrmReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(533, 341)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1048, 582)
         Me.Controls.Add(Me.CRVPresentacion)
         Me.Name = "FrmReports"
-        Me.Text = "FrmReports"
+        Me.Text = "Impresion de Reportes"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents CRVPresentacion As CrystalDecisions.Windows.Forms.CrystalReportViewer

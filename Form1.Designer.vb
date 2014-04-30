@@ -28,8 +28,11 @@ Partial Class Form1
         Me.CmdImprimir = New System.Windows.Forms.Button()
         Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
         Me.optTipo = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
+        Me.PerformanceCounter1 = New System.Diagnostics.PerformanceCounter()
+        Me.Jck_Txt1 = New Jck_txt.Jck_Txt()
         CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.optTipo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PerformanceCounter1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         '_cmdBotones_1
@@ -60,11 +63,25 @@ Partial Class Form1
         Me.CmdImprimir.Text = "&Aceptar"
         Me.CmdImprimir.UseVisualStyleBackColor = False
         '
+        'Jck_Txt1
+        '
+        Me.Jck_Txt1.decimales = 0
+        Me.Jck_Txt1.formato = "99999"
+        Me.Jck_Txt1.Location = New System.Drawing.Point(6, 86)
+        Me.Jck_Txt1.longitud = 5
+        Me.Jck_Txt1.Name = "Jck_Txt1"
+        Me.Jck_Txt1.negativos = True
+        Me.Jck_Txt1.Size = New System.Drawing.Size(112, 20)
+        Me.Jck_Txt1.TabIndex = 12
+        Me.Jck_Txt1.tipoCaracter = 1
+        Me.Jck_Txt1.tipoletra = 3
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(425, 125)
+        Me.ClientSize = New System.Drawing.Size(384, 118)
+        Me.Controls.Add(Me.Jck_Txt1)
         Me.Controls.Add(Me._cmdBotones_1)
         Me.Controls.Add(Me.CmdImprimir)
         Me.Name = "Form1"
@@ -79,4 +96,6 @@ Partial Class Form1
     Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
     Public WithEvents CmdImprimir As System.Windows.Forms.Button
     Public WithEvents optTipo As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
+    Friend WithEvents PerformanceCounter1 As System.Diagnostics.PerformanceCounter
+    Friend WithEvents Jck_Txt1 As Jck_txt.Jck_Txt
 End Class

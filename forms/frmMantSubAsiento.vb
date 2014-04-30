@@ -1,56 +1,56 @@
 Option Strict Off
 Option Explicit On
-Imports VB = Microsoft.VisualBasic
+Imports Func = Contabilidad.ModFuncionesGen
 Friend Class frmMantSubAsiento
-	Inherits System.Windows.Forms.Form
-	
-	Dim modoinsert As Boolean
-	Dim modoedit As Boolean
-	Dim rs As New ADODB.Recordset
-	Dim rsAsiento As ADODB.Recordset
-	
-	Private Sub frmMantSubAsiento_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		Call ConfiguraForm()
+    Inherits System.Windows.Forms.Form
+
+    Dim modoinsert As Boolean
+    Dim modoedit As Boolean
+    Dim rs As New ADODB.Recordset
+    Dim rsAsiento As ADODB.Recordset
+
+    Private Sub frmMantSubAsiento_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+        Call ConfiguraForm()
         Call MuestraDatosAsiento()
         SSTab1.TabPages.Item(0).Enabled = True
 
-	End Sub
-	
-	Private Sub frmMantSubAsiento_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    End Sub
+
+    Private Sub frmMantSubAsiento_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         rs = Nothing
         rsAsiento = Nothing
-        VGvardllgen = Nothing
-	End Sub
-	
-	Sub ConfiguraForm()
-		SSTab1.SelectedIndex = 0
-		SSTab1.TabPages.Item(1).Enabled = False
-		SSTab1.TabPages.Item(2).Enabled = False
-		Ctr_Ayuda1.conexion(VGCNx)
-		Ctr_Ayuda2.conexion(VGCNx)
+        '  VGvardllgen = Nothing
+    End Sub
+
+    Sub ConfiguraForm()
+        SSTab1.SelectedIndex = 0
+        SSTab1.TabPages.Item(1).Enabled = False
+        SSTab1.TabPages.Item(2).Enabled = False
+        Ctr_Ayuda1.conexion(VGCNx)
+        Ctr_Ayuda2.conexion(VGCNx)
         Ctr_Ayuda1.Filtro = "where asientocodigo<>'00'"
         cAcepta.Enabled = False
-		lblNumReg.Text = CStr(Nothing)
+        lblNumReg.Text = CStr(Nothing)
         'Me.Width = VB6.TwipsToPixelsX(6825)
         'Me.Height = VB6.TwipsToPixelsY(7815)
-	End Sub
-	
-	Sub MuestraDatosAsiento()
-		Dim SQL As String
-		rsAsiento = New ADODB.Recordset
-		SQL = "SELECT asientocodigo as Codigo,asientodescripcion as Descripción FROM ct_asiento WHERE asientocodigo<>'00' ORDER BY 1"
-		rsAsiento = VGCNx.Execute(SQL)
-		TDBGrid1.DataSource = rsAsiento
+    End Sub
+
+    Sub MuestraDatosAsiento()
+        Dim SQL As String
+        rsAsiento = New ADODB.Recordset
+        SQL = "SELECT asientocodigo as Codigo,asientodescripcion as Descripción FROM ct_asiento WHERE asientocodigo<>'00' ORDER BY 1"
+        rsAsiento = VGCNx.Execute(SQL)
+        TDBGrid1.DataSource = rsAsiento
         TDBGrid1.Columns(0).Width = 60
         TDBGrid1.Columns(1).Width = 220
-		lblNumReg.Text = CStr(rsAsiento.RecordCount)
-	End Sub
-	
-	Private Sub Ctr_Ayuda1_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_Ayuda1.AlDevolverDato
-		Call MuestraDatosSubAsiento()
-	End Sub
-	
-	'FIXIT: Declare 'MuestraDatosSubAsiento' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
+        lblNumReg.Text = CStr(rsAsiento.RecordCount)
+    End Sub
+
+    Private Sub Ctr_Ayuda1_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_Ayuda1.AlDevolverDato
+        Call MuestraDatosSubAsiento()
+    End Sub
+
+    'FIXIT: Declare 'MuestraDatosSubAsiento' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
     Public Sub MuestraDatosSubAsiento()
         Dim SQL As String
         SQL = "SELECT ct_subasiento.subasientocodigo, ct_subasiento.subasientodescripcion,"
@@ -87,7 +87,7 @@ Friend Class frmMantSubAsiento
                 Call LimpiarForm(Me, "Ctr_Ayuda1")
 
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(0).CtlText = GeneraCodigo(VGCNx, "Select max(subasientocodigo) from ct_subasiento where asientocodigo='" & Ctr_Ayuda1.xclave & "'", "0000")
+                txt(0).Text = GeneraCodigo(VGCNx, "Select max(subasientocodigo) from ct_subasiento where asientocodigo='" & Ctr_Ayuda1.xclave & "'", "0000")
                 txt(0).Focus()
                 Call ModoEditable(True, gbDatos, "Ctr_Ayuda1")
                 frmbotones.Visible = False
@@ -132,79 +132,78 @@ X:
     End Sub
 
     Private Sub cAcepta_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cAcepta.Click
-        Dim SQL As String
         On Error GoTo X
 
-        VGvardllgen = New dllgeneral.dll_general
+        '  VGvardllgen = New dllgeneral.dll_general
         VGCNx.BeginTrans()
 
         If modoinsert = True Then
             SQL = "INSERT INTO CT_SUBASIENTO (subasientocodigo,asientocodigo,monedacodigo,subasientodescripcion,"
             SQL = SQL & "subasientonumcorr01,subasientonumcorr02,subasientonumcorr03,subasientonumcorr04,subasientonumcorr05,subasientonumcorr06,subasientonumcorr07,subasientonumcorr08,subasientonumcorr09,subasientonumcorr10,subasientonumcorr11,subasientonumcorr12,subasientoglosa,subasientorepitedoc,usuariocodigo,fechaact) "
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            SQL = SQL & "VALUES ('" & txt(0).CtlText & "','" & Ctr_Ayuda1.xclave & "','" & Ctr_Ayuda2.xclave & "','" & Trim(UCase(txt(1).CtlText)) & "',"
+            SQL = SQL & "VALUES ('" & txt(0).Text & "','" & Ctr_Ayuda1.xclave & "','" & Ctr_Ayuda2.xclave & "','" & Trim(UCase(txt(1).Text)) & "',"
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(4).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(3).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & VGvardllgen.ESNULO(txt(2).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(3).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(4).CtlText, 0) & ","
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(4).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(3).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & ESNULO(txt(2).Text, 0) & "," & ESNULO(txt(3).Text, 0) & "," & ESNULO(txt(4).Text, 0) & ","
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(7).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(6).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & VGvardllgen.ESNULO(txt(5).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(6).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(7).CtlText, 0) & ","
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(7).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(6).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & ESNULO(txt(5).Text, 0) & "," & ESNULO(txt(6).Text, 0) & "," & ESNULO(txt(7).Text, 0) & ","
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(13).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(12).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(11).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(10).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(9).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & VGvardllgen.ESNULO(txt(8).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(9).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(10).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(11).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(12).CtlText, 0) & "," & VGvardllgen.ESNULO(txt(13).CtlText, 0) & ",'" & txt(14).CtlText & "'," & chk.CheckState & ",'"
-            SQL = SQL & VGusuario & "','" & VB6.Format(Today, "dd/mm/yyyy") & "')"
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(13).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(12).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(11).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(10).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(9).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & ESNULO(txt(8).Text, 0) & "," & ESNULO(txt(9).Text, 0) & "," & ESNULO(txt(10).Text, 0) & "," & ESNULO(txt(11).Text, 0) & "," & ESNULO(txt(12).Text, 0) & "," & ESNULO(txt(13).Text, 0) & ",'" & txt(14).Text & "'," & chk.CheckState & ",'"
+            SQL = SQL & VGUsuario & "','" & VB6.Format(Today, "dd/mm/yyyy") & "')"
 
         ElseIf modoedit = True Then
             SQL = "UPDATE CT_SUBASIENTO SET monedacodigo='" & Ctr_Ayuda2.xclave & "',"
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            SQL = SQL & "subasientodescripcion='" & Trim(UCase(txt(1).CtlText)) & "',"
+            SQL = SQL & "subasientodescripcion='" & Trim(UCase(txt(1).Text)) & "',"
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(4).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(3).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & "subasientonumcorr01=" & VGvardllgen.ESNULO(txt(2).CtlText, 0) & ",subasientonumcorr02=" & VGvardllgen.ESNULO(txt(3).CtlText, 0) & ",subasientonumcorr03=" & VGvardllgen.ESNULO(txt(4).CtlText, 0) & ","
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(4).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(3).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & "subasientonumcorr01=" & ESNULO(txt(2).Text, 0) & ",subasientonumcorr02=" & ESNULO(txt(3).Text, 0) & ",subasientonumcorr03=" & ESNULO(txt(4).Text, 0) & ","
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(7).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(6).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & "subasientonumcorr04=" & VGvardllgen.ESNULO(txt(5).CtlText, 0) & ",subasientonumcorr05=" & VGvardllgen.ESNULO(txt(6).CtlText, 0) & ",subasientonumcorr06=" & VGvardllgen.ESNULO(txt(7).CtlText, 0) & ","
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(7).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(6).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & "subasientonumcorr04=" & ESNULO(txt(5).Text, 0) & ",subasientonumcorr05=" & ESNULO(txt(6).Text, 0) & ",subasientonumcorr06=" & ESNULO(txt(7).Text, 0) & ","
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(10).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(9).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & "subasientonumcorr07=" & VGvardllgen.ESNULO(txt(8).CtlText, 0) & ",subasientonumcorr08=" & VGvardllgen.ESNULO(txt(9).CtlText, 0) & ",subasientonumcorr09=" & VGvardllgen.ESNULO(txt(10).CtlText, 0) & ","
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(10).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(9).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & "subasientonumcorr07=" & ESNULO(txt(8).Text, 0) & ",subasientonumcorr08=" & ESNULO(txt(9).Text, 0) & ",subasientonumcorr09=" & ESNULO(txt(10).Text, 0) & ","
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(13).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(txt(12).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VGvardllgen.ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            SQL = SQL & "subasientonumcorr10=" & VGvardllgen.ESNULO(txt(11).CtlText, 0) & ",subasientonumcorr11=" & VGvardllgen.ESNULO(txt(12).CtlText, 0) & ",subasientonumcorr12=" & VGvardllgen.ESNULO(txt(13).CtlText, 0) & ","
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(13).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(txt(12).Text, 0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            SQL = SQL & "subasientonumcorr10=" & ESNULO(txt(11).Text, 0) & ",subasientonumcorr11=" & ESNULO(txt(12).Text, 0) & ",subasientonumcorr12=" & ESNULO(txt(13).Text, 0) & ","
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            SQL = SQL & "subasientoglosa='" & txt(14).CtlText & "',subasientorepitedoc=" & chk.CheckState & ","
-            SQL = SQL & "usuariocodigo='" & VGusuario & "',fechaact='" & VB6.Format(Today, "dd/mm/yyyy") & "' "
+            SQL = SQL & "subasientoglosa='" & txt(14).Text & "',subasientorepitedoc=" & chk.CheckState & ","
+            SQL = SQL & "usuariocodigo='" & VGUsuario & "',fechaact='" & VB6.Format(Today, "dd/mm/yyyy") & "' "
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            SQL = SQL & "WHERE subasientocodigo='" & txt(0).CtlText & "' AND asientocodigo='" & Ctr_Ayuda1.xclave & "'"
+            SQL = SQL & "WHERE subasientocodigo='" & txt(0).Text & "' AND asientocodigo='" & Ctr_Ayuda1.xclave & "'"
         End If
 
         VGCNx.Execute(SQL)
         VGCNx.CommitTrans()
 
         'UPGRADE_NOTE: El objeto VGvardllgen no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-        VGvardllgen = Nothing
+        '  VGvardllgen = Nothing
         frmbotones.Visible = True
         modoinsert = False : modoedit = False : lblMensaje.Text = CStr(Nothing)
         Call MuestraDatosSubAsiento()
         cAcepta.Enabled = False
         'UPGRADE_NOTE: El objeto VGvardllgen no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-        VGvardllgen = Nothing
+        '  VGvardllgen = Nothing
         Call ModoEditable(False, Me, "")
         Exit Sub
 
@@ -239,11 +238,11 @@ X:
         On Error Resume Next
         'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
         If IsNothing(rs.Sort) Then
-            rs.Sort = TDBGrid1.Columns.Item(eventArgs.ColIndex).DataField & " asc"
-        ElseIf VB.Right(rs.Sort, 3) = "asc" Then
-            rs.Sort = TDBGrid1.Columns.Item(eventArgs.ColIndex).DataField & " desc"
-        ElseIf VB.Right(rs.Sort, 4) = "desc" Then
-            rs.Sort = TDBGrid1.Columns.Item(eventArgs.ColIndex).DataField & " asc"
+            rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
+        ElseIf Func.Right(rs.Sort, 3) = "asc" Then
+            rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " desc"
+        ElseIf Func.Right(rs.Sort, 4) = "desc" Then
+            rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
         End If
         'UPGRADE_NOTE: Refresh se actualizó a CtlRefresh. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         TDBGrid1.Refresh()
@@ -280,7 +279,7 @@ X:
 
     Private Sub txt_KeyPressEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyPressEvent) Handles txt.KeyPressEvent
         Dim Index As Short = txt.GetIndex(eventSender)
-        If eventArgs.KeyAscii = 13 And Index = 15 Then
+        If eventArgs.keyAscii = 13 And Index = 15 Then
             cAcepta.Focus()
             Call cAcepta_Click(cAcepta, New System.EventArgs())
         End If
@@ -292,10 +291,10 @@ X:
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            If Not IsDbNull(txt(0).CtlText) Then txt(0).CtlText = VB6.Format(txt(0).CtlText, "0000")
+            If Not IsDBNull(txt(0).Text) Then txt(0).Text = VB6.Format(txt(0).Text, "0000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            txt(Index).CtlText = UCase(txt(Index).CtlText)
+            txt(Index).Text = UCase(txt(Index).Text)
         End If
     End Sub
 
@@ -305,11 +304,11 @@ X:
         If rs.RecordCount > 0 Then
             With TDBGrid3
                 For i = 2 To 13
-                    txt(i).CtlText = TDBGrid3.Columns(i + 3).Value
+                    txt(i).Text = TDBGrid3.Columns(i + 3).Value
                 Next
-                txt(0).CtlText = .Columns(0).Value
-                txt(1).CtlText = .Columns(1).Value
-                txt(14).CtlText = .Columns(2).Value
+                txt(0).Text = .Columns(0).Value
+                txt(1).Text = .Columns(1).Value
+                txt(14).Text = .Columns(2).Value
                 chk.CheckState = IIf(.Columns(3).Value = 0, 0, 1)
                 Ctr_Ayuda2.xclave = .Columns(17).Value : Ctr_Ayuda2.Ejecutar()
             End With
@@ -331,51 +330,51 @@ X:
         End With
 
     End Sub
-	
-	Function ValidaDataIngreso() As Boolean
-		Dim i As Short
-		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		If IsNothing(Ctr_Ayuda1.xclave) Then
-			ValidaDataIngreso = False
-			Exit Function
-		End If
-		
-		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		If IsNothing(Ctr_Ayuda2.xclave) Then
-			ValidaDataIngreso = False
-			Exit Function
-		End If
-		
-		For i = 0 To 1
-			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-			If IsNothing(txt(i).CtlText) Then
-				ValidaDataIngreso = False
-				Exit Function
-			End If
-			
-		Next 
-		
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		If IsNothing(txt(14).CtlText) Then
-			ValidaDataIngreso = False
-			Exit Function
-		End If
-		
-		ValidaDataIngreso = True
-	End Function
-	
-	
-	'Private Function LimpiarValores()
-	'Dim I As Integer
-	' Ctr_Ayuda2.xclave = Empty: Ctr_Ayuda2.Ejecutar
-	' For I = 0 To 14
-	'  txt(I).Text = Empty
-	' Next
-	' chk.Value = 0
-	'
-	'End Function
+
+    Function ValidaDataIngreso() As Boolean
+        Dim i As Short
+        'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        If IsNothing(Ctr_Ayuda1.xclave) Then
+            ValidaDataIngreso = False
+            Exit Function
+        End If
+
+        'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        If IsNothing(Ctr_Ayuda2.xclave) Then
+            ValidaDataIngreso = False
+            Exit Function
+        End If
+
+        For i = 0 To 1
+            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+            'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+            If IsNothing(txt(i).Text) Then
+                ValidaDataIngreso = False
+                Exit Function
+            End If
+
+        Next
+
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        If IsNothing(txt(14).Text) Then
+            ValidaDataIngreso = False
+            Exit Function
+        End If
+
+        ValidaDataIngreso = True
+    End Function
+
+
+    'Private Function LimpiarValores()
+    'Dim I As Integer
+    ' Ctr_Ayuda2.xclave = Empty: Ctr_Ayuda2.Ejecutar
+    ' For I = 0 To 14
+    '  txt(I).Text = Empty
+    ' Next
+    ' chk.Value = 0
+    '
+    'End Function
 
     Private Sub TDBGrid1_AfterColUpdate(ByVal sender As System.Object, ByVal e As AxTrueOleDBGrid70.TrueDBGridEvents_AfterColUpdateEvent) Handles TDBGrid1.AfterColUpdate
 

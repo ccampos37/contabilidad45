@@ -16,87 +16,78 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _Ctr_Ayuda1_0 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents _Ctr_Ayuda1_1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label4 As System.Windows.Forms.Label
-	Public WithEvents Label3 As System.Windows.Forms.Label
-	Public WithEvents fraResumido As System.Windows.Forms.GroupBox
-	Public WithEvents DTPickerFecFinal As AxMSComCtl2.AxDTPicker
-	Public WithEvents DTPickerFecInicio As AxMSComCtl2.AxDTPicker
-	Public WithEvents _Ctr_Ayuda2_0 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents _Ctr_Ayuda2_1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents Label5 As System.Windows.Forms.Label
-	Public WithEvents Label6 As System.Windows.Forms.Label
-	Public WithEvents fraDetallado As System.Windows.Forms.GroupBox
-	Public WithEvents _optOpcion_1 As System.Windows.Forms.RadioButton
-	Public WithEvents _optOpcion_0 As System.Windows.Forms.RadioButton
-	Public WithEvents _optOpcion_2 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
-	Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
-	Public WithEvents cboMes As System.Windows.Forms.ComboBox
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents Ctr_Ayuda1 As AxCtr_AyudaArray
-	Public WithEvents Ctr_Ayuda2 As AxCtr_AyudaArray
-	Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	Public WithEvents optOpcion As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+    Public WithEvents ctr_ayuAsiento As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents ctr_ayuSubasiento As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label4 As System.Windows.Forms.Label
+    Public WithEvents Label3 As System.Windows.Forms.Label
+    Public WithEvents fraResumido As System.Windows.Forms.GroupBox
+    Public WithEvents DTPickerFecFinal As AxMSComCtl2.AxDTPicker
+    Public WithEvents DTPickerFecInicio As AxMSComCtl2.AxDTPicker
+    Public WithEvents Ctr_Ayuda20 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Ctr_Ayuda21 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents Label2 As System.Windows.Forms.Label
+    Public WithEvents Label5 As System.Windows.Forms.Label
+    Public WithEvents Label6 As System.Windows.Forms.Label
+    Public WithEvents fraDetallado As System.Windows.Forms.GroupBox
+    Public WithEvents optOpcion1 As System.Windows.Forms.RadioButton
+    Public WithEvents optOpcion0 As System.Windows.Forms.RadioButton
+    Public WithEvents optOpcion2 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    Public WithEvents cmdBotones1 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones0 As System.Windows.Forms.Button
+    Public WithEvents cboMes As System.Windows.Forms.ComboBox
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents Ctr_Ayuda1 As AxCtr_AyudaArray
+    Public WithEvents Ctr_Ayuda2 As AxCtr_AyudaArray
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLibroDiario))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.fraResumido = New System.Windows.Forms.GroupBox()
-        Me._Ctr_Ayuda1_0 = New Axctrlayuda_f.AxCtr_Ayuda()
-        Me._Ctr_Ayuda1_1 = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.ctr_ayuAsiento = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.ctr_ayuSubasiento = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.fraDetallado = New System.Windows.Forms.GroupBox()
         Me.DTPickerFecFinal = New AxMSComCtl2.AxDTPicker()
         Me.DTPickerFecInicio = New AxMSComCtl2.AxDTPicker()
-        Me._Ctr_Ayuda2_0 = New Axctrlayuda_f.AxCtr_Ayuda()
-        Me._Ctr_Ayuda2_1 = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.Ctr_Ayuda20 = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.Ctr_Ayuda21 = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Frame1 = New System.Windows.Forms.GroupBox()
-        Me._optOpcion_1 = New System.Windows.Forms.RadioButton()
-        Me._optOpcion_0 = New System.Windows.Forms.RadioButton()
-        Me._optOpcion_2 = New System.Windows.Forms.RadioButton()
-        Me._cmdBotones_1 = New System.Windows.Forms.Button()
-        Me._cmdBotones_0 = New System.Windows.Forms.Button()
+        Me.optOpcion1 = New System.Windows.Forms.RadioButton()
+        Me.optOpcion0 = New System.Windows.Forms.RadioButton()
+        Me.optOpcion2 = New System.Windows.Forms.RadioButton()
+        Me.cmdBotones1 = New System.Windows.Forms.Button()
+        Me.cmdBotones0 = New System.Windows.Forms.Button()
         Me.Frame2 = New System.Windows.Forms.GroupBox()
         Me.cboMes = New System.Windows.Forms.ComboBox()
-        Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
-        Me.optOpcion = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
         Me.fraResumido.SuspendLayout()
-        CType(Me._Ctr_Ayuda1_0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._Ctr_Ayuda1_1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ctr_ayuAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ctr_ayuSubasiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fraDetallado.SuspendLayout()
         CType(Me.DTPickerFecFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DTPickerFecInicio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._Ctr_Ayuda2_0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._Ctr_Ayuda2_1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ctr_Ayuda20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ctr_Ayuda21, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame1.SuspendLayout()
         Me.Frame2.SuspendLayout()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.optOpcion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'fraResumido
         '
-        Me.fraResumido.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.fraResumido.Controls.Add(Me._Ctr_Ayuda1_0)
-        Me.fraResumido.Controls.Add(Me._Ctr_Ayuda1_1)
+        Me.fraResumido.BackColor = System.Drawing.Color.White
+        Me.fraResumido.Controls.Add(Me.ctr_ayuAsiento)
+        Me.fraResumido.Controls.Add(Me.ctr_ayuSubasiento)
         Me.fraResumido.Controls.Add(Me.Label4)
         Me.fraResumido.Controls.Add(Me.Label3)
         Me.fraResumido.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraResumido.Location = New System.Drawing.Point(32, 149)
+        Me.fraResumido.Location = New System.Drawing.Point(6, 169)
         Me.fraResumido.Name = "fraResumido"
         Me.fraResumido.Padding = New System.Windows.Forms.Padding(0)
         Me.fraResumido.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -105,27 +96,27 @@
         Me.fraResumido.TabStop = False
         Me.fraResumido.Text = "Diario General Resumido"
         '
-        '_Ctr_Ayuda1_0
+        'ctr_ayuAsiento
         '
-        Me._Ctr_Ayuda1_0.Enabled = True
-        Me._Ctr_Ayuda1_0.Location = New System.Drawing.Point(85, 29)
-        Me._Ctr_Ayuda1_0.Name = "_Ctr_Ayuda1_0"
-        Me._Ctr_Ayuda1_0.OcxState = CType(resources.GetObject("_Ctr_Ayuda1_0.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._Ctr_Ayuda1_0.Size = New System.Drawing.Size(254, 22)
-        Me._Ctr_Ayuda1_0.TabIndex = 18
+        Me.ctr_ayuAsiento.Enabled = True
+        Me.ctr_ayuAsiento.Location = New System.Drawing.Point(88, 25)
+        Me.ctr_ayuAsiento.Name = "ctr_ayuAsiento"
+        Me.ctr_ayuAsiento.OcxState = CType(resources.GetObject("ctr_ayuAsiento.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ctr_ayuAsiento.Size = New System.Drawing.Size(254, 22)
+        Me.ctr_ayuAsiento.TabIndex = 18
         '
-        '_Ctr_Ayuda1_1
+        'ctr_ayuSubasiento
         '
-        Me._Ctr_Ayuda1_1.Enabled = True
-        Me._Ctr_Ayuda1_1.Location = New System.Drawing.Point(85, 50)
-        Me._Ctr_Ayuda1_1.Name = "_Ctr_Ayuda1_1"
-        Me._Ctr_Ayuda1_1.OcxState = CType(resources.GetObject("_Ctr_Ayuda1_1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._Ctr_Ayuda1_1.Size = New System.Drawing.Size(254, 22)
-        Me._Ctr_Ayuda1_1.TabIndex = 19
+        Me.ctr_ayuSubasiento.Enabled = True
+        Me.ctr_ayuSubasiento.Location = New System.Drawing.Point(85, 43)
+        Me.ctr_ayuSubasiento.Name = "ctr_ayuSubasiento"
+        Me.ctr_ayuSubasiento.OcxState = CType(resources.GetObject("ctr_ayuSubasiento.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ctr_ayuSubasiento.Size = New System.Drawing.Size(254, 22)
+        Me.ctr_ayuSubasiento.TabIndex = 19
         '
         'Label4
         '
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label4.Location = New System.Drawing.Point(12, 31)
@@ -137,7 +128,7 @@
         '
         'Label3
         '
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label3.Location = New System.Drawing.Point(12, 53)
@@ -152,14 +143,14 @@
         Me.fraDetallado.BackColor = System.Drawing.SystemColors.Control
         Me.fraDetallado.Controls.Add(Me.DTPickerFecFinal)
         Me.fraDetallado.Controls.Add(Me.DTPickerFecInicio)
-        Me.fraDetallado.Controls.Add(Me._Ctr_Ayuda2_0)
-        Me.fraDetallado.Controls.Add(Me._Ctr_Ayuda2_1)
+        Me.fraDetallado.Controls.Add(Me.Ctr_Ayuda20)
+        Me.fraDetallado.Controls.Add(Me.Ctr_Ayuda21)
         Me.fraDetallado.Controls.Add(Me.Label1)
         Me.fraDetallado.Controls.Add(Me.Label2)
         Me.fraDetallado.Controls.Add(Me.Label5)
         Me.fraDetallado.Controls.Add(Me.Label6)
         Me.fraDetallado.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraDetallado.Location = New System.Drawing.Point(32, 149)
+        Me.fraDetallado.Location = New System.Drawing.Point(9, 169)
         Me.fraDetallado.Name = "fraDetallado"
         Me.fraDetallado.Padding = New System.Windows.Forms.Padding(0)
         Me.fraDetallado.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -184,23 +175,23 @@
         Me.DTPickerFecInicio.Size = New System.Drawing.Size(164, 20)
         Me.DTPickerFecInicio.TabIndex = 10
         '
-        '_Ctr_Ayuda2_0
+        'Ctr_Ayuda20
         '
-        Me._Ctr_Ayuda2_0.Enabled = True
-        Me._Ctr_Ayuda2_0.Location = New System.Drawing.Point(85, 64)
-        Me._Ctr_Ayuda2_0.Name = "_Ctr_Ayuda2_0"
-        Me._Ctr_Ayuda2_0.OcxState = CType(resources.GetObject("_Ctr_Ayuda2_0.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._Ctr_Ayuda2_0.Size = New System.Drawing.Size(254, 22)
-        Me._Ctr_Ayuda2_0.TabIndex = 11
+        Me.Ctr_Ayuda20.Enabled = True
+        Me.Ctr_Ayuda20.Location = New System.Drawing.Point(85, 64)
+        Me.Ctr_Ayuda20.Name = "Ctr_Ayuda20"
+        Me.Ctr_Ayuda20.OcxState = CType(resources.GetObject("Ctr_Ayuda20.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.Ctr_Ayuda20.Size = New System.Drawing.Size(254, 22)
+        Me.Ctr_Ayuda20.TabIndex = 11
         '
-        '_Ctr_Ayuda2_1
+        'Ctr_Ayuda21
         '
-        Me._Ctr_Ayuda2_1.Enabled = True
-        Me._Ctr_Ayuda2_1.Location = New System.Drawing.Point(85, 85)
-        Me._Ctr_Ayuda2_1.Name = "_Ctr_Ayuda2_1"
-        Me._Ctr_Ayuda2_1.OcxState = CType(resources.GetObject("_Ctr_Ayuda2_1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._Ctr_Ayuda2_1.Size = New System.Drawing.Size(254, 22)
-        Me._Ctr_Ayuda2_1.TabIndex = 12
+        Me.Ctr_Ayuda21.Enabled = True
+        Me.Ctr_Ayuda21.Location = New System.Drawing.Point(85, 85)
+        Me.Ctr_Ayuda21.Name = "Ctr_Ayuda21"
+        Me.Ctr_Ayuda21.OcxState = CType(resources.GetObject("Ctr_Ayuda21.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.Ctr_Ayuda21.Size = New System.Drawing.Size(254, 22)
+        Me.Ctr_Ayuda21.TabIndex = 12
         '
         'Label1
         '
@@ -252,98 +243,93 @@
         '
         'Frame1
         '
-        Me.Frame1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Frame1.Controls.Add(Me._optOpcion_1)
-        Me.Frame1.Controls.Add(Me._optOpcion_0)
-        Me.Frame1.Controls.Add(Me._optOpcion_2)
+        Me.Frame1.BackColor = System.Drawing.Color.White
+        Me.Frame1.Controls.Add(Me.optOpcion1)
+        Me.Frame1.Controls.Add(Me.optOpcion0)
+        Me.Frame1.Controls.Add(Me.optOpcion2)
         Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame1.Location = New System.Drawing.Point(32, 8)
+        Me.Frame1.Location = New System.Drawing.Point(6, 8)
         Me.Frame1.Name = "Frame1"
         Me.Frame1.Padding = New System.Windows.Forms.Padding(0)
         Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Frame1.Size = New System.Drawing.Size(342, 84)
+        Me.Frame1.Size = New System.Drawing.Size(342, 98)
         Me.Frame1.TabIndex = 4
         Me.Frame1.TabStop = False
         '
-        '_optOpcion_1
+        'optOpcion1
         '
-        Me._optOpcion_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._optOpcion_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._optOpcion_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optOpcion.SetIndex(Me._optOpcion_1, CType(1, Short))
-        Me._optOpcion_1.Location = New System.Drawing.Point(16, 40)
-        Me._optOpcion_1.Name = "_optOpcion_1"
-        Me._optOpcion_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optOpcion_1.Size = New System.Drawing.Size(177, 17)
-        Me._optOpcion_1.TabIndex = 7
-        Me._optOpcion_1.TabStop = True
-        Me._optOpcion_1.Text = "Diario General Resumido Tipo 1"
-        Me._optOpcion_1.UseVisualStyleBackColor = False
+        Me.optOpcion1.BackColor = System.Drawing.Color.White
+        Me.optOpcion1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion1.Location = New System.Drawing.Point(16, 40)
+        Me.optOpcion1.Name = "optOpcion1"
+        Me.optOpcion1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion1.Size = New System.Drawing.Size(177, 17)
+        Me.optOpcion1.TabIndex = 7
+        Me.optOpcion1.TabStop = True
+        Me.optOpcion1.Text = "Diario General Resumido Tipo 1"
+        Me.optOpcion1.UseVisualStyleBackColor = False
         '
-        '_optOpcion_0
+        'optOpcion0
         '
-        Me._optOpcion_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._optOpcion_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._optOpcion_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optOpcion.SetIndex(Me._optOpcion_0, CType(0, Short))
-        Me._optOpcion_0.Location = New System.Drawing.Point(16, 16)
-        Me._optOpcion_0.Name = "_optOpcion_0"
-        Me._optOpcion_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optOpcion_0.Size = New System.Drawing.Size(153, 25)
-        Me._optOpcion_0.TabIndex = 6
-        Me._optOpcion_0.TabStop = True
-        Me._optOpcion_0.Text = "Diario General Detallado"
-        Me._optOpcion_0.UseVisualStyleBackColor = False
+        Me.optOpcion0.BackColor = System.Drawing.Color.White
+        Me.optOpcion0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion0.Location = New System.Drawing.Point(16, 9)
+        Me.optOpcion0.Name = "optOpcion0"
+        Me.optOpcion0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion0.Size = New System.Drawing.Size(153, 25)
+        Me.optOpcion0.TabIndex = 6
+        Me.optOpcion0.TabStop = True
+        Me.optOpcion0.Text = "Diario General Detallado"
+        Me.optOpcion0.UseVisualStyleBackColor = False
         '
-        '_optOpcion_2
+        'optOpcion2
         '
-        Me._optOpcion_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._optOpcion_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._optOpcion_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optOpcion.SetIndex(Me._optOpcion_2, CType(2, Short))
-        Me._optOpcion_2.Location = New System.Drawing.Point(16, 56)
-        Me._optOpcion_2.Name = "_optOpcion_2"
-        Me._optOpcion_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optOpcion_2.Size = New System.Drawing.Size(177, 25)
-        Me._optOpcion_2.TabIndex = 5
-        Me._optOpcion_2.TabStop = True
-        Me._optOpcion_2.Text = "Diario General Resumido Tipo 2"
-        Me._optOpcion_2.UseVisualStyleBackColor = False
+        Me.optOpcion2.BackColor = System.Drawing.Color.White
+        Me.optOpcion2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion2.Location = New System.Drawing.Point(16, 63)
+        Me.optOpcion2.Name = "optOpcion2"
+        Me.optOpcion2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion2.Size = New System.Drawing.Size(177, 25)
+        Me.optOpcion2.TabIndex = 5
+        Me.optOpcion2.TabStop = True
+        Me.optOpcion2.Text = "Diario General Resumido Tipo 2"
+        Me.optOpcion2.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_1
+        'cmdBotones1
         '
-        Me._cmdBotones_1.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_1, CType(1, Short))
-        Me._cmdBotones_1.Location = New System.Drawing.Point(217, 296)
-        Me._cmdBotones_1.Name = "_cmdBotones_1"
-        Me._cmdBotones_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_1.Size = New System.Drawing.Size(82, 23)
-        Me._cmdBotones_1.TabIndex = 3
-        Me._cmdBotones_1.Text = "&Cancelar"
-        Me._cmdBotones_1.UseVisualStyleBackColor = False
+        Me.cmdBotones1.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones1.Location = New System.Drawing.Point(198, 296)
+        Me.cmdBotones1.Name = "cmdBotones1"
+        Me.cmdBotones1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones1.Size = New System.Drawing.Size(82, 48)
+        Me.cmdBotones1.TabIndex = 3
+        Me.cmdBotones1.Text = "&Cancelar"
+        Me.cmdBotones1.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_0
+        'cmdBotones0
         '
-        Me._cmdBotones_0.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_0, CType(0, Short))
-        Me._cmdBotones_0.Location = New System.Drawing.Point(110, 296)
-        Me._cmdBotones_0.Name = "_cmdBotones_0"
-        Me._cmdBotones_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_0.Size = New System.Drawing.Size(82, 23)
-        Me._cmdBotones_0.TabIndex = 2
-        Me._cmdBotones_0.Text = "&Aceptar"
-        Me._cmdBotones_0.UseVisualStyleBackColor = False
+        Me.cmdBotones0.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones0.Location = New System.Drawing.Point(91, 296)
+        Me.cmdBotones0.Name = "cmdBotones0"
+        Me.cmdBotones0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones0.Size = New System.Drawing.Size(82, 48)
+        Me.cmdBotones0.TabIndex = 2
+        Me.cmdBotones0.Text = "&Aceptar"
+        Me.cmdBotones0.UseVisualStyleBackColor = False
         '
         'Frame2
         '
-        Me.Frame2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Frame2.BackColor = System.Drawing.Color.White
         Me.Frame2.Controls.Add(Me.cboMes)
         Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame2.Location = New System.Drawing.Point(32, 93)
+        Me.Frame2.Location = New System.Drawing.Point(7, 111)
         Me.Frame2.Name = "Frame2"
         Me.Frame2.Padding = New System.Windows.Forms.Padding(0)
         Me.Frame2.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -357,29 +343,23 @@
         Me.cboMes.BackColor = System.Drawing.SystemColors.Window
         Me.cboMes.Cursor = System.Windows.Forms.Cursors.Default
         Me.cboMes.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cboMes.Location = New System.Drawing.Point(6, 17)
+        Me.cboMes.Location = New System.Drawing.Point(8, 17)
         Me.cboMes.Name = "cboMes"
         Me.cboMes.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cboMes.Size = New System.Drawing.Size(330, 21)
         Me.cboMes.TabIndex = 1
-        '
-        'cmdBotones
-        '
-        '
-        'optOpcion
-        '
         '
         'FrmLibroDiario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(411, 345)
+        Me.ClientSize = New System.Drawing.Size(367, 357)
         Me.Controls.Add(Me.fraResumido)
         Me.Controls.Add(Me.fraDetallado)
         Me.Controls.Add(Me.Frame1)
-        Me.Controls.Add(Me._cmdBotones_1)
-        Me.Controls.Add(Me._cmdBotones_0)
+        Me.Controls.Add(Me.cmdBotones1)
+        Me.Controls.Add(Me.cmdBotones0)
         Me.Controls.Add(Me.Frame2)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Location = New System.Drawing.Point(4, 30)
@@ -387,17 +367,15 @@
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Text = "Libro Diario"
         Me.fraResumido.ResumeLayout(False)
-        CType(Me._Ctr_Ayuda1_0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._Ctr_Ayuda1_1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ctr_ayuAsiento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ctr_ayuSubasiento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.fraDetallado.ResumeLayout(False)
         CType(Me.DTPickerFecFinal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DTPickerFecInicio, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._Ctr_Ayuda2_0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._Ctr_Ayuda2_1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ctr_Ayuda20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ctr_Ayuda21, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame1.ResumeLayout(False)
         Me.Frame2.ResumeLayout(False)
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.optOpcion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

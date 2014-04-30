@@ -5,7 +5,7 @@ Friend Class frmselanomes
 	'FIXIT: Utilice Option Explicit para evitar la creación implícita de variables de tipo Variant.     FixIT90210ae-R383-H1984
 	Private Sub cmdAceptar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdAceptar.Click
 		Dim tccambio As Double
-		VGvardllgen = New dllgeneral.dll_general
+        '  VGvardllgen = New dllgeneral.dll_general
 		VGParamSistem.Anoproceso = VB6.Format(Year(DTPperiodo._Value), "0000")
 		VGParamSistem.Mesproceso = VB6.Format(Month(DTPperiodo._Value), "00")
 		VGParamSistem.TablaCabcomprob = "ct_cabcomprob" & Year(DTPperiodo._Value)
@@ -17,7 +17,7 @@ Friend Class frmselanomes
 		'UPGRADE_WARNING: El límite inferior de la colección MDIPrincipal.StatusBar1.Panels cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
 		MDIPrincipal.StatusBar1.Items.Item(2).Text = "Año Proceso :" & Year(DTPperiodo._Value)
 		
-		tccambio = XRecuperaTipoCambio(CDate(VB6.Format(DTPperiodo._Value, "dd/mm/yyyy")), ModificarCampos.tipocambio.Venta, VGCNx)
+        tccambio = XRecuperaTipoCambio(CDate(VB6.Format(DTPperiodo._Value, "dd/mm/yyyy")), tipocambio.Venta, VGCNx)
 		If tccambio = 0 Then
 			MsgBox("No existe tipo de cambio para esta fecha", MsgBoxStyle.Information)
 		End If

@@ -14,7 +14,7 @@ Friend Class FrmImportDataFac
 		cmdg_archivoOpen.ShowDialog()
 		NombreArchivo = cmdg_archivoOpen.FileName
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxArchivo.CtlText = NombreArchivo
+        TxArchivo1.Text = NombreArchivo
 	End Sub
 	Private Sub cmdCancelar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancelar.Click
 		Me.Close()
@@ -35,20 +35,8 @@ Friend Class FrmImportDataFac
 		
 		rsparimpo = New ADODB.Recordset
 		rsparimpo = VGCNx.Execute(" select * from ct_importarventas")
-		If Opt(0).Checked = True Then
-			If ChkRest.CheckState = 1 Then
-				If Not Restaurar Then
-					'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-					System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
-					Exit Sub
-				End If
-			End If
-			BaseOrigen = "TRANSFER" & Trim(Mid(VB6.GetItemString(cboSerie, cboSerie.SelectedIndex), 7, 3))
-		End If
-		If rsparimpo.RecordCount = 0 Then Exit Sub
-		If Opt(1).Checked = True Then
-			BaseOrigen = rsparimpo.Fields("BaseVenta").Value
-		End If
+        If rsparimpo.RecordCount = 0 Then Exit Sub
+	
 		paso1 = rsparimpo.Fields("asientofacturacion").Value
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -226,24 +214,23 @@ restarurar:
 	Private Sub FrmImportDataFac_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 		DTPPerido.Month = CShort(VGParamSistem.Mesproceso)
 		DTPPerido.Year = CShort(VGParamSistem.Anoproceso)
-		Opt(1).Checked = True
-		Call LlenarCboSeries()
+        Call LlenarCboSeries()
 	End Sub
 	
 	'UPGRADE_WARNING: El evento Opt.CheckedChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub Opt_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Opt.CheckedChanged
-		If eventSender.Checked Then
-			Dim Index As Short = Opt.GetIndex(eventSender)
-			Select Case Index
-				Case 0
-					CmdArchivo.Enabled = True
-					cboSerie.Enabled = True
-				Case 1
-					CmdArchivo.Enabled = False
-					cboSerie.Enabled = False
-			End Select
-		End If
-	End Sub
+    Private Sub Opt_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs)
+        If eventSender.Checked Then
+            Dim Index As Integer = 0
+            Select Case Index
+                Case 0
+                    CmdArchivo.Enabled = True
+                    cboSerie.Enabled = True
+                Case 1
+                    CmdArchivo.Enabled = False
+                    cboSerie.Enabled = False
+            End Select
+        End If
+    End Sub
 	
 	Sub LlenarCboSeries()
 		cboSerie.Items.Add("Serie 001")

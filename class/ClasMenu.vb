@@ -74,7 +74,7 @@ errortab:
 		Resume Next
 	End Sub
 	Private Function MaxNivel() As Short
-		Dim Cont, Aux As Short
+        Dim Aux As Short
 		MaxNivel = 0
 		'*---------------------------------*
 		For	Each Contr In MDIPrincipal.Controls

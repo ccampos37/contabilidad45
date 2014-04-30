@@ -16,161 +16,137 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents Check1 As System.Windows.Forms.CheckBox
-	Public WithEvents Command1 As System.Windows.Forms.Button
-	Public WithEvents Command2 As System.Windows.Forms.Button
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents ListView2 As System.Windows.Forms.ListView
-	Public WithEvents ListView1 As System.Windows.Forms.ListView
-	Public WithEvents FrameCuentas As System.Windows.Forms.GroupBox
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    Public WithEvents Check1 As System.Windows.Forms.CheckBox
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
 	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
 	'Se puede modificar mediante el Diseñador de Windows Forms.
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(FrmLibroInventariosyBalances))
-		Me.components = New System.ComponentModel.Container()
-		Me.ToolTip1 = New System.Windows.Forms.ToolTip(components)
-		Me.Check1 = New System.Windows.Forms.CheckBox
-		Me.Frame1 = New System.Windows.Forms.GroupBox
-		Me.FrameCuentas = New System.Windows.Forms.GroupBox
-		Me.Frame2 = New System.Windows.Forms.GroupBox
-		Me.Command1 = New System.Windows.Forms.Button
-		Me.Command2 = New System.Windows.Forms.Button
-		Me.ListView2 = New System.Windows.Forms.ListView
-		Me.ListView1 = New System.Windows.Forms.ListView
-		Me.Frame1.SuspendLayout()
-		Me.FrameCuentas.SuspendLayout()
-		Me.Frame2.SuspendLayout()
-		Me.SuspendLayout()
-		Me.ToolTip1.Active = True
-		Me.Text = "Libro de Inventarios y Balances"
-		Me.ClientSize = New System.Drawing.Size(740, 565)
-		Me.Location = New System.Drawing.Point(4, 30)
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation
-		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackColor = System.Drawing.SystemColors.Control
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
-		Me.ControlBox = True
-		Me.Enabled = True
-		Me.KeyPreview = False
-		Me.MaximizeBox = True
-		Me.MinimizeBox = True
-		Me.Cursor = System.Windows.Forms.Cursors.Default
-		Me.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.ShowInTaskbar = True
-		Me.HelpButton = False
-		Me.WindowState = System.Windows.Forms.FormWindowState.Normal
-		Me.Name = "FrmLibroInventariosyBalances"
-		Me.Check1.Text = "Imprimir"
-		Me.Check1.Size = New System.Drawing.Size(81, 33)
-		Me.Check1.Location = New System.Drawing.Point(64, 56)
-		Me.Check1.TabIndex = 7
-		Me.Check1.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me.Check1.FlatStyle = System.Windows.Forms.FlatStyle.Standard
-		Me.Check1.BackColor = System.Drawing.SystemColors.Control
-		Me.Check1.CausesValidation = True
-		Me.Check1.Enabled = True
-		Me.Check1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Check1.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Check1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Check1.Appearance = System.Windows.Forms.Appearance.Normal
-		Me.Check1.TabStop = True
-		Me.Check1.CheckState = System.Windows.Forms.CheckState.Unchecked
-		Me.Check1.Visible = True
-		Me.Check1.Name = "Check1"
-		Me.Frame1.Size = New System.Drawing.Size(649, 537)
-		Me.Frame1.Location = New System.Drawing.Point(24, 8)
-		Me.Frame1.TabIndex = 0
-		Me.Frame1.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame1.Enabled = True
-		Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame1.Visible = True
-		Me.Frame1.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame1.Name = "Frame1"
-		Me.FrameCuentas.Size = New System.Drawing.Size(601, 449)
-		Me.FrameCuentas.Location = New System.Drawing.Point(24, 64)
-		Me.FrameCuentas.TabIndex = 1
-		Me.FrameCuentas.BackColor = System.Drawing.SystemColors.Control
-		Me.FrameCuentas.Enabled = True
-		Me.FrameCuentas.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.FrameCuentas.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.FrameCuentas.Visible = True
-		Me.FrameCuentas.Padding = New System.Windows.Forms.Padding(0)
-		Me.FrameCuentas.Name = "FrameCuentas"
-		Me.Frame2.Text = "Opciones"
-		Me.Frame2.Size = New System.Drawing.Size(281, 81)
-		Me.Frame2.Location = New System.Drawing.Point(176, 336)
-		Me.Frame2.TabIndex = 2
-		Me.Frame2.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame2.Enabled = True
-		Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame2.Visible = True
-		Me.Frame2.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame2.Name = "Frame2"
-		Me.Command1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		Me.Command1.Text = "Impprimir"
-		Me.Command1.Size = New System.Drawing.Size(105, 41)
-		Me.Command1.Location = New System.Drawing.Point(24, 16)
-		Me.Command1.TabIndex = 4
-		Me.Command1.BackColor = System.Drawing.SystemColors.Control
-		Me.Command1.CausesValidation = True
-		Me.Command1.Enabled = True
-		Me.Command1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Command1.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Command1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Command1.TabStop = True
-		Me.Command1.Name = "Command1"
-		Me.Command2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		Me.Command2.Text = "Salir"
-		Me.Command2.Size = New System.Drawing.Size(105, 41)
-		Me.Command2.Location = New System.Drawing.Point(160, 16)
-		Me.Command2.TabIndex = 3
-		Me.Command2.BackColor = System.Drawing.SystemColors.Control
-		Me.Command2.CausesValidation = True
-		Me.Command2.Enabled = True
-		Me.Command2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Command2.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Command2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Command2.TabStop = True
-		Me.Command2.Name = "Command2"
-		Me.ListView2.Size = New System.Drawing.Size(2, 9)
-		Me.ListView2.Location = New System.Drawing.Point(88, 104)
-		Me.ListView2.TabIndex = 5
-		Me.ListView2.LabelWrap = True
-		Me.ListView2.HideSelection = True
-		Me.ListView2.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.ListView2.BackColor = System.Drawing.SystemColors.Window
-		Me.ListView2.LabelEdit = True
-		Me.ListView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.ListView2.Name = "ListView2"
-		Me.ListView1.Size = New System.Drawing.Size(561, 305)
-		Me.ListView1.Location = New System.Drawing.Point(8, 16)
-		Me.ListView1.TabIndex = 6
-		Me.ListView1.LabelWrap = True
-		Me.ListView1.HideSelection = True
-		Me.ListView1.Checkboxes = True
-		Me.ListView1.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.ListView1.BackColor = System.Drawing.SystemColors.Window
-		Me.ListView1.LabelEdit = True
-		Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.ListView1.Name = "ListView1"
-		Me.Controls.Add(Check1)
-		Me.Controls.Add(Frame1)
-		Me.Frame1.Controls.Add(FrameCuentas)
-		Me.FrameCuentas.Controls.Add(Frame2)
-		Me.FrameCuentas.Controls.Add(ListView2)
-		Me.FrameCuentas.Controls.Add(ListView1)
-		Me.Frame2.Controls.Add(Command1)
-		Me.Frame2.Controls.Add(Command2)
-		Me.Frame1.ResumeLayout(False)
-		Me.FrameCuentas.ResumeLayout(False)
-		Me.Frame2.ResumeLayout(False)
-		Me.ResumeLayout(False)
-		Me.PerformLayout()
-	End Sub
+        Me.Check1 = New System.Windows.Forms.CheckBox()
+        Me.Frame1 = New System.Windows.Forms.GroupBox()
+        Me.Frame2 = New System.Windows.Forms.GroupBox()
+        Me.Command1 = New System.Windows.Forms.Button()
+        Me.Command2 = New System.Windows.Forms.Button()
+        Me.Framecuentas = New System.Windows.Forms.GroupBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.Frame1.SuspendLayout
+        Me.Frame2.SuspendLayout
+        Me.Framecuentas.SuspendLayout
+        Me.SuspendLayout
+        '
+        'Check1
+        '
+        Me.Check1.BackColor = System.Drawing.SystemColors.Control
+        Me.Check1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Check1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Check1.Location = New System.Drawing.Point(31, 12)
+        Me.Check1.Name = "Check1"
+        Me.Check1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Check1.Size = New System.Drawing.Size(69, 21)
+        Me.Check1.TabIndex = 7
+        Me.Check1.Text = "Imprimir"
+        Me.Check1.UseVisualStyleBackColor = False
+        '
+        'Frame1
+        '
+        Me.Frame1.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame1.Controls.Add(Me.Framecuentas)
+        Me.Frame1.Controls.Add(Me.Frame2)
+        Me.Frame1.Controls.Add(Me.Check1)
+        Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame1.Location = New System.Drawing.Point(12, 12)
+        Me.Frame1.Name = "Frame1"
+        Me.Frame1.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame1.Size = New System.Drawing.Size(735, 477)
+        Me.Frame1.TabIndex = 0
+        Me.Frame1.TabStop = False
+        '
+        'Frame2
+        '
+        Me.Frame2.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame2.Controls.Add(Me.Command1)
+        Me.Frame2.Controls.Add(Me.Command2)
+        Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame2.Location = New System.Drawing.Point(567, 34)
+        Me.Frame2.Name = "Frame2"
+        Me.Frame2.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame2.Size = New System.Drawing.Size(143, 305)
+        Me.Frame2.TabIndex = 8
+        Me.Frame2.TabStop = False
+        Me.Frame2.Text = "Opciones"
+        '
+        'Command1
+        '
+        Me.Command1.BackColor = System.Drawing.SystemColors.Control
+        Me.Command1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Command1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Command1.Location = New System.Drawing.Point(24, 59)
+        Me.Command1.Name = "Command1"
+        Me.Command1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Command1.Size = New System.Drawing.Size(116, 48)
+        Me.Command1.TabIndex = 4
+        Me.Command1.Text = "Impprimir"
+        Me.Command1.UseVisualStyleBackColor = False
+        '
+        'Command2
+        '
+        Me.Command2.BackColor = System.Drawing.SystemColors.Control
+        Me.Command2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Command2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Command2.Location = New System.Drawing.Point(24, 178)
+        Me.Command2.Name = "Command2"
+        Me.Command2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Command2.Size = New System.Drawing.Size(116, 48)
+        Me.Command2.TabIndex = 3
+        Me.Command2.Text = "Salir"
+        Me.Command2.UseVisualStyleBackColor = False
+        '
+        'Framecuentas
+        '
+        Me.Framecuentas.Controls.Add(Me.ListView1)
+        Me.Framecuentas.Location = New System.Drawing.Point(14, 39)
+        Me.Framecuentas.Name = "Framecuentas"
+        Me.Framecuentas.Size = New System.Drawing.Size(547, 300)
+        Me.Framecuentas.TabIndex = 5
+        Me.Framecuentas.TabStop = False
+        Me.Framecuentas.Text = "Libros"
+        '
+        'ListView1
+        '
+        Me.ListView1.BackColor = System.Drawing.SystemColors.Window
+        Me.ListView1.CheckBoxes = True
+        Me.ListView1.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.ListView1.LabelEdit = True
+        Me.ListView1.Location = New System.Drawing.Point(17, 19)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(524, 275)
+        Me.ListView1.TabIndex = 6
+        Me.ListView1.UseCompatibleStateImageBehavior = false
+        '
+        'FrmLibroInventariosyBalances
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(759, 501)
+        Me.Controls.Add(Me.Frame1)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Location = New System.Drawing.Point(4, 30)
+        Me.Name = "FrmLibroInventariosyBalances"
+        Me.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Text = "Libro de Inventarios y Balances"
+        Me.Frame1.ResumeLayout(false)
+        Me.Frame2.ResumeLayout(false)
+        Me.Framecuentas.ResumeLayout(false)
+        Me.ResumeLayout(false)
+
+End Sub
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents Command1 As System.Windows.Forms.Button
+    Public WithEvents Command2 As System.Windows.Forms.Button
+    Friend WithEvents Framecuentas As System.Windows.Forms.GroupBox
+    Public WithEvents ListView1 As System.Windows.Forms.ListView
 #End Region 
 End Class

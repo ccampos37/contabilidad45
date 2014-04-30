@@ -1,6 +1,6 @@
 Option Strict Off
 Option Explicit On
-Imports VB = Microsoft.VisualBasic
+Imports Func = Contabilidad.ModFuncionesGen
 Friend Class FrmRepCompras
 	Inherits System.Windows.Forms.Form
 	'FIXIT: Utilice Option Explicit para evitar la creación implícita de variables de tipo Variant.     FixIT90210ae-R383-H1984
@@ -35,9 +35,9 @@ Friend Class FrmRepCompras
 		'FIXIT: Declare 'arrform' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
 		Dim arrform(1) As Object
 		Dim arrparm(9) As Object
-		Dim NombreRep, CadOrden As String
-		Dim mon As String
-		'@BASE, @ANNO, @MES, @ASIENTOSPLAN, @CTASPLANCOMP, @CTASIGV
+        Dim NombreRep As String = ""
+        Dim CadOrden As String = ""
+        '@BASE, @ANNO, @MES, @ASIENTOSPLAN, @CTASPLANCOMP, @CTASIGV
 		RSparCompras = New ADODB.Recordset
 		RSparCompras.Open("select * from ct_paramlibaux where paramlibauxtipo='CO'", VGCNx, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
 		If RSparCompras.RecordCount = 0 Then
@@ -90,28 +90,28 @@ Friend Class FrmRepCompras
 	
 	Private Function ArmaCriterio(ByRef cad As String, ByRef car As String, Optional ByRef campocrit As String = "") As String
 		Dim pos As Short
-		Dim cadaux, criterio As String
+        Dim criterio As String
 		Dim valor As String
 		criterio = ""
 		Do While True
 			pos = InStr(1, cad, car, CompareMethod.Text)
 			If pos = 0 Then Exit Do
 			If campocrit = "" Or Trim(car) = "," Then
-				valor = "''" & VB.Left(cad, pos - 1) & "''"
-			Else
-				valor = "''" & VB.Left(cad, pos) & "''"
-			End If
-			cad = VB.Right(cad, Len(cad) - pos)
-			If campocrit <> "" Then
-				criterio = criterio & campocrit & " like " & valor & " or "
-			Else
-				criterio = criterio & valor & car
-			End If
-		Loop 
-		If campocrit <> "" Then
-			ArmaCriterio = VB.Left(criterio, Len(criterio) - 3)
-		Else
-			ArmaCriterio = VB.Left(criterio, Len(criterio) - 1)
-		End If
+                valor = "''" & Func.Left(cad, pos - 1) & "''"
+            Else
+                valor = "''" & Func.Left(cad, pos) & "''"
+            End If
+            cad = Func.Right(cad, Len(cad) - pos)
+            If campocrit <> "" Then
+                criterio = criterio & campocrit & " like " & valor & " or "
+            Else
+                criterio = criterio & valor & car
+            End If
+        Loop
+        If campocrit <> "" Then
+            ArmaCriterio = Func.Left(criterio, Len(criterio) - 3)
+        Else
+            ArmaCriterio = Func.Left(criterio, Len(criterio) - 1)
+        End If
 	End Function
 End Class

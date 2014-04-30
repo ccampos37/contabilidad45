@@ -22,14 +22,12 @@ Partial Class FrmMntDocumentos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMntDocumentos))
         Me.Framelinea = New System.Windows.Forms.GroupBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DbGrid1 = New AxMSDataGridLib.AxDataGrid()
         Me.frame5 = New System.Windows.Forms.GroupBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Frame1 = New System.Windows.Forms.GroupBox()
         Me.CmdGrabar = New System.Windows.Forms.Button()
         Me.Cmdcancelar = New System.Windows.Forms.Button()
@@ -50,18 +48,18 @@ Partial Class FrmMntDocumentos
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Framelinea.SuspendLayout
-        CType(Me.DbGrid1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.frame5.SuspendLayout
-        Me.Frame1.SuspendLayout
-        Me.Frame2.SuspendLayout
-        Me.Frame3.SuspendLayout
-        Me.Frameactivo.SuspendLayout
-        Me.SuspendLayout
+        Me.Framelinea.SuspendLayout()
+        CType(Me.DbGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.frame5.SuspendLayout()
+        Me.Frame1.SuspendLayout()
+        Me.Frame2.SuspendLayout()
+        Me.Frame3.SuspendLayout()
+        Me.Frameactivo.SuspendLayout()
+        Me.SuspendLayout()
         '
         'Framelinea
         '
-        Me.Framelinea.BackColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(192,Byte),Integer))
+        Me.Framelinea.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Framelinea.Controls.Add(Me.txtcodigo)
         Me.Framelinea.Controls.Add(Me.Label2)
         Me.Framelinea.ForeColor = System.Drawing.SystemColors.ControlText
@@ -441,7 +439,6 @@ End Sub
     Public WithEvents Framelinea As System.Windows.Forms.GroupBox
     Public WithEvents DbGrid1 As AxMSDataGridLib.AxDataGrid
     Public WithEvents frame5 As System.Windows.Forms.GroupBox
-    Public WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Public WithEvents Frame1 As System.Windows.Forms.GroupBox
     Public WithEvents CmdGrabar As System.Windows.Forms.Button
     Public WithEvents Cmdcancelar As System.Windows.Forms.Button

@@ -8,7 +8,7 @@ Friend Class frmRepCentrodeCostos
 		'FIXIT: Declare 'arrform' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
 		Dim arrform(2) As Object
 		Dim arrparm(6) As Object
-		VGvardllgen = New dllgeneral.dll_general
+        '  VGvardllgen = New dllgeneral.dll_general
 		
 		
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'

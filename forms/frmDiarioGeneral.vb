@@ -14,12 +14,12 @@ Friend Class frmRepDiarioGeneral
 	End Sub
 	
 	Sub ConfiguraForm()
-		optOpcion(0).Checked = True
-		Ctr_Ayuda1(0).Conexion(VGCNx)
-		Ctr_Ayuda1(1).Conexion(VGCNx)
-		Ctr_Ayuda1(1).Filtro = "asientocodigo='" & Ctr_Ayuda1(0).xclave & "'"
-		Ctr_Ayuda2(0).Conexion(VGCNx)
-		Ctr_Ayuda2(1).Conexion(VGCNx)
+        optOpcion0.Checked = True
+        Ctr_Ayuda10.Conexion(VGCNx)
+        Ctr_Ayuda11.Conexion(VGCNx)
+        Ctr_Ayuda11.Filtro = "asientocodigo='" & Ctr_Ayuda1(0).xclave & "'"
+        Ctr_Ayuda20.Conexion(VGCNx)
+        Ctr_Ayuda21.Conexion(VGCNx)
 		
 	End Sub
 	
@@ -44,109 +44,32 @@ Friend Class frmRepDiarioGeneral
 		End If
 	End Sub
 	
-	Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
-		Dim Index As Short = cmdBotones.GetIndex(eventSender)
-		Dim cMes As String
-		Dim arrform(2) As Object
-		Dim arrparm() As Object 'Detallado
-		Select Case Index
-			Case 0
-				'If ValidaData() = True Then
-				'   MsgBox "Imprimiendo", vbInformation, Caption
-				'End If
-				If optOpcion(0).Checked = True Then
-					ReDim arrparm(7) 'Store Procedure:CT_DIARIO2_REP
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(0) = VGParamSistem.BDEmpresa
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(1) = VGParametros.empresacodigo
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(2) = VGParamSistem.Anoproceso
-					If cboMes.SelectedIndex >= 0 Then
-						cMes = VB6.Format(cboMes.SelectedIndex + 1, "0#")
-					Else
-						cMes = VB6.Format(VGParamSistem.Mesproceso, "0#")
-					End If
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(3) = cMes
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(4) = "%%"
-					'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(5). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(5) = IIf(IsNothing(Ctr_Ayuda2(0).xclave), "%%", Ctr_Ayuda2(0).xclave)
-					'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(6). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(6) = IIf(IsNothing(Ctr_Ayuda2(1).xclave), "%%", Ctr_Ayuda2(1).xclave)
-					VGvardllgen = New dllgeneral.dll_general
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrform(0) = "@TituloReporte='" & "Libro Diario Detallado - Asiento: " & Ctr_Ayuda1(0).xclave & " " & Ctr_Ayuda1(0).xnombre & "'"
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'VGvardllgen.DESMES(VGParamSistem.Mesproceso)
-					Call ImpresionRptProc("rptLibroDiarioDetallado.rpt", arrform, arrparm)
-				Else 'Resumido Store Procedure:CT_DIARIO1_REP
-					ReDim arrparm(6)
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(0) = VGParamSistem.BDEmpresa
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(1) = VGParametros.empresacodigo
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(2) = VGParamSistem.Anoproceso
-					If cboMes.SelectedIndex >= 0 Then
-						cMes = VB6.Format(cboMes.SelectedIndex + 1, "0#")
-					Else
-						cMes = VB6.Format(VGParamSistem.Mesproceso, "0#")
-					End If
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(3) = cMes
-					'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(4) = IIf(IsNothing(Ctr_Ayuda1(0).xclave), "%%", Ctr_Ayuda1(0).xclave)
-					'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(5). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrparm(5) = IIf(IsNothing(Ctr_Ayuda1(1).xclave), "%%", Ctr_Ayuda1(1).xclave)
-					VGvardllgen = New dllgeneral.dll_general
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrform(0) = "@TituloReporte='" & "Libro Diario Resumido - Asiento: " & Ctr_Ayuda1(0).xclave & " " & Ctr_Ayuda1(0).xnombre & "'"
-					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'VGvardllgen.DESMES(VGParamSistem.Mesproceso)
-					If optOpcion(1).Checked = True Then
-						Call ImpresionRptProc("ct_LibroDiarioResumido1.rpt", arrform, arrparm)
-					Else
-						Call ImpresionRptProc("ct_LibroDiarioResumido2.rpt", arrform, arrparm)
-					End If
-				End If
-				
-			Case 1 : Me.Close()
-				
-		End Select
-	End Sub
-	
-	Sub Llenacbomes()
-		Dim i As Short
-		VGvardllgen = New dllgeneral.dll_general
-		cboMes.Items.Clear()
-		For i = 1 To 12
-			cboMes.Items.Add(DesMes(Str(i)))
-		Next 
-		'UPGRADE_NOTE: El objeto VGvardllgen no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		VGvardllgen = Nothing
-		
-	End Sub
-	
-	Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
-		cboMes.Text = VB6.GetItemString(cboMes, nMes - 1)
-		DTPickerFecInicio.Value = VB6.Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
-		DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
-	End Sub
-	
-	'UPGRADE_WARNING: El evento cboMes.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub cboMes_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboMes.SelectedIndexChanged
-		Call SeleccionarMes(cboMes.SelectedIndex + 1, CShort(VGParamSistem.Anoproceso))
-	End Sub
-	
-	Function ValidaData() As Boolean
-		Dim SQL As String
-		VGvardllgen = New dllgeneral.dll_general
+    Sub Llenacbomes()
+        Dim i As Short
+        ' '  VGvardllgen = New dllgeneral.dll_general
+        cboMes.Items.Clear()
+        For i = 1 To 12
+            cboMes.Items.Add(DesMes(Str(i)))
+        Next
+        'UPGRADE_NOTE: El objeto VGvardllgen no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        ' '  VGvardllgen = Nothing
+
+    End Sub
+
+    Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
+        cboMes.Text = VB6.GetItemString(cboMes, nMes - 1)
+        DTPickerFecInicio.Value = VB6.Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
+        DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
+    End Sub
+
+    'UPGRADE_WARNING: El evento cboMes.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
+    Private Sub cboMes_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboMes.SelectedIndexChanged
+        Call SeleccionarMes(cboMes.SelectedIndex + 1, CShort(VGParamSistem.Anoproceso))
+    End Sub
+
+    Function ValidaData() As Boolean
+        Dim SQL As String
+        ' '  VGvardllgen = New dllgeneral.dll_general
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto DTPickerFecFinal.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto DTPickerFecInicio.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		If DTPickerFecInicio.Value > DTPickerFecFinal.Value Then
@@ -204,4 +127,53 @@ Friend Class frmRepDiarioGeneral
 		End If
 		
 	End Sub
+
+    Private Sub cmdBotones0_Click(sender As Object, e As EventArgs) Handles cmdBotones0.Click
+        Dim cMes As String
+        Dim arrform(2) As Object
+        Dim arrparm() As Object 'Detallado
+        If optOpcion0.Checked = True Then
+            ReDim arrparm(7) 'Store Procedure:CT_DIARIO2_REP
+            arrparm(0) = VGParamSistem.BDEmpresa
+            arrparm(1) = VGParametros.empresacodigo
+            arrparm(2) = VGParamSistem.Anoproceso
+            If cboMes.SelectedIndex >= 0 Then
+                cMes = VB6.Format(cboMes.SelectedIndex + 1, "0#")
+            Else
+                cMes = VB6.Format(VGParamSistem.Mesproceso, "0#")
+            End If
+            arrparm(3) = cMes
+            arrparm(4) = "%%"
+            arrparm(5) = IIf(IsNothing(Ctr_Ayuda2(0).xclave), "%%", Ctr_Ayuda2(0).xclave)
+            arrparm(6) = IIf(IsNothing(Ctr_Ayuda2(1).xclave), "%%", Ctr_Ayuda2(1).xclave)
+            arrform(0) = "@TituloReporte='" & "Libro Diario Detallado - Asiento: " & Ctr_Ayuda1(0).xclave & " " & Ctr_Ayuda1(0).xnombre & "'"
+            arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'DESMES(VGParamSistem.Mesproceso)
+            Call ImpresionRptProc("rptLibroDiarioDetallado.rpt", arrform, arrparm)
+        Else 'Resumido Store Procedure:CT_DIARIO1_REP
+            ReDim arrparm(6)
+            arrparm(0) = VGParamSistem.BDEmpresa
+            arrparm(1) = VGParametros.empresacodigo
+            arrparm(2) = VGParamSistem.Anoproceso
+            If cboMes.SelectedIndex >= 0 Then
+                cMes = VB6.Format(cboMes.SelectedIndex + 1, "0#")
+            Else
+                cMes = VB6.Format(VGParamSistem.Mesproceso, "0#")
+            End If
+            arrparm(3) = cMes
+            arrparm(4) = IIf(IsNothing(Ctr_Ayuda1(0).xclave), "%%", Ctr_Ayuda1(0).xclave)
+            arrparm(5) = IIf(IsNothing(Ctr_Ayuda1(1).xclave), "%%", Ctr_Ayuda1(1).xclave)
+            arrform(0) = "@TituloReporte='" & "Libro Diario Resumido - Asiento: " & Ctr_Ayuda1(0).xclave & " " & Ctr_Ayuda1(0).xnombre & "'"
+            arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'DESMES(VGParamSistem.Mesproceso)
+            If optOpcion1.Checked = True Then
+                Call ImpresionRptProc("ct_LibroDiarioResumido1.rpt", arrform, arrparm)
+            Else
+                Call ImpresionRptProc("ct_LibroDiarioResumido2.rpt", arrform, arrparm)
+            End If
+        End If
+
+    End Sub
+
+    Private Sub cmdBotones1_Click(sender As Object, e As EventArgs) Handles cmdBotones1.Click
+        Me.Close()
+    End Sub
 End Class

@@ -32,10 +32,10 @@ Friend Class FrmSunat682
 	End Sub
 	Private Sub Exportar(ByRef rs As ADODB.Recordset)
 		Dim xsumactas As Object
-		Dim li_aRC, TotReg As Short
-		Dim sumactas As Double
-		Dim xblanco15, xfecha, xmoneda, xcuenta, xmonto, xtotreg, xblanco20 As Object
-		Dim xblanco40 As String
+        Dim li_aRC As Short
+
+        Dim xmonto As Object
+
 		Dim xregistro1 As String
 		Dim sumas As String
 		sumas = "0"
@@ -80,8 +80,7 @@ Error_PDT:
 	End Sub
 	Private Sub generar()
 		VGCommandoSP = New ADODB.Command
-		VGvardllgen = New dllgeneral.dll_general
-		'Elimar los Detalle antes de grabar
+        'Elimar los Detalle antes de grabar
 		VGCommandoSP.let_ActiveConnection(VGGeneral)
 		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
 		VGCommandoSP.CommandText = "ct_pro_GeneraSunat682"

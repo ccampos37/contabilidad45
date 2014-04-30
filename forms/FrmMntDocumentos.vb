@@ -111,7 +111,6 @@ EliErr:
         If nTra = 1 Then VGCNx.RollbackTrans()
     End Sub
     Private Sub cmdgrabar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdGrabar.Click
-        Dim cUni As String
         If resp = "S" Then
             If txtcodigo.Text = "" Then
                 MsgBox("Ingrese Código de Documento", MsgBoxStyle.Information, "Mensaje")

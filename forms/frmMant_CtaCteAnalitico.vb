@@ -1,7 +1,7 @@
 Option Strict Off
 Option Explicit On
-Imports VB = Microsoft.VisualBasic
-Imports Microsoft.VisualBasic.PowerPacks
+Imports Func = Contabilidad.ModFuncionesGen
+
 Friend Class frmMant_CtaCteAnalitico
 	Inherits System.Windows.Forms.Form
 	Dim modoinsert As Boolean
@@ -88,18 +88,17 @@ Friend Class frmMant_CtaCteAnalitico
 		CtrAyu_TipAnal.xclave = CStr(Nothing) : CtrAyu_TipAnal.Ejecutar()
 		CtrAyu_TipDoc.xclave = CStr(Nothing) : CtrAyu_TipDoc.Ejecutar()
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxGlosa.CtlText = Nothing
+		TxGlosa.Text = Nothing
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxMonto.CtlText = Nothing
+		TxMonto.Text = Nothing
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxSerie.CtlText = Nothing
+		TxSerie.Text = Nothing
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxNdoc.CtlText = Nothing
+		TxNdoc.Text = Nothing
 	End Sub
 	
 	Sub Edicion()
-		Dim i As Short
-		'cabcomprobmes , detcomprobitem, cabcomprobnumero, subasientocodigo, asientocodigo, documentocodigo, operacioncodigo, cuentacodigo, ""
+        'cabcomprobmes , detcomprobitem, cabcomprobnumero, subasientocodigo, asientocodigo, documentocodigo, operacioncodigo, cuentacodigo, ""
 		'SQL = SQL & "ctacteanaliticofechaconta, analiticocodigo, ctacteanaliticonumdocumento, ctacteanaliticofechadoc, ctacteanaliticoglosa, ctacteanaliticodebe,"
 		'SQL = SQL & "ctacteanaliticoussdebe, ctacteanaliticohaber, ctacteanaliticousshaber, ctacteanaliticocancel, ctacteanaliticofechaven,monedacodigo,ctacteanaliticosaldo "
 		
@@ -109,27 +108,27 @@ Friend Class frmMant_CtaCteAnalitico
 				CtrAyu_Opera.xclave = .Fields("operacioncodigo").Value : CtrAyu_Opera.Ejecutar()
 				Ctr_CtaCtble.xclave = .Fields("cuentacodigo").Value : Ctr_CtaCtble.Ejecutar()
 				CtrAy_Asiento.xclave = .Fields("asientocodigo").Value : CtrAy_Asiento.Ejecutar()
-				CtrAyu_TipAnal.xclave = VB.Right(Trim(.Fields("analiticocodigo").Value), 3) : CtrAyu_TipAnal.Ejecutar()
-				Ctr_Analitico.xclave = .Fields("analiticocodigo").Value : Ctr_Analitico.Ejecutar()
-				CtrAyu_TipDoc.xclave = .Fields("documentocodigo").Value : CtrAyu_TipDoc.Ejecutar()
-				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				TxSerie.CtlText = VB.Left(Trim(.Fields("ctacteanaliticonumdocumento").Value), 4)
-				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				TxNdoc.CtlText = VB.Right(.Fields("ctacteanaliticonumdocumento").Value, Len(.Fields("ctacteanaliticonumdocumento").Value) - 4)
+                CtrAyu_TipAnal.xclave = Func.Right(Trim(.Fields("analiticocodigo").Value), 3) : CtrAyu_TipAnal.Ejecutar()
+                Ctr_Analitico.xclave = .Fields("analiticocodigo").Value : Ctr_Analitico.Ejecutar()
+                CtrAyu_TipDoc.xclave = .Fields("documentocodigo").Value : CtrAyu_TipDoc.Ejecutar()
+                'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+                TxSerie.Text = Func.Left(Trim(.Fields("ctacteanaliticonumdocumento").Value), 4)
+                'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+                TxNdoc.Text = Func.Right(.Fields("ctacteanaliticonumdocumento").Value, Len(.Fields("ctacteanaliticonumdocumento").Value) - 4)
 				Dtp_FechaDoc.Value = VB6.Format(.Fields("ctacteanaliticofechadoc").Value, "dd/mm/yyyy")
 				DtpFech_Ven.Value = VB6.Format(.Fields("ctacteanaliticofechaven").Value, "dd/mm/yyyy")
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				TxGlosa.CtlText = .Fields("ctacteanaliticoglosa").Value
+				TxGlosa.Text = .Fields("ctacteanaliticoglosa").Value
 				CtrAyu_Moneda.xclave = .Fields("monedacodigo").Value : CtrAyu_Moneda.Ejecutar()
 				If .Fields("ctacteanaliticodebe").Value > 0 Then
 					CmbID.SelectedIndex = 0
 					'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-					TxMonto.CtlText = System.Math.Round(.Fields("ctacteanaliticodebe").Value, 2)
+					TxMonto.Text = System.Math.Round(.Fields("ctacteanaliticodebe").Value, 2)
 					lb_vcambio.Text = CStr(System.Math.Round(.Fields("ctacteanaliticodebe").Value / .Fields("ctacteanaliticoussdebe").Value, 4))
 				Else
 					CmbID.SelectedIndex = 1
 					'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-					TxMonto.CtlText = System.Math.Round(.Fields("ctacteanaliticohaber").Value, 2)
+					TxMonto.Text = System.Math.Round(.Fields("ctacteanaliticohaber").Value, 2)
 					lb_vcambio.Text = CStr(System.Math.Round(.Fields("ctacteanaliticohaber").Value / .Fields("ctacteanaliticousshaber").Value, 4))
 				End If
 			End With
@@ -180,7 +179,7 @@ Friend Class frmMant_CtaCteAnalitico
 			.Parameters("@operacioncodigo").Value = Trim(CtrAyu_Opera.xclave)
 			.Parameters("@cuentacodigo").Value = Trim(Ctr_CtaCtble.xclave)
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.Parameters("@detcomprobnumdocumento").Value = VB6.Format(Trim(TxSerie.CtlText), "0000") & VB6.Format(Trim(TxNdoc.CtlText), "0000000000")
+			.Parameters("@detcomprobnumdocumento").Value = VB6.Format(Trim(TxSerie.Text), "0000") & VB6.Format(Trim(TxNdoc.Text), "0000000000")
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Dtp_FechaDoc.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			.Parameters("@detcomprobfechaemision").Value = Dtp_FechaDoc.Value
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto DtpFech_Ven.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -188,19 +187,19 @@ Friend Class frmMant_CtaCteAnalitico
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Dtp_FechaDoc.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			.Parameters("@ctacteanaliticofechacontable").Value = Dtp_FechaDoc.Value
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.Parameters("@detcomprobglosa").Value = Trim(TxGlosa.CtlText)
+			.Parameters("@detcomprobglosa").Value = Trim(TxGlosa.Text)
 			If CmbID.SelectedIndex = 0 Then
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				.Parameters("@detcomprobdebe").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "01", TxMonto.CtlText, CDbl(TxMonto.CtlText) * CDbl(lb_vcambio.Text))
+				.Parameters("@detcomprobdebe").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "01", TxMonto.Text, CDbl(TxMonto.Text) * CDbl(lb_vcambio.Text))
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				.Parameters("@detcomprobussdebe").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "02", TxMonto.CtlText, CDbl(TxMonto.CtlText) / CDbl(lb_vcambio.Text))
+				.Parameters("@detcomprobussdebe").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "02", TxMonto.Text, CDbl(TxMonto.Text) / CDbl(lb_vcambio.Text))
 				.Parameters("@detcomprobhaber").Value = 0
 				.Parameters("@detcomprobusshaber").Value = 0
 			ElseIf CmbID.SelectedIndex > 0 Then 
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				.Parameters("@detcomprobhaber").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "01", TxMonto.CtlText, CDbl(TxMonto.CtlText) * CDbl(lb_vcambio.Text))
+				.Parameters("@detcomprobhaber").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "01", TxMonto.Text, CDbl(TxMonto.Text) * CDbl(lb_vcambio.Text))
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				.Parameters("@detcomprobusshaber").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "02", TxMonto.CtlText, CDbl(TxMonto.CtlText) / CDbl(lb_vcambio.Text))
+				.Parameters("@detcomprobusshaber").Value = IIf(Trim(CtrAyu_Moneda.xclave) = "02", TxMonto.Text, CDbl(TxMonto.Text) / CDbl(lb_vcambio.Text))
 				.Parameters("@detcomprobdebe").Value = 0
 				.Parameters("@detcomprobussdebe").Value = 0
 			End If
@@ -223,26 +222,26 @@ xx:
 		MsgBox("No se pudo Grabar la Cuenta Corriente " & Chr(13) & Err.Description, MsgBoxStyle.Exclamation)
 	End Sub
 	
-	Function RecuperaTipoCambio(ByRef fecha As String, ByRef tipo As ModificarCampos.tipocambio) As Double
-		Dim RSAUX As ADODB.Recordset
-		RSAUX = New ADODB.Recordset
-		Dim Campo As String
-		RecuperaTipoCambio = 0
-		Select Case tipo
-			Case ModificarCampos.tipocambio.Compra
-				Campo = "tipocambiocompra"
-			Case ModificarCampos.tipocambio.Venta
-				Campo = "tipocambioventa"
-			Case ModificarCampos.tipocambio.Promedio
-				Campo = "tipocambiopromedio"
-			Case Else
-				Campo = "tipocambioventa"
-		End Select
-		RSAUX.Open("Select Valor=isnull(" & Campo & ",0)  from ct_tipocambio where tipocambiofecha ='" & fecha & "'", VGCNx, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
-		If RSAUX.RecordCount > 0 Then
-			RecuperaTipoCambio = RSAUX.Fields("valor").Value
-		End If
-	End Function
+    Function RecuperaTipoCambio(ByRef fecha As String, ByRef tipo As tipocambio) As Double
+        Dim RSAUX As ADODB.Recordset
+        RSAUX = New ADODB.Recordset
+        Dim Campo As String
+        RecuperaTipoCambio = 0
+        Select Case tipo
+            Case tipocambio.Compra
+                Campo = "tipocambiocompra"
+            Case tipocambio.Venta
+                Campo = "tipocambioventa"
+            Case tipocambio.Promedio
+                Campo = "tipocambiopromedio"
+            Case Else
+                Campo = "tipocambioventa"
+        End Select
+        RSAUX.Open("Select Valor=isnull(" & Campo & ",0)  from ct_tipocambio where tipocambiofecha ='" & fecha & "'", VGCNx, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
+        If RSAUX.RecordCount > 0 Then
+            RecuperaTipoCambio = RSAUX.Fields("valor").Value
+        End If
+    End Function
 	
 	Private Sub cAcepta_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cAcepta.Click
 		If modoedit = True Then Call eliminar()

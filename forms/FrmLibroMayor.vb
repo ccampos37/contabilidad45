@@ -66,25 +66,7 @@ Friend Class FrmLibroMayor
 		End Set
 	End Property
 	
-	Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
-		Dim Index As Short = cmdBotones.GetIndex(eventSender)
-		Select Case Index
-			Case 0
-				Select Case m_caso
-					Case "1" 'Imprimir Libro Mayor Analítico
-						If ValidarImpresion = True Then
-							Call ImpresionMayorAnalitico()
-						End If
-					Case "2" 'Imprimir Libro Mayor General
-						Call ImpresionMayorGeneral()
-				End Select
-				
-			Case 1 : Me.Close()
-				
-		End Select
-		
-	End Sub
-	
+   
 	Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
 		DTPickerFecInicio.Value = VB6.Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
 		DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
@@ -142,15 +124,11 @@ Friend Class FrmLibroMayor
 		End If
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(10). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		arrparm(10) = "FORMATO 06.01"
-		VGvardllgen = New dllgeneral.dll_general
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(0) = "@TituloReporte='" & "Libro Mayor Analítico Cuenta: " & "'" 'Ctr_Ayuda1.xclave
+        arrform(0) = "@TituloReporte='" & "Libro Mayor Analítico Cuenta: " & "'" 'Ctr_Ayuda1.xclave
 		If Month(DTPickerFecInicio.Value) <> Month(DTPickerFecFinal.Value) And Year(DTPickerFecInicio.Value) = Year(DTPickerFecFinal.Value) Then
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrform(1) = "@Mes='" & DesMes(CStr(Month(DTPickerFecInicio.Value))) & " - " & DesMes(CStr(Month(DTPickerFecFinal.Value))) & "'"
+            arrform(1) = "@Mes='" & DesMes(CStr(Month(DTPickerFecInicio.Value))) & " - " & DesMes(CStr(Month(DTPickerFecFinal.Value))) & "'"
 		Else
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrform(1) = "@Mes='" & DesMes(CStr(Month(DTPickerFecInicio.Value))) & "'"
+            arrform(1) = "@Mes='" & DesMes(CStr(Month(DTPickerFecInicio.Value))) & "'"
 		End If
 		Call ImpresionRptProc("ct_libromayor.rpt", arrform, arrparm,  , "Libro Mayor ")
 	End Sub
@@ -193,7 +171,7 @@ Friend Class FrmLibroMayor
 		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		arrparm(8) = IIf(IsNothing(Ctr_Ayucuenta(1).xclave), "%%", Trim(Ctr_Ayucuenta(1).xclave))
-		VGvardllgen = New dllgeneral.dll_general
+        '  VGvardllgen = New dllgeneral.dll_general
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		arrform(0) = "@TituloReporte='" & "Libro Mayor General " & Ctr_Ayucuenta(0).xclave & " " & Ctr_Ayucuenta(0).xnombre & "'"
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'

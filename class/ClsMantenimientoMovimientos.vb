@@ -1,5 +1,6 @@
 Option Strict Off
 Option Explicit On
+Imports Contabilidad.ModFuncionesGen
 Friend Class ClsMantMov1
 	Public Enum Campos
 		operacioncodigo = 1
@@ -80,15 +81,12 @@ Friend Class ClsMantMov1
 		
 	End Sub
 	Public Sub AñadiralDetalle(ByRef rs As ADODB.Recordset)
-		Dim vardllgen As New dllgeneral.dll_general
-		'FIXIT: Declare 'fila' con un tipo de datos de enlace en tiempo de compilación             FixIT90210ae-R1672-R1B8ZE
-		Dim fila As Object
+     	Dim fila As Object
 		Dim CamposAux As ADODB.Fields
 		Dim I As Short
 		'FIXIT: Declare 'Posant' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
 		Dim rsaux As ADODB.Recordset
-		Dim Posant As Object
-		rsaux = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
+        rsaux = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
 		rsaux.Filter = 0
 		Call Limpia()
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto fila. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -139,11 +137,11 @@ Friend Class ClsMantMov1
 		Dim cadeval, cadaux As String
 		pos = InStr(1, cad, "A", CompareMethod.Text)
 		cadeval = Mid(cad, pos, (Len(cad) - pos) + 1)
-		cadaux = Right(cadeval, 1)
+        cadaux = Right(cadeval, 1)
 		If Asc(cadaux) = 90 Then
 			cadeval = cadeval & "A"
 		Else
-			cadeval = Left(cadeval, Len(cadeval) - 1) & Chr(Asc(cadaux) + 1)
+            cadeval = Left(cadeval, Len(cadeval) - 1) & Chr(Asc(cadaux) + 1)
 		End If
 		CaracterProx = cadeval
 	End Function
@@ -161,8 +159,7 @@ Friend Class ClsMantMov1
 	End Sub
 	'FIXIT: Declare 'criterio' con un tipo de datos de enlace en tiempo de compilación         FixIT90210ae-R1672-R1B8ZE
 	Public Sub ActualizaNumItems(ByRef rs As ADODB.Recordset, ByVal criterio As Object)
-		'FIXIT: Declare 'Posant' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
-		Dim Posant As Object
+
 		Dim I As Integer
 		VGactulizodoc = True
 		rs.MoveFirst()
@@ -197,27 +194,27 @@ Friend Class ClsMantMov1
 			.CtrAyu_TipAnal.xclave = "" : .CtrAyu_TipAnal.xnombre = ""
 			.CtrAyu_Analitico.xclave = "" : .CtrAyu_Analitico.xnombre = ""
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.txRuc.CtlText = ""
+			.txRuc.Text = ""
 			.CtrAyu_TipDoc.xclave = "" : .CtrAyu_TipDoc.xnombre = ""
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxSerie.CtlText = ""
+			.TxSerie.Text = ""
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxNdoc.CtlText = ""
+			.TxNdoc.Text = ""
 			'     .Dtp_FechaDoc = frmantcomprobantes.DTPFechaComprobCab
 			'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
 			.DtpFech_Ven._Value = System.DBNull.Value
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxGlosa.CtlText = ""
+			.TxGlosa.Text = ""
 			.CmbID.SelectedIndex = 0
 			.CtrAyu_Moneda.xclave = VGMonSubAsiento : .CtrAyu_Moneda.Ejecutar()
 			.CmbTcambio.SelectedIndex = 1
-			VGValorCambio = RecuperaTipoCambio(VB6.Format(frmantcomprobantes.DTPFechaComprobCab._Value, "dd/mm/yyyy"), ModificarCampos.tipocambio.Venta)
+            VGValorCambio = RecuperaTipoCambio(VB6.Format(frmantcomprobantes.DTPFechaComprobCab._Value, "dd/mm/yyyy"), tipocambio.Venta)
 			.lb_vcambio.Text = VB6.Format(VGValorCambio, "#.000 ")
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxMonto.CtlText = VB6.Format(0, "#.00")
+			.TxMonto.Text = VB6.Format(0, "#.00")
 			.CtrAyu_TipRef.xclave = "" : .CtrAyu_TipRef.xnombre = ""
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxNref.CtlText = ""
+			.TxNref.Text = ""
 			'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
 			.DtpFech_Ven.Value = System.DBNull.Value
 			'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
@@ -228,9 +225,9 @@ Friend Class ClsMantMov1
 			.CtrAyu_Analitico1.xclave = "" : .CtrAyu_Analitico1.xnombre = ""
 			.CtrAyu_TipDoc1.xclave = "" : .CtrAyu_TipDoc1.xnombre = ""
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxSerie1.CtlText = ""
+			.TxSerie1.Text = ""
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxNdoc1.CtlText = ""
+			.TxNdoc1.Text = ""
 			
 		End With
 		VGflaglimpia = True
@@ -239,16 +236,13 @@ Friend Class ClsMantMov1
 	'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
     Public Sub ActualizarDetalle(ByRef rs As ADODB.Recordset, ByRef op As Campos, Optional ByRef flag As Boolean = False, Optional ByRef FechaAux As Object = "01/01/2014")
         'Procedimiento Realizado por Fernando Cossio......
-        Dim vardllgen As New dllgeneral.dll_general
-        'FIXIT: Declare 'POSANTERIOR' con un tipo de datos de enlace en tiempo de compilación      FixIT90210ae-R1672-R1B8ZE
         Dim POSANTERIOR As Object
-        Dim flagajuste As Boolean
+
         Dim swth As Short
         If rs Is Nothing Then Exit Sub
         If rs.RecordCount = 0 Then Exit Sub
         VGactulizodoc = False
         If VGMoverRegistro Then Exit Sub
-        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
         Dim fecha As Date
         Dim mon As String
@@ -258,19 +252,15 @@ Friend Class ClsMantMov1
             Select Case op
                 Case 0
                     VGactulizodoc = True
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto POSANTERIOR. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    POSANTERIOR = .AbsolutePosition
+                     POSANTERIOR = .AbsolutePosition
                     .MoveFirst()
                     While Not .EOF
-                        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                        .Fields("detcomprobglosa").Value = frmantcomprobantes.TxGlosaComprobCab.CtlText
+                         .Fields("detcomprobglosa").Value = frmantcomprobantes.TxGlosaComprobCab.Text
                         .Update()
                         .MoveNext()
                     End While
                     VGactulizodoc = False
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto POSANTERIOR. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     .AbsolutePosition = POSANTERIOR
-                    'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
                     System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
                     Exit Sub
                 Case 1 : .Fields("operacioncodigo").Value = frmantcomprobantes.CtrAyu_Opera.xclave
@@ -281,51 +271,39 @@ Friend Class ClsMantMov1
                     .Fields("analiticocodigo").Value = frmantcomprobantes.CtrAyu_Analitico.xclave
                     '!detcomprobruc = Trim$(frmantcomprobantes.txRuc.Text)
                 Case 6
-                    'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                    .Fields("detcomprobruc").Value = Trim(frmantcomprobantes.txRuc.CtlText)
+                    .Fields("detcomprobruc").Value = Trim(frmantcomprobantes.txRuc.Text)
                 Case 7, 8
                     If VGRepiteDoc Then
                         VGactulizodoc = True
-                        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto POSANTERIOR. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         POSANTERIOR = .AbsolutePosition
                         .MoveFirst()
                         While Not .EOF
                             .Fields("documentocodigo").Value = frmantcomprobantes.CtrAyu_TipDoc.xclave
-                            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                            .Fields("detcomprobnumdocumento").Value = Left(frmantcomprobantes.TxSerie.CtlText, frmantcomprobantes.TxSerie.MaxLength) & frmantcomprobantes.TxNdoc.CtlText
+                            .Fields("detcomprobnumdocumento").Value = Left(frmantcomprobantes.TxSerie.Text, frmantcomprobantes.TxSerie.MaxLength) & frmantcomprobantes.TxNdoc.Text
 
                             .Fields("tipdocref").Value = frmantcomprobantes.CtrAyu_TipRef.xclave
-                            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                            .Fields("detcomprobnumref").Value = frmantcomprobantes.TxNref.CtlText
-                            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.Dtp_FechaDocRef._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                            .Fields("detcomprobnumref").Value = frmantcomprobantes.TxNref.Text
                             .Fields("detcomprobfecharef").Value = frmantcomprobantes.Dtp_FechaDocRef._Value
                             .Update()
                             .MoveNext()
                         End While
                         VGactulizodoc = False
-                        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto POSANTERIOR. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        .AbsolutePosition = POSANTERIOR
-                        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
+                         .AbsolutePosition = POSANTERIOR
                         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
                         Exit Sub
                     Else
                         .Fields("tipdocref").Value = frmantcomprobantes.CtrAyu_TipRef.xclave
-                        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                        .Fields("detcomprobnumref").Value = frmantcomprobantes.TxNref.CtlText
+                        .Fields("detcomprobnumref").Value = frmantcomprobantes.TxNref.Text
                         .Fields("documentocodigo").Value = frmantcomprobantes.CtrAyu_TipDoc.xclave
-                        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                        .Fields("detcomprobnumdocumento").Value = Trim(frmantcomprobantes.TxSerie.CtlText) & Trim(frmantcomprobantes.TxNdoc.CtlText)
+                         .Fields("detcomprobnumdocumento").Value = Trim(frmantcomprobantes.TxSerie.Text) & Trim(frmantcomprobantes.TxNdoc.Text)
                     End If
                 Case 9
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.DtpFech_Ven._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     .Fields("detcomprobfechavencimiento").Value = frmantcomprobantes.DtpFech_Ven._Value
                 Case 14
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.Dtp_FechaDocRef._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     .Fields("detcomprobfecharef").Value = frmantcomprobantes.Dtp_FechaDocRef._Value
                 Case 10
-                    'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                    .Fields("detcomprobglosa").Value = frmantcomprobantes.TxGlosa.CtlText
-                Case 11 : .Fields("indicador").Value = Trim(vardllgen.ComboDato((frmantcomprobantes.CmbID.Text)))
+                    .Fields("detcomprobglosa").Value = frmantcomprobantes.TxGlosa.Text
+                Case 11 : .Fields("indicador").Value = Trim(frmantcomprobantes.CmbID.Text)
                 Case 12
 
                     If (CDbl(.Fields("detcomprobitem").Value) = 1 Or flag) And vgcont <> 2 Then
@@ -334,9 +312,7 @@ Friend Class ClsMantMov1
                         'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.Dtp_FechaDoc._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         fecha = frmantcomprobantes.Dtp_FechaDoc._Value
                         mon = frmantcomprobantes.CtrAyu_Moneda.xclave
-                        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        camb = CDbl(ESNULO((frmantcomprobantes.lb_vcambio), 0))
-                        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto POSANTERIOR. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                         camb = CDbl(ESNULO((frmantcomprobantes.lb_vcambio), 0))
                         POSANTERIOR = .AbsolutePosition
                         '.AbsolutePosition = 1
                         .MoveFirst()
@@ -352,11 +328,8 @@ Friend Class ClsMantMov1
                                 frmantcomprobantes.CtrAyu_Moneda.xclave = mon : frmantcomprobantes.CtrAyu_Moneda.Ejecutar()
                             Else
                                 '                       frmantcomprobantes.Dtp_FechaDoc = frmantcomprobantes.DTPFechaComprobCab
-                                'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
-                                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto FechaAux. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                If IsDBNull(FechaAux) Then FechaAux = frmantcomprobantes.Dtp_FechaDoc._Value
-                                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto FechaAux. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                VGValorCambio = RecuperaTipoCambio(VB6.Format(FechaAux, "dd/mm/yyyy"), frmantcomprobantes.CmbTcambio.SelectedIndex + 1)
+                                 If IsDBNull(FechaAux) Then FechaAux = frmantcomprobantes.Dtp_FechaDoc._Value
+                                 VGValorCambio = RecuperaTipoCambio(VB6.Format(FechaAux, "dd/mm/yyyy"), frmantcomprobantes.CmbTcambio.SelectedIndex + 1)
                                 frmantcomprobantes.lb_vcambio.Text = VB6.Format(VGValorCambio, "#.000 ")
                                 'If .AbsolutePosition = 1 Then .AbsolutePosition = 1
                                 frmantcomprobantes.CtrAyu_Moneda.xclave = mon : frmantcomprobantes.CtrAyu_Moneda.Ejecutar()
@@ -369,10 +342,8 @@ MonedaTodos:
                         End While
                         VGactulizodoc = False
                         vgcont = 0
-                        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto POSANTERIOR. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        .AbsolutePosition = POSANTERIOR
+                         .AbsolutePosition = POSANTERIOR
 
-                        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
                         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
                         Exit Sub
                     Else
@@ -391,21 +362,19 @@ Montos:
                     '                    Call CalculoIGV(rs)
                     '                End If
                 Case 15
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.Dtp_FechaDoc._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    .Fields("detcomprobfechaemision").Value = frmantcomprobantes.Dtp_FechaDoc._Value
+                     .Fields("detcomprobfechaemision").Value = frmantcomprobantes.Dtp_FechaDoc._Value
                 Case 16 : .Fields("plantillaasientoinafecto").Value = frmantcomprobantes.ChkInafecto.CheckState
 
             End Select
             .Fields("detcomprobauto").Value = 0
             .Update()
         End With
-        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
         Exit Sub
 ActualizaMontos:
         With rs
             .Fields("monedacodigo").Value = frmantcomprobantes.CtrAyu_Moneda.xclave
-            .Fields("tcambio").Value = Trim(vardllgen.ComboDato((frmantcomprobantes.CmbTcambio.Text)))
+            .Fields("tcambio").Value = Trim(frmantcomprobantes.CmbTcambio.Text)
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.Dtp_FechaDoc._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             .Fields("detcomprobfechaemision").Value = frmantcomprobantes.Dtp_FechaDoc._Value
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -413,29 +382,19 @@ ActualizaMontos:
             .Fields("detcomprobajusteuser").Value = frmantcomprobantes.ChkAjusta.CheckState
             If frmantcomprobantes.ChkAjusta.CheckState = 0 Then
                 If .Fields("monedacodigo").Value <> VGParametros.monedabase Then
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Coversion(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     .Fields("montosol").Value = Coversion(.Fields("monedacodigo").Value, .Fields("valcambio").Value, CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)))
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    .Fields("montouss").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)), 2)
+                     .Fields("montouss").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)), 2)
                 Else
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Coversion(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    .Fields("montouss").Value = Coversion(.Fields("monedacodigo").Value, .Fields("valcambio").Value, CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)))
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                     .Fields("montouss").Value = Coversion(.Fields("monedacodigo").Value, .Fields("valcambio").Value, CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)))
                     .Fields("montosol").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)), 2)
                 End If
             Else
                 If .Fields("monedacodigo").Value = VGParametros.monedabase Then
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     .Fields("montosol").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)), 2)
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     .Fields("montouss").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxValor.valor)), 0)), 2)
                 Else
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    .Fields("montouss").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)), 2)
-                    'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    .Fields("montosol").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxValor.valor)), 0)), 2)
+                     .Fields("montouss").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxMonto.valor)), 0)), 2)
+                     .Fields("montosol").Value = System.Math.Round(CDbl(ESNULO(Espunto((frmantcomprobantes.TxValor.valor)), 0)), 2)
                 End If
             End If
         End With
@@ -448,16 +407,14 @@ ActualizaMontos:
 	Public Sub CalculoIGV(ByRef rs As ADODB.Recordset)
 		Dim POSANTERIOR As Object
 		Dim rsaux As ADODB.Recordset
-		Dim monto As Double
-		Dim ctaigv As String
+        Dim ctaigv As String
 		Dim inaf As Boolean
 		Dim porc As Double
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		If cuentaigv(CShort(ESNULO(rs.Fields("detcomprobitemaux"), "0"))) = "" Then Exit Sub
 		'If rs!montosol = 0 Then Exit Sub
 		VGactulizodoc = True
-		VGvardllgen = New dllgeneral.dll_general
-		rsaux = New ADODB.Recordset
+        rsaux = New ADODB.Recordset
 		rsaux.Fields.Append("cuenta", ADODB.DataTypeEnum.adVarChar, 20)
 		rsaux.Fields.Append("valorsol", ADODB.DataTypeEnum.adDouble)
 		rsaux.Fields.Append("valordol", ADODB.DataTypeEnum.adDouble)
@@ -540,8 +497,7 @@ errormaxitem:
 	Public Sub GrabarCabecera(ByVal op As Short, ByRef NumComprob As String, Optional ByVal Numlibro As String = "")
 		On Error GoTo ErrorGrabaCabecera
 		VGCommandoSP = New ADODB.Command
-		VGvardllgen = New dllgeneral.dll_general
-		VGCommandoSP.let_ActiveConnection(VGGeneral)
+        VGCommandoSP.let_ActiveConnection(VGGeneral)
 		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
 		VGCommandoSP.CommandText = "ct_grabarcabcomprob_pro"
 		VGCommandoSP.Parameters.Refresh()
@@ -558,9 +514,9 @@ errormaxitem:
 				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto frmantcomprobantes.DTPFechaComprobCab._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				.Parameters("@cabcomprobfeccontable").Value = frmantcomprobantes.DTPFechaComprobCab._Value
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				.Parameters("@cabcomprobobservaciones").Value = UCase(Trim(frmantcomprobantes.TxObsComprobCab.CtlText))
+				.Parameters("@cabcomprobobservaciones").Value = UCase(Trim(frmantcomprobantes.TxObsComprobCab.Text))
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				.Parameters("@cabcomprobglosa").Value = UCase(Trim(frmantcomprobantes.TxGlosaComprobCab.CtlText))
+				.Parameters("@cabcomprobglosa").Value = UCase(Trim(frmantcomprobantes.TxGlosaComprobCab.Text))
 				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				.Parameters("@cabcomprobtotdebe").Value = System.Math.Round(CDbl(ESNULO(frmantcomprobantes.LbTotales(0).Text, 0)), 2)
 				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -576,7 +532,7 @@ errormaxitem:
 				End If
 				If frmantcomprobantes.VlNref Then
 					'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-					.Parameters("@cabcomprobnref").Value = Trim(frmantcomprobantes.TxCtrNref.CtlText)
+					.Parameters("@cabcomprobnref").Value = Trim(frmantcomprobantes.TxCtrNref.Text)
 				Else
 					.Parameters("@cabcomprobnref").Value = ""
 				End If
@@ -713,16 +669,14 @@ Actualizacorre:
 		Dim rsaux As ADODB.Recordset
 		Dim NumeroComprobante As String
 		Dim numerodocumento As String
-		VGvardllgen = New dllgeneral.dll_general
-		rsaux = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
+        rsaux = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
 		If Vgdocumentoanulado = "" Then
 			rsaux.Filter = "(montosol<>0 or montouss <> 0)"
 		Else
 			rsaux.Filter = "operacioncodigo='" & Vgdocumentoanulado & "'"
 		End If
 		VGCommandoSP = New ADODB.Command
-		VGvardllgen = New dllgeneral.dll_general
-		'Elimar los Detalle antes de grabar
+        'Elimar los Detalle antes de grabar
 		VGCommandoSP.let_ActiveConnection(VGGeneral)
 		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
 		VGCommandoSP.CommandText = "ct_grabardetallecomprob_pro"
@@ -757,7 +711,7 @@ Actualizacorre:
 					'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 					numerodocumento = ESNULO(rsaux.Fields("detcomprobnumdocumento"), "")
 					If Len(numerodocumento) > 4 And IsNumeric(numerodocumento) Then
-						numerodocumento = Left(numerodocumento, 4) & Right("0000000000" & Right(numerodocumento, Len(numerodocumento) - 4), 10)
+                        numerodocumento = Left(numerodocumento, 4) & Right("0000000000" & Right(numerodocumento, Len(numerodocumento) - 4), 10)
 					End If
 					.Parameters("@detcomprobnumdocumento").Value = numerodocumento
 					.Parameters("@detcomprobfechaemision").Value = VB6.Format(rsaux.Fields("detcomprobfechaemision").Value, "dd/mm/yyyy")
@@ -848,30 +802,29 @@ GrabaAuto:
 	Public Sub MostrarCabecera(ByVal rs As ADODB.Fields)
 		Dim rsaux As ADODB.Fields
 		rsaux = rs
-		VGvardllgen = New dllgeneral.dll_general
-		With frmantcomprobantes
-			.lbNumComprobCab.Text = rsaux("cabcomprobnumero").Value
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.lbNumComprobCablibro.Text = ESNULO((rsaux("cabcomprobnlibro").Value), "")
-			.DTPFechaComprobCab._Value = rsaux("cabcomprobfeccontable").Value
-			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxObsComprobCab.CtlText = rsaux("cabcomprobobservaciones").Value
-			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxGlosaComprobCab.CtlText = rsaux("cabcomprobglosa").Value
-			.LbTotales(0).Text = VB6.Format(rsaux("cabcomprobtotdebe").Value, "###,###,###.00 ")
-			.LbTotales(1).Text = VB6.Format(rsaux("cabcomprobtothaber").Value, "###,###,###.00 ")
-			.LbTotales(2).Text = VB6.Format(rsaux("cabcomprobtotdebe").Value - rsaux("cabcomprobtothaber").Value, "###,###,###.00 ")
-			.LbTotales(3).Text = VB6.Format(rsaux("cabcomprobtotussdebe").Value, "###,###,###.00 ")
-			.LbTotales(4).Text = VB6.Format(rsaux("cabcomprobtotusshaber").Value, "###,###,###.00 ")
-			.LbTotales(5).Text = VB6.Format(rsaux("cabcomprobtotussdebe").Value - rsaux("cabcomprobtotusshaber").Value, "###,###,###.00 ")
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.ChkGrabado.CheckState = IIf(ESNULO((rsaux("cabcomprobgrabada").Value), False), 1, 0)
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			.TxCtrNref.CtlText = ESNULO((rsaux("cabcomprobnref").Value), "")
-			.VPAsiento = rsaux("asientocodigo").Value
-			.VPSubAsiento = rsaux("subasientocodigo").Value
-		End With
+        With frmantcomprobantes
+            .lbNumComprobCab.Text = rsaux("cabcomprobnumero").Value
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            .lbNumComprobCablibro.Text = ESNULO((rsaux("cabcomprobnlibro").Value), "")
+            .DTPFechaComprobCab._Value = rsaux("cabcomprobfeccontable").Value
+            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+            .TxObsComprobCab.Text = rsaux("cabcomprobobservaciones").Value
+            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+            .TxGlosaComprobCab.Text = rsaux("cabcomprobglosa").Value
+            .LbTotales(0).Text = VB6.Format(rsaux("cabcomprobtotdebe").Value, "###,###,###.00 ")
+            .LbTotales(1).Text = VB6.Format(rsaux("cabcomprobtothaber").Value, "###,###,###.00 ")
+            .LbTotales(2).Text = VB6.Format(rsaux("cabcomprobtotdebe").Value - rsaux("cabcomprobtothaber").Value, "###,###,###.00 ")
+            .LbTotales(3).Text = VB6.Format(rsaux("cabcomprobtotussdebe").Value, "###,###,###.00 ")
+            .LbTotales(4).Text = VB6.Format(rsaux("cabcomprobtotusshaber").Value, "###,###,###.00 ")
+            .LbTotales(5).Text = VB6.Format(rsaux("cabcomprobtotussdebe").Value - rsaux("cabcomprobtotusshaber").Value, "###,###,###.00 ")
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            .ChkGrabado.CheckState = IIf(ESNULO((rsaux("cabcomprobgrabada").Value), False), 1, 0)
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+            .TxCtrNref.Text = ESNULO((rsaux("cabcomprobnref").Value), "")
+            .VPAsiento = rsaux("asientocodigo").Value
+            .VPSubAsiento = rsaux("subasientocodigo").Value
+        End With
 	End Sub
 	Public Sub MostrarDetalle(ByRef rs As ADODB.Recordset)
 		Dim rsaux As ADODB.Recordset
@@ -879,8 +832,7 @@ GrabaAuto:
 		On Error GoTo err_Renamed
 		rsaux = New ADODB.Recordset
 		VGCommandoSP = New ADODB.Command
-		VGvardllgen = New dllgeneral.dll_general
-		'Elimar los Detalle antes de grabar
+        'Elimar los Detalle antes de grabar
 		VGCommandoSP.let_ActiveConnection(VGGeneral)
 		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
 		VGCommandoSP.CommandText = "ct_grabardetallecomprob_pro"
@@ -930,7 +882,7 @@ err_Renamed:
 				Exit Function
 			End If
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			If Trim(.TxGlosaComprobCab.CtlText) = "" Then
+			If Trim(.TxGlosaComprobCab.Text) = "" Then
 				MsgBox("Tiene que ingresar la glosa de la cabecera de comprobante")
 				.TxGlosaComprobCab.Focus()
 				Exit Function
@@ -980,7 +932,7 @@ err_Renamed:
 			
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
 			'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			If (.TxSerie.CtlEnabled And .TxSerie.Visible) And Trim(.TxSerie.CtlText & .TxNdoc.CtlText) = "" Then
+			If (.TxSerie.CtlEnabled And .TxSerie.Visible) And Trim(.TxSerie.Text & .TxNdoc.Text) = "" Then
 				MsgBox("Debe Ingrear el Numero del Documento", MsgBoxStyle.Information)
 				.TxSerie.Focus()
 				Exit Function
@@ -988,7 +940,7 @@ err_Renamed:
 			
 			'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
 			'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-			If (.TxGlosa.CtlEnabled And .TxGlosa.Visible) And Trim(.TxGlosa.CtlText) = "" Then
+			If (.TxGlosa.CtlEnabled And .TxGlosa.Visible) And Trim(.TxGlosa.Text) = "" Then
 				'     MsgBox "Debe Ingrear la Glosa del Detalle", vbInformation
 				'     .TxGlosa.SetFocus
 				'      Exit Function
@@ -1016,8 +968,7 @@ err_Renamed:
 	End Function
 	Public Function ValidarRsDetalle(ByRef rs As ADODB.Recordset) As Boolean
 		Dim doc, docaux As String
-		VGvardllgen = New dllgeneral.dll_general
-		ValidarRsDetalle = False
+        ValidarRsDetalle = False
 		rs.AbsolutePosition = 1
 		While Not rs.EOF
 			If Not ValidarGrabarDetalle Then Exit Function
@@ -1048,7 +999,8 @@ err_Renamed:
 	End Function
 	Public Function CargarPlantillaAsiento(ByRef rs As ADODB.Recordset, ByVal Asiento As String, ByVal SubAsiento As String) As Boolean
 		Dim rsaux As ADODB.Recordset
-		Dim criterio As String
+        Dim criterio As String = ""
+
 		CargarPlantillaAsiento = False
 		rsaux = New ADODB.Recordset
 		SQL = "select * from ct_plantillaasiento where asientocodigo='" & Trim(Asiento) & "'"
@@ -1092,48 +1044,48 @@ err_Renamed:
 	End Function
 	Private Function ArmaCriterioComodin(ByRef cad As String) As String
 		Dim pos As Short
-		Dim cadaux, criterio As String
+        Dim criterio As String
 		Dim valor As String
 		criterio = ""
 		Do While True
 			pos = InStr(1, cad, "%", CompareMethod.Text)
 			If pos = 0 Then Exit Do
-			valor = "'" & Left(cad, pos) & "'"
-			cad = Right(cad, Len(cad) - pos)
+            valor = "'" & Left(cad, pos) & "'"
+            cad = Right(cad, Len(cad) - pos)
 			criterio = criterio & "cuentacodigo like " & valor & " or "
 		Loop 
-		ArmaCriterioComodin = Left(criterio, Len(criterio) - 3)
+        ArmaCriterioComodin = Left(criterio, Len(criterio) - 3)
 	End Function
-	Public Function RecuperaTipoCambio(ByRef fecha As String, ByRef tipo As ModificarCampos.tipocambio) As Double
-		Dim rsaux As ADODB.Recordset
-		rsaux = New ADODB.Recordset
-		'FIXIT: Declare 'fechaIni' con un tipo de datos de enlace en tiempo de compilación         FixIT90210ae-R1672-R1B8ZE
-		Dim fechaIni As Object
-		Dim fechaDato As Date
-		Dim Campo As String
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto fechaIni. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		fechaIni = "01/01/" & VGParamSistem.Anoproceso
-		fechaDato = CDate(fecha)
-		'FIXIT: Reemplazar la función 'Str' con la función 'Str$'.                                 FixIT90210ae-R9757-R1B8ZE
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto fechaIni. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		If fechaIni > fechaDato Then fecha = "31/12/" & Str(CDbl(VGParamSistem.Anoproceso) - 1)
-		RecuperaTipoCambio = 0
-		Select Case tipo
-			Case ModificarCampos.tipocambio.Compra
-				Campo = "tipocambiocompra"
-			Case ModificarCampos.tipocambio.Venta
-				Campo = "tipocambioventa"
-			Case ModificarCampos.tipocambio.Promedio
-				Campo = "tipocambiopromedio"
-			Case Else
-				Campo = "tipocambioventa"
-		End Select
-		rsaux.Open("Select Valor=isnull(" & Campo & ",0)  from ct_tipocambio where tipocambiofecha ='" & fecha & "'", VGCNx, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
-		If rsaux.RecordCount > 0 Then
-			RecuperaTipoCambio = rsaux.Fields("valor").Value
-			frmantcomprobantes.lbnregdetalle.Text = VB6.Format(rsaux.RecordCount, "0 ")
-		End If
-	End Function
+    Public Function RecuperaTipoCambio(ByRef fecha As String, ByRef tipo As tipocambio) As Double
+        Dim rsaux As ADODB.Recordset
+        rsaux = New ADODB.Recordset
+        'FIXIT: Declare 'fechaIni' con un tipo de datos de enlace en tiempo de compilación         FixIT90210ae-R1672-R1B8ZE
+        Dim fechaIni As Object
+        Dim fechaDato As Date
+        Dim Campo As String
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto fechaIni. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        fechaIni = "01/01/" & VGParamSistem.Anoproceso
+        fechaDato = CDate(fecha)
+        'FIXIT: Reemplazar la función 'Str' con la función 'Str$'.                                 FixIT90210ae-R9757-R1B8ZE
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto fechaIni. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        If fechaIni > fechaDato Then fecha = "31/12/" & Str(CDbl(VGParamSistem.Anoproceso) - 1)
+        RecuperaTipoCambio = 0
+        Select Case tipo
+            Case tipocambio.Compra
+                Campo = "tipocambiocompra"
+            Case tipocambio.Venta
+                Campo = "tipocambioventa"
+            Case tipocambio.Promedio
+                Campo = "tipocambiopromedio"
+            Case Else
+                Campo = "tipocambioventa"
+        End Select
+        rsaux.Open("Select Valor=isnull(" & Campo & ",0)  from ct_tipocambio where tipocambiofecha ='" & fecha & "'", VGCNx, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
+        If rsaux.RecordCount > 0 Then
+            RecuperaTipoCambio = rsaux.Fields("valor").Value
+            frmantcomprobantes.lbnregdetalle.Text = VB6.Format(rsaux.RecordCount, "0 ")
+        End If
+    End Function
 	Public Function Validadocum(ByRef analitico As String, ByRef tipdoc As String, ByRef ndoc As String) As Boolean
 		Dim sqlcad As String
 		Dim rsaux As ADODB.Recordset
@@ -1149,7 +1101,7 @@ err_Renamed:
 		Dim rsaux As ADODB.Recordset
 		Dim Ncomprob As String
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		Ncomprob = Trim(frmantcomprobantes.TxSerie.CtlText) & IIf(Trim(frmantcomprobantes.TxSerie.CtlText) = "", "", "-") & Trim(frmantcomprobantes.TxNdoc.CtlText)
+		Ncomprob = Trim(frmantcomprobantes.TxSerie.Text) & IIf(Trim(frmantcomprobantes.TxSerie.Text) = "", "", "-") & Trim(frmantcomprobantes.TxNdoc.Text)
 		Verifidocumacancelar = False
 		rsaux = New ADODB.Recordset
 		sqlcad = "select * from dbo.ct_detcomprob" & VGParamSistem.Anoproceso & " where analiticocodigo='" & Trim(frmantcomprobantes.CtrAyu_Analitico.xclave) & "' and " & " isnull(operacioncodigo,'')='01' and documentocodigo='" & Trim(frmantcomprobantes.CtrAyu_TipDoc.xclave) & "' and " & " detcomprobnumdocumento='" & Ncomprob & "" & "' "
@@ -1163,10 +1115,10 @@ err_Renamed:
         Dim POSANTERIOR As Object
 		Dim rsaux As ADODB.Recordset
 		Dim monto As Double
-		Dim ctaajuste, ind As String
+        Dim ctaajuste As String
+        Dim ind As String = ""
 		Dim sicuentaajuste As Short
 		Dim difsoles, difdolares As Double
-		VGvardllgen = New dllgeneral.dll_general
         difsoles = CDbl(ESNULO(frmantcomprobantes.LbTotales(2).Text, 0)) 'diferencia en soles
         difdolares = CDbl(ESNULO(frmantcomprobantes.LbTotales(5).Text, 0)) 'diferencia en dolares
 		VGactulizodoc = True
@@ -1245,8 +1197,7 @@ ERRX:
 	
 	Private Sub CalcularTotalessinajuste(ByVal rs As ADODB.Recordset, ByVal rsajust As ADODB.Recordset, ByRef difersoles As Double, ByRef diferdolares As Double)
 		Dim rsaux, rs2 As ADODB.Recordset
-		Dim vardllgen As New dllgeneral.dll_general
-		rsaux = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
+        rsaux = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
 		rs2 = rsajust.Clone(ADODB.LockTypeEnum.adLockReadOnly)
         Dim difsoles, difdolares As Double
 		Dim montosolesDebe, montodolaresDebe As Double

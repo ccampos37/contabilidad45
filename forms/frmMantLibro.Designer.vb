@@ -23,15 +23,14 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents lblNumReg As System.Windows.Forms.Label
+    Public WithEvents lblNumReg As System.Windows.Forms.Label
 	Public WithEvents Label1 As System.Windows.Forms.Label
     Public WithEvents TDBGridAsientos2 As AxTrueOleDBGrid70.AxTDBGrid
-    Public WithEvents _cmdBotones_3 As System.Windows.Forms.Button
-    Public WithEvents _cmdBotones_4 As System.Windows.Forms.Button
-    Public WithEvents _cmdBotones_2 As System.Windows.Forms.Button
-    Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
-    Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones3 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones4 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones2 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones1 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones0 As System.Windows.Forms.Button
     Public WithEvents frmbotones As System.Windows.Forms.GroupBox
     Public WithEvents _SSTab1_TabPage0 As System.Windows.Forms.TabPage
     Public WithEvents _chk_0 As System.Windows.Forms.CheckBox
@@ -71,66 +70,62 @@
     Public WithEvents _SSTab1_TabPage2 As System.Windows.Forms.TabPage
     Public WithEvents SSTab1 As System.Windows.Forms.TabControl
     Public WithEvents chk As Microsoft.VisualBasic.Compatibility.VB6.CheckBoxArray
-    Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
     Public WithEvents lbl As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
     Public WithEvents txt As AxTxFerArray
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar mediante el Diseñador de Windows Forms.
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantLibro))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.SSTab1 = New System.Windows.Forms.TabControl
-        Me._SSTab1_TabPage0 = New System.Windows.Forms.TabPage
-        Me.lblNumReg = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.TDBGridAsientos2 = New AxTrueOleDBGrid70.AxTDBGrid
-        Me.frmbotones = New System.Windows.Forms.GroupBox
-        Me._cmdBotones_3 = New System.Windows.Forms.Button
-        Me._cmdBotones_4 = New System.Windows.Forms.Button
-        Me._cmdBotones_2 = New System.Windows.Forms.Button
-        Me._cmdBotones_1 = New System.Windows.Forms.Button
-        Me._cmdBotones_0 = New System.Windows.Forms.Button
-        Me._SSTab1_TabPage1 = New System.Windows.Forms.TabPage
-        Me.Frame1 = New System.Windows.Forms.GroupBox
-        Me._chk_0 = New System.Windows.Forms.CheckBox
-        Me._txt_0 = New AxTextFer.AxTxFer
-        Me._txt_1 = New AxTextFer.AxTxFer
-        Me.Label2 = New System.Windows.Forms.Label
-        Me._lbl_1 = New System.Windows.Forms.Label
-        Me._lbl_0 = New System.Windows.Forms.Label
-        Me.cAcepta = New System.Windows.Forms.Button
-        Me.cCancela = New System.Windows.Forms.Button
-        Me._SSTab1_TabPage2 = New System.Windows.Forms.TabPage
-        Me._lbl_4 = New System.Windows.Forms.Label
-        Me._lbl_15 = New System.Windows.Forms.Label
-        Me._lbl_14 = New System.Windows.Forms.Label
-        Me._lbl_13 = New System.Windows.Forms.Label
-        Me._lbl_12 = New System.Windows.Forms.Label
-        Me._lbl_11 = New System.Windows.Forms.Label
-        Me._lbl_10 = New System.Windows.Forms.Label
-        Me._lbl_9 = New System.Windows.Forms.Label
-        Me._lbl_8 = New System.Windows.Forms.Label
-        Me._lbl_7 = New System.Windows.Forms.Label
-        Me._lbl_6 = New System.Windows.Forms.Label
-        Me._lbl_5 = New System.Windows.Forms.Label
-        Me._txt_14 = New AxTextFer.AxTxFer
-        Me._txt_3 = New AxTextFer.AxTxFer
-        Me._txt_13 = New AxTextFer.AxTxFer
-        Me._txt_12 = New AxTextFer.AxTxFer
-        Me._txt_11 = New AxTextFer.AxTxFer
-        Me._txt_7 = New AxTextFer.AxTxFer
-        Me._txt_6 = New AxTextFer.AxTxFer
-        Me._txt_5 = New AxTextFer.AxTxFer
-        Me._txt_4 = New AxTextFer.AxTxFer
-        Me._txt_10 = New AxTextFer.AxTxFer
-        Me._txt_9 = New AxTextFer.AxTxFer
-        Me._txt_8 = New AxTextFer.AxTxFer
+        Me.SSTab1 = New System.Windows.Forms.TabControl()
+        Me._SSTab1_TabPage0 = New System.Windows.Forms.TabPage()
+        Me.lblNumReg = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TDBGridAsientos2 = New AxTrueOleDBGrid70.AxTDBGrid()
+        Me.frmbotones = New System.Windows.Forms.GroupBox()
+        Me.cmdBotones3 = New System.Windows.Forms.Button()
+        Me.cmdBotones4 = New System.Windows.Forms.Button()
+        Me.cmdBotones2 = New System.Windows.Forms.Button()
+        Me.cmdBotones1 = New System.Windows.Forms.Button()
+        Me.cmdBotones0 = New System.Windows.Forms.Button()
+        Me._SSTab1_TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Frame1 = New System.Windows.Forms.GroupBox()
+        Me._chk_0 = New System.Windows.Forms.CheckBox()
+        Me._txt_0 = New AxTextFer.AxTxFer()
+        Me._txt_1 = New AxTextFer.AxTxFer()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me._lbl_1 = New System.Windows.Forms.Label()
+        Me._lbl_0 = New System.Windows.Forms.Label()
+        Me.cAcepta = New System.Windows.Forms.Button()
+        Me.cCancela = New System.Windows.Forms.Button()
+        Me._SSTab1_TabPage2 = New System.Windows.Forms.TabPage()
+        Me._lbl_4 = New System.Windows.Forms.Label()
+        Me._lbl_15 = New System.Windows.Forms.Label()
+        Me._lbl_14 = New System.Windows.Forms.Label()
+        Me._lbl_13 = New System.Windows.Forms.Label()
+        Me._lbl_12 = New System.Windows.Forms.Label()
+        Me._lbl_11 = New System.Windows.Forms.Label()
+        Me._lbl_10 = New System.Windows.Forms.Label()
+        Me._lbl_9 = New System.Windows.Forms.Label()
+        Me._lbl_8 = New System.Windows.Forms.Label()
+        Me._lbl_7 = New System.Windows.Forms.Label()
+        Me._lbl_6 = New System.Windows.Forms.Label()
+        Me._lbl_5 = New System.Windows.Forms.Label()
+        Me._txt_14 = New AxTextFer.AxTxFer()
+        Me._txt_3 = New AxTextFer.AxTxFer()
+        Me._txt_13 = New AxTextFer.AxTxFer()
+        Me._txt_12 = New AxTextFer.AxTxFer()
+        Me._txt_11 = New AxTextFer.AxTxFer()
+        Me._txt_7 = New AxTextFer.AxTxFer()
+        Me._txt_6 = New AxTextFer.AxTxFer()
+        Me._txt_5 = New AxTextFer.AxTxFer()
+        Me._txt_4 = New AxTextFer.AxTxFer()
+        Me._txt_10 = New AxTextFer.AxTxFer()
+        Me._txt_9 = New AxTextFer.AxTxFer()
+        Me._txt_8 = New AxTextFer.AxTxFer()
         Me.chk = New Microsoft.VisualBasic.Compatibility.VB6.CheckBoxArray(Me.components)
-        Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
         Me.lbl = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
-        Me.txt = New Contabilidad.AxTxFerArray(Me.components)
         Me.SSTab1.SuspendLayout()
         Me._SSTab1_TabPage0.SuspendLayout()
         CType(Me.TDBGridAsientos2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,9 +148,7 @@
         CType(Me._txt_9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._txt_8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lbl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SSTab1
@@ -219,11 +212,11 @@
         'frmbotones
         '
         Me.frmbotones.BackColor = System.Drawing.SystemColors.Control
-        Me.frmbotones.Controls.Add(Me._cmdBotones_3)
-        Me.frmbotones.Controls.Add(Me._cmdBotones_4)
-        Me.frmbotones.Controls.Add(Me._cmdBotones_2)
-        Me.frmbotones.Controls.Add(Me._cmdBotones_1)
-        Me.frmbotones.Controls.Add(Me._cmdBotones_0)
+        Me.frmbotones.Controls.Add(Me.cmdBotones3)
+        Me.frmbotones.Controls.Add(Me.cmdBotones4)
+        Me.frmbotones.Controls.Add(Me.cmdBotones2)
+        Me.frmbotones.Controls.Add(Me.cmdBotones1)
+        Me.frmbotones.Controls.Add(Me.cmdBotones0)
         Me.frmbotones.ForeColor = System.Drawing.SystemColors.ControlText
         Me.frmbotones.Location = New System.Drawing.Point(32, 322)
         Me.frmbotones.Name = "frmbotones"
@@ -233,75 +226,70 @@
         Me.frmbotones.TabIndex = 4
         Me.frmbotones.TabStop = False
         '
-        '_cmdBotones_3
+        'cmdBotones3
         '
-        Me._cmdBotones_3.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_3, CType(3, Short))
-        Me._cmdBotones_3.Location = New System.Drawing.Point(229, 11)
-        Me._cmdBotones_3.Name = "_cmdBotones_3"
-        Me._cmdBotones_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_3.Size = New System.Drawing.Size(72, 22)
-        Me._cmdBotones_3.TabIndex = 9
-        Me._cmdBotones_3.Text = "&Imprimir"
-        Me._cmdBotones_3.UseVisualStyleBackColor = False
+        Me.cmdBotones3.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones3.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones3.Location = New System.Drawing.Point(229, 11)
+        Me.cmdBotones3.Name = "cmdBotones3"
+        Me.cmdBotones3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones3.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones3.TabIndex = 9
+        Me.cmdBotones3.Text = "&Imprimir"
+        Me.cmdBotones3.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_4
+        'cmdBotones4
         '
-        Me._cmdBotones_4.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_4.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_4, CType(4, Short))
-        Me._cmdBotones_4.Location = New System.Drawing.Point(304, 11)
-        Me._cmdBotones_4.Name = "_cmdBotones_4"
-        Me._cmdBotones_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_4.Size = New System.Drawing.Size(72, 22)
-        Me._cmdBotones_4.TabIndex = 8
-        Me._cmdBotones_4.Text = "&Salir"
-        Me._cmdBotones_4.UseVisualStyleBackColor = False
+        Me.cmdBotones4.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones4.Location = New System.Drawing.Point(304, 11)
+        Me.cmdBotones4.Name = "cmdBotones4"
+        Me.cmdBotones4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones4.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones4.TabIndex = 8
+        Me.cmdBotones4.Text = "&Salir"
+        Me.cmdBotones4.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_2
+        'cmdBotones2
         '
-        Me._cmdBotones_2.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_2, CType(2, Short))
-        Me._cmdBotones_2.Location = New System.Drawing.Point(154, 11)
-        Me._cmdBotones_2.Name = "_cmdBotones_2"
-        Me._cmdBotones_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_2.Size = New System.Drawing.Size(72, 22)
-        Me._cmdBotones_2.TabIndex = 7
-        Me._cmdBotones_2.Text = "&Eliminar"
-        Me._cmdBotones_2.UseVisualStyleBackColor = False
+        Me.cmdBotones2.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones2.Location = New System.Drawing.Point(154, 11)
+        Me.cmdBotones2.Name = "cmdBotones2"
+        Me.cmdBotones2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones2.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones2.TabIndex = 7
+        Me.cmdBotones2.Text = "&Eliminar"
+        Me.cmdBotones2.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_1
+        'cmdBotones1
         '
-        Me._cmdBotones_1.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_1, CType(1, Short))
-        Me._cmdBotones_1.Location = New System.Drawing.Point(79, 11)
-        Me._cmdBotones_1.Name = "_cmdBotones_1"
-        Me._cmdBotones_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_1.Size = New System.Drawing.Size(72, 22)
-        Me._cmdBotones_1.TabIndex = 6
-        Me._cmdBotones_1.Text = "E&ditar"
-        Me._cmdBotones_1.UseVisualStyleBackColor = False
+        Me.cmdBotones1.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones1.Location = New System.Drawing.Point(79, 11)
+        Me.cmdBotones1.Name = "cmdBotones1"
+        Me.cmdBotones1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones1.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones1.TabIndex = 6
+        Me.cmdBotones1.Text = "E&ditar"
+        Me.cmdBotones1.UseVisualStyleBackColor = False
         '
-        '_cmdBotones_0
+        'cmdBotones0
         '
-        Me._cmdBotones_0.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdBotones_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdBotones_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_0, CType(0, Short))
-        Me._cmdBotones_0.Location = New System.Drawing.Point(4, 11)
-        Me._cmdBotones_0.Name = "_cmdBotones_0"
-        Me._cmdBotones_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_0.Size = New System.Drawing.Size(72, 22)
-        Me._cmdBotones_0.TabIndex = 5
-        Me._cmdBotones_0.Text = "&Nuevo"
-        Me._cmdBotones_0.UseVisualStyleBackColor = False
+        Me.cmdBotones0.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones0.Location = New System.Drawing.Point(4, 11)
+        Me.cmdBotones0.Name = "cmdBotones0"
+        Me.cmdBotones0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones0.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones0.TabIndex = 5
+        Me.cmdBotones0.Text = "&Nuevo"
+        Me.cmdBotones0.UseVisualStyleBackColor = False
         '
         '_SSTab1_TabPage1
         '
@@ -348,7 +336,6 @@
         '_txt_0
         '
         Me._txt_0.Enabled = True
-        Me.txt.SetIndex(Me._txt_0, CType(0, Short))
         Me._txt_0.Location = New System.Drawing.Point(121, 13)
         Me._txt_0.Name = "_txt_0"
         Me._txt_0.OcxState = CType(resources.GetObject("_txt_0.OcxState"), System.Windows.Forms.AxHost.State)
@@ -358,7 +345,6 @@
         '_txt_1
         '
         Me._txt_1.Enabled = True
-        Me.txt.SetIndex(Me._txt_1, CType(1, Short))
         Me._txt_1.Location = New System.Drawing.Point(121, 34)
         Me._txt_1.Name = "_txt_1"
         Me._txt_1.OcxState = CType(resources.GetObject("_txt_1.OcxState"), System.Windows.Forms.AxHost.State)
@@ -620,7 +606,6 @@
         '_txt_14
         '
         Me._txt_14.Enabled = True
-        Me.txt.SetIndex(Me._txt_14, CType(14, Short))
         Me._txt_14.Location = New System.Drawing.Point(336, 161)
         Me._txt_14.Name = "_txt_14"
         Me._txt_14.OcxState = CType(resources.GetObject("_txt_14.OcxState"), System.Windows.Forms.AxHost.State)
@@ -630,7 +615,6 @@
         '_txt_3
         '
         Me._txt_3.Enabled = True
-        Me.txt.SetIndex(Me._txt_3, CType(3, Short))
         Me._txt_3.Location = New System.Drawing.Point(127, 48)
         Me._txt_3.Name = "_txt_3"
         Me._txt_3.OcxState = CType(resources.GetObject("_txt_3.OcxState"), System.Windows.Forms.AxHost.State)
@@ -640,7 +624,6 @@
         '_txt_13
         '
         Me._txt_13.Enabled = True
-        Me.txt.SetIndex(Me._txt_13, CType(13, Short))
         Me._txt_13.Location = New System.Drawing.Point(336, 139)
         Me._txt_13.Name = "_txt_13"
         Me._txt_13.OcxState = CType(resources.GetObject("_txt_13.OcxState"), System.Windows.Forms.AxHost.State)
@@ -650,7 +633,6 @@
         '_txt_12
         '
         Me._txt_12.Enabled = True
-        Me.txt.SetIndex(Me._txt_12, CType(12, Short))
         Me._txt_12.Location = New System.Drawing.Point(336, 116)
         Me._txt_12.Name = "_txt_12"
         Me._txt_12.OcxState = CType(resources.GetObject("_txt_12.OcxState"), System.Windows.Forms.AxHost.State)
@@ -660,7 +642,6 @@
         '_txt_11
         '
         Me._txt_11.Enabled = True
-        Me.txt.SetIndex(Me._txt_11, CType(11, Short))
         Me._txt_11.Location = New System.Drawing.Point(336, 93)
         Me._txt_11.Name = "_txt_11"
         Me._txt_11.OcxState = CType(resources.GetObject("_txt_11.OcxState"), System.Windows.Forms.AxHost.State)
@@ -670,7 +651,6 @@
         '_txt_7
         '
         Me._txt_7.Enabled = True
-        Me.txt.SetIndex(Me._txt_7, CType(7, Short))
         Me._txt_7.Location = New System.Drawing.Point(127, 141)
         Me._txt_7.Name = "_txt_7"
         Me._txt_7.OcxState = CType(resources.GetObject("_txt_7.OcxState"), System.Windows.Forms.AxHost.State)
@@ -680,7 +660,6 @@
         '_txt_6
         '
         Me._txt_6.Enabled = True
-        Me.txt.SetIndex(Me._txt_6, CType(6, Short))
         Me._txt_6.Location = New System.Drawing.Point(127, 118)
         Me._txt_6.Name = "_txt_6"
         Me._txt_6.OcxState = CType(resources.GetObject("_txt_6.OcxState"), System.Windows.Forms.AxHost.State)
@@ -690,7 +669,6 @@
         '_txt_5
         '
         Me._txt_5.Enabled = True
-        Me.txt.SetIndex(Me._txt_5, CType(5, Short))
         Me._txt_5.Location = New System.Drawing.Point(127, 95)
         Me._txt_5.Name = "_txt_5"
         Me._txt_5.OcxState = CType(resources.GetObject("_txt_5.OcxState"), System.Windows.Forms.AxHost.State)
@@ -700,7 +678,6 @@
         '_txt_4
         '
         Me._txt_4.Enabled = True
-        Me.txt.SetIndex(Me._txt_4, CType(4, Short))
         Me._txt_4.Location = New System.Drawing.Point(127, 72)
         Me._txt_4.Name = "_txt_4"
         Me._txt_4.OcxState = CType(resources.GetObject("_txt_4.OcxState"), System.Windows.Forms.AxHost.State)
@@ -710,7 +687,6 @@
         '_txt_10
         '
         Me._txt_10.Enabled = True
-        Me.txt.SetIndex(Me._txt_10, CType(10, Short))
         Me._txt_10.Location = New System.Drawing.Point(336, 70)
         Me._txt_10.Name = "_txt_10"
         Me._txt_10.OcxState = CType(resources.GetObject("_txt_10.OcxState"), System.Windows.Forms.AxHost.State)
@@ -720,7 +696,6 @@
         '_txt_9
         '
         Me._txt_9.Enabled = True
-        Me.txt.SetIndex(Me._txt_9, CType(9, Short))
         Me._txt_9.Location = New System.Drawing.Point(336, 49)
         Me._txt_9.Name = "_txt_9"
         Me._txt_9.OcxState = CType(resources.GetObject("_txt_9.OcxState"), System.Windows.Forms.AxHost.State)
@@ -730,7 +705,6 @@
         '_txt_8
         '
         Me._txt_8.Enabled = True
-        Me.txt.SetIndex(Me._txt_8, CType(8, Short))
         Me._txt_8.Location = New System.Drawing.Point(127, 164)
         Me._txt_8.Name = "_txt_8"
         Me._txt_8.OcxState = CType(resources.GetObject("_txt_8.OcxState"), System.Windows.Forms.AxHost.State)
@@ -738,12 +712,6 @@
         Me._txt_8.TabIndex = 22
         '
         'chk
-        '
-        '
-        'cmdBotones
-        '
-        '
-        'txt
         '
         '
         'frmMantLibro
@@ -781,11 +749,9 @@
         CType(Me._txt_9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._txt_8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chk, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lbl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
-    End Sub
+End Sub
 #End Region 
 End Class

@@ -53,40 +53,40 @@
     'Se puede modificar mediante el Diseñador de Windows Forms.
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantEntidad))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.frmbotones = New System.Windows.Forms.GroupBox
-        Me._cmdBotones_0 = New System.Windows.Forms.Button
-        Me._cmdBotones_1 = New System.Windows.Forms.Button
-        Me._cmdBotones_2 = New System.Windows.Forms.Button
-        Me._cmdBotones_4 = New System.Windows.Forms.Button
-        Me._cmdBotones_3 = New System.Windows.Forms.Button
-        Me.cAcepta = New System.Windows.Forms.Button
-        Me.cCancela = New System.Windows.Forms.Button
-        Me.Frame1 = New System.Windows.Forms.GroupBox
-        Me.cboTipoCont = New System.Windows.Forms.ComboBox
-        Me.ListView1 = New System.Windows.Forms.ListView
-        Me._txt_0 = New AxTextFer.AxTxFer
-        Me._txt_1 = New AxTextFer.AxTxFer
-        Me._txt_2 = New AxTextFer.AxTxFer
-        Me._txt_3 = New AxTextFer.AxTxFer
-        Me._txt_4 = New AxTextFer.AxTxFer
-        Me.Label2 = New System.Windows.Forms.Label
-        Me._lbl_1 = New System.Windows.Forms.Label
-        Me._lbl_2 = New System.Windows.Forms.Label
-        Me._lbl_3 = New System.Windows.Forms.Label
-        Me._lbl_16 = New System.Windows.Forms.Label
-        Me._lbl_0 = New System.Windows.Forms.Label
+        Me.frmbotones = New System.Windows.Forms.GroupBox()
+        Me._cmdBotones_0 = New System.Windows.Forms.Button()
+        Me._cmdBotones_1 = New System.Windows.Forms.Button()
+        Me._cmdBotones_2 = New System.Windows.Forms.Button()
+        Me._cmdBotones_4 = New System.Windows.Forms.Button()
+        Me._cmdBotones_3 = New System.Windows.Forms.Button()
+        Me.cAcepta = New System.Windows.Forms.Button()
+        Me.cCancela = New System.Windows.Forms.Button()
+        Me.Frame1 = New System.Windows.Forms.GroupBox()
+        Me.cboTipoCont = New System.Windows.Forms.ComboBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me._txt_0 = New AxTextFer.AxTxFer()
+        Me._txt_1 = New AxTextFer.AxTxFer()
+        Me._txt_2 = New AxTextFer.AxTxFer()
+        Me._txt_3 = New AxTextFer.AxTxFer()
+        Me._txt_4 = New AxTextFer.AxTxFer()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me._lbl_1 = New System.Windows.Forms.Label()
+        Me._lbl_2 = New System.Windows.Forms.Label()
+        Me._lbl_3 = New System.Windows.Forms.Label()
+        Me._lbl_16 = New System.Windows.Forms.Label()
+        Me._lbl_0 = New System.Windows.Forms.Label()
         Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
         Me.lbl = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.txt = New Contabilidad.AxTxFerArray(Me.components)
-        Me.SSTab1 = New System.Windows.Forms.TabControl
-        Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.TDBGrid1 = New System.Windows.Forms.DataGridView
-        Me.lblNumReg = New System.Windows.Forms.Label
-        Me.TabPage2 = New System.Windows.Forms.TabPage
-        Me.txtbuscar = New AxTextFer.AxTxFer
+        Me.SSTab1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TDBGrid1 = New System.Windows.Forms.DataGridView()
+        Me.lblNumReg = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txtbuscar = New AxTextFer.AxTxFer()
         Me.frmbotones.SuspendLayout()
         Me.Frame1.SuspendLayout()
         CType(Me._txt_0, System.ComponentModel.ISupportInitialize).BeginInit()

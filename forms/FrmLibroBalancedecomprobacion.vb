@@ -118,4 +118,6 @@ Friend Class FrmLibroBalancedeComprobacion
 			lforma = Index + 1
 		End If
 	End Sub
+
+
 End Class

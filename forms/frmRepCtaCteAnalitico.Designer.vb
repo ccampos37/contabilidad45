@@ -23,535 +23,475 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents chkAjuste As System.Windows.Forms.CheckBox
-	Public WithEvents _OptDetalle_0 As System.Windows.Forms.RadioButton
-	Public WithEvents _OptDetalle_1 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame6 As System.Windows.Forms.GroupBox
-	Public WithEvents _optOpcion_3 As System.Windows.Forms.RadioButton
-	Public WithEvents _optOpcion_2 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame5 As System.Windows.Forms.GroupBox
-	Public WithEvents lstTipoAnaliticoCodigo As System.Windows.Forms.ListBox
-	Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
-	Public WithEvents _optFiltro_2 As System.Windows.Forms.RadioButton
-	Public WithEvents _optFiltro_1 As System.Windows.Forms.RadioButton
-	Public WithEvents _optFiltro_0 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame4 As System.Windows.Forms.GroupBox
-	Public WithEvents Ctr_Ayuda1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents Frame3 As System.Windows.Forms.GroupBox
-	Public WithEvents cboTipoAnalitico As System.Windows.Forms.ComboBox
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents _optOpcion_4 As System.Windows.Forms.RadioButton
-	Public WithEvents _optOpcion_0 As System.Windows.Forms.RadioButton
-	Public WithEvents _optOpcion_1 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
-	Public WithEvents Ctr_AyudaEnt As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Ctr_Ayuda2 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label4 As System.Windows.Forms.Label
-	Public WithEvents OptDetalle As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	Public WithEvents optFiltro As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	Public WithEvents optOpcion As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmRepCtaCteAnalitico))
-		Me.components = New System.ComponentModel.Container()
-		Me.ToolTip1 = New System.Windows.Forms.ToolTip(components)
-		Me.chkAjuste = New System.Windows.Forms.CheckBox
-		Me.Frame6 = New System.Windows.Forms.GroupBox
-		Me._OptDetalle_0 = New System.Windows.Forms.RadioButton
-		Me._OptDetalle_1 = New System.Windows.Forms.RadioButton
-		Me.Frame5 = New System.Windows.Forms.GroupBox
-		Me._optOpcion_3 = New System.Windows.Forms.RadioButton
-		Me._optOpcion_2 = New System.Windows.Forms.RadioButton
-		Me.lstTipoAnaliticoCodigo = New System.Windows.Forms.ListBox
-		Me._cmdBotones_0 = New System.Windows.Forms.Button
-		Me._cmdBotones_1 = New System.Windows.Forms.Button
-		Me.Frame4 = New System.Windows.Forms.GroupBox
-		Me._optFiltro_2 = New System.Windows.Forms.RadioButton
-		Me._optFiltro_1 = New System.Windows.Forms.RadioButton
-		Me._optFiltro_0 = New System.Windows.Forms.RadioButton
-		Me.Frame3 = New System.Windows.Forms.GroupBox
-		Me.Ctr_Ayuda1 = New Axctrlayuda_f.AxCtr_Ayuda
-		Me.Label1 = New System.Windows.Forms.Label
-		Me.Frame2 = New System.Windows.Forms.GroupBox
-		Me.cboTipoAnalitico = New System.Windows.Forms.ComboBox
-		Me.Label2 = New System.Windows.Forms.Label
-		Me.Frame1 = New System.Windows.Forms.GroupBox
-		Me._optOpcion_4 = New System.Windows.Forms.RadioButton
-		Me._optOpcion_0 = New System.Windows.Forms.RadioButton
-		Me._optOpcion_1 = New System.Windows.Forms.RadioButton
-		Me.Ctr_AyudaEnt = New Axctrlayuda_f.AxCtr_Ayuda
-		Me.Ctr_Ayuda2 = New Axctrlayuda_f.AxCtr_Ayuda
-		Me.Label4 = New System.Windows.Forms.Label
-		Me.OptDetalle = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(components)
-		Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(components)
-		Me.optFiltro = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(components)
-		Me.optOpcion = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(components)
-		Me.Frame6.SuspendLayout()
-		Me.Frame5.SuspendLayout()
-		Me.Frame4.SuspendLayout()
-		Me.Frame3.SuspendLayout()
-		Me.Frame2.SuspendLayout()
-		Me.Frame1.SuspendLayout()
-		Me.SuspendLayout()
-		Me.ToolTip1.Active = True
-		CType(Me.Ctr_Ayuda1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.Ctr_AyudaEnt, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.Ctr_Ayuda2, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.OptDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.optFiltro, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.optOpcion, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Text = "Cuenta Corriente Entidades (Analíticos)"
-		Me.ClientSize = New System.Drawing.Size(485, 411)
-		Me.Location = New System.Drawing.Point(3, 22)
-		Me.MaximizeBox = False
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
-		Me.MinimizeBox = False
-		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackColor = System.Drawing.SystemColors.Control
-		Me.ControlBox = True
-		Me.Enabled = True
-		Me.KeyPreview = False
-		Me.Cursor = System.Windows.Forms.Cursors.Default
-		Me.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.ShowInTaskbar = True
-		Me.HelpButton = False
-		Me.WindowState = System.Windows.Forms.FormWindowState.Normal
-		Me.Name = "frmRepCtaCteAnalitico"
-		Me.chkAjuste.Text = "Incluye ajuste por diferencia de cambio"
-		Me.chkAjuste.Size = New System.Drawing.Size(121, 29)
-		Me.chkAjuste.Location = New System.Drawing.Point(358, 234)
-		Me.chkAjuste.TabIndex = 26
-		Me.chkAjuste.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me.chkAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Standard
-		Me.chkAjuste.BackColor = System.Drawing.SystemColors.Control
-		Me.chkAjuste.CausesValidation = True
-		Me.chkAjuste.Enabled = True
-		Me.chkAjuste.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.chkAjuste.Cursor = System.Windows.Forms.Cursors.Default
-		Me.chkAjuste.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.chkAjuste.Appearance = System.Windows.Forms.Appearance.Normal
-		Me.chkAjuste.TabStop = True
-		Me.chkAjuste.CheckState = System.Windows.Forms.CheckState.Unchecked
-		Me.chkAjuste.Visible = True
-		Me.chkAjuste.Name = "chkAjuste"
-		Me.Frame6.Text = "Seleccionar Detalle"
-		Me.Frame6.Size = New System.Drawing.Size(346, 46)
-		Me.Frame6.Location = New System.Drawing.Point(6, 222)
-		Me.Frame6.TabIndex = 23
-		Me.Frame6.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame6.Enabled = True
-		Me.Frame6.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame6.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame6.Visible = True
-		Me.Frame6.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame6.Name = "Frame6"
-		Me._OptDetalle_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._OptDetalle_0.Text = "Solo Saldos"
-		Me._OptDetalle_0.Size = New System.Drawing.Size(94, 13)
-		Me._OptDetalle_0.Location = New System.Drawing.Point(15, 21)
-		Me._OptDetalle_0.TabIndex = 25
-		Me._OptDetalle_0.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._OptDetalle_0.BackColor = System.Drawing.SystemColors.Control
-		Me._OptDetalle_0.CausesValidation = True
-		Me._OptDetalle_0.Enabled = True
-		Me._OptDetalle_0.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._OptDetalle_0.Cursor = System.Windows.Forms.Cursors.Default
-		Me._OptDetalle_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._OptDetalle_0.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._OptDetalle_0.TabStop = True
-		Me._OptDetalle_0.Checked = False
-		Me._OptDetalle_0.Visible = True
-		Me._OptDetalle_0.Name = "_OptDetalle_0"
-		Me._OptDetalle_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._OptDetalle_1.Text = "Detalle por documento"
-		Me._OptDetalle_1.Size = New System.Drawing.Size(133, 16)
-		Me._OptDetalle_1.Location = New System.Drawing.Point(174, 18)
-		Me._OptDetalle_1.TabIndex = 24
-		Me._OptDetalle_1.Checked = True
-		Me._OptDetalle_1.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._OptDetalle_1.BackColor = System.Drawing.SystemColors.Control
-		Me._OptDetalle_1.CausesValidation = True
-		Me._OptDetalle_1.Enabled = True
-		Me._OptDetalle_1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._OptDetalle_1.Cursor = System.Windows.Forms.Cursors.Default
-		Me._OptDetalle_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._OptDetalle_1.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._OptDetalle_1.TabStop = True
-		Me._OptDetalle_1.Visible = True
-		Me._OptDetalle_1.Name = "_OptDetalle_1"
-		Me.Frame5.Text = "Ordenado por"
-		Me.Frame5.Size = New System.Drawing.Size(147, 57)
-		Me.Frame5.Location = New System.Drawing.Point(328, 8)
-		Me.Frame5.TabIndex = 18
-		Me.Frame5.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame5.Enabled = True
-		Me.Frame5.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame5.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame5.Visible = True
-		Me.Frame5.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame5.Name = "Frame5"
-		Me._optOpcion_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_3.Text = "Cuenta Contable"
-		Me._optOpcion_3.Size = New System.Drawing.Size(208, 15)
-		Me._optOpcion_3.Location = New System.Drawing.Point(9, 36)
-		Me._optOpcion_3.TabIndex = 20
-		Me._optOpcion_3.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_3.BackColor = System.Drawing.SystemColors.Control
-		Me._optOpcion_3.CausesValidation = True
-		Me._optOpcion_3.Enabled = True
-		Me._optOpcion_3.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optOpcion_3.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optOpcion_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optOpcion_3.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optOpcion_3.TabStop = True
-		Me._optOpcion_3.Checked = False
-		Me._optOpcion_3.Visible = True
-		Me._optOpcion_3.Name = "_optOpcion_3"
-		Me._optOpcion_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_2.Text = "Entidad"
-		Me._optOpcion_2.Size = New System.Drawing.Size(200, 15)
-		Me._optOpcion_2.Location = New System.Drawing.Point(9, 19)
-		Me._optOpcion_2.TabIndex = 19
-		Me._optOpcion_2.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_2.BackColor = System.Drawing.SystemColors.Control
-		Me._optOpcion_2.CausesValidation = True
-		Me._optOpcion_2.Enabled = True
-		Me._optOpcion_2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optOpcion_2.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optOpcion_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optOpcion_2.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optOpcion_2.TabStop = True
-		Me._optOpcion_2.Checked = False
-		Me._optOpcion_2.Visible = True
-		Me._optOpcion_2.Name = "_optOpcion_2"
-		Me.lstTipoAnaliticoCodigo.Size = New System.Drawing.Size(79, 20)
-		Me.lstTipoAnaliticoCodigo.Location = New System.Drawing.Point(387, 330)
-		Me.lstTipoAnaliticoCodigo.TabIndex = 14
-		Me.lstTipoAnaliticoCodigo.Visible = False
-		Me.lstTipoAnaliticoCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.lstTipoAnaliticoCodigo.BackColor = System.Drawing.SystemColors.Window
-		Me.lstTipoAnaliticoCodigo.CausesValidation = True
-		Me.lstTipoAnaliticoCodigo.Enabled = True
-		Me.lstTipoAnaliticoCodigo.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.lstTipoAnaliticoCodigo.IntegralHeight = True
-		Me.lstTipoAnaliticoCodigo.Cursor = System.Windows.Forms.Cursors.Default
-		Me.lstTipoAnaliticoCodigo.SelectionMode = System.Windows.Forms.SelectionMode.One
-		Me.lstTipoAnaliticoCodigo.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.lstTipoAnaliticoCodigo.Sorted = False
-		Me.lstTipoAnaliticoCodigo.TabStop = True
-		Me.lstTipoAnaliticoCodigo.MultiColumn = False
-		Me.lstTipoAnaliticoCodigo.Name = "lstTipoAnaliticoCodigo"
-		Me._cmdBotones_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		Me._cmdBotones_0.Text = "&Aceptar"
-		Me._cmdBotones_0.Size = New System.Drawing.Size(98, 25)
-		Me._cmdBotones_0.Location = New System.Drawing.Point(139, 332)
-		Me._cmdBotones_0.TabIndex = 13
-		Me._cmdBotones_0.BackColor = System.Drawing.SystemColors.Control
-		Me._cmdBotones_0.CausesValidation = True
-		Me._cmdBotones_0.Enabled = True
-		Me._cmdBotones_0.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._cmdBotones_0.Cursor = System.Windows.Forms.Cursors.Default
-		Me._cmdBotones_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._cmdBotones_0.TabStop = True
-		Me._cmdBotones_0.Name = "_cmdBotones_0"
-		Me._cmdBotones_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		Me._cmdBotones_1.Text = "&Cancelar"
-		Me._cmdBotones_1.Size = New System.Drawing.Size(98, 25)
-		Me._cmdBotones_1.Location = New System.Drawing.Point(251, 332)
-		Me._cmdBotones_1.TabIndex = 12
-		Me._cmdBotones_1.BackColor = System.Drawing.SystemColors.Control
-		Me._cmdBotones_1.CausesValidation = True
-		Me._cmdBotones_1.Enabled = True
-		Me._cmdBotones_1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._cmdBotones_1.Cursor = System.Windows.Forms.Cursors.Default
-		Me._cmdBotones_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._cmdBotones_1.TabStop = True
-		Me._cmdBotones_1.Name = "_cmdBotones_1"
-		Me.Frame4.Text = "Seleccionar Filtro"
-		Me.Frame4.Size = New System.Drawing.Size(475, 50)
-		Me.Frame4.Location = New System.Drawing.Point(6, 273)
-		Me.Frame4.TabIndex = 11
-		Me.Frame4.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame4.Enabled = True
-		Me.Frame4.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame4.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame4.Visible = True
-		Me.Frame4.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame4.Name = "Frame4"
-		Me._optFiltro_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optFiltro_2.Text = "Todos"
-		Me._optFiltro_2.Size = New System.Drawing.Size(101, 20)
-		Me._optFiltro_2.Location = New System.Drawing.Point(363, 18)
-		Me._optFiltro_2.TabIndex = 17
-		Me._optFiltro_2.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optFiltro_2.BackColor = System.Drawing.SystemColors.Control
-		Me._optFiltro_2.CausesValidation = True
-		Me._optFiltro_2.Enabled = True
-		Me._optFiltro_2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optFiltro_2.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optFiltro_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optFiltro_2.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optFiltro_2.TabStop = True
-		Me._optFiltro_2.Checked = False
-		Me._optFiltro_2.Visible = True
-		Me._optFiltro_2.Name = "_optFiltro_2"
-		Me._optFiltro_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optFiltro_1.Text = "Documentos pendientes"
-		Me._optFiltro_1.Size = New System.Drawing.Size(143, 20)
-		Me._optFiltro_1.Location = New System.Drawing.Point(173, 18)
-		Me._optFiltro_1.TabIndex = 16
-		Me._optFiltro_1.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optFiltro_1.BackColor = System.Drawing.SystemColors.Control
-		Me._optFiltro_1.CausesValidation = True
-		Me._optFiltro_1.Enabled = True
-		Me._optFiltro_1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optFiltro_1.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optFiltro_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optFiltro_1.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optFiltro_1.TabStop = True
-		Me._optFiltro_1.Checked = False
-		Me._optFiltro_1.Visible = True
-		Me._optFiltro_1.Name = "_optFiltro_1"
-		Me._optFiltro_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optFiltro_0.Text = "Documentos cancelados"
-		Me._optFiltro_0.Size = New System.Drawing.Size(143, 20)
-		Me._optFiltro_0.Location = New System.Drawing.Point(12, 18)
-		Me._optFiltro_0.TabIndex = 15
-		Me._optFiltro_0.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optFiltro_0.BackColor = System.Drawing.SystemColors.Control
-		Me._optFiltro_0.CausesValidation = True
-		Me._optFiltro_0.Enabled = True
-		Me._optFiltro_0.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optFiltro_0.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optFiltro_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optFiltro_0.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optFiltro_0.TabStop = True
-		Me._optFiltro_0.Checked = False
-		Me._optFiltro_0.Visible = True
-		Me._optFiltro_0.Name = "_optFiltro_0"
-		Me.Frame3.Text = "Seleccionar Cuentas"
-		Me.Frame3.Size = New System.Drawing.Size(476, 63)
-		Me.Frame3.Location = New System.Drawing.Point(3, 126)
-		Me.Frame3.TabIndex = 9
-		Me.Frame3.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame3.Enabled = True
-		Me.Frame3.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame3.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame3.Visible = True
-		Me.Frame3.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame3.Name = "Frame3"
-		Ctr_Ayuda1.OcxState = CType(resources.GetObject("Ctr_Ayuda1.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.Ctr_Ayuda1.Size = New System.Drawing.Size(359, 24)
-		Me.Ctr_Ayuda1.Location = New System.Drawing.Point(112, 24)
-		Me.Ctr_Ayuda1.TabIndex = 5
-		Me.Ctr_Ayuda1.Name = "Ctr_Ayuda1"
-		Me.Label1.Text = "Cuenta Contable"
-		Me.Label1.Size = New System.Drawing.Size(89, 19)
-		Me.Label1.Location = New System.Drawing.Point(9, 29)
-		Me.Label1.TabIndex = 10
-		Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopLeft
-		Me.Label1.BackColor = System.Drawing.SystemColors.Control
-		Me.Label1.Enabled = True
-		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Label1.UseMnemonic = True
-		Me.Label1.Visible = True
-		Me.Label1.AutoSize = False
-		Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.Label1.Name = "Label1"
-		Me.Frame2.Text = "Seleccionar Entidades (Analítico)"
-		Me.Frame2.Size = New System.Drawing.Size(474, 48)
-		Me.Frame2.Location = New System.Drawing.Point(2, 75)
-		Me.Frame2.TabIndex = 3
-		Me.Frame2.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame2.Enabled = True
-		Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame2.Visible = True
-		Me.Frame2.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame2.Name = "Frame2"
-		Me.cboTipoAnalitico.Size = New System.Drawing.Size(293, 21)
-		Me.cboTipoAnalitico.Location = New System.Drawing.Point(126, 19)
-		Me.cboTipoAnalitico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboTipoAnalitico.TabIndex = 4
-		Me.cboTipoAnalitico.BackColor = System.Drawing.SystemColors.Window
-		Me.cboTipoAnalitico.CausesValidation = True
-		Me.cboTipoAnalitico.Enabled = True
-		Me.cboTipoAnalitico.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.cboTipoAnalitico.IntegralHeight = True
-		Me.cboTipoAnalitico.Cursor = System.Windows.Forms.Cursors.Default
-		Me.cboTipoAnalitico.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.cboTipoAnalitico.Sorted = False
-		Me.cboTipoAnalitico.TabStop = True
-		Me.cboTipoAnalitico.Visible = True
-		Me.cboTipoAnalitico.Name = "cboTipoAnalitico"
-		Me.Label2.Text = "Tipo Analítico"
-		Me.Label2.Size = New System.Drawing.Size(67, 16)
-		Me.Label2.Location = New System.Drawing.Point(12, 23)
-		Me.Label2.TabIndex = 8
-		Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopLeft
-		Me.Label2.BackColor = System.Drawing.SystemColors.Control
-		Me.Label2.Enabled = True
-		Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Label2.UseMnemonic = True
-		Me.Label2.Visible = True
-		Me.Label2.AutoSize = False
-		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.Label2.Name = "Label2"
-		Me.Frame1.Text = "Emitir por"
-		Me.Frame1.Size = New System.Drawing.Size(315, 57)
-		Me.Frame1.Location = New System.Drawing.Point(3, 7)
-		Me.Frame1.TabIndex = 2
-		Me.Frame1.BackColor = System.Drawing.SystemColors.Control
-		Me.Frame1.Enabled = True
-		Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Frame1.Visible = True
-		Me.Frame1.Padding = New System.Windows.Forms.Padding(0)
-		Me.Frame1.Name = "Frame1"
-		Me._optOpcion_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_4.Text = "Saldos iniciales"
-		Me._optOpcion_4.Size = New System.Drawing.Size(200, 15)
-		Me._optOpcion_4.Location = New System.Drawing.Point(176, 24)
-		Me._optOpcion_4.TabIndex = 21
-		Me._optOpcion_4.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_4.BackColor = System.Drawing.SystemColors.Control
-		Me._optOpcion_4.CausesValidation = True
-		Me._optOpcion_4.Enabled = True
-		Me._optOpcion_4.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optOpcion_4.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optOpcion_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optOpcion_4.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optOpcion_4.TabStop = True
-		Me._optOpcion_4.Checked = False
-		Me._optOpcion_4.Visible = True
-		Me._optOpcion_4.Name = "_optOpcion_4"
-		Me._optOpcion_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_0.Text = "Movimiento Cuenta Corriente"
-		Me._optOpcion_0.Size = New System.Drawing.Size(200, 15)
-		Me._optOpcion_0.Location = New System.Drawing.Point(9, 19)
-		Me._optOpcion_0.TabIndex = 0
-		Me._optOpcion_0.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_0.BackColor = System.Drawing.SystemColors.Control
-		Me._optOpcion_0.CausesValidation = True
-		Me._optOpcion_0.Enabled = True
-		Me._optOpcion_0.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optOpcion_0.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optOpcion_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optOpcion_0.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optOpcion_0.TabStop = True
-		Me._optOpcion_0.Checked = False
-		Me._optOpcion_0.Visible = True
-		Me._optOpcion_0.Name = "_optOpcion_0"
-		Me._optOpcion_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_1.Text = "Saldos Cuenta Corriente"
-		Me._optOpcion_1.Size = New System.Drawing.Size(200, 15)
-		Me._optOpcion_1.Location = New System.Drawing.Point(9, 37)
-		Me._optOpcion_1.TabIndex = 1
-		Me._optOpcion_1.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optOpcion_1.BackColor = System.Drawing.SystemColors.Control
-		Me._optOpcion_1.CausesValidation = True
-		Me._optOpcion_1.Enabled = True
-		Me._optOpcion_1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me._optOpcion_1.Cursor = System.Windows.Forms.Cursors.Default
-		Me._optOpcion_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me._optOpcion_1.Appearance = System.Windows.Forms.Appearance.Normal
-		Me._optOpcion_1.TabStop = True
-		Me._optOpcion_1.Checked = False
-		Me._optOpcion_1.Visible = True
-		Me._optOpcion_1.Name = "_optOpcion_1"
-		Ctr_AyudaEnt.OcxState = CType(resources.GetObject("Ctr_AyudaEnt.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.Ctr_AyudaEnt.Size = New System.Drawing.Size(359, 22)
-		Me.Ctr_AyudaEnt.Location = New System.Drawing.Point(111, 195)
-		Me.Ctr_AyudaEnt.TabIndex = 7
-		Me.Ctr_AyudaEnt.Name = "Ctr_AyudaEnt"
-		Ctr_Ayuda2.OcxState = CType(resources.GetObject("Ctr_Ayuda2.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.Ctr_Ayuda2.Size = New System.Drawing.Size(359, 22)
-		Me.Ctr_Ayuda2.Location = New System.Drawing.Point(111, 195)
-		Me.Ctr_Ayuda2.TabIndex = 6
-		Me.Ctr_Ayuda2.Visible = False
-		Me.Ctr_Ayuda2.Name = "Ctr_Ayuda2"
-		Me.Label4.Text = "Código Analítico"
-		Me.Label4.Size = New System.Drawing.Size(100, 18)
-		Me.Label4.Location = New System.Drawing.Point(12, 198)
-		Me.Label4.TabIndex = 22
-		Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopLeft
-		Me.Label4.BackColor = System.Drawing.SystemColors.Control
-		Me.Label4.Enabled = True
-		Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Label4.UseMnemonic = True
-		Me.Label4.Visible = True
-		Me.Label4.AutoSize = False
-		Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.Label4.Name = "Label4"
-		Me.OptDetalle.SetIndex(_OptDetalle_0, CType(0, Short))
-		Me.OptDetalle.SetIndex(_OptDetalle_1, CType(1, Short))
-		Me.cmdBotones.SetIndex(_cmdBotones_0, CType(0, Short))
-		Me.cmdBotones.SetIndex(_cmdBotones_1, CType(1, Short))
-		Me.optFiltro.SetIndex(_optFiltro_2, CType(2, Short))
-		Me.optFiltro.SetIndex(_optFiltro_1, CType(1, Short))
-		Me.optFiltro.SetIndex(_optFiltro_0, CType(0, Short))
-		Me.optOpcion.SetIndex(_optOpcion_3, CType(3, Short))
-		Me.optOpcion.SetIndex(_optOpcion_2, CType(2, Short))
-		Me.optOpcion.SetIndex(_optOpcion_4, CType(4, Short))
-		Me.optOpcion.SetIndex(_optOpcion_0, CType(0, Short))
-		Me.optOpcion.SetIndex(_optOpcion_1, CType(1, Short))
-		CType(Me.optOpcion, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.optFiltro, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.OptDetalle, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.Ctr_Ayuda2, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.Ctr_AyudaEnt, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.Ctr_Ayuda1, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.Controls.Add(chkAjuste)
-		Me.Controls.Add(Frame6)
-		Me.Controls.Add(Frame5)
-		Me.Controls.Add(lstTipoAnaliticoCodigo)
-		Me.Controls.Add(_cmdBotones_0)
-		Me.Controls.Add(_cmdBotones_1)
-		Me.Controls.Add(Frame4)
-		Me.Controls.Add(Frame3)
-		Me.Controls.Add(Frame2)
-		Me.Controls.Add(Frame1)
-		Me.Controls.Add(Ctr_AyudaEnt)
-		Me.Controls.Add(Ctr_Ayuda2)
-		Me.Controls.Add(Label4)
-		Me.Frame6.Controls.Add(_OptDetalle_0)
-		Me.Frame6.Controls.Add(_OptDetalle_1)
-		Me.Frame5.Controls.Add(_optOpcion_3)
-		Me.Frame5.Controls.Add(_optOpcion_2)
-		Me.Frame4.Controls.Add(_optFiltro_2)
-		Me.Frame4.Controls.Add(_optFiltro_1)
-		Me.Frame4.Controls.Add(_optFiltro_0)
-		Me.Frame3.Controls.Add(Ctr_Ayuda1)
-		Me.Frame3.Controls.Add(Label1)
-		Me.Frame2.Controls.Add(cboTipoAnalitico)
-		Me.Frame2.Controls.Add(Label2)
-		Me.Frame1.Controls.Add(_optOpcion_4)
-		Me.Frame1.Controls.Add(_optOpcion_0)
-		Me.Frame1.Controls.Add(_optOpcion_1)
-		Me.Frame6.ResumeLayout(False)
-		Me.Frame5.ResumeLayout(False)
-		Me.Frame4.ResumeLayout(False)
-		Me.Frame3.ResumeLayout(False)
-		Me.Frame2.ResumeLayout(False)
-		Me.Frame1.ResumeLayout(False)
-		Me.ResumeLayout(False)
-		Me.PerformLayout()
-	End Sub
+    Public WithEvents chkAjuste As System.Windows.Forms.CheckBox
+    Public WithEvents OptDetalle0 As System.Windows.Forms.RadioButton
+    Public WithEvents OptDetalle1 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame6 As System.Windows.Forms.GroupBox
+    Public WithEvents optOpcion3 As System.Windows.Forms.RadioButton
+    Public WithEvents optOpcion2 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame5 As System.Windows.Forms.GroupBox
+    Public WithEvents lstTipoAnaliticoCodigo As System.Windows.Forms.ListBox
+    Public WithEvents cmdBotones0 As System.Windows.Forms.Button
+    Public WithEvents cmdBotones1 As System.Windows.Forms.Button
+    Public WithEvents optFiltro2 As System.Windows.Forms.RadioButton
+    Public WithEvents optFiltro1 As System.Windows.Forms.RadioButton
+    Public WithEvents optFiltro0 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame4 As System.Windows.Forms.GroupBox
+    Public WithEvents Ctr_Ayuda1 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents Frame3 As System.Windows.Forms.GroupBox
+    Public WithEvents cboTipoAnalitico As System.Windows.Forms.ComboBox
+    Public WithEvents Label2 As System.Windows.Forms.Label
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents optOpcion4 As System.Windows.Forms.RadioButton
+    Public WithEvents optOpcion0 As System.Windows.Forms.RadioButton
+    Public WithEvents optOpcion1 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    Public WithEvents Ctr_AyudaEnt As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Ctr_Ayuda2 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label4 As System.Windows.Forms.Label
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRepCtaCteAnalitico))
+        Me.chkAjuste = New System.Windows.Forms.CheckBox()
+        Me.Frame6 = New System.Windows.Forms.GroupBox()
+        Me.OptDetalle0 = New System.Windows.Forms.RadioButton()
+        Me.OptDetalle1 = New System.Windows.Forms.RadioButton()
+        Me.Frame5 = New System.Windows.Forms.GroupBox()
+        Me.optOpcion3 = New System.Windows.Forms.RadioButton()
+        Me.optOpcion2 = New System.Windows.Forms.RadioButton()
+        Me.lstTipoAnaliticoCodigo = New System.Windows.Forms.ListBox()
+        Me.cmdBotones0 = New System.Windows.Forms.Button()
+        Me.cmdBotones1 = New System.Windows.Forms.Button()
+        Me.Frame4 = New System.Windows.Forms.GroupBox()
+        Me.optFiltro2 = New System.Windows.Forms.RadioButton()
+        Me.optFiltro1 = New System.Windows.Forms.RadioButton()
+        Me.optFiltro0 = New System.Windows.Forms.RadioButton()
+        Me.Frame3 = New System.Windows.Forms.GroupBox()
+        Me.Ctr_Ayuda1 = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Frame2 = New System.Windows.Forms.GroupBox()
+        Me.cboTipoAnalitico = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Frame1 = New System.Windows.Forms.GroupBox()
+        Me.optOpcion4 = New System.Windows.Forms.RadioButton()
+        Me.optOpcion0 = New System.Windows.Forms.RadioButton()
+        Me.optOpcion1 = New System.Windows.Forms.RadioButton()
+        Me.Ctr_AyudaEnt = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.Ctr_Ayuda2 = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Frame6.SuspendLayout
+        Me.Frame5.SuspendLayout
+        Me.Frame4.SuspendLayout
+        Me.Frame3.SuspendLayout
+        CType(Me.Ctr_Ayuda1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Frame2.SuspendLayout
+        Me.Frame1.SuspendLayout
+        CType(Me.Ctr_AyudaEnt,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Ctr_Ayuda2,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
+        '
+        'chkAjuste
+        '
+        Me.chkAjuste.BackColor = System.Drawing.SystemColors.Control
+        Me.chkAjuste.Cursor = System.Windows.Forms.Cursors.Default
+        Me.chkAjuste.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.chkAjuste.Location = New System.Drawing.Point(358, 234)
+        Me.chkAjuste.Name = "chkAjuste"
+        Me.chkAjuste.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.chkAjuste.Size = New System.Drawing.Size(121, 29)
+        Me.chkAjuste.TabIndex = 26
+        Me.chkAjuste.Text = "Incluye ajuste por diferencia de cambio"
+        Me.chkAjuste.UseVisualStyleBackColor = false
+        '
+        'Frame6
+        '
+        Me.Frame6.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame6.Controls.Add(Me.OptDetalle0)
+        Me.Frame6.Controls.Add(Me.OptDetalle1)
+        Me.Frame6.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame6.Location = New System.Drawing.Point(6, 222)
+        Me.Frame6.Name = "Frame6"
+        Me.Frame6.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame6.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame6.Size = New System.Drawing.Size(346, 46)
+        Me.Frame6.TabIndex = 23
+        Me.Frame6.TabStop = false
+        Me.Frame6.Text = "Seleccionar Detalle"
+        '
+        'OptDetalle0
+        '
+        Me.OptDetalle0.BackColor = System.Drawing.SystemColors.Control
+        Me.OptDetalle0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.OptDetalle0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.OptDetalle0.Location = New System.Drawing.Point(15, 21)
+        Me.OptDetalle0.Name = "OptDetalle0"
+        Me.OptDetalle0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.OptDetalle0.Size = New System.Drawing.Size(94, 17)
+        Me.OptDetalle0.TabIndex = 25
+        Me.OptDetalle0.TabStop = true
+        Me.OptDetalle0.Text = "Solo Saldos"
+        Me.OptDetalle0.UseVisualStyleBackColor = false
+        '
+        'OptDetalle1
+        '
+        Me.OptDetalle1.BackColor = System.Drawing.SystemColors.Control
+        Me.OptDetalle1.Checked = true
+        Me.OptDetalle1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.OptDetalle1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.OptDetalle1.Location = New System.Drawing.Point(174, 18)
+        Me.OptDetalle1.Name = "OptDetalle1"
+        Me.OptDetalle1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.OptDetalle1.Size = New System.Drawing.Size(133, 16)
+        Me.OptDetalle1.TabIndex = 24
+        Me.OptDetalle1.TabStop = true
+        Me.OptDetalle1.Text = "Detalle por documento"
+        Me.OptDetalle1.UseVisualStyleBackColor = false
+        '
+        'Frame5
+        '
+        Me.Frame5.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame5.Controls.Add(Me.optOpcion3)
+        Me.Frame5.Controls.Add(Me.optOpcion2)
+        Me.Frame5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame5.Location = New System.Drawing.Point(328, 8)
+        Me.Frame5.Name = "Frame5"
+        Me.Frame5.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame5.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame5.Size = New System.Drawing.Size(147, 57)
+        Me.Frame5.TabIndex = 18
+        Me.Frame5.TabStop = false
+        Me.Frame5.Text = "Ordenado por"
+        '
+        'optOpcion3
+        '
+        Me.optOpcion3.BackColor = System.Drawing.SystemColors.Control
+        Me.optOpcion3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion3.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion3.Location = New System.Drawing.Point(9, 36)
+        Me.optOpcion3.Name = "optOpcion3"
+        Me.optOpcion3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion3.Size = New System.Drawing.Size(136, 15)
+        Me.optOpcion3.TabIndex = 20
+        Me.optOpcion3.TabStop = true
+        Me.optOpcion3.Text = "Cuenta Contable"
+        Me.optOpcion3.UseVisualStyleBackColor = false
+        '
+        'optOpcion2
+        '
+        Me.optOpcion2.BackColor = System.Drawing.SystemColors.Control
+        Me.optOpcion2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion2.Location = New System.Drawing.Point(9, 19)
+        Me.optOpcion2.Name = "optOpcion2"
+        Me.optOpcion2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion2.Size = New System.Drawing.Size(138, 15)
+        Me.optOpcion2.TabIndex = 19
+        Me.optOpcion2.TabStop = true
+        Me.optOpcion2.Text = "Entidad"
+        Me.optOpcion2.UseVisualStyleBackColor = false
+        '
+        'lstTipoAnaliticoCodigo
+        '
+        Me.lstTipoAnaliticoCodigo.BackColor = System.Drawing.SystemColors.Window
+        Me.lstTipoAnaliticoCodigo.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lstTipoAnaliticoCodigo.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lstTipoAnaliticoCodigo.Location = New System.Drawing.Point(387, 330)
+        Me.lstTipoAnaliticoCodigo.Name = "lstTipoAnaliticoCodigo"
+        Me.lstTipoAnaliticoCodigo.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lstTipoAnaliticoCodigo.Size = New System.Drawing.Size(79, 17)
+        Me.lstTipoAnaliticoCodigo.TabIndex = 14
+        Me.lstTipoAnaliticoCodigo.Visible = false
+        '
+        'cmdBotones0
+        '
+        Me.cmdBotones0.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones0.Location = New System.Drawing.Point(139, 332)
+        Me.cmdBotones0.Name = "cmdBotones0"
+        Me.cmdBotones0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones0.Size = New System.Drawing.Size(98, 25)
+        Me.cmdBotones0.TabIndex = 13
+        Me.cmdBotones0.Text = "&Aceptar"
+        Me.cmdBotones0.UseVisualStyleBackColor = false
+        '
+        'cmdBotones1
+        '
+        Me.cmdBotones1.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdBotones1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdBotones1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdBotones1.Location = New System.Drawing.Point(251, 332)
+        Me.cmdBotones1.Name = "cmdBotones1"
+        Me.cmdBotones1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdBotones1.Size = New System.Drawing.Size(98, 25)
+        Me.cmdBotones1.TabIndex = 12
+        Me.cmdBotones1.Text = "&Cancelar"
+        Me.cmdBotones1.UseVisualStyleBackColor = false
+        '
+        'Frame4
+        '
+        Me.Frame4.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame4.Controls.Add(Me.optFiltro2)
+        Me.Frame4.Controls.Add(Me.optFiltro1)
+        Me.Frame4.Controls.Add(Me.optFiltro0)
+        Me.Frame4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame4.Location = New System.Drawing.Point(6, 273)
+        Me.Frame4.Name = "Frame4"
+        Me.Frame4.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame4.Size = New System.Drawing.Size(475, 50)
+        Me.Frame4.TabIndex = 11
+        Me.Frame4.TabStop = false
+        Me.Frame4.Text = "Seleccionar Filtro"
+        '
+        'optFiltro2
+        '
+        Me.optFiltro2.BackColor = System.Drawing.SystemColors.Control
+        Me.optFiltro2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optFiltro2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optFiltro2.Location = New System.Drawing.Point(363, 18)
+        Me.optFiltro2.Name = "optFiltro2"
+        Me.optFiltro2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optFiltro2.Size = New System.Drawing.Size(101, 20)
+        Me.optFiltro2.TabIndex = 17
+        Me.optFiltro2.TabStop = true
+        Me.optFiltro2.Text = "Todos"
+        Me.optFiltro2.UseVisualStyleBackColor = false
+        '
+        'optFiltro1
+        '
+        Me.optFiltro1.BackColor = System.Drawing.SystemColors.Control
+        Me.optFiltro1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optFiltro1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optFiltro1.Location = New System.Drawing.Point(173, 18)
+        Me.optFiltro1.Name = "optFiltro1"
+        Me.optFiltro1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optFiltro1.Size = New System.Drawing.Size(143, 20)
+        Me.optFiltro1.TabIndex = 16
+        Me.optFiltro1.TabStop = true
+        Me.optFiltro1.Text = "Documentos pendientes"
+        Me.optFiltro1.UseVisualStyleBackColor = false
+        '
+        'optFiltro0
+        '
+        Me.optFiltro0.BackColor = System.Drawing.SystemColors.Control
+        Me.optFiltro0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optFiltro0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optFiltro0.Location = New System.Drawing.Point(12, 18)
+        Me.optFiltro0.Name = "optFiltro0"
+        Me.optFiltro0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optFiltro0.Size = New System.Drawing.Size(143, 20)
+        Me.optFiltro0.TabIndex = 15
+        Me.optFiltro0.TabStop = true
+        Me.optFiltro0.Text = "Documentos cancelados"
+        Me.optFiltro0.UseVisualStyleBackColor = false
+        '
+        'Frame3
+        '
+        Me.Frame3.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame3.Controls.Add(Me.Ctr_Ayuda1)
+        Me.Frame3.Controls.Add(Me.Label1)
+        Me.Frame3.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame3.Location = New System.Drawing.Point(3, 126)
+        Me.Frame3.Name = "Frame3"
+        Me.Frame3.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame3.Size = New System.Drawing.Size(476, 63)
+        Me.Frame3.TabIndex = 9
+        Me.Frame3.TabStop = false
+        Me.Frame3.Text = "Seleccionar Cuentas"
+        '
+        'Ctr_Ayuda1
+        '
+        Me.Ctr_Ayuda1.Enabled = true
+        Me.Ctr_Ayuda1.Location = New System.Drawing.Point(112, 24)
+        Me.Ctr_Ayuda1.Name = "Ctr_Ayuda1"
+        Me.Ctr_Ayuda1.OcxState = CType(resources.GetObject("Ctr_Ayuda1.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.Ctr_Ayuda1.Size = New System.Drawing.Size(359, 24)
+        Me.Ctr_Ayuda1.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.SystemColors.Control
+        Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label1.Location = New System.Drawing.Point(9, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label1.Size = New System.Drawing.Size(89, 19)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Cuenta Contable"
+        '
+        'Frame2
+        '
+        Me.Frame2.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame2.Controls.Add(Me.cboTipoAnalitico)
+        Me.Frame2.Controls.Add(Me.Label2)
+        Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame2.Location = New System.Drawing.Point(2, 75)
+        Me.Frame2.Name = "Frame2"
+        Me.Frame2.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame2.Size = New System.Drawing.Size(474, 48)
+        Me.Frame2.TabIndex = 3
+        Me.Frame2.TabStop = false
+        Me.Frame2.Text = "Seleccionar Entidades (Analítico)"
+        '
+        'cboTipoAnalitico
+        '
+        Me.cboTipoAnalitico.BackColor = System.Drawing.SystemColors.Window
+        Me.cboTipoAnalitico.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cboTipoAnalitico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipoAnalitico.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.cboTipoAnalitico.Location = New System.Drawing.Point(126, 19)
+        Me.cboTipoAnalitico.Name = "cboTipoAnalitico"
+        Me.cboTipoAnalitico.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cboTipoAnalitico.Size = New System.Drawing.Size(293, 21)
+        Me.cboTipoAnalitico.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label2.Location = New System.Drawing.Point(12, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label2.Size = New System.Drawing.Size(67, 16)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Tipo Analítico"
+        '
+        'Frame1
+        '
+        Me.Frame1.BackColor = System.Drawing.SystemColors.Control
+        Me.Frame1.Controls.Add(Me.optOpcion4)
+        Me.Frame1.Controls.Add(Me.optOpcion0)
+        Me.Frame1.Controls.Add(Me.optOpcion1)
+        Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Frame1.Location = New System.Drawing.Point(3, 7)
+        Me.Frame1.Name = "Frame1"
+        Me.Frame1.Padding = New System.Windows.Forms.Padding(0)
+        Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Frame1.Size = New System.Drawing.Size(315, 57)
+        Me.Frame1.TabIndex = 2
+        Me.Frame1.TabStop = false
+        Me.Frame1.Text = "Emitir por"
+        '
+        'optOpcion4
+        '
+        Me.optOpcion4.BackColor = System.Drawing.SystemColors.Control
+        Me.optOpcion4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion4.Location = New System.Drawing.Point(176, 24)
+        Me.optOpcion4.Name = "optOpcion4"
+        Me.optOpcion4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion4.Size = New System.Drawing.Size(141, 15)
+        Me.optOpcion4.TabIndex = 21
+        Me.optOpcion4.TabStop = true
+        Me.optOpcion4.Text = "Saldos iniciales"
+        Me.optOpcion4.UseVisualStyleBackColor = false
+        '
+        'optOpcion0
+        '
+        Me.optOpcion0.BackColor = System.Drawing.SystemColors.Control
+        Me.optOpcion0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion0.Location = New System.Drawing.Point(9, 19)
+        Me.optOpcion0.Name = "optOpcion0"
+        Me.optOpcion0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion0.Size = New System.Drawing.Size(163, 15)
+        Me.optOpcion0.TabIndex = 0
+        Me.optOpcion0.TabStop = true
+        Me.optOpcion0.Text = "Movimiento Cuenta Corriente"
+        Me.optOpcion0.UseVisualStyleBackColor = false
+        '
+        'optOpcion1
+        '
+        Me.optOpcion1.BackColor = System.Drawing.SystemColors.Control
+        Me.optOpcion1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.optOpcion1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.optOpcion1.Location = New System.Drawing.Point(9, 37)
+        Me.optOpcion1.Name = "optOpcion1"
+        Me.optOpcion1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.optOpcion1.Size = New System.Drawing.Size(159, 15)
+        Me.optOpcion1.TabIndex = 1
+        Me.optOpcion1.TabStop = true
+        Me.optOpcion1.Text = "Saldos Cuenta Corriente"
+        Me.optOpcion1.UseVisualStyleBackColor = false
+        '
+        'Ctr_AyudaEnt
+        '
+        Me.Ctr_AyudaEnt.Enabled = true
+        Me.Ctr_AyudaEnt.Location = New System.Drawing.Point(111, 195)
+        Me.Ctr_AyudaEnt.Name = "Ctr_AyudaEnt"
+        Me.Ctr_AyudaEnt.OcxState = CType(resources.GetObject("Ctr_AyudaEnt.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.Ctr_AyudaEnt.Size = New System.Drawing.Size(359, 22)
+        Me.Ctr_AyudaEnt.TabIndex = 7
+        '
+        'Ctr_Ayuda2
+        '
+        Me.Ctr_Ayuda2.Enabled = true
+        Me.Ctr_Ayuda2.Location = New System.Drawing.Point(111, 195)
+        Me.Ctr_Ayuda2.Name = "Ctr_Ayuda2"
+        Me.Ctr_Ayuda2.OcxState = CType(resources.GetObject("Ctr_Ayuda2.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.Ctr_Ayuda2.Size = New System.Drawing.Size(359, 22)
+        Me.Ctr_Ayuda2.TabIndex = 6
+        Me.Ctr_Ayuda2.Visible = false
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.SystemColors.Control
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label4.Location = New System.Drawing.Point(12, 198)
+        Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label4.Size = New System.Drawing.Size(100, 18)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Código Analítico"
+        '
+        'frmRepCtaCteAnalitico
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(485, 411)
+        Me.Controls.Add(Me.chkAjuste)
+        Me.Controls.Add(Me.Frame6)
+        Me.Controls.Add(Me.Frame5)
+        Me.Controls.Add(Me.lstTipoAnaliticoCodigo)
+        Me.Controls.Add(Me.cmdBotones0)
+        Me.Controls.Add(Me.cmdBotones1)
+        Me.Controls.Add(Me.Frame4)
+        Me.Controls.Add(Me.Frame3)
+        Me.Controls.Add(Me.Frame2)
+        Me.Controls.Add(Me.Frame1)
+        Me.Controls.Add(Me.Ctr_AyudaEnt)
+        Me.Controls.Add(Me.Ctr_Ayuda2)
+        Me.Controls.Add(Me.Label4)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Location = New System.Drawing.Point(3, 22)
+        Me.MaximizeBox = false
+        Me.MinimizeBox = false
+        Me.Name = "frmRepCtaCteAnalitico"
+        Me.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
+        Me.Text = "Cuenta Corriente Entidades (Analíticos)"
+        Me.Frame6.ResumeLayout(false)
+        Me.Frame5.ResumeLayout(false)
+        Me.Frame4.ResumeLayout(false)
+        Me.Frame3.ResumeLayout(false)
+        CType(Me.Ctr_Ayuda1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Frame2.ResumeLayout(false)
+        Me.Frame1.ResumeLayout(false)
+        CType(Me.Ctr_AyudaEnt,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Ctr_Ayuda2,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+
+End Sub
 #End Region 
 End Class

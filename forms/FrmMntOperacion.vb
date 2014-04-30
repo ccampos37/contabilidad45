@@ -1,6 +1,6 @@
 ﻿Option Strict Off
 Option Explicit On
-Imports Microsoft.VisualBasic
+
 Public Class FrmMntOperacion
     Inherits System.Windows.Forms.Form
     Dim a_Array(12, 12) As Object

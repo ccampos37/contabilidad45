@@ -32,23 +32,23 @@ Friend Class FrmMntIndicadorOportunidad
 		ListView1.View = System.Windows.Forms.View.Details
 		rs1 = VGCNx.Execute("select * from ct_librossunatcorrelativos ")
 		rs1.MoveFirst()
-		I = 1
+        I = 0
 		Do While Not rs1.EOF
 			itmX = ListView1.Items.Add(IIf(rs1.Fields("LibrosunatEstadoAnulado").Value = True, "               ", "Por Usar  ") + rs1.Fields("librocodigosunat").Value + "  " + rs1.Fields("libroCorrelativodescripcion").Value)
 			If Check1.CheckState = 0 Then
 				SQL = " select * from ct_librossunatxempresa where empresacodigo='" & VGParametros.empresacodigo & "'"
 				SQL = SQL & " and librocodigosunat='" & rs1.Fields("librocodigosunat").Value & "'"
 				rs2 = VGCNx.Execute(SQL)
-				If rs2.RecordCount = 0 Then
-					'UPGRADE_WARNING: El límite inferior de la colección ListView1.ListItems cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
-					ListView1.Items.Item(I + 0).Checked = 0
-				Else
-					'UPGRADE_WARNING: El límite inferior de la colección ListView1.ListItems cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
-					ListView1.Items.Item(I + 0).Checked = rs2.Fields("estadoregistro").Value
-				End If
+                If rs2.RecordCount = 0 Then
+                    'UPGRADE_WARNING: El límite inferior de la colección ListView1.ListItems cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
+                    ListView1.Items.Item(I + 0).Checked = False
+                Else
+                    'UPGRADE_WARNING: El límite inferior de la colección ListView1.ListItems cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
+                    ListView1.Items.Item(I + 0).Checked = rs2.Fields("estadoregistro").Value
+                End If
 			Else
 				'UPGRADE_WARNING: El límite inferior de la colección ListView1.ListItems cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
-				ListView1.Items.Item(I + 0).Checked = 1
+                ListView1.Items.Item(I + 0).Checked = True
 			End If
 			I = I + 1
 			rs1.MoveNext()
@@ -63,12 +63,11 @@ Friend Class FrmMntIndicadorOportunidad
 		rs1 = VGCNx.Execute(SQL)
 		Dim I As Short
 		Dim rs2 As New ADODB.Recordset
-		I = 1
+        I = 0
 		Do While Not rs1.EOF
 			SQL = " select * from ct_LibrosSunatxEmpresa where empresacodigo='" & VGParametros.empresacodigo & "'"
 			SQL = SQL & " and librocodigosunat='" & rs1.Fields("librocodigosunat").Value & "'"
 			rs2 = VGCNx.Execute(SQL)
-			'UPGRADE_WARNING: El límite inferior de la colección ListView1.ListItems cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
 			If ListView1.Items.Item(I + 0).Checked = 0 Or rs1.Fields("LibrosunatEstadoAnulado").Value = 1 Then
 				If rs2.RecordCount > 0 Then
 					SQL = " delete ct_LibrosSunatxEmpresa where empresacodigo='" & VGParametros.empresacodigo & "'"

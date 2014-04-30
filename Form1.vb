@@ -1,4 +1,5 @@
 ﻿Imports CrystalDecisions.Shared
+Imports CrystalDecisions.ReportAppServer
 
 Public Class Form1
     Inherits System.Windows.Forms.Form
@@ -12,14 +13,14 @@ Public Class Form1
         Dim RSQL As New ADODB.Recordset
         Dim myDataSourceConnections As DataSourceConnections = Cry.DataSourceConnections
         Dim myConnectInfo As IConnectionInfo = myDataSourceConnections(0)
-[C#]
 
 
         Try
-            myConnectInfo.SetConnection("(local)", "marficenet", "sa", "12345")
-            myConnectInfo.SetLogon("sa", "12345")
+            myConnectInfo.SetConnection("hp", "marficenet", "sa", "12345")
+            '   myConnectInfo.SetConnection("hp", "marficenet", False)
+            '  myConnectInfo.SetLogon("sa", "12345")
 
-            RSQL = VGCNx.Execute(" SELECT * FROM ct_paramlibaux where paramlibauxtipo='CO'")
+            RSQL = VGCNx.Execute(" SELECT * FROM ct_paramlibaux where paramlibauxtipo='VT'")
 
             Cry.SetParameterValue("@base", "dbrocaing")
             Cry.SetParameterValue("@empresa", VGParametros.empresacodigo)
@@ -27,9 +28,13 @@ Public Class Form1
             Cry.SetParameterValue("@mes", VGParamSistem.Mesproceso)
             Cry.SetParameterValue("@asientosplan", RSQL.Fields("paramlibauxasiento").Value)
             Cry.SetParameterValue("@ctasplancomp", RSQL.Fields("paramlibauxcuenta").Value)
+
+            '            Cry.SetParameterValue("@asientosplan", "030,031")
+            '            Cry.SetParameterValue("@ctasplancomp", "60%612%63%64%65%")
             Cry.SetParameterValue("@analitico", "%%")
 
             FrmRep.CRVPresentacion.ReportSource = Cry
+
             FrmRep.Show()
 
         Catch ex As Exception
@@ -40,5 +45,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub _cmdBotones_1_Click(sender As Object, e As EventArgs) Handles _cmdBotones_1.Click
+        Me.Close()
     End Sub
 End Class

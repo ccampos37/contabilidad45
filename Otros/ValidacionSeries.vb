@@ -5,11 +5,10 @@ Friend Class frmValidacionSeries
 	
 	Private Sub frmValidacionSeries_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 		Dim rs As ADODB.Recordset
-		Dim rsM As ADODB.Recordset
-		Dim SQL As String
+        Dim SQL As String
 		Dim serie As String
 		Dim numeroini As Integer
-		Dim contador As Integer
+
 		
 		'Ejecutar el Store del Registro de Ventas: Generar un Temporal
 		

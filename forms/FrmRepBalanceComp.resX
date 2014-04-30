@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ToolTip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
   <data name="CtrAyu_Cuenta.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
@@ -181,17 +177,11 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAzwAAAAIB
-        AAAAAQAAAAAkAAAAQTEzM0YwMDAtQ0NCMC0xMWQwLUEzMTYtMDBBQTAwNjg4QjEwAAAAAJYAAAAhQzQS
-        CAAAAKodAAAsAgAAQm9vRgAABgCGAAAAAAAAAP////8AAAAAAAAAAAEAAAACAAAA//////////8AAAAA
-        AwAAADIAAAAAAAAAfO7mCZxezgZMHucJAAAAAAwAAABEAGUAcwBjAHIAAAAIAAAAQwBvAGQAAAAWAAAA
-        RABhAHQAYQBDAG8AbQBiAG8AMQAAAAAAAAAL
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA1QAAAAIB
+        AAAAAQAAAAAkAAAAQTEzM0YwMDAtQ0NCMC0xMWQwLUEzMTYtMDBBQTAwNjg4QjEwAAAAAJwAAAAhQzQS
+        CAAAAKodAAAsAgAAQm9vRgAABgCMAAAAAAAAAP////8AAAAAAAAAAAEAAAACAAAA//////////8AAAAA
+        AwAAADIAAAAAAAAAHD3YFMTr4xTkPdgUAAAAAA4AAABEAGUAcwBjAHIAAAAAAAoAAABDAG8AZAAAAAAA
+        GAAAAEQAYQB0AGEAQwBvAG0AYgBvADEAAAAAAAAAAAAL
 </value>
-  </data>
-  <data name="OpTipo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 17</value>
-  </data>
-  <data name="OptForma.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 17</value>
   </data>
 </root>

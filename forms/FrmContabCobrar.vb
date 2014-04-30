@@ -2,15 +2,13 @@ Option Strict Off
 Option Explicit On
 Friend Class FrmContabCobrar
 	Inherits System.Windows.Forms.Form
-	'FIXIT: Utilice Option Explicit para evitar la creación implícita de variables de tipo Variant.     FixIT90210ae-R383-H1984
-	Dim sqlcad As String
+    Dim sqlcad As String
 	Dim cnxtrans As ADODB.Connection
 	Dim rstrans As ADODB.Recordset
 	Dim NombreArchivo As String
 	
 	Private Sub FrmContabCobrar_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		DTPPerido.Month = CShort(VGParamSistem.Mesproceso)
-		DTPPerido.Year = CShort(VGParamSistem.Anoproceso)
+        DTPPerido.Value = "01/" & VGParamSistem.Mesproceso & "/" & VGParamSistem.Anoproceso
 		Opt(0).Enabled = False
 		Opt(1).Checked = True
 	End Sub
@@ -21,7 +19,7 @@ Friend Class FrmContabCobrar
 		cmdg_archivoOpen.ShowDialog()
 		NombreArchivo = cmdg_archivoOpen.FileName
 		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxArchivo.CtlText = NombreArchivo
+        TxArchivo.Text = NombreArchivo
 	End Sub
 	Private Sub cmdCancelar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancelar.Click
 		Me.Close()
@@ -52,7 +50,7 @@ Friend Class FrmContabCobrar
 		End If
 		
 		
-		Call DeleteDataPlanillaCobrar(rsparimpo.Fields("asientocodigo").Value, rsparimpo.Fields("subasientocodigo").Value, CShort(VB6.Format(Month(DTPPerido._Value), "00")), CStr(Year(DTPPerido._Value)))
+        Call DeleteDataPlanillaCobrar(rsparimpo.Fields("asientocodigo").Value, rsparimpo.Fields("subasientocodigo").Value, CShort(Format(Month(DTPPerido.Value), "00")), CStr(Year(DTPPerido.Value)))
 		VGGeneral.BeginTrans()
 		Comando = New ADODB.Command
 		With Comando
@@ -77,9 +75,9 @@ Friend Class FrmContabCobrar
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			.Parameters("@Libro") = rsparimpo.Fields("Librocodigo").Value
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Parameters("@Mes") = VB6.Format(Month(DTPPerido._Value), "00")
+            .Parameters("@Mes") = Format(Month(DTPPerido.Value), "00")
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Parameters("@Ano") = Year(DTPPerido._Value)
+            .Parameters("@Ano") = Year(DTPPerido.Value)
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			.Parameters("@tipanal") = "002"
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'

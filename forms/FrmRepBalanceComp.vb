@@ -34,8 +34,8 @@ Friend Class FrmRepBalanceComp
 		Call CtrAyu_Moneda.Conexion(VGCNx)
 		Call CtrAyu_Cuenta.Conexion(VGCNx)
 		CtrAyu_Moneda.xclave = VGParametros.monedabase : CtrAyu_Moneda.Ejecutar()
-		OptForma(1).Checked = True
-		OpTipo(0).Checked = True
+        OptForma1.Checked = True
+        OpTipo0.Checked = True
 		DTPicker1.Value = DateSerial(CShort(VGParamSistem.Anoproceso), CShort(VGParamSistem.Mesproceso), 1)
 	End Sub
 	Private Sub CargaNivel()
@@ -113,11 +113,4 @@ Friend Class FrmRepBalanceComp
 		Call ImpresionRptProc("ct_BalanceComprobacion.rpt", arrform, arrparm)
 	End Sub
 	
-	'UPGRADE_WARNING: El evento OptForma.CheckedChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub OptForma_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles OptForma.CheckedChanged
-		If eventSender.Checked Then
-			Dim Index As Short = OptForma.GetIndex(eventSender)
-			lforma = Index + 1
-		End If
-	End Sub
 End Class

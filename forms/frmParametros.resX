@@ -117,17 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ToolTip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
   <data name="Ctr_moneda.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAuQIAAAIB
-        AAAAAQAAAAAAAAAAAAAAAKQCAACTsgAApAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeADNHgAA
-        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AEYCAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
+        AAAAAQAAAAAAAAAAAAAAAKQCAACTsgAApAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeADnHgAA
+        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AGECAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
         bwBuAGcAaQB0AHUAZAAAAAAAAAADAAgANHtWYiAAAAB4AGMAbwBkAHcAaQB0AGgA9AEAAAgACAA5cFb/
         NAAAAG4AbwBtAHQAYQBiAGwAYQAJAAAAZwByAF8AbQBvAG4AZQBkAGEAAAAIAAsAh+Qla3AAAABsAGkA
         cwB0AGEAYwBhAG0AcABvAHMAJAAAAG0AbwBuAGUAZABhAGMAbwBkAGkAZwBvACgAMQApACwAbQBvAG4A
@@ -140,13 +136,13 @@
         bgAAAAsACQCHi0CKhP3//3IAZQBxAHUAZQByAGkAZABvAAAACw==
 </value>
   </data>
-  <data name="_Ctr_AyudaCuentaAjuste_0.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="Ctr_AyudaCuentaAjuste0.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAmQIAAAIB
         AAAAAQAAAAAAAAAAAAAAAIQCAACTsgAAhAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeACYHgAA
-        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AGECAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
+        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AHsCAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
         bwBuAGcAaQB0AHUAZAAAAAAAAAADAAgANHtWYiAAAAB4AGMAbwBkAHcAaQB0AGgAIAMAAAgACAA5cFb/
         NAAAAG4AbwBtAHQAYQBiAGwAYQAJAAAAYwB0AF8AYwB1AGUAbgB0AGEAAAAIAAsAh+Qla3AAAABsAGkA
         cwB0AGEAYwBhAG0AcABvAHMAJAAAAGMAdQBlAG4AdABhAGMAbwBkAGkAZwBvACgAMQApACwAYwB1AGUA
@@ -159,12 +155,12 @@
         bgAAAAs=
 </value>
   </data>
-  <data name="_txt_0.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="txt0.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAqQEAAAIB
-        AAAAAQAAAAAAAAAAAAAAAJQBAACTsgAAlAEAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeADuJQAA
+        AAAAAQAAAAAAAAAAAAAAAJQBAACTsgAAlAEAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeAAJJgAA
         AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5ABECAAALABAAd5O15DAAAABjAGEAdQBzAGUAcwB2AGEA
         bABpAGQAYQB0AGkAbwBuAP//AAANAAQAdfMNvDwAAABmAG8AbgB0AANS4wuRj84RneMAqgBLuFEBAAAA
         kAFEQgEADU1TIFNhbnMgU2VyaWYDAAkAstpAkiQAAABtAGEAeABsAGUAbgBnAHQAaAAoAAAAAAAIAAQA
@@ -174,12 +170,12 @@
         //8AAAs=
 </value>
   </data>
-  <data name="_txt_1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="txt1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAqQEAAAIB
-        AAAAAQAAAAAAAAAAAAAAAJQBAACTsgAAlAEAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeAB2FwAA
+        AAAAAQAAAAAAAAAAAAAAAJQBAACTsgAAlAEAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeACRFwAA
         AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5ABECAAALABAAd5O15DAAAABjAGEAdQBzAGUAcwB2AGEA
         bABpAGQAYQB0AGkAbwBuAP//AAANAAQAdfMNvDwAAABmAG8AbgB0AANS4wuRj84RneMAqgBLuFEBAAAA
         kAFEQgEADU1TIFNhbnMgU2VyaWYDAAkAstpAkiQAAABtAGEAeABsAGUAbgBnAHQAaAAPAAAAAAAIAAQA
@@ -189,7 +185,7 @@
         //8AAAs=
 </value>
   </data>
-  <data name="_txt_3.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="txt3.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
@@ -205,7 +201,7 @@
         bgBmAG8AcQB1AGUA//8AAAs=
 </value>
   </data>
-  <data name="_txt_2.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="txt2.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
@@ -220,12 +216,12 @@
         //8AAAs=
 </value>
   </data>
-  <data name="_txt_4.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="txt4.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQIAAAIB
-        AAAAAQAAAAAAAAAAAAAAAAgCAACTsgAACAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeABoCQAA
+        AAAAAQAAAAAAAAAAAAAAAAgCAACTsgAACAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeACCCQAA
         AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5ABECAAALABAAd5O15DAAAABjAGEAdQBzAGUAcwB2AGEA
         bABpAGQAYQB0AGkAbwBuAP//AAANAAQAdfMNvDwAAABmAG8AbgB0AANS4wuRj84RneMAqgBLuFEBAAAA
         kAFEQgEADU1TIFNhbnMgU2VyaWYDAAkAstpAkiQAAABtAGEAeABsAGUAbgBnAHQAaAALAAAAAAAIAAQA
@@ -237,13 +233,13 @@
         Cw==
 </value>
   </data>
-  <data name="_Ctr_AyudaCuentaAjuste_1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="Ctr_AyudaCuentaAjuste1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAmQIAAAIB
         AAAAAQAAAAAAAAAAAAAAAIQCAACTsgAAhAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeACyHgAA
-        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AGECAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
+        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AHsCAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
         bwBuAGcAaQB0AHUAZAAAAAAAAAADAAgANHtWYiAAAAB4AGMAbwBkAHcAaQB0AGgAIAMAAAgACAA5cFb/
         NAAAAG4AbwBtAHQAYQBiAGwAYQAJAAAAYwB0AF8AYwB1AGUAbgB0AGEAAAAIAAsAh+Qla3AAAABsAGkA
         cwB0AGEAYwBhAG0AcABvAHMAJAAAAGMAdQBlAG4AdABhAGMAbwBkAGkAZwBvACgAMQApACwAYwB1AGUA
@@ -256,13 +252,13 @@
         bgAAAAs=
 </value>
   </data>
-  <data name="_Ctr_Codigo_0.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="Ctr_Codigo0.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAwQIAAAIB
-        AAAAAQAAAAAAAAAAAAAAAKwCAACTsgAArAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeABbGgAA
-        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AEYCAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
+        AAAAAQAAAAAAAAAAAAAAAKwCAACTsgAArAIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeAB1GgAA
+        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AGECAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
         bwBuAGcAaQB0AHUAZAADAAAAAAADAAgANHtWYiAAAAB4AGMAbwBkAHcAaQB0AGgAWAIAAAgACAA5cFb/
         NAAAAG4AbwBtAHQAYQBiAGwAYQAKAAAAYwB0AF8AYQBzAGkAZQBuAHQAbwAIAAsAh+Qla3QAAABsAGkA
         cwB0AGEAYwBhAG0AcABvAHMAJgAAAGEAcwBpAGUAbgB0AG8AYwBvAGQAaQBnAG8AKAAxACkALABhAHMA
@@ -275,13 +271,13 @@
         cABjAGkAbwBuAAAACwAJAIeLQIp8/f//cgBlAHEAdQBlAHIAaQBkAG8AAAAL
 </value>
   </data>
-  <data name="_Ctr_Codigo_1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="Ctr_Codigo1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA8QIAAAIB
-        AAAAAQAAAAAAAAAAAAAAANwCAACTsgAA3AIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeABAGgAA
-        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AEYCAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
+        AAAAAQAAAAAAAAAAAAAAANwCAACTsgAA3AIAAAMACAAL8ldHIAAAAF8AZQB4AHQAZQBuAHQAeABbGgAA
+        AwAIAAryV0cgAAAAXwBlAHgAdABlAG4AdAB5AGECAAADAA8AiOt3VDAAAAB4AGMAbwBkAG0AYQB4AGwA
         bwBuAGcAaQB0AHUAZAAEAAAAAAADAAgANHtWYiAAAAB4AGMAbwBkAHcAaQB0AGgAWAIAAAgACAA5cFb/
         PAAAAG4AbwBtAHQAYQBiAGwAYQANAAAAYwB0AF8AcwB1AGIAYQBzAGkAZQBuAHQAbwAAAAgACwCH5CVr
         gAAAAGwAaQBzAHQAYQBjAGEAbQBwAG8AcwAsAAAAcwB1AGIAYQBzAGkAZQBuAHQAbwBjAG8AZABpAGcA
@@ -294,23 +290,5 @@
         bwBjAG8AZABpAGcAbwAsAHMAdQBiAGEAcwBpAGUAbgB0AG8AZABlAHMAYwByAGkAcABjAGkAbwBuAAAA
         CwAJAIeLQIpM/f//cgBlAHEAdQBlAHIAaQBkAG8AAAAL
 </value>
-  </data>
-  <data name="Ctr_AyudaCuentaAjuste.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 17</value>
-  </data>
-  <data name="Ctr_Codigo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 17</value>
-  </data>
-  <data name="chk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>401, 17</value>
-  </data>
-  <data name="cmdBotones.Location" type="System.Drawing.Point, System.Drawing">
-    <value>449, 17</value>
-  </data>
-  <data name="lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 17</value>
-  </data>
-  <data name="txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>601, 17</value>
   </data>
 </root>

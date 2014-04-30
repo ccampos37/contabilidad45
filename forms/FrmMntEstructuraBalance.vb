@@ -8,8 +8,7 @@ Friend Class FrmMntEstructuraBalance
 	Dim rs As New ADODB.Recordset
 	Dim datos As String
 	Private Sub cmdImprimir_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdImprimir.Click
-		Dim cadena As String
-		Dim aparam(1) As Object
+        Dim aparam(1) As Object
 		Dim aform(1) As Object
 		Dim cNomRepor As String
 		cNomRepor = "unimedida.RPT"
@@ -114,26 +113,25 @@ EliErr:
 		If nTra = 1 Then VGCNx.RollbackTrans()
 	End Sub
 	Private Sub cmdgrabar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdgrabar.Click
-		Dim cUni As String
-		If resp = "S" Then
-			If txtlinea.Text = "" Then
-				MsgBox("Ingrese Numero de linea", MsgBoxStyle.Information, "Mensaje")
-				txtlinea.Focus()
-				Exit Sub
-			Else
-				If Existe(1, Trim(txtlinea.Text), "ct_strucbalance", "strucbalancelinea", False) Then
-					MsgBox("El código de Linea ya existe", MsgBoxStyle.Information, "Mensaje")
-					txtlinea.Focus()
-					Exit Sub
-				End If
-			End If
-			If Not IsNumeric(txtlinea.Text) Then
-				MsgBox("LINEA es numerico ", MsgBoxStyle.Information, "Mensaje")
-				txtlinea.Focus()
-				Exit Sub
-				
-			End If
-		End If
+        If resp = "S" Then
+            If txtlinea.Text = "" Then
+                MsgBox("Ingrese Numero de linea", MsgBoxStyle.Information, "Mensaje")
+                txtlinea.Focus()
+                Exit Sub
+            Else
+                If Existe(1, Trim(txtlinea.Text), "ct_strucbalance", "strucbalancelinea", False) Then
+                    MsgBox("El código de Linea ya existe", MsgBoxStyle.Information, "Mensaje")
+                    txtlinea.Focus()
+                    Exit Sub
+                End If
+            End If
+            If Not IsNumeric(txtlinea.Text) Then
+                MsgBox("LINEA es numerico ", MsgBoxStyle.Information, "Mensaje")
+                txtlinea.Focus()
+                Exit Sub
+
+            End If
+        End If
 		VGCommandoSP = New ADODB.Command
 		VGCommandoSP.let_ActiveConnection(VGGeneral)
 		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
@@ -195,7 +193,7 @@ EliErr:
 	Sub Listado(ByRef wcad As Object)
 		'UPGRADE_NOTE: El objeto DbGrid1.DataSource no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		DbGrid1.DataSource = Nothing
-		Dim nCursor As String
+
 		rs = VGCNx.Execute(datos)
 		DbGrid1.DataSource = rs
 		With DbGrid1

@@ -93,7 +93,7 @@ xtrans:
 	Private Sub CargarMeses()
 		Dim items As System.Windows.Forms.ListView.ListViewItemCollection
 		Dim I As Short
-		VGvardllgen = New dllgeneral.dll_general
+        '  VGvardllgen = New dllgeneral.dll_general
 		items = LV_Meses.Items
 		For I = 1 To 12
 			'UPGRADE_WARNING: El límite inferior de la colección items.ImageList cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'

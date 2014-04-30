@@ -24,123 +24,149 @@
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
 	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents DTPicker1 As AxMSComCtl2.AxDTPicker
-	Public WithEvents Command2 As System.Windows.Forms.Button
-	Public WithEvents Command1 As System.Windows.Forms.Button
-	Public WithEvents Ctr_AyudaCCosto As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(FrmAjusDiferxDoc))
-		Me.components = New System.ComponentModel.Container()
-		Me.ToolTip1 = New System.Windows.Forms.ToolTip(components)
-		Me.DTPicker1 = New AxMSComCtl2.AxDTPicker
-		Me.Command2 = New System.Windows.Forms.Button
-		Me.Command1 = New System.Windows.Forms.Button
-		Me.Ctr_AyudaCCosto = New Axctrlayuda_f.AxCtr_Ayuda
-		Me.Label2 = New System.Windows.Forms.Label
-		Me.Label1 = New System.Windows.Forms.Label
-		Me.SuspendLayout()
-		Me.ToolTip1.Active = True
-		CType(Me.DTPicker1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.Ctr_AyudaCCosto, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Text = "Ajuste de Difer x Cambio por documento"
-		Me.ClientSize = New System.Drawing.Size(282, 164)
-		Me.Location = New System.Drawing.Point(3, 22)
-		Me.MaximizeBox = False
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
-		Me.MinimizeBox = False
-		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackColor = System.Drawing.SystemColors.Control
-		Me.ControlBox = True
-		Me.Enabled = True
-		Me.KeyPreview = False
-		Me.Cursor = System.Windows.Forms.Cursors.Default
-		Me.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.ShowInTaskbar = True
-		Me.HelpButton = False
-		Me.WindowState = System.Windows.Forms.FormWindowState.Normal
-		Me.Name = "FrmAjusDiferxDoc"
-		DTPicker1.OcxState = CType(resources.GetObject("DTPicker1.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.DTPicker1.Size = New System.Drawing.Size(89, 21)
-		Me.DTPicker1.Location = New System.Drawing.Point(118, 18)
-		Me.DTPicker1.TabIndex = 0
-		Me.DTPicker1.Name = "DTPicker1"
-		Me.Command2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		Me.Command2.Text = "&Cancelar"
-		Me.Command2.Size = New System.Drawing.Size(75, 25)
-		Me.Command2.Location = New System.Drawing.Point(134, 115)
-		Me.Command2.TabIndex = 3
-		Me.Command2.BackColor = System.Drawing.SystemColors.Control
-		Me.Command2.CausesValidation = True
-		Me.Command2.Enabled = True
-		Me.Command2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Command2.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Command2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Command2.TabStop = True
-		Me.Command2.Name = "Command2"
-		Me.Command1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		Me.Command1.Text = "&Aceptar"
-		Me.Command1.Size = New System.Drawing.Size(75, 25)
-		Me.Command1.Location = New System.Drawing.Point(59, 115)
-		Me.Command1.TabIndex = 2
-		Me.Command1.BackColor = System.Drawing.SystemColors.Control
-		Me.Command1.CausesValidation = True
-		Me.Command1.Enabled = True
-		Me.Command1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Command1.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Command1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Command1.TabStop = True
-		Me.Command1.Name = "Command1"
-		Ctr_AyudaCCosto.OcxState = CType(resources.GetObject("Ctr_AyudaCCosto.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.Ctr_AyudaCCosto.Size = New System.Drawing.Size(212, 20)
-		Me.Ctr_AyudaCCosto.Location = New System.Drawing.Point(28, 74)
-		Me.Ctr_AyudaCCosto.TabIndex = 1
-		Me.Ctr_AyudaCCosto.Name = "Ctr_AyudaCCosto"
-		Me.Label2.Text = "Centro Costo - ajuste por pérdida:"
-		Me.Label2.Size = New System.Drawing.Size(197, 17)
-		Me.Label2.Location = New System.Drawing.Point(28, 56)
-		Me.Label2.TabIndex = 5
-		Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopLeft
-		Me.Label2.BackColor = System.Drawing.SystemColors.Control
-		Me.Label2.Enabled = True
-		Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Label2.UseMnemonic = True
-		Me.Label2.Visible = True
-		Me.Label2.AutoSize = False
-		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.Label2.Name = "Label2"
-		Me.Label1.Text = "Fecha ajuste:"
-		Me.Label1.Size = New System.Drawing.Size(83, 17)
-		Me.Label1.Location = New System.Drawing.Point(30, 20)
-		Me.Label1.TabIndex = 4
-		Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopLeft
-		Me.Label1.BackColor = System.Drawing.SystemColors.Control
-		Me.Label1.Enabled = True
-		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Label1.UseMnemonic = True
-		Me.Label1.Visible = True
-		Me.Label1.AutoSize = False
-		Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.Label1.Name = "Label1"
-		CType(Me.Ctr_AyudaCCosto, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.DTPicker1, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.Controls.Add(DTPicker1)
-		Me.Controls.Add(Command2)
-		Me.Controls.Add(Command1)
-		Me.Controls.Add(Ctr_AyudaCCosto)
-		Me.Controls.Add(Label2)
-		Me.Controls.Add(Label1)
-		Me.ResumeLayout(False)
-		Me.PerformLayout()
-	End Sub
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAjusDiferxDoc))
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Ctr_AyudaCCosto = New Axctrlayuda_f.AxCtr_Ayuda()
+        Me.Command2 = New System.Windows.Forms.Button()
+        Me.Command1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.Ctr_AyudaCCosto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.Ctr_AyudaCCosto)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 24)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(299, 131)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Datos"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.White
+        Me.GroupBox2.Controls.Add(Me.Command2)
+        Me.GroupBox2.Controls.Add(Me.Command1)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 177)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(299, 84)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Opciones"
+        '
+        'Ctr_AyudaCCosto
+        '
+        Me.Ctr_AyudaCCosto.Enabled = True
+        Me.Ctr_AyudaCCosto.Location = New System.Drawing.Point(47, 95)
+        Me.Ctr_AyudaCCosto.Name = "Ctr_AyudaCCosto"
+        Me.Ctr_AyudaCCosto.OcxState = CType(resources.GetObject("Ctr_AyudaCCosto.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.Ctr_AyudaCCosto.Size = New System.Drawing.Size(212, 20)
+        Me.Ctr_AyudaCCosto.TabIndex = 14
+        '
+        'Command2
+        '
+        Me.Command2.BackColor = System.Drawing.SystemColors.Control
+        Me.Command2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Command2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Command2.Image = CType(resources.GetObject("Command2.Image"), System.Drawing.Image)
+        Me.Command2.Location = New System.Drawing.Point(181, 19)
+        Me.Command2.Name = "Command2"
+        Me.Command2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Command2.Size = New System.Drawing.Size(78, 43)
+        Me.Command2.TabIndex = 18
+        Me.Command2.UseVisualStyleBackColor = False
+        '
+        'Command1
+        '
+        Me.Command1.BackColor = System.Drawing.SystemColors.Control
+        Me.Command1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Command1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Command1.Image = CType(resources.GetObject("Command1.Image"), System.Drawing.Image)
+        Me.Command1.Location = New System.Drawing.Point(41, 19)
+        Me.Command1.Name = "Command1"
+        Me.Command1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Command1.Size = New System.Drawing.Size(105, 43)
+        Me.Command1.TabIndex = 17
+        Me.Command1.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label3.ForeColor = System.Drawing.Color.Maroon
+        Me.Label3.Location = New System.Drawing.Point(38, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label3.Size = New System.Drawing.Size(83, 17)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Fecha ajuste:"
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label4.ForeColor = System.Drawing.Color.Maroon
+        Me.Label4.Location = New System.Drawing.Point(44, 75)
+        Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label4.Size = New System.Drawing.Size(197, 17)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Centro Costo - ajuste por pérdida:"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(41, 42)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 19
+        '
+        'FrmAjusDiferxDoc
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(332, 280)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Location = New System.Drawing.Point(3, 22)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "FrmAjusDiferxDoc"
+        Me.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
+        Me.Text = "Ajuste de Difer x Cambio por documento"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        CType(Me.Ctr_AyudaCCosto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Public WithEvents Ctr_AyudaCCosto As Axctrlayuda_f.AxCtr_Ayuda
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Public WithEvents Command2 As System.Windows.Forms.Button
+    Public WithEvents Command1 As System.Windows.Forms.Button
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Public WithEvents Label4 As System.Windows.Forms.Label
+    Public WithEvents Label3 As System.Windows.Forms.Label
 #End Region 
 End Class

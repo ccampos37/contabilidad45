@@ -18,9 +18,7 @@ Module MainContab
 	Public VGflaglimpia As Boolean 'Flag que Limpia
 	Public VGMoverRegistro As Boolean 'Flag al mover el registro
 	Public VGCommandoSP As ADODB.Command 'De Comando
-	Public VGvardllgen As dllgeneral.dll_general 'Dll de Algunas funciones
-	Public VGdllApi As dll_apisgen.dll_apis
-	Public VGvarVerifica As Boolean 'Flag Verifica que transaccion es OK (Grabar ,Etc)
+    Public VGvarVerifica As Boolean 'Flag Verifica que transaccion es OK (Grabar ,Etc)
 	Public VGErrorString As String 'Almacena el Error el que hubo en alguna transaccion
 	Public VGValorCambio As Double 'Almacena el valor del Cambio
 	Public VGRepiteDoc As Boolean 'Flag de Repite de documento en subasiento
@@ -46,7 +44,7 @@ Module MainContab
 	
 	Public VGParametros As ParametrosdeContabilidad
 	Public VGParamSistem As ParametrosdeSistema
-	Public VGtipo As ModificarCampos.TIPOSISTEMA
+    Public VGtipo As TIPOSISTEMA
 	
 	Public Structure ParametrosdeContabilidad
 		Dim monedabase As String
