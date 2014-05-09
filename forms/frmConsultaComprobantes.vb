@@ -12,9 +12,6 @@ Friend Class frmConsultaComprobantes
         CtrAyu_SubAsiento.conexion(VGCNx)
         CtrAyu_Libro.conexion(VGCNx)
         TDBG_ConsultaDetalle.FetchRowStyle = True
-        Me.Width = VB6.TwipsToPixelsX(11280)
-        Me.Height = VB6.TwipsToPixelsY(8115)
-        'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
         DTPicker1.Value = ""
     End Sub
 
@@ -29,15 +26,15 @@ Friend Class frmConsultaComprobantes
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        If Not IsNothing(txt(0).Text) Then sqlcad = sqlcad & "AND cast(Right(rtrim$(cabcomprobnumero),5) as int)=" & CInt(Func.Right(Trim(txt(0).Text), 5)) & " "
+        If Not IsNothing(txt0.Text) Then sqlcad = sqlcad & "AND cast(Right(rtrim$(cabcomprobnumero),5) as int)=" & CInt(Func.Right(Trim(txt0.Text), 5)) & " "
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        If Not IsNothing(txt(1).Text) Then sqlcad = sqlcad & "AND cast(Right(rtrim$(cabcomprobnlibro),5) as int)=" & CInt(Func.Right(Trim(txt(1).Text), 5)) & " "
+        If Not IsNothing(txt1.Text) Then sqlcad = sqlcad & "AND cast(Right(rtrim$(cabcomprobnlibro),5) as int)=" & CInt(Func.Right(Trim(txt1.Text), 5)) & " "
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        If Not IsNothing(txt(2).Text) Then sqlcad = sqlcad & "AND cabcomprobglosa like '%" & txt(2).Text & "%' "
+        If Not IsNothing(txt2.Text) Then sqlcad = sqlcad & "AND cabcomprobglosa like '%" & txt2.Text & "%' "
         'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
         If Not IsDBNull(DTPicker1.Value) Then sqlcad = sqlcad & "AND cabcomprobfeccontable='" & CDate(DTPicker1.Value) & "'"
 
@@ -51,10 +48,10 @@ Friend Class frmConsultaComprobantes
         rscabecera = VGCNx.Execute(sqlcad)
 
         If rscabecera.RecordCount > 0 Then
-            lblNro_Reg.Text = VB6.Format(rscabecera.RecordCount, "0 ")
+            lblNro_Reg.Text = Format(rscabecera.RecordCount, "0 ")
             TDBG_ConsultaCabecera.Focus()
         Else
-            lblNro_Reg.Text = VB6.Format(0, "0 ")
+            lblNro_Reg.Text = Format(0, "0 ")
         End If
         TDBG_ConsultaCabecera.DataSource = rscabecera
     End Sub

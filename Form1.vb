@@ -1,5 +1,6 @@
 ﻿Imports CrystalDecisions.Shared
 Imports CrystalDecisions.ReportAppServer
+Imports System.Drawing.Drawing2D
 
 Public Class Form1
     Inherits System.Windows.Forms.Form
@@ -49,5 +50,26 @@ Public Class Form1
 
     Private Sub _cmdBotones_1_Click(sender As Object, e As EventArgs) Handles _cmdBotones_1.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim xx As String
+        xx = Jck_Txt1.Text
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+        Dim y As Integer = 0
+        Dim x As Integer = 0
+        Dim ancho As Integer = Me.Width
+        Dim alto As Integer = Me.Height
+        Dim color1 As Color
+        Dim color2 As Color
+        color1 = Color.DarkRed
+        color2 = Color.LightCoral
+        Dim colorear As New LinearGradientBrush(New Point(x, y), New Point(x + ancho, y), color1, color2)
+        e.Graphics.FillRectangle(colorear, x, y, ancho, alto)
+        y += alto + 10
+        Dim diag_brush As New LinearGradientBrush(New Point(x, y), New Point(x + ancho, y + alto), color1, color2)
+        e.Graphics.FillRectangle(diag_brush, x, y, ancho, alto)
     End Sub
 End Class

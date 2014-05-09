@@ -17,22 +17,19 @@
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
     Public WithEvents cmdcancelar As System.Windows.Forms.Button
-	Public WithEvents DTPperiodo As AxMSComCtl2.AxDTPicker
-	Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents Label1 As System.Windows.Forms.Label
 	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
 	Public WithEvents cmdaceptar As System.Windows.Forms.Button
 	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
 	'Se puede modificar mediante el Diseñador de Windows Forms.
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmselanomes))
         Me.cmdcancelar = New System.Windows.Forms.Button()
         Me.Frame1 = New System.Windows.Forms.GroupBox()
-        Me.DTPperiodo = New AxMSComCtl2.AxDTPicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdaceptar = New System.Windows.Forms.Button()
+        Me.DTPperiodo = New System.Windows.Forms.DateTimePicker()
         Me.Frame1.SuspendLayout()
-        CType(Me.DTPperiodo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmdcancelar
@@ -62,14 +59,6 @@
         Me.Frame1.TabIndex = 1
         Me.Frame1.TabStop = False
         '
-        'DTPperiodo
-        '
-        Me.DTPperiodo.Location = New System.Drawing.Point(122, 13)
-        Me.DTPperiodo.Name = "DTPperiodo"
-        Me.DTPperiodo.OcxState = CType(resources.GetObject("DTPperiodo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.DTPperiodo.Size = New System.Drawing.Size(110, 19)
-        Me.DTPperiodo.TabIndex = 4
-        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
@@ -95,6 +84,14 @@
         Me.cmdaceptar.Text = "&Aceptar"
         Me.cmdaceptar.UseVisualStyleBackColor = False
         '
+        'DTPperiodo
+        '
+        Me.DTPperiodo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTPperiodo.Location = New System.Drawing.Point(126, 15)
+        Me.DTPperiodo.Name = "DTPperiodo"
+        Me.DTPperiodo.Size = New System.Drawing.Size(111, 20)
+        Me.DTPperiodo.TabIndex = 3
+        '
         'frmselanomes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -114,9 +111,9 @@
         Me.ShowInTaskbar = False
         Me.Text = "Seleccion Periodo de Trabajo"
         Me.Frame1.ResumeLayout(False)
-        CType(Me.DTPperiodo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents DTPperiodo As System.Windows.Forms.DateTimePicker
 #End Region 
 End Class

@@ -37,7 +37,7 @@ Friend Class FrmLibroDiario
 
     Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
         cboMes.Text = VB6.GetItemString(cboMes, nMes - 1)
-        DTPickerFecInicio.Value = VB6.Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
+        DTPickerFecInicio.Value = Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
         DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
     End Sub
     Private Sub cboMes_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboMes.SelectedIndexChanged
@@ -138,9 +138,9 @@ Friend Class FrmLibroDiario
             arrparm(1) = VGParametros.empresacodigo
             arrparm(2) = VGParamSistem.Anoproceso
             If cboMes.SelectedIndex >= 0 Then
-                cMes = VB6.Format(cboMes.SelectedIndex + 1, "0#")
+                cMes = Format(cboMes.SelectedIndex + 1, "0#")
             Else
-                cMes = VB6.Format(VGParamSistem.Mesproceso, "0#")
+                cMes = Format(VGParamSistem.Mesproceso, "0#")
             End If
             arrparm(3) = cMes
             arrparm(4) = "%%"
@@ -156,9 +156,9 @@ Friend Class FrmLibroDiario
             arrparm(1) = VGParametros.empresacodigo
             arrparm(2) = VGParamSistem.Anoproceso
             If cboMes.SelectedIndex >= 0 Then
-                cMes = VB6.Format(cboMes.SelectedIndex + 1, "0#")
+                cMes = Format(cboMes.SelectedIndex + 1, "0#")
             Else
-                cMes = VB6.Format(VGParamSistem.Mesproceso, "0#")
+                cMes = Format(VGParamSistem.Mesproceso, "0#")
             End If
             arrparm(3) = cMes
             arrparm(4) = IIf(IsNothing(ctr_ayuAsiento.xclave), "%%", ctr_ayuAsiento.xclave)

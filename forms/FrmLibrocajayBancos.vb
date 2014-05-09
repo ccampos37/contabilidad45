@@ -18,7 +18,7 @@ Friend Class FrmLibroCajayBancos
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto aparam(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		aparam(3) = VGParamSistem.Mesproceso
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto aparam(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		aparam(4) = VB6.Format(CDbl(VGParamSistem.Mesproceso) - 1, "00")
+        aparam(4) = Format(CDbl(VGParamSistem.Mesproceso) - 1, "00")
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto aparam(6). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		aparam(6) = VGParametros.sistemactaajustedeb
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto aparam(7). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'

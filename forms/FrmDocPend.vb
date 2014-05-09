@@ -10,29 +10,25 @@ Friend Class FrmDocPend
 	Public Sub RecibeRs(ByRef rs As ADODB.Recordset, ByRef Campos As ADODB.Fields)
 		RsPend = rs.Clone(ADODB.LockTypeEnum.adLockReadOnly)
 		TDBG_DocPend.DataSource = RsPend
-		lbnregdetalle.Text = VB6.Format(RsPend.RecordCount, "0 ")
-		Me.ShowDialog()
-		Campos = CamposAux
-	End Sub
-	
-	Private Sub cmdAceptar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdAceptar.Click
-		CamposAux = RsPend.Fields
-		FlagAceptar = True
-		Me.Close()
-	End Sub
-	
-	Private Sub cmdCancelar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancelar.Click
-		'UPGRADE_NOTE: El objeto CamposAux no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		CamposAux = Nothing
-		FlagAceptar = False
-		Me.Close()
-	End Sub
-	
-	Private Sub FrmDocPend_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		Me.Left = VB6.TwipsToPixelsX((VB6.PixelsToTwipsX(MDIPrincipal.ClientRectangle.Width) - VB6.PixelsToTwipsX(Me.ClientRectangle.Width)) / 2)
-		Me.Top = VB6.TwipsToPixelsY((VB6.PixelsToTwipsY(MDIPrincipal.ClientRectangle.Height) - VB6.PixelsToTwipsY(Me.ClientRectangle.Height)) / 2)
-	End Sub
-	
+        lbnregdetalle.Text = Format(RsPend.RecordCount, "0 ")
+        Me.ShowDialog()
+        Campos = CamposAux
+    End Sub
+
+    Private Sub cmdAceptar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdAceptar.Click
+        CamposAux = RsPend.Fields
+        FlagAceptar = True
+        Me.Close()
+    End Sub
+
+    Private Sub cmdCancelar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancelar.Click
+        'UPGRADE_NOTE: El objeto CamposAux no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        CamposAux = Nothing
+        FlagAceptar = False
+        Me.Close()
+    End Sub
+
+
 	Private Sub FrmDocPend_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
 		'UPGRADE_NOTE: El objeto CamposAux no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		If Not FlagAceptar Then CamposAux = Nothing

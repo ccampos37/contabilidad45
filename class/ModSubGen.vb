@@ -554,11 +554,7 @@ err2:
 			End If
 		End Get
 	End Property
-	Public Sub central(ByRef f As System.Windows.Forms.Form)
-		f.Left = VB6.TwipsToPixelsX((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(f.Width)) / 2)
-		f.Top = VB6.TwipsToPixelsY((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) / 1.19 - VB6.PixelsToTwipsY(f.Height)))
-	End Sub
-	
+
 	Public Sub Enfoque(ByRef OBJ As Object)
 		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto OBJ.SelStart. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		OBJ.SelStart = 0
@@ -866,90 +862,7 @@ error_Renamed:
     ' End With
     'End Sub
 
-    Public Sub MostrarForm(ByRef pVentana As System.Windows.Forms.Form, ByRef pPos As String)
-
-        'pVentana.Icon = LoadPicture(App.Path & "\Cuenta.ico")
-
-        If pPos = "C" Then
-            pVentana.Left = VB6.TwipsToPixelsX(((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(pVentana.Width)) / 2) - 350)
-            pVentana.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - VB6.PixelsToTwipsY(pVentana.Height)) / 2) - 350)
-        ElseIf pPos = "I" Then
-            pVentana.Left = VB6.TwipsToPixelsX(300)
-            pVentana.Top = VB6.TwipsToPixelsY(300)
-        ElseIf pPos = "M" And pVentana.Visible = False Then
-            pVentana.Text = pVentana.Text & "  " & VGParametros.NomEmpresa
-            pVentana.Width = VB6.TwipsToPixelsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width)
-        ElseIf pPos = "C1" Then
-            pVentana.Left = VB6.TwipsToPixelsX(((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(pVentana.Width)) / 2) - 350)
-            pVentana.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - VB6.PixelsToTwipsY(pVentana.Height)) / 2) - 350)
-            Exit Sub
-        ElseIf pPos = "C2" Then
-            pVentana.Left = VB6.TwipsToPixelsX(((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(pVentana.Width)) / 2) - 350)
-            pVentana.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - VB6.PixelsToTwipsY(pVentana.Height)) / 2) - 350)
-            Exit Sub
-        End If
-        '		pVentana.Panel.Panels(1).Width = (VB6.PixelsToTwipsX(pVentana.Width) / 4)
-        'If pPos = "M" Then
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(1).Width = ((VB6.PixelsToTwipsX(pVentana.Width) - 2600) / 4)
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(1).text = "EMPRESA: " & VGParametros.NomEmpresa
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(2).Alignment = System.Windows.Forms.ToolStripItemAlignment.Left
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(2).Width = (VB6.PixelsToTwipsX(pVentana.Width) / 4)
-        'Else
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(1).text = "FORMATO : " & Escadena((pVentana.Text))
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(2).text = "USUARIO: " & VGUsuario
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(2).Alignment = System.Windows.Forms.ToolStripItemAlignment.Left
-        '	'UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        '	pVentana.Panel.Panels(2).Width = (VB6.PixelsToTwipsX(pVentana.Width) / 4)
-        'End If
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(1).Alignment = System.Windows.Forms.ToolStripItemAlignment.Left
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(3).text = "FECHA :" & VB6.Format(Today, "dd/mm/yyyy")
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(3).Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(3).Width = (VB6.PixelsToTwipsX(pVentana.Width) / 4)
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(4).text = "HORA :" & VB6.Format(TimeOfDay, "hh:mm:ss")
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(4).Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        ''UPGRADE_ISSUE: Control Panel no se pudo resolver porque está dentro del espacio de nombres genérico Form. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="084D22AD-ECB1-400F-B4C7-418ECEC5E36E"'
-        'pVentana.Panel.Panels(4).Width = (VB6.PixelsToTwipsX(pVentana.Width) / 4)
-
-    End Sub
-
-    Public Sub MostrarFormVentas(ByRef pVentana As System.Windows.Forms.Form, ByRef pPos As String)
-
-        'pVentana.Icon = LoadPicture(App.Path & "\Cuenta.ico")
-
-        If pPos = "C" Then
-            pVentana.Left = VB6.TwipsToPixelsX(((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(pVentana.Width)) / 2) - 350)
-            pVentana.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - VB6.PixelsToTwipsY(pVentana.Height)) / 2) - 350)
-        ElseIf pPos = "I" Then
-            pVentana.Left = VB6.TwipsToPixelsX(300)
-            pVentana.Top = VB6.TwipsToPixelsY(300)
-        ElseIf pPos = "M" And pVentana.Visible = False Then
-            pVentana.Text = pVentana.Text & "  " & VGParametros.NomEmpresa
-            pVentana.Width = VB6.TwipsToPixelsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width)
-        ElseIf pPos = "C1" Then
-            pVentana.Left = VB6.TwipsToPixelsX(((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(pVentana.Width)) / 2) - 350)
-            pVentana.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - VB6.PixelsToTwipsY(pVentana.Height)) / 2) - 350)
-            Exit Sub
-        ElseIf pPos = "C2" Then
-            pVentana.Left = VB6.TwipsToPixelsX(((VB6.PixelsToTwipsX(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - VB6.PixelsToTwipsX(pVentana.Width)) / 2) - 350)
-            pVentana.Top = VB6.TwipsToPixelsY(((VB6.PixelsToTwipsY(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - VB6.PixelsToTwipsY(pVentana.Height)) / 2) - 350)
-            Exit Sub
-        End If
-
-
-    End Sub
+    
 
     Public Sub Seguir(ByRef MBox As Object, ByRef ntecla As Short)
         If ntecla = 13 Then
@@ -1061,7 +974,7 @@ errores:
             .Parameters("@SubAsiento").Value = rsparimpo.Fields("SubAsiento").Value
             .Parameters("@Libro").Value = rsparimpo.Fields("libro").Value
 
-            .Parameters("@Mes").Value = VB6.Format(Month(Fecha), "00")
+            .Parameters("@Mes").Value = Format(Month(Fecha), "00")
             .Parameters("@Ano").Value = Year(Fecha)
             .Parameters("@Compu").Value = VGcomputer
             .Parameters("@Usuario").Value = VGParamSistem.Usuario
@@ -1107,7 +1020,7 @@ Procesotransf:
                 .Parameters("@SubAsiento").Value = rsparimpo.Fields("SubAsiento").Value
                 .Parameters("@Libro").Value = rsparimpo.Fields("libro").Value
 
-                .Parameters("@Mes").Value = VB6.Format(Month(Fecha), "00")
+                .Parameters("@Mes").Value = Format(Month(Fecha), "00")
                 .Parameters("@Ano").Value = Year(Fecha)
 
                 .Parameters("@tipanal").Value = "002"

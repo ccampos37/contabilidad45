@@ -29,169 +29,169 @@ Friend Class frmantcomprobantes
 			TxValor.Visible = True
 			If CtrAyu_Moneda.xclave = VGParametros.monedabase Then
 				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				TxValor.Text = VB6.Format(rsmantenimiento.Fields("montouss").Value, "###,###,###.00")
-				TxValor.valor = rsmantenimiento.Fields("montouss")
-			Else
-				'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-				TxValor.Text = VB6.Format(rsmantenimiento.Fields("montosol").Value, "###,###,###.00")
-				TxValor.valor = rsmantenimiento.Fields("montosol")
-			End If
-		Else
-			lbconv.Visible = False
-			TxValor.Visible = False
-		End If
-		If Not VGflaglimpia Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		If VGMoverRegistro Then Exit Sub
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.Montos)
-		Call CalcularTotales(rsmantenimiento)
-	End Sub
-	
-	Private Sub ChkGrabado_KeyPress(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyPressEventArgs) Handles ChkGrabado.KeyPress
-		Dim KeyAscii As Short = Asc(eventArgs.KeyChar)
-		If KeyAscii = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
-		eventArgs.KeyChar = Chr(KeyAscii)
-		If KeyAscii = 0 Then
-			eventArgs.Handled = True
-		End If
-	End Sub
-	
-	'UPGRADE_WARNING: El evento ChkInafecto.CheckStateChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub ChkInafecto_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles ChkInafecto.CheckStateChanged
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.plantillaasientoinafecto)
-	End Sub
-	
-	Private Sub ChkInafecto_KeyPress(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyPressEventArgs) Handles ChkInafecto.KeyPress
-		Dim KeyAscii As Short = Asc(eventArgs.KeyChar)
-		If KeyAscii = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
-		eventArgs.KeyChar = Chr(KeyAscii)
-		If KeyAscii = 0 Then
-			eventArgs.Handled = True
-		End If
-	End Sub
-	
-	'UPGRADE_WARNING: El evento ChkTodos.CheckStateChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub ChkTodos_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles ChkTodos.CheckStateChanged
-		If ChkTodos.CheckState = 1 Then
-			Call EjecutarConsulta("", True)
-		Else
-			Call EjecutarConsulta("", False)
-		End If
-	End Sub
-	'UPGRADE_WARNING: El evento CmbID.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub CmbID_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmbID.SelectedIndexChanged
-		If Not VGflaglimpia Then Exit Sub
-		If VGMoverRegistro Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.indicador)
-		Call ClsMM1.CalculoIGV(rsmantenimiento)
-		Call ClsMM1.CalculodeAjuste(rsmantenimiento)
-		Call CalcularTotales(rsmantenimiento)
-	End Sub
-	
-	Private Sub CmbID_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles CmbID.KeyDown
-		Dim KeyCode As Short = eventArgs.KeyCode
-		Dim Shift As Short = eventArgs.KeyData \ &H10000
-		If KeyCode = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
-	End Sub
-	'UPGRADE_WARNING: El evento CmbTcambio.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-	Private Sub CmbTcambio_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmbTcambio.SelectedIndexChanged
-		If Not VGflaglimpia Then Exit Sub
-		If VGMoverRegistro Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		ClsMM1 = New ClsMantMov1
-		VGValorCambio = ClsMM1.RecuperaTipoCambio(VB6.Format(Dtp_FechaDoc._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
-		lb_vcambio.Text = VB6.Format(VGValorCambio, "#.000 ")
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.Montos)
-		Call ClsMM1.CalculoIGV(rsmantenimiento)
-		Call ClsMM1.CalculodeAjuste(rsmantenimiento)
-		Call CalcularTotales(rsmantenimiento)
-	End Sub
-	Private Sub CmbTcambio_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles CmbTcambio.KeyDown
-		Dim KeyCode As Short = eventArgs.KeyCode
-		Dim Shift As Short = eventArgs.KeyData \ &H10000
-		If KeyCode = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
-	End Sub
-	
-	Private Sub cmdAceptar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdAceptar.Click
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizaIngresorapido(rsmantenimiento, Me)
-		Call CalcularTotales(rsmantenimiento)
-		
-	End Sub
-	
-	Private Sub CmdDocPend_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdDocPend.Click
-		Call MuestraDocPend()
-	End Sub
-	
-	Private Sub CmdSalir_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdSalir.Click
-		FrameIngreso.Visible = False
-	End Sub
-	
-	Private Sub CtrAyu_Analitico_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_Analitico.AlDevolverDato
-		If Not VGflaglimpia Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.analiticocodigo)
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		txRuc.Text = ESNULO(Trim(eventArgs.ColecCampos("entidadruc").Value), "") : txRuc.Locked = True
-		
-	End Sub
-	
-	Private Sub CtrAyu_Analitico_AlNoDevolverNada(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CtrAyu_Analitico.AlNoDevolverNada
-		If Not VGflaglimpia Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.analiticocodigo)
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		txRuc.Text = "" : txRuc.Locked = False
-		
-	End Sub
-	
-	Private Sub CtrAyu_Asiento_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_Asiento.AlDevolverDato
-		CtrAyu_SubAsiento.Filtro = "asientocodigo='" & Trim(CtrAyu_Asiento.xclave) & "'"
-		CtrAyu_SubAsiento.xclave = "" : CtrAyu_SubAsiento.xnombre = ""
-		
-		'    CtrAyu_SubAsiento.Enabled = True
-		'    lbSubAsiento.Enabled = True
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		VlGrabada = ESNULO((eventArgs.ColecCampos("flaggrabado").Value), 0)
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		VlNref = ESNULO((eventArgs.ColecCampos("controlnref").Value), 0)
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		Vllabelsref = ESNULO((eventArgs.ColecCampos("nemotecref").Value), "")
-		VlLibro = eventArgs.ColecCampos("librocodigo").Value
-	End Sub
-	
-	Private Sub CtrAyu_Asiento_AlNoDevolverNada(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CtrAyu_Asiento.AlNoDevolverNada
-		CtrAyu_SubAsiento.xclave = "" : CtrAyu_SubAsiento.xnombre = ""
-		VlGrabada = False
-		VlNref = False
-		Vllabelsref = ""
-		VlLibro = ""
-		'    CtrAyu_SubAsiento.Enabled = False
-		'    lbSubAsiento.Enabled = False
-	End Sub
-	
-	Private Sub CtrAyu_CCosto_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_CCosto.AlDevolverDato
-		If Not VGflaglimpia Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.centrocostocodigo)
-	End Sub
-	
-	Private Sub CtrAyu_CCosto_AlNoDevolverNada(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CtrAyu_CCosto.AlNoDevolverNada
-		If Not VGflaglimpia Then Exit Sub
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.centrocostocodigo)
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VlCtaAjuste. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		VlCtaAjuste = ""
-	End Sub
-	
-	Private Sub CtrAyu_Cuenta_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_Cuenta.AlDevolverDato
-		If Not VGflaglimpia Then Exit Sub
-		Call HabilitarSegunCuenta((eventArgs.ColecCampos("cuentaestadoccostos").Value), (eventArgs.ColecCampos("cuentaestadoanalitico").Value), (eventArgs.ColecCampos("cuentadocumento").Value))
-		ClsMM1 = New ClsMantMov1
-		Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.cuentacodigo)
+                TxValor.Text = Format(rsmantenimiento.Fields("montouss").Value, "###,###,###.00")
+                TxValor.valor = rsmantenimiento.Fields("montouss")
+            Else
+                'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+                TxValor.Text = Format(rsmantenimiento.Fields("montosol").Value, "###,###,###.00")
+                TxValor.valor = rsmantenimiento.Fields("montosol")
+            End If
+        Else
+            lbconv.Visible = False
+            TxValor.Visible = False
+        End If
+        If Not VGflaglimpia Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        If VGMoverRegistro Then Exit Sub
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.Montos)
+        Call CalcularTotales(rsmantenimiento)
+    End Sub
+
+    Private Sub ChkGrabado_KeyPress(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyPressEventArgs) Handles ChkGrabado.KeyPress
+        Dim KeyAscii As Short = Asc(eventArgs.KeyChar)
+        If KeyAscii = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
+        eventArgs.KeyChar = Chr(KeyAscii)
+        If KeyAscii = 0 Then
+            eventArgs.Handled = True
+        End If
+    End Sub
+
+    'UPGRADE_WARNING: El evento ChkInafecto.CheckStateChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
+    Private Sub ChkInafecto_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles ChkInafecto.CheckStateChanged
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.plantillaasientoinafecto)
+    End Sub
+
+    Private Sub ChkInafecto_KeyPress(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyPressEventArgs) Handles ChkInafecto.KeyPress
+        Dim KeyAscii As Short = Asc(eventArgs.KeyChar)
+        If KeyAscii = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
+        eventArgs.KeyChar = Chr(KeyAscii)
+        If KeyAscii = 0 Then
+            eventArgs.Handled = True
+        End If
+    End Sub
+
+    'UPGRADE_WARNING: El evento ChkTodos.CheckStateChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
+    Private Sub ChkTodos_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles ChkTodos.CheckStateChanged
+        If ChkTodos.CheckState = 1 Then
+            Call EjecutarConsulta("", True)
+        Else
+            Call EjecutarConsulta("", False)
+        End If
+    End Sub
+    'UPGRADE_WARNING: El evento CmbID.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
+    Private Sub CmbID_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmbID.SelectedIndexChanged
+        If Not VGflaglimpia Then Exit Sub
+        If VGMoverRegistro Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.indicador)
+        Call ClsMM1.CalculoIGV(rsmantenimiento)
+        Call ClsMM1.CalculodeAjuste(rsmantenimiento)
+        Call CalcularTotales(rsmantenimiento)
+    End Sub
+
+    Private Sub CmbID_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles CmbID.KeyDown
+        Dim KeyCode As Short = eventArgs.KeyCode
+        Dim Shift As Short = eventArgs.KeyData \ &H10000
+        If KeyCode = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
+    End Sub
+    'UPGRADE_WARNING: El evento CmbTcambio.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
+    Private Sub CmbTcambio_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmbTcambio.SelectedIndexChanged
+        If Not VGflaglimpia Then Exit Sub
+        If VGMoverRegistro Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        ClsMM1 = New ClsMantMov1
+        VGValorCambio = ClsMM1.RecuperaTipoCambio(Format(Dtp_FechaDoc._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
+        lb_vcambio.Text = Format(VGValorCambio, "#.000 ")
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.Montos)
+        Call ClsMM1.CalculoIGV(rsmantenimiento)
+        Call ClsMM1.CalculodeAjuste(rsmantenimiento)
+        Call CalcularTotales(rsmantenimiento)
+    End Sub
+    Private Sub CmbTcambio_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles CmbTcambio.KeyDown
+        Dim KeyCode As Short = eventArgs.KeyCode
+        Dim Shift As Short = eventArgs.KeyData \ &H10000
+        If KeyCode = 13 Then Call System.Windows.Forms.SendKeys.Send("{TAB}")
+    End Sub
+
+    Private Sub cmdAceptar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdAceptar.Click
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizaIngresorapido(rsmantenimiento, Me)
+        Call CalcularTotales(rsmantenimiento)
+
+    End Sub
+
+    Private Sub CmdDocPend_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdDocPend.Click
+        Call MuestraDocPend()
+    End Sub
+
+    Private Sub CmdSalir_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdSalir.Click
+        FrameIngreso.Visible = False
+    End Sub
+
+    Private Sub CtrAyu_Analitico_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_Analitico.AlDevolverDato
+        If Not VGflaglimpia Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.analiticocodigo)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        txRuc.Text = ESNULO(Trim(eventArgs.ColecCampos("entidadruc").Value), "") : txRuc.Locked = True
+
+    End Sub
+
+    Private Sub CtrAyu_Analitico_AlNoDevolverNada(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CtrAyu_Analitico.AlNoDevolverNada
+        If Not VGflaglimpia Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.analiticocodigo)
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        txRuc.Text = "" : txRuc.Locked = False
+
+    End Sub
+
+    Private Sub CtrAyu_Asiento_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_Asiento.AlDevolverDato
+        CtrAyu_SubAsiento.Filtro = "asientocodigo='" & Trim(CtrAyu_Asiento.xclave) & "'"
+        CtrAyu_SubAsiento.xclave = "" : CtrAyu_SubAsiento.xnombre = ""
+
+        '    CtrAyu_SubAsiento.Enabled = True
+        '    lbSubAsiento.Enabled = True
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        VlGrabada = ESNULO((eventArgs.ColecCampos("flaggrabado").Value), 0)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        VlNref = ESNULO((eventArgs.ColecCampos("controlnref").Value), 0)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        Vllabelsref = ESNULO((eventArgs.ColecCampos("nemotecref").Value), "")
+        VlLibro = eventArgs.ColecCampos("librocodigo").Value
+    End Sub
+
+    Private Sub CtrAyu_Asiento_AlNoDevolverNada(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CtrAyu_Asiento.AlNoDevolverNada
+        CtrAyu_SubAsiento.xclave = "" : CtrAyu_SubAsiento.xnombre = ""
+        VlGrabada = False
+        VlNref = False
+        Vllabelsref = ""
+        VlLibro = ""
+        '    CtrAyu_SubAsiento.Enabled = False
+        '    lbSubAsiento.Enabled = False
+    End Sub
+
+    Private Sub CtrAyu_CCosto_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_CCosto.AlDevolverDato
+        If Not VGflaglimpia Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.centrocostocodigo)
+    End Sub
+
+    Private Sub CtrAyu_CCosto_AlNoDevolverNada(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CtrAyu_CCosto.AlNoDevolverNada
+        If Not VGflaglimpia Then Exit Sub
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.centrocostocodigo)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VlCtaAjuste. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        VlCtaAjuste = ""
+    End Sub
+
+    Private Sub CtrAyu_Cuenta_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles CtrAyu_Cuenta.AlDevolverDato
+        If Not VGflaglimpia Then Exit Sub
+        Call HabilitarSegunCuenta((eventArgs.ColecCampos("cuentaestadoccostos").Value), (eventArgs.ColecCampos("cuentaestadoanalitico").Value), (eventArgs.ColecCampos("cuentadocumento").Value))
+        ClsMM1 = New ClsMantMov1
+        Call ClsMM1.ActualizarDetalle(rsmantenimiento, ClsMantMov1.Campos.cuentacodigo)
         '  VGvardllgen = New dllgeneral.dll_general
         'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         CtrAyu_TipAnal.xclave = Trim(ESNULO((eventArgs.ColecCampos("tipoanaliticocodigo").Value), ""))
@@ -211,7 +211,7 @@ Friend Class frmantcomprobantes
         CtrAyu_TipAnal.Visible = SiAnalitico
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         CtrAyu_TipAnal.CtlEnabled = Not SiAnalitico
-        lbTipAnal(0).Visible = SiAnalitico
+        lbTipAnal0.Visible = SiAnalitico
         CtrAyu_Analitico.Visible = SiAnalitico
         lbAnalitico.Visible = SiAnalitico
         If Not SiAnalitico Then
@@ -354,8 +354,8 @@ Friend Class frmantcomprobantes
         Dim POSANTERIOR As Short
         Dim flagcambio As Boolean
         If Not VlNotaCredito Then
-            VGValorCambio = ClsMM1.RecuperaTipoCambio(VB6.Format(Dtp_FechaDoc._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
-            lb_vcambio.Text = VB6.Format(VGValorCambio, "#.000 ")
+            VGValorCambio = ClsMM1.RecuperaTipoCambio(Format(Dtp_FechaDoc._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
+            lb_vcambio.Text = Format(VGValorCambio, "#.000 ")
             flagcambio = False
             If VGValorCambio = 0 Then
                 MsgBox("No Existe tipo cambio para esta fecha", MsgBoxStyle.Information)
@@ -423,13 +423,13 @@ Friend Class frmantcomprobantes
         Dim fecha As Date
 
         If Not VlNotaCredito Then
-            VGValorCambio = ClsMM1.RecuperaTipoCambio(VB6.Format(DTPFechaComprobCab._Value, "dd/mm/yyyy"), tipocambio.Venta)
-            lb_vcambio.Text = VB6.Format(VGValorCambio, "#.000 ")
+            VGValorCambio = ClsMM1.RecuperaTipoCambio(Format(DTPFechaComprobCab._Value, "dd/mm/yyyy"), tipocambio.Venta)
+            lb_vcambio.Text = Format(VGValorCambio, "#.000 ")
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto DTPFechaComprobCab._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             fecha = DTPFechaComprobCab._Value
         Else
-            VGValorCambio = ClsMM1.RecuperaTipoCambio(VB6.Format(Dtp_FechaDocRef._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
-            lb_vcambio.Text = VB6.Format(VGValorCambio, "#.000 ")
+            VGValorCambio = ClsMM1.RecuperaTipoCambio(Format(Dtp_FechaDocRef._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
+            lb_vcambio.Text = Format(VGValorCambio, "#.000 ")
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Dtp_FechaDocRef._Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             fecha = Dtp_FechaDocRef._Value
         End If
@@ -560,9 +560,9 @@ Friend Class frmantcomprobantes
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
                 TxNdoc.Text = ""
             End If
-            Dtp_FechaDoc._Value = VB6.Format(.Fields("detcomprobfechaemision").Value, "dd/mm/yyyy")
+            Dtp_FechaDoc._Value = Format(.Fields("detcomprobfechaemision").Value, "dd/mm/yyyy")
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            DtpFech_Ven._Value = VB6.Format(ESNULO(.Fields("detcomprobfechavencimiento"), .Fields("detcomprobfechaemision")), "dd/mm/yyyy")
+            DtpFech_Ven._Value = Format(ESNULO(.Fields("detcomprobfechavencimiento"), .Fields("detcomprobfechaemision")), "dd/mm/yyyy")
             Dtp_FechaDocRef._Value = .Fields("detcomprobfecharef").Value
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             TxGlosa.Text = .Fields("detcomprobglosa").Value
@@ -577,16 +577,16 @@ Friend Class frmantcomprobantes
                     CmbTcambio.SelectedIndex = 2
             End Select
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            lb_vcambio.Text = VB6.Format(ESNULO(.Fields("valcambio"), 0), "#.000 ")
+            lb_vcambio.Text = Format(ESNULO(.Fields("valcambio"), 0), "#.000 ")
 
             If .Fields("monedacodigo").Value = VGParametros.monedabase Then
                 'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                TxMonto.Text = VB6.Format(ESNULO(.Fields("montosol"), 0), "#.00")
+                TxMonto.Text = Format(ESNULO(.Fields("montosol"), 0), "#.00")
             Else
                 'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                TxMonto.Text = VB6.Format(ESNULO(.Fields("montouss"), 0), "#.00")
+                TxMonto.Text = Format(ESNULO(.Fields("montouss"), 0), "#.00")
             End If
             ChkAjusta.CheckState = IIf(.Fields("detcomprobajusteuser").Value, 1, 0)
             'ChkInafecto.Visible = !plantillaasientoinafecto
@@ -620,10 +620,6 @@ Friend Class frmantcomprobantes
         Static PreviousTab As Short = SSTabMant.SelectedIndex()
         Dim Existelibro As Boolean
         If PreviousTab = 0 Then
-            'UPGRADE_WARNING: El límite inferior de la colección StBar.Panels cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
-            StBar.Items.Item(1).Text = "Asiento : " & VPAsiento & " - " & CtrAyu_Asiento.xnombre
-            'UPGRADE_WARNING: El límite inferior de la colección StBar.Panels cambió de 1 a 0. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A3B628A0-A810-4AE2-BFA2-9E7A29EB9AD0"'
-            StBar.Items.Item(2).Text = "Sub Asiento : " & VPSubAsiento & " - " & CtrAyu_SubAsiento.xnombre
             CtrAyu_Opera.Requerido = True
             CtrAyu_Cuenta.Requerido = True
             CtrAyu_CCosto.Requerido = True
@@ -649,10 +645,10 @@ Friend Class frmantcomprobantes
             End If
             Existelibro = ExisteSQL(VGCNx, "Select flagcontrol From ct_libro where librocodigo='" & Trim(VlLibro) & "' and flagcontrol <> 0 ")
             If Existelibro Then
-                leNComprob(0).Visible = True
+                leNComprob0.Visible = True
                 lbNumComprobCablibro.Visible = True
             Else
-                leNComprob(0).Visible = False
+                leNComprob0.Visible = False
                 lbNumComprobCablibro.Visible = False
             End If
             VlNotaCredito = False
@@ -772,7 +768,7 @@ Friend Class frmantcomprobantes
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(TxSerie.Text) = True Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            doc1 = VB6.Format(TxSerie.Text, "0000")
+            doc1 = Format(TxSerie.Text, "0000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             doc1 = TxSerie.Text
@@ -780,7 +776,7 @@ Friend Class frmantcomprobantes
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(TxNdoc.Text) Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            doc2 = VB6.Format(TxNdoc.Text, "0000000000")
+            doc2 = Format(TxNdoc.Text, "0000000000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             doc2 = TxNdoc.Text
@@ -807,7 +803,7 @@ Friend Class frmantcomprobantes
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(TxSerie1.Text) = True Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            doc1 = VB6.Format(TxSerie1.Text, "0000")
+            doc1 = Format(TxSerie1.Text, "0000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             doc1 = TxSerie1.Text
@@ -815,7 +811,7 @@ Friend Class frmantcomprobantes
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(TxNdoc1.Text) Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            doc2 = VB6.Format(TxNdoc1.Text, "0000000000")
+            doc2 = Format(TxNdoc1.Text, "0000000000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             doc2 = TxNdoc1.Text
@@ -894,13 +890,13 @@ Friend Class frmantcomprobantes
         difsoles = montosolesDebe - montosolesHaber
         difdolares = montodolaresDebe - montodolaresHaber
         'Soles
-        LbTotales(0).Text = VB6.Format(montosolesDebe, "###,###,###,###.00 ") ' Debe
-        LbTotales(1).Text = VB6.Format(montosolesHaber, "###,###,###,###.00 ") ' Haber
-        LbTotales(2).Text = VB6.Format(difsoles, "###,###,###,###.00 ") ' Diferencia
+        LbTotales0.Text = Format(montosolesDebe, "###,###,###,###.00 ") ' Debe
+        LbTotales1.Text = Format(montosolesHaber, "###,###,###,###.00 ") ' Haber
+        LbTotales2.Text = Format(difsoles, "###,###,###,###.00 ") ' Diferencia
         'Dolares
-        LbTotales(3).Text = VB6.Format(montodolaresDebe, "###,###,###,###.00 ") ' Debe
-        LbTotales(4).Text = VB6.Format(montodolaresHaber, "###,###,###,###.00 ") ' Haber
-        LbTotales(5).Text = VB6.Format(difdolares, "###,###,###,###.00 ") ' Diferencia
+        LbTotales3.Text = Format(montodolaresDebe, "###,###,###,###.00 ") ' Debe
+        LbTotales4.Text = Format(montodolaresHaber, "###,###,###,###.00 ") ' Haber
+        LbTotales5.Text = Format(difdolares, "###,###,###,###.00 ") ' Diferencia
 
 ERRX:
     End Sub
@@ -942,10 +938,10 @@ ERRX:
         sqlcad = "select * from " & VGParamSistem.TablaCabcomprob & " " & cad & criterio
         rscabecera.Open(sqlcad, VGCNx, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
         If rscabecera.RecordCount > 0 Then
-            lbl_nregconsulta.Text = VB6.Format(rscabecera.RecordCount, "0 ")
+            lbl_nregconsulta.Text = Format(rscabecera.RecordCount, "0 ")
             TDBG_Consulta.Focus()
         Else
-            lbl_nregconsulta.Text = VB6.Format(0, "0 ")
+            lbl_nregconsulta.Text = Format(0, "0 ")
             TxEjecutar.Focus()
         End If
         TDBG_Consulta.DataSource = rscabecera
@@ -1209,7 +1205,7 @@ ErrorGrabar:
         End If
         Call HabilitarDetalleContab(True, FramDetalle, Me)
         Call ClsMM1.AñadiralDetalle(rsmantenimiento)
-        lbnregdetalle.Text = VB6.Format(rsmantenimiento.RecordCount, "0 ")
+        lbnregdetalle.Text = Format(rsmantenimiento.RecordCount, "0 ")
         CtrAyu_Opera.Focus()
         Call HabilitarSegunCuenta(False, False, False)
     End Sub
@@ -1259,7 +1255,7 @@ ErrorGrabar:
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(TxSerie.Text) Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            TxSerie.Text = VB6.Format(TxSerie.Text, "0000")
+            TxSerie.Text = Format(TxSerie.Text, "0000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             TxSerie.Text = TxSerie.Text & Func.Left("    ", TxSerie.MaxLength - Len(TxSerie.Text))
@@ -1272,7 +1268,7 @@ ErrorGrabar:
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         If IsNumeric(TxSerie1.Text) Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            TxSerie1.Text = VB6.Format(TxSerie1.Text, "0000")
+            TxSerie1.Text = Format(TxSerie1.Text, "0000")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             TxSerie1.Text = TxSerie1.Text & Func.Left("    ", TxSerie1.MaxLength - Len(TxSerie1.Text))

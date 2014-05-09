@@ -198,19 +198,18 @@ EliErr:
 		DbGrid1.DataSource = rs
 		With DbGrid1
 			.Columns(0).Caption = "Lin"
-			.Columns(0).Width = VB6.TwipsToPixelsX(400)
-			.Columns(1).Caption = "Tip"
-			.Columns(1).Width = VB6.TwipsToPixelsX(400)
-			.Columns(2).Caption = "Neg"
-			.Columns(2).Width = VB6.TwipsToPixelsX(400)
-			.Columns(3).Caption = "Cuentas"
-			.Columns(3).Width = VB6.TwipsToPixelsX(2000)
-			.Columns(4).Caption = "descripcion Linea"
-			.Columns(4).Width = VB6.TwipsToPixelsX(3000)
-			.Columns(5).Caption = "Signo Rep"
-			.Columns(5).Width = VB6.TwipsToPixelsX(300)
+
+            .Columns(1).Caption = "Tip"
+
+            .Columns(2).Caption = "Neg"
+
+            .Columns(3).Caption = "Cuentas"
+
+            .Columns(4).Caption = "descripcion Linea"
+
+            .Columns(5).Caption = "Signo Rep"
+
 			.MarqueeStyle = MSDataGridLib.MarqueeStyleConstants.dbgHighlightRow
-			'UPGRADE_NOTE: Refresh se actualizó a CtlRefresh. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             .Refresh()
 		End With
 	End Sub

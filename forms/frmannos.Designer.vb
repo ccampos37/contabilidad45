@@ -23,11 +23,9 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents CmdAceptar As System.Windows.Forms.Button
+    Public WithEvents CmdAceptar As System.Windows.Forms.Button
 	Public WithEvents RichCom As System.Windows.Forms.RichTextBox
-	Public WithEvents ImageList1 As System.Windows.Forms.ImageList
-	Public WithEvents cmdCancelar As System.Windows.Forms.Button
+    Public WithEvents cmdCancelar As System.Windows.Forms.Button
 	Public WithEvents cmdEliminar As System.Windows.Forms.Button
 	Public WithEvents cmdGenerar As System.Windows.Forms.Button
 	Public WithEvents DTPanno As AxMSComCtl2.AxDTPicker
@@ -42,12 +40,9 @@
 	'Se puede modificar mediante el Diseñador de Windows Forms.
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmannos))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.CmdAceptar = New System.Windows.Forms.Button()
         Me.RichCom = New System.Windows.Forms.RichTextBox()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.cmdCancelar = New System.Windows.Forms.Button()
         Me.Frame1 = New System.Windows.Forms.GroupBox()
         Me.cmdEliminar = New System.Windows.Forms.Button()
@@ -86,12 +81,6 @@
         Me.RichCom.TabIndex = 10
         Me.RichCom.Text = ""
         Me.RichCom.Visible = False
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         '
         'cmdCancelar
         '
@@ -175,11 +164,9 @@
         Me.LV_Meses.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me._LV_Meses_ColumnHeader_1})
         Me.LV_Meses.ForeColor = System.Drawing.SystemColors.WindowText
         Me.LV_Meses.GridLines = True
-        Me.LV_Meses.LargeImageList = Me.ImageList1
         Me.LV_Meses.Location = New System.Drawing.Point(133, 19)
         Me.LV_Meses.Name = "LV_Meses"
         Me.LV_Meses.Size = New System.Drawing.Size(191, 265)
-        Me.LV_Meses.SmallImageList = Me.ImageList1
         Me.LV_Meses.TabIndex = 1
         Me.LV_Meses.UseCompatibleStateImageBehavior = False
         Me.LV_Meses.View = System.Windows.Forms.View.Details

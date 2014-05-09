@@ -25,11 +25,10 @@
 	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
 	Public WithEvents _Label1_3 As System.Windows.Forms.Label
 	Public WithEvents Frame3 As System.Windows.Forms.GroupBox
-	Public WithEvents Label1 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Frame3 = New System.Windows.Forms.GroupBox()
         Me.Combo4 = New System.Windows.Forms.ComboBox()
@@ -40,11 +39,9 @@
         Me.Command2 = New System.Windows.Forms.Button()
         Me.Command1 = New System.Windows.Forms.Button()
         Me._Label1_3 = New System.Windows.Forms.Label()
-        Me.Label1 = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.Frame3.SuspendLayout()
         Me.Frame1.SuspendLayout()
         Me.Frame2.SuspendLayout()
-        CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Frame3
@@ -161,7 +158,6 @@
         Me._Label1_3.BackColor = System.Drawing.Color.Transparent
         Me._Label1_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label1_3.ForeColor = System.Drawing.Color.Black
-        Me.Label1.SetIndex(Me._Label1_3, CType(3, Short))
         Me._Label1_3.Location = New System.Drawing.Point(48, 139)
         Me._Label1_3.Name = "_Label1_3"
         Me._Label1_3.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -185,8 +181,7 @@
         Me.Frame3.PerformLayout()
         Me.Frame1.ResumeLayout(False)
         Me.Frame2.ResumeLayout(False)
-        CType(Me.Label1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+         Me.ResumeLayout(False)
 
     End Sub
 #End Region 

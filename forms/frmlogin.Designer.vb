@@ -20,9 +20,7 @@
 	Public WithEvents CmdCancelar As System.Windows.Forms.Button
 	Public WithEvents Combo1 As System.Windows.Forms.ComboBox
 	Public WithEvents Combo2 As System.Windows.Forms.ComboBox
-    Public WithEvents TxUser As AxTextFer.AxTxFer
-	Public WithEvents TxPwd As AxTextFer.AxTxFer
-	Public WithEvents Lbgrupo As System.Windows.Forms.Label
+    Public WithEvents Lbgrupo As System.Windows.Forms.Label
 	Public WithEvents Lbempresa As System.Windows.Forms.Label
 	Public WithEvents _Label1_0 As System.Windows.Forms.Label
 	Public WithEvents Label3 As System.Windows.Forms.Label
@@ -48,8 +46,6 @@
         Me.CmdCancelar = New System.Windows.Forms.Button()
         Me.Combo1 = New System.Windows.Forms.ComboBox()
         Me.Combo2 = New System.Windows.Forms.ComboBox()
-        Me.TxUser = New AxTextFer.AxTxFer()
-        Me.TxPwd = New AxTextFer.AxTxFer()
         Me.Lbgrupo = New System.Windows.Forms.Label()
         Me.Lbempresa = New System.Windows.Forms.Label()
         Me._Label1_0 = New System.Windows.Forms.Label()
@@ -62,10 +58,10 @@
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxUser = New Jck_txt.Jck_Txt()
+        Me.TxPwd = New System.Windows.Forms.TextBox()
         Me._Frame1_1.SuspendLayout()
         Me._Frame1_0.SuspendLayout()
-        CType(Me.TxUser, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxPwd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.framaño.SuspendLayout()
         Me.SuspendLayout()
@@ -87,13 +83,13 @@
         '_Frame1_0
         '
         Me._Frame1_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me._Frame1_0.Controls.Add(Me.TxPwd)
+        Me._Frame1_0.Controls.Add(Me.TxUser)
         Me._Frame1_0.Controls.Add(Me.DTPfecha)
         Me._Frame1_0.Controls.Add(Me.CmdAceptar)
         Me._Frame1_0.Controls.Add(Me.CmdCancelar)
         Me._Frame1_0.Controls.Add(Me.Combo1)
         Me._Frame1_0.Controls.Add(Me.Combo2)
-        Me._Frame1_0.Controls.Add(Me.TxUser)
-        Me._Frame1_0.Controls.Add(Me.TxPwd)
         Me._Frame1_0.Controls.Add(Me.Lbgrupo)
         Me._Frame1_0.Controls.Add(Me.Lbempresa)
         Me._Frame1_0.Controls.Add(Me._Label1_0)
@@ -167,24 +163,6 @@
         Me.Combo2.Size = New System.Drawing.Size(177, 21)
         Me.Combo2.TabIndex = 2
         Me.Combo2.Visible = False
-        '
-        'TxUser
-        '
-        Me.TxUser.Enabled = True
-        Me.TxUser.Location = New System.Drawing.Point(74, 70)
-        Me.TxUser.Name = "TxUser"
-        Me.TxUser.OcxState = CType(resources.GetObject("TxUser.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxUser.Size = New System.Drawing.Size(127, 27)
-        Me.TxUser.TabIndex = 3
-        '
-        'TxPwd
-        '
-        Me.TxPwd.Enabled = True
-        Me.TxPwd.Location = New System.Drawing.Point(74, 102)
-        Me.TxPwd.Name = "TxPwd"
-        Me.TxPwd.OcxState = CType(resources.GetObject("TxPwd.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxPwd.Size = New System.Drawing.Size(127, 28)
-        Me.TxPwd.TabIndex = 4
         '
         'Lbgrupo
         '
@@ -339,6 +317,32 @@
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Sistema de Contabilidad"
         '
+        'TxUser
+        '
+        Me.TxUser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.TxUser.BackColor = System.Drawing.Color.White
+        Me.TxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.TxUser.decimales = 0
+        Me.TxUser.formato = " "
+        Me.TxUser.Location = New System.Drawing.Point(75, 76)
+        Me.TxUser.longitud = 8
+        Me.TxUser.Name = "TxUser"
+        Me.TxUser.negativos = False
+        Me.TxUser.Requerido = True
+        Me.TxUser.Size = New System.Drawing.Size(122, 21)
+        Me.TxUser.TabIndex = 25
+        Me.TxUser.tipoCaracter = 3
+        Me.TxUser.tipoletra = 3
+        '
+        'TxPwd
+        '
+        Me.TxPwd.Location = New System.Drawing.Point(75, 103)
+        Me.TxPwd.Name = "TxPwd"
+        Me.TxPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxPwd.Size = New System.Drawing.Size(124, 20)
+        Me.TxPwd.TabIndex = 26
+        Me.TxPwd.UseSystemPasswordChar = True
+        '
         'frmlogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -362,8 +366,6 @@
         Me._Frame1_1.ResumeLayout(False)
         Me._Frame1_0.ResumeLayout(False)
         Me._Frame1_0.PerformLayout()
-        CType(Me.TxUser, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxPwd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.framaño.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -371,5 +373,7 @@
 
     End Sub
     Friend WithEvents DTPfecha As System.Windows.Forms.DateTimePicker
-#End Region 
+    Friend WithEvents TxPwd As System.Windows.Forms.TextBox
+    Friend WithEvents TxUser As Jck_txt.Jck_Txt
+#End Region
 End Class

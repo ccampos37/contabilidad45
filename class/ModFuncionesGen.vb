@@ -148,17 +148,17 @@ SaliError:
     End Function
     Public Function Fecha(ByVal tipo As Short, ByRef dato As Date) As Date
         Dim fecha1 As Date
-        fecha1 = CDate(VB6.Format("01/" & VB6.Format(Month(dato), "00") & "/" & Year(dato), "dd/mm/yyyy"))
+        fecha1 = CDate(Format("01/" & Format(Month(dato), "00") & "/" & Year(dato), "dd/mm/yyyy"))
         Select Case tipo
             Case 1
                 Fecha = fecha1
             Case 2
                 fecha1 = System.Date.FromOADate(fecha1.ToOADate + 31)
-                fecha1 = CDate(VB6.Format("01/" & VB6.Format(Month(fecha1), "00") & "/" & Year(fecha1), "dd/mm/yyyy"))
+                fecha1 = CDate(Format("01/" & Format(Month(fecha1), "00") & "/" & Year(fecha1), "dd/mm/yyyy"))
                 Fecha = System.Date.FromOADate(fecha1.ToOADate - 1)
             Case 3
                 fecha1 = System.Date.FromOADate(fecha1.ToOADate - 27)
-                Fecha = CDate(VB6.Format("01/" & VB6.Format(Month(fecha1), "00") & "/" & Year(fecha1), "dd/mm/yyyy"))
+                Fecha = CDate(Format("01/" & Format(Month(fecha1), "00") & "/" & Year(fecha1), "dd/mm/yyyy"))
         End Select
     End Function
 
@@ -260,7 +260,7 @@ ERR:
             If Fecha = False Then
                 cF = "Select " & CampDev & " from " & Tabla & "  Where " & Campo & " =  '" & Cod & "' "
             Else
-                cF = "Select " & CampDev & " from " & Tabla & "  Where " & Campo & " =  #" & VB6.Format(Cod, "mm/dd/yyyy") & "#"
+                cF = "Select " & CampDev & " from " & Tabla & "  Where " & Campo & " =  #" & Format(Cod, "mm/dd/yyyy") & "#"
             End If
         End If
         If Trim(Campo2) <> "" Then
@@ -490,7 +490,7 @@ ERR:
                 aValor = Val(Number)
             End If
         End If
-        numero = VB6.Format(aValor, "####,###.00")
+        numero = Format(aValor, "####,###.00")
     End Function
 
 
@@ -563,9 +563,9 @@ nerror:
         SQL = SQL & "Where tipocambiofecha='" & DateSQL(xfecha) & "'"
         rs = xCn.Execute(SQL)
         If Not (rs.EOF Or rs.BOF) Then
-            DatoTipoCambio = CDbl(VB6.Format(rs.Fields(1).Value, "#####0.###0"))
+            DatoTipoCambio = CDbl(Format(rs.Fields(1).Value, "#####0.###0"))
         Else
-            DatoTipoCambio = CDbl(VB6.Format(1, "#####0.###0"))
+            DatoTipoCambio = CDbl(Format(1, "#####0.###0"))
         End If
         rs = Nothing
     End Function

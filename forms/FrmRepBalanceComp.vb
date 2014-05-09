@@ -41,76 +41,76 @@ Friend Class FrmRepBalanceComp
 	Private Sub CargaNivel()
 		Dim i As Short
 		For i = 1 To VGnumnivelescuenta
-			cmbNivel.Items.Add(VB6.Format(i, "0"))
-		Next 
-		cmbNivel.SelectedIndex = 0
-	End Sub
-	Private Sub CargaRsFiltro()
-		RsFiltro = New ADODB.Recordset
-		RsFiltro.Fields.Append("Cod", ADODB.DataTypeEnum.adVarChar, 2)
-		RsFiltro.Fields.Append("Descr", ADODB.DataTypeEnum.adVarChar, 50)
-		RsFiltro.Open()
-		RsFiltro.AddNew()
-		RsFiltro.Fields("Cod").Value = "0"
-		RsFiltro.Fields("Descr").Value = "Todos las cuentas"
-		RsFiltro.Update()
-		RsFiltro.AddNew()
-		RsFiltro.Fields("Cod").Value = "1"
-		RsFiltro.Fields("Descr").Value = "Cuenta con Movimientos y Saldos Acumulados"
-		RsFiltro.Update()
-		DtCfiltro.RowSource = RsFiltro
-		DtCfiltro.BoundText = "1"
-	End Sub
-	Public Sub imprimir()
-		'FIXIT: Declare 'arrform' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
-		Dim arrform(2) As Object
-		Dim arrparm(11) As Object
-		Dim mon As String
-		If CtrAyu_Moneda.xclave = "01" Then
-			mon = CStr(1)
-		Else
-			mon = CStr(2)
-		End If
-		'@Base, @Anno, @Mes, @Nivel, @NoEnCascada, @Corden, @opvista
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(0) = VGParamSistem.BDEmpresa
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(1) = VGParametros.empresacodigo
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(2) = VGParamSistem.Anoproceso
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(3) = VB6.Format(Month(DTPicker1._Value), "0") 'VGParamSistem.Mesproceso
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(4) = CShort(cmbNivel.Text)
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(5). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(5) = IIf(ChkCascada.CheckState = 1, 0, 1)
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(6). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(6) = "left(Cuenta,2) Asc,Nivel Desc"
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(7). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(7) = CShort(DtCfiltro.BoundText)
-		If ChkFiltcta.CheckState = 1 Then
-			If CtrAyu_Cuenta.xclave = "" Then
-				MsgBox("Debe escoger una cuenta ", MsgBoxStyle.Information)
-				Exit Sub
-			End If
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrparm(8) = VB6.Format(Len(Trim(CtrAyu_Cuenta.xclave)), "0")
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(9). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrparm(9) = Trim(CtrAyu_Cuenta.xclave) & "%"
-		Else
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrparm(8) = 0
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(9). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			arrparm(9) = 0
-		End If
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(10). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(10) = IIf(VGParametros.sistemamonista, "1", "0")
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(0) = "pmon=" & mon
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrform(1) = "pforma=" & lforma
-		'Call ImpresionRptProc("rptBalanceComprob.rpt", arrform, arrparm)
-		Call ImpresionRptProc("ct_BalanceComprobacion.rpt", arrform, arrparm)
-	End Sub
+            cmbNivel.Items.Add(Format(i, "0"))
+        Next
+        cmbNivel.SelectedIndex = 0
+    End Sub
+    Private Sub CargaRsFiltro()
+        RsFiltro = New ADODB.Recordset
+        RsFiltro.Fields.Append("Cod", ADODB.DataTypeEnum.adVarChar, 2)
+        RsFiltro.Fields.Append("Descr", ADODB.DataTypeEnum.adVarChar, 50)
+        RsFiltro.Open()
+        RsFiltro.AddNew()
+        RsFiltro.Fields("Cod").Value = "0"
+        RsFiltro.Fields("Descr").Value = "Todos las cuentas"
+        RsFiltro.Update()
+        RsFiltro.AddNew()
+        RsFiltro.Fields("Cod").Value = "1"
+        RsFiltro.Fields("Descr").Value = "Cuenta con Movimientos y Saldos Acumulados"
+        RsFiltro.Update()
+        DtCfiltro.RowSource = RsFiltro
+        DtCfiltro.BoundText = "1"
+    End Sub
+    Public Sub imprimir()
+        'FIXIT: Declare 'arrform' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
+        Dim arrform(2) As Object
+        Dim arrparm(11) As Object
+        Dim mon As String
+        If CtrAyu_Moneda.xclave = "01" Then
+            mon = CStr(1)
+        Else
+            mon = CStr(2)
+        End If
+        '@Base, @Anno, @Mes, @Nivel, @NoEnCascada, @Corden, @opvista
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(0) = VGParamSistem.BDEmpresa
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(1) = VGParametros.empresacodigo
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(2) = VGParamSistem.Anoproceso
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(3) = Format(Month(DTPicker1._Value), "0") 'VGParamSistem.Mesproceso
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(4) = CShort(cmbNivel.Text)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(5). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(5) = IIf(ChkCascada.CheckState = 1, 0, 1)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(6). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(6) = "left(Cuenta,2) Asc,Nivel Desc"
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(7). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(7) = CShort(DtCfiltro.BoundText)
+        If ChkFiltcta.CheckState = 1 Then
+            If CtrAyu_Cuenta.xclave = "" Then
+                MsgBox("Debe escoger una cuenta ", MsgBoxStyle.Information)
+                Exit Sub
+            End If
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            arrparm(8) = Format(Len(Trim(CtrAyu_Cuenta.xclave)), "0")
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(9). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            arrparm(9) = Trim(CtrAyu_Cuenta.xclave) & "%"
+        Else
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            arrparm(8) = 0
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(9). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            arrparm(9) = 0
+        End If
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(10). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(10) = IIf(VGParametros.sistemamonista, "1", "0")
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrform(0) = "pmon=" & mon
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrform(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrform(1) = "pforma=" & lforma
+        'Call ImpresionRptProc("rptBalanceComprob.rpt", arrform, arrparm)
+        Call ImpresionRptProc("ct_BalanceComprobacion.rpt", arrform, arrparm)
+    End Sub
 	
 End Class

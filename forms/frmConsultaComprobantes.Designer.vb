@@ -23,46 +23,44 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _txt_2 As AxTextFer.AxTxFer
-	Public WithEvents CtrAyu_Libro As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label3 As System.Windows.Forms.Label
-	Public WithEvents Label4 As System.Windows.Forms.Label
-	Public WithEvents Frame3 As System.Windows.Forms.GroupBox
-	Public WithEvents _txt_0 As AxTextFer.AxTxFer
-	Public WithEvents _txt_1 As AxTextFer.AxTxFer
+    Public WithEvents txt2 As AxTextFer.AxTxFer
+    Public WithEvents CtrAyu_Libro As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label3 As System.Windows.Forms.Label
+    Public WithEvents Label4 As System.Windows.Forms.Label
+    Public WithEvents Frame3 As System.Windows.Forms.GroupBox
+    Public WithEvents txt0 As AxTextFer.AxTxFer
+    Public WithEvents txt1 As AxTextFer.AxTxFer
     Public WithEvents Label7 As System.Windows.Forms.Label
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents CtrAyu_SubAsiento As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_Asiento As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label25 As System.Windows.Forms.Label
-	Public WithEvents lbSubAsiento As System.Windows.Forms.Label
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
-	Public WithEvents cmdConsultar As System.Windows.Forms.Button
-	Public WithEvents TDBG_ConsultaDetalle As AxTrueOleDBGrid70.AxTDBGrid
-	Public WithEvents TDBG_ConsultaCabecera As AxTrueOleDBGrid70.AxTDBGrid
-	Public WithEvents lblNroReg_Det As System.Windows.Forms.Label
-	Public WithEvents Label6 As System.Windows.Forms.Label
-	Public WithEvents lblNro_Reg As System.Windows.Forms.Label
-	Public WithEvents Label5 As System.Windows.Forms.Label
-	Public WithEvents txt As AxTxFerArray
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents Label2 As System.Windows.Forms.Label
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents CtrAyu_SubAsiento As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_Asiento As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label25 As System.Windows.Forms.Label
+    Public WithEvents lbSubAsiento As System.Windows.Forms.Label
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    Public WithEvents cmdConsultar As System.Windows.Forms.Button
+    Public WithEvents TDBG_ConsultaDetalle As AxTrueOleDBGrid70.AxTDBGrid
+    Public WithEvents TDBG_ConsultaCabecera As AxTrueOleDBGrid70.AxTDBGrid
+    Public WithEvents lblNroReg_Det As System.Windows.Forms.Label
+    Public WithEvents Label6 As System.Windows.Forms.Label
+    Public WithEvents lblNro_Reg As System.Windows.Forms.Label
+    Public WithEvents Label5 As System.Windows.Forms.Label
+    Public WithEvents txt As AxTxFerArray
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsultaComprobantes))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Frame3 = New System.Windows.Forms.GroupBox()
-        Me._txt_2 = New AxTextFer.AxTxFer()
+        Me.txt2 = New AxTextFer.AxTxFer()
         Me.CtrAyu_Libro = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Frame2 = New System.Windows.Forms.GroupBox()
-        Me._txt_0 = New AxTextFer.AxTxFer()
-        Me._txt_1 = New AxTextFer.AxTxFer()
+        Me.DTPicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.txt0 = New AxTextFer.AxTxFer()
+        Me.txt1 = New AxTextFer.AxTxFer()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -78,26 +76,23 @@
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblNro_Reg = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt = New Contabilidad.AxTxFerArray(Me.components)
-        Me.DTPicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Frame3.SuspendLayout()
-        CType(Me._txt_2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CtrAyu_Libro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame2.SuspendLayout()
-        CType(Me._txt_0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._txt_1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt0, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame1.SuspendLayout()
         CType(Me.CtrAyu_SubAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CtrAyu_Asiento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TDBG_ConsultaDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TDBG_ConsultaCabecera, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Frame3
         '
         Me.Frame3.BackColor = System.Drawing.SystemColors.Control
-        Me.Frame3.Controls.Add(Me._txt_2)
+        Me.Frame3.Controls.Add(Me.txt2)
         Me.Frame3.Controls.Add(Me.CtrAyu_Libro)
         Me.Frame3.Controls.Add(Me.Label3)
         Me.Frame3.Controls.Add(Me.Label4)
@@ -111,15 +106,14 @@
         Me.Frame3.TabStop = False
         Me.Frame3.Text = "Consulta por Libro y/o Glosa"
         '
-        '_txt_2
+        'txt2
         '
-        Me._txt_2.Enabled = True
-        Me.txt.SetIndex(Me._txt_2, CType(2, Short))
-        Me._txt_2.Location = New System.Drawing.Point(383, 16)
-        Me._txt_2.Name = "_txt_2"
-        Me._txt_2.OcxState = CType(resources.GetObject("_txt_2.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._txt_2.Size = New System.Drawing.Size(350, 20)
-        Me._txt_2.TabIndex = 3
+        Me.txt2.Enabled = True
+        Me.txt2.Location = New System.Drawing.Point(383, 16)
+        Me.txt2.Name = "txt2"
+        Me.txt2.OcxState = CType(resources.GetObject("txt2.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.txt2.Size = New System.Drawing.Size(350, 20)
+        Me.txt2.TabIndex = 3
         '
         'CtrAyu_Libro
         '
@@ -158,8 +152,8 @@
         '
         Me.Frame2.BackColor = System.Drawing.SystemColors.Control
         Me.Frame2.Controls.Add(Me.DTPicker1)
-        Me.Frame2.Controls.Add(Me._txt_0)
-        Me.Frame2.Controls.Add(Me._txt_1)
+        Me.Frame2.Controls.Add(Me.txt0)
+        Me.Frame2.Controls.Add(Me.txt1)
         Me.Frame2.Controls.Add(Me.Label7)
         Me.Frame2.Controls.Add(Me.Label1)
         Me.Frame2.Controls.Add(Me.Label2)
@@ -173,25 +167,32 @@
         Me.Frame2.TabStop = False
         Me.Frame2.Text = "Consulta por Números de Control"
         '
-        '_txt_0
+        'DTPicker1
         '
-        Me._txt_0.Enabled = True
-        Me.txt.SetIndex(Me._txt_0, CType(0, Short))
-        Me._txt_0.Location = New System.Drawing.Point(102, 15)
-        Me._txt_0.Name = "_txt_0"
-        Me._txt_0.OcxState = CType(resources.GetObject("_txt_0.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._txt_0.Size = New System.Drawing.Size(114, 20)
-        Me._txt_0.TabIndex = 4
+        Me.DTPicker1.CustomFormat = "mm-yyyy"
+        Me.DTPicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTPicker1.Location = New System.Drawing.Point(511, 13)
+        Me.DTPicker1.Name = "DTPicker1"
+        Me.DTPicker1.Size = New System.Drawing.Size(132, 20)
+        Me.DTPicker1.TabIndex = 24
         '
-        '_txt_1
+        'txt0
         '
-        Me._txt_1.Enabled = True
-        Me.txt.SetIndex(Me._txt_1, CType(1, Short))
-        Me._txt_1.Location = New System.Drawing.Point(291, 12)
-        Me._txt_1.Name = "_txt_1"
-        Me._txt_1.OcxState = CType(resources.GetObject("_txt_1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me._txt_1.Size = New System.Drawing.Size(168, 20)
-        Me._txt_1.TabIndex = 5
+        Me.txt0.Enabled = True
+        Me.txt0.Location = New System.Drawing.Point(102, 15)
+        Me.txt0.Name = "txt0"
+        Me.txt0.OcxState = CType(resources.GetObject("txt0.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.txt0.Size = New System.Drawing.Size(114, 20)
+        Me.txt0.TabIndex = 4
+        '
+        'txt1
+        '
+        Me.txt1.Enabled = True
+        Me.txt1.Location = New System.Drawing.Point(291, 12)
+        Me.txt1.Name = "txt1"
+        Me.txt1.OcxState = CType(resources.GetObject("txt1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.txt1.Size = New System.Drawing.Size(168, 20)
+        Me.txt1.TabIndex = 5
         '
         'Label7
         '
@@ -367,18 +368,6 @@
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Nº Registros:"
         '
-        'txt
-        '
-        '
-        'DTPicker1
-        '
-        Me.DTPicker1.CustomFormat = "mm-yyyy"
-        Me.DTPicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPicker1.Location = New System.Drawing.Point(511, 13)
-        Me.DTPicker1.Name = "DTPicker1"
-        Me.DTPicker1.Size = New System.Drawing.Size(132, 20)
-        Me.DTPicker1.TabIndex = 24
-        '
         'frmConsultaComprobantes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -406,17 +395,16 @@
         Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         Me.Text = "Consulta Comprobantes"
         Me.Frame3.ResumeLayout(False)
-        CType(Me._txt_2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtrAyu_Libro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame2.ResumeLayout(False)
-        CType(Me._txt_0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._txt_1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt0, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame1.ResumeLayout(False)
         CType(Me.CtrAyu_SubAsiento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtrAyu_Asiento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TDBG_ConsultaDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TDBG_ConsultaCabecera, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

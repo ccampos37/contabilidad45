@@ -14,8 +14,7 @@ Friend Class Frmusuarios
 	Dim mNode As System.Windows.Forms.TreeNode
 	
 	Private Sub Frmusuarios_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		central(Me)
-		ADOConectar()
+        ADOConectar()
 		' Init_ControlDataGrid DataGrid1
 		If Adoreg1.RecordCount = 0 Then
 			Botones_Init(True)
@@ -63,8 +62,7 @@ Friend Class Frmusuarios
         DataGrid1.Refresh()
         DataGrid1.Columns(0).Caption = "           Código"
         DataGrid1.Columns(1).Caption = "                            Nombre"
-        DataGrid1.Columns(0).Width = VB6.TwipsToPixelsX(1800)
-        DataGrid1.Columns(1).Width = VB6.TwipsToPixelsX(4500)
+
         DataGrid1.ScrollBars = MSDataGridLib.ScrollBarsConstants.dbgVertical
     End Sub
 

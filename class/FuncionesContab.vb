@@ -373,7 +373,7 @@ error_Renamed:
         rsX = New ADODB.Recordset
         rsX = Conex.Execute(csql)
         'UPGRADE_WARNING: Se detectó el uso de Null/IsNull(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="2EED02CB-5C0E-4DC1-AE94-4FAA3A30F51A"'
-        GeneraCodigo = VB6.Format(Val(IIf(IsDBNull(rsX.Fields(0).Value), 0, rsX.Fields(0).Value)) + 1, cNumCeros)
+        GeneraCodigo = Format(Val(IIf(IsDBNull(rsX.Fields(0).Value), 0, rsX.Fields(0).Value)) + 1, cNumCeros)
         'UPGRADE_NOTE: El objeto rsX no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         rsX = Nothing
     End Function

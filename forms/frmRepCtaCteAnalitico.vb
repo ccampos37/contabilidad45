@@ -14,71 +14,71 @@ Friend Class frmRepCtaCteAnalitico
 	
 	'UPGRADE_WARNING: El evento cboTipoAnalitico.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
 	Private Sub cboTipoAnalitico_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboTipoAnalitico.SelectedIndexChanged
-		Ctr_Ayuda2.Filtro = "Right(tipoanaliticocodigo,3)='" & VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex) & "'"
-		Ctr_Ayuda2.Ejecutar()
-		
-		Ctr_AyudaEnt.Filtro = "entidadcodigo in (Select case when lTrim(rtrim(entidadcodigo))='' then '0' else entidadcodigo end as entidadcodigo From ct_analitico Where tipoanaliticocodigo = '" & VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex) & "')"
-		Ctr_AyudaEnt.Ejecutar()
-	End Sub
-	
+        Ctr_Ayuda2.Filtro = "Right(tipoanaliticocodigo,3)='" & VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex) & "'"
+        Ctr_Ayuda2.Ejecutar()
 
-	
-	Function ValidaImpresion() As Boolean
-		If cboTipoAnalitico.SelectedIndex < 0 Then
-			If Not MsgBox("No ha seleccionado el tipo de anallitico, desea continuar ", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "AVISO") = MsgBoxResult.Yes Then
-				ValidaImpresion = False
-				Exit Function
-			End If
-		End If
-		ValidaImpresion = True
-	End Function
-	
-	Sub LlenarcboTipoAnalitico()
+        Ctr_AyudaEnt.Filtro = "entidadcodigo in (Select case when lTrim(rtrim(entidadcodigo))='' then '0' else entidadcodigo end as entidadcodigo From ct_analitico Where tipoanaliticocodigo = '" & VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex) & "')"
+        Ctr_AyudaEnt.Ejecutar()
+    End Sub
+
+
+
+    Function ValidaImpresion() As Boolean
+        If cboTipoAnalitico.SelectedIndex < 0 Then
+            If Not MsgBox("No ha seleccionado el tipo de anallitico, desea continuar ", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "AVISO") = MsgBoxResult.Yes Then
+                ValidaImpresion = False
+                Exit Function
+            End If
+        End If
+        ValidaImpresion = True
+    End Function
+
+    Sub LlenarcboTipoAnalitico()
         Dim rs As ADODB.Recordset
-		
-		rs = VGCNx.Execute("Select tipoanaliticocodigo,tipoanaliticodescripcion from ct_tipoanalitico where tipoanaliticocodigo<>'00'")
-		cboTipoAnalitico.Items.Clear()
-		lstTipoAnaliticoCodigo.Items.Clear()
-		While Not rs.EOF
-			cboTipoAnalitico.Items.Add(rs.Fields(1).Value)
-			lstTipoAnaliticoCodigo.Items.Add(rs.Fields(0).Value)
-			rs.MoveNext()
-		End While
 
-	End Sub
-	
-	Sub ImpresionCtacteMovimiento()
-		Dim cMensaje As String
-		'FIXIT: Declare 'arrform' and 'arrparm' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
-		Dim arrform(2) As Object
-		Dim arrparm() As Object
-		ReDim arrparm(14)
-		
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(0) = VGParamSistem.BDEmpresa
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(1) = VGParametros.empresacodigo
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(2) = VGParamSistem.Anoproceso
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(3) = "00"
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(4) = VB6.Format(VGParamSistem.Mesproceso, "0#")
-		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(5). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(5) = IIf(IsNothing(Ctr_Ayuda1.xclave), "%%", Trim(Ctr_Ayuda1.xclave) & "%")
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(6). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(6) = "%%"
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(7). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(7) = "%%"
-		
-		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(8) = IIf(IsNothing(Ctr_AyudaEnt.xclave), "%%", Trim(Ctr_AyudaEnt.xclave) & "%")
-		
-		'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(9). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		arrparm(9) = IIf(IsNothing(VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex)), "%%", VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex))
+        rs = VGCNx.Execute("Select tipoanaliticocodigo,tipoanaliticodescripcion from ct_tipoanalitico where tipoanaliticocodigo<>'00'")
+        cboTipoAnalitico.Items.Clear()
+        lstTipoAnaliticoCodigo.Items.Clear()
+        While Not rs.EOF
+            cboTipoAnalitico.Items.Add(rs.Fields(1).Value)
+            lstTipoAnaliticoCodigo.Items.Add(rs.Fields(0).Value)
+            rs.MoveNext()
+        End While
+
+    End Sub
+
+    Sub ImpresionCtacteMovimiento()
+        Dim cMensaje As String
+        'FIXIT: Declare 'arrform' and 'arrparm' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
+        Dim arrform(2) As Object
+        Dim arrparm() As Object
+        ReDim arrparm(14)
+
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(0). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(0) = VGParamSistem.BDEmpresa
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(1). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(1) = VGParametros.empresacodigo
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(2). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(2) = VGParamSistem.Anoproceso
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(3). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(3) = "00"
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(4). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(4) = Format(VGParamSistem.Mesproceso, "0#")
+        'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(5). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(5) = IIf(IsNothing(Ctr_Ayuda1.xclave), "%%", Trim(Ctr_Ayuda1.xclave) & "%")
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(6). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(6) = "%%"
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(7). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(7) = "%%"
+
+        'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(8). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(8) = IIf(IsNothing(Ctr_AyudaEnt.xclave), "%%", Trim(Ctr_AyudaEnt.xclave) & "%")
+
+        'UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(9). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        arrparm(9) = IIf(IsNothing(VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex)), "%%", VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex))
         If optFiltro0.Checked = True Then
             'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto arrparm(10). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             arrparm(10) = "1"
@@ -92,7 +92,7 @@ Friend Class frmRepCtaCteAnalitico
             arrparm(10) = "3"
             cMensaje = "Todos"
         End If
-		
+
         If OptDetalle0.Checked = True Then
             If Ctr_AyudaEnt.Visible = True And Not IsNothing(Ctr_AyudaEnt.xclave) And IsNothing(Ctr_Ayuda1.xclave) Then
                 optOpcion2.Checked = True
@@ -132,7 +132,7 @@ Friend Class frmRepCtaCteAnalitico
         arrparm(1) = VGParametros.empresacodigo
         arrparm(2) = VGParamSistem.Anoproceso
         arrparm(3) = "00"
-        arrparm(4) = VB6.Format(VGParamSistem.Mesproceso, "0#")
+        arrparm(4) = Format(VGParamSistem.Mesproceso, "0#")
         arrparm(5) = IIf(IsNothing(Ctr_Ayuda1.xclave), "%%", Trim(Ctr_Ayuda1.xclave) & "%")
         arrparm(6) = IIf(IsNothing(Ctr_AyudaEnt.xclave), "%%", Trim(Ctr_AyudaEnt.xclave) & "%")
         arrparm(7) = IIf(IsNothing(VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex)), "%%", VB6.GetItemString(lstTipoAnaliticoCodigo, cboTipoAnalitico.SelectedIndex))

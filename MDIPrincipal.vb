@@ -1,64 +1,64 @@
 Option Strict Off
 Option Explicit On
-Imports Func = Contabilidad.ModFuncionesGen
+Imports VB = Microsoft.VisualBasic
+
 Friend Class MDIPrincipal
-    Inherits System.Windows.Forms.Form
-
-
-    Private Sub MDIPrincipal_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-
+	Inherits System.Windows.Forms.Form
+	
+	
+	Private Sub MDIPrincipal_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         Call ADOConectar()
-        Call ADOConectarReport("CONTABILIDAD")
-        MainContab.VGtipo = TIPOSISTEMA.contab
-
-        mensaje1 = "Prueba "
-
-        frmlogin.ShowDialog()
-        Me.Text = "Sistema de Contabilidad Empresa : " & VGParametros.NomEmpresa & "   Base de datos --> " & VGParamSistem.BDEmpresa
-
-        If VGSalir Then
-            If VGCNx.State = 1 Then VGCNx.Close()
+		Call ADOConectarReport("CONTABILIDAD")
+		MainContab.VGtipo = ModificarCampos.TIPOSISTEMA.contab
+		
+		mensaje1 = "Prueba "
+		
+		frmlogin.ShowDialog()
+		Me.Text = "Sistema de Contabilidad Empresa : " & VGParametros.NomEmpresa & "   Base de datos --> " & VGParamSistem.BDEmpresa
+		
+		If VGSalir Then
+			If VGCNx.State = 1 Then VGCNx.Close()
             If VGCnxCT.State = 1 Then VGCnxCT.Close()
             Me.Close()
         Else
             Call CargarParametrosContabilidad()
-        End If
+		End If
         Exit Sub
+		
+err_Renamed: 
+		MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Aviso")
+		Exit Sub
+		Resume 
+Xmain: 
+		MsgBox(Err.Description, MsgBoxStyle.Exclamation)
+		
+	End Sub
+	
+	Public Sub mnu00_01_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu00_01_01.Click
+		Dim Index As Short = mnu00_01_01.GetIndex(eventSender)
 
-err_Renamed:
-        MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Aviso")
-        Exit Sub
-        Resume
-Xmain:
-        MsgBox(Err.Description, MsgBoxStyle.Exclamation)
+	End Sub
+	
+	Public Sub mnu00_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu00_01.Click
+		Dim Index As Short = mnu00_01.GetIndex(eventSender)
 
-    End Sub
-
-    Public Sub mnu00_01_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu00_01_01.Click
-        Dim Index As Short = mnu00_01_01.GetIndex(eventSender)
-
-    End Sub
-
-    Public Sub mnu00_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu00_01.Click
-        Dim Index As Short = mnu00_01.GetIndex(eventSender)
-
-    End Sub
-
-    Public Sub mnu01_01_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_02.Click
+	End Sub
+	
+	Public Sub mnu01_01_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_02.Click
         FrmMntOperacion.Show()
-    End Sub
-
-    Public Sub mnu01_01_03_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_03.Click
+	End Sub
+	
+	Public Sub mnu01_01_03_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_03.Click
 
         frmMntCentroCosto.Show()
-    End Sub
-
-
-    Public Sub mnu01_02_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_02_02.Click
-        FrmMntIndicadorOportunidad.Show()
-    End Sub
-
-    Public Sub mnu01_04_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_04_01.Click
+	End Sub
+	
+	
+	Public Sub mnu01_02_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_02_02.Click
+		FrmMntIndicadorOportunidad.Show()
+	End Sub
+	
+	Public Sub mnu01_04_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_04_01.Click
         Try
             FrmMantTipoAnalitico.Show()
 
@@ -66,55 +66,55 @@ Xmain:
             MsgBox("error --> " + " " + ex.ToString)
         End Try
     End Sub
-
-    Public Sub mnu01_04_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_04_02.Click
-        frmMantEntidad.Show()
-    End Sub
-
-    Private Sub mnu01_01_05_Click()
-        frmMantLibro.Show()
-    End Sub
-
-    Public Sub mnu01_06_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_01.Click
-        frmMantAsiento.Show()
-    End Sub
-
-    Public Sub mnu01_06_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_02.Click
-        If ValidaAsientos() = True Then
-            frmMantSubAsiento.Show()
-        End If
-    End Sub
-
-    Public Sub mnu01_06_03_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_03.Click
-        If ValidaAsientos() = True Then
-            If ValidaSubAsientos("%") = True Then frmMantPlantillaAsiento.Show()
-        End If
-    End Sub
-
-    Public Sub mnu01_07_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_07.Click
+	
+	Public Sub mnu01_04_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_04_02.Click
+        frmMntEntidad.Show()
+	End Sub
+	
+	Private Sub mnu01_01_05_Click()
+		frmMantLibro.Show()
+	End Sub
+	
+	Public Sub mnu01_06_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_01.Click
+        frmMntAsiento.Show()
+	End Sub
+	
+	Public Sub mnu01_06_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_02.Click
+		If ValidaAsientos = True Then
+			frmMantSubAsiento.Show()
+		End If
+	End Sub
+	
+	Public Sub mnu01_06_03_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_03.Click
+		If ValidaAsientos = True Then
+			If ValidaSubAsientos("%") = True Then frmMantPlantillaAsiento.Show()
+		End If
+	End Sub
+	
+	Public Sub mnu01_07_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_07.Click
         '    frmPassword.Show
 
         FrmMntTipocambio.Show()
 
     End Sub
-
-    Public Sub mnu01_01_08_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_08.Click
+	
+	Public Sub mnu01_01_08_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_08.Click
         Try
             FrmMntDocumentos.Show()
         Catch ex As Exception
 
         End Try
     End Sub
-
-    Public Sub mnu01_01_09_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_09.Click
-        '  frmMantEstComprobante.Show
-    End Sub
-
-    Public Sub mnu01_01_10_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_10.Click
-        '   frmMantAplicacion.Show
-    End Sub
-
-    Public Sub mnu01_11_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_11_01.Click
+	
+	Public Sub mnu01_01_09_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_09.Click
+		'  frmMantEstComprobante.Show
+	End Sub
+	
+	Public Sub mnu01_01_10_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_01_10.Click
+		'   frmMantAplicacion.Show
+	End Sub
+	
+	Public Sub mnu01_11_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_11_01.Click
         FrmMntEstructuraBalance.Show()
     End Sub
 
@@ -408,7 +408,7 @@ xx:
     End Sub
 
     Public Sub mnu05_04_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu05_04.Click
-        MainContab.VGtipo = TIPOSISTEMA.contab
+        MainContab.VGtipo = ModificarCampos.TIPOSISTEMA.contab
         'FrmCfgEmpresa.Show
     End Sub
 
@@ -447,7 +447,7 @@ xx:
     End Sub
     Private Sub ToolComprob_ButtonClick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles _ToolComprob_Button1.Click, _ToolComprob_Button2.Click, _ToolComprob_Button3.Click, _ToolComprob_Button4.Click, _ToolComprob_Button5.Click, _ToolComprob_Button6.Click, _ToolComprob_Button7.Click, _ToolComprob_Button8.Click, _ToolComprob_Button9.Click, _ToolComprob_Button10.Click
         Dim Button As System.Windows.Forms.ToolStripItem = CType(eventSender, System.Windows.Forms.ToolStripItem)
-        Select Case CShort(Func.Right(Trim(Button.Name), Len(Trim(Button.Name)) - 1))
+        Select Case CShort(VB.Right(Trim(Button.Name), Len(Trim(Button.Name)) - 1))
             Case 1 'Nuevo
                 Call mnu00_01_Click(mnu00_01.Item(1), New System.EventArgs())
             Case 2 'grabar
@@ -474,4 +474,5 @@ xx:
     Private Sub PruebasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebasToolStripMenuItem.Click
         Form1.Show()
     End Sub
+
 End Class

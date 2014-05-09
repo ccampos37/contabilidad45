@@ -130,7 +130,6 @@
         Me.axBCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.axBCancelar.Size = New System.Drawing.Size(94, 45)
         Me.axBCancelar.TabIndex = 0
-        Me.axBCancelar.Text = "&Cancelar"
         Me.axBCancelar.UseVisualStyleBackColor = False
         '
         'FrmLibroRegistrodeCompras

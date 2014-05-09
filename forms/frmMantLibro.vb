@@ -26,11 +26,9 @@ Friend Class frmMantLibro
 		SSTab1.TabPages.Item(2).Enabled = False
 		cAcepta.Enabled = False
 		lblNumReg.Text = CStr(Nothing)
-		Me.Width = VB6.TwipsToPixelsX(7050)
-		Me.Height = VB6.TwipsToPixelsY(6255)
-	End Sub
-	
-	'FIXIT: Declare 'MuestraDatosLibro' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
+    End Sub
+
+    'FIXIT: Declare 'MuestraDatosLibro' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
     Public Sub MuestraDatosLibro()
         Dim SQL As String
 
@@ -95,12 +93,6 @@ Friend Class frmMantLibro
         End If
     End Sub
 
-    'UPGRADE_WARNING: El evento chk.CheckStateChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-    Private Sub chk_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles chk.CheckStateChanged
-        Dim Index As Short = chk.GetIndex(eventSender)
-        If modoinsert = True Or modoedit = True Then cAcepta.Enabled = ValidaDataIngreso()
-    End Sub
-
     Private Sub txt_KeyDownEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyDownEvent) Handles txt.KeyDownEvent
         Dim Index As Short = txt.GetIndex(eventSender)
         If Index = 2 And eventArgs.keyCode = 13 Then
@@ -112,7 +104,7 @@ Friend Class frmMantLibro
     Private Sub txt_Leave(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles txt.Leave
         Dim Index As Short = txt.GetIndex(eventSender)
         If Index = 0 Then
-            If Not IsDBNull(txt(0).Text) Then txt(0).Text = VB6.Format(txt(0).Text, "00")
+            If Not IsDBNull(txt0.Text) Then txt0.Text = Format(txt0.Text, "00")
         Else
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             txt(Index).Text = UCase(txt(Index).Text)
@@ -125,10 +117,10 @@ Friend Class frmMantLibro
         If rs.RecordCount > 0 Then
             With TDBGridAsientos2
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(0).Text = .Columns(0).Value
+                txt0.Text = .Columns(0).Value
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(1).Text = .Columns(1).Value
-                chk(0).CheckState = IIf(.Columns(2).Value = 0, 0, 1)
+                txt1.Text = .Columns(1).Value
+                chk0.CheckState = IIf(.Columns(2).Value = 0, 0, 1)
                 For i = 1 To 12
                     'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
                     txt(i + 2).Text = .Columns(i + 2).Value
@@ -169,7 +161,7 @@ Friend Class frmMantLibro
         SSTab1.TabPages.Item(2).Enabled = True
         modoinsert = True
         Call LimpiarForm(Me, "")
-        txt(0).Focus()
+        txt0.Focus()
         Call ModoEditable(True, Me, "")
         frmbotones.Visible = False
     End Sub
@@ -178,10 +170,10 @@ Friend Class frmMantLibro
         Dim sql1 As String
         If MsgBox("Desea eliminar el registro de Libro Nº " & TDBGridAsientos2.Columns(0).Value & "?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "AVISO") = MsgBoxResult.Yes Then
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            SQL = "DELETE FROM CT_LIBRO WHERE librocodigo='" & txt(0).Text & "'"
+            SQL = "DELETE FROM CT_LIBRO WHERE librocodigo='" & txt0.Text & "'"
             sql1 = "DELETE FROM CT_LIBROCORRE WHERE "
             'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            sql1 = sql1 & " empresacodigo='" & VGParametros.empresacodigo & "' and librocodigo='" & txt(0).Text & "' AND libroanno='" & VGParamSistem.Anoproceso & "'"
+            sql1 = sql1 & " empresacodigo='" & VGParametros.empresacodigo & "' and librocodigo='" & txt0.Text & "' AND libroanno='" & VGParamSistem.Anoproceso & "'"
             VGCNx.Execute(SQL)
             VGCNx.Execute(sql1)
             Call MuestraDatosLibro()
@@ -219,14 +211,14 @@ Friend Class frmMantLibro
         If modoinsert = True Then
             SQL = "INSERT INTO CT_libro (librocodigo,librodescripcion,flagcontrol,"
             SQL = SQL & "libronumcorr01,libronumcorr02,libronumcorr03,libronumcorr04,libronumcorr05,libronumcorr06,libronumcorr07,libronumcorr08,libronumcorr09,libronumcorr10,libronumcorr11,libronumcorr12,usuariocodigo,fechaact) "
-            SQL = SQL & "VALUES ('" & txt(0).Text & "','" & txt(1).Text & "'," & chk(0).CheckState & ","
-            SQL = SQL & ESNULO(txt(3).Text, 0) & "," & ESNULO(txt(4).Text, 0) & "," & ESNULO(txt(5).Text, 0) & ","
-            SQL = SQL & ESNULO(txt(6).Text, 0) & "," & ESNULO(txt(7).Text, 0) & "," & ESNULO(txt(8).Text, 0) & ","
-            SQL = SQL & ESNULO(txt(9).Text, 0) & "," & ESNULO(txt(10).Text, 0) & "," & ESNULO(txt(11).Text, 0) & "," & ESNULO(txt(12).Text, 0) & "," & ESNULO(txt(13).Text, 0) & "," & ESNULO(txt(14).Text, 0) & ",'"
-            SQL = SQL & VGUsuario & "','" & VB6.Format(Today, "dd/mm/yyyy") & "')"
+            SQL = SQL & "VALUES ('" & txt0.Text & "','" & txt1.Text & "'," & chk0.CheckState & ","
+            SQL = SQL & ESNULO(txt3.Text, 0) & "," & ESNULO(txt4.Text, 0) & "," & ESNULO(txt5.Text, 0) & ","
+            SQL = SQL & ESNULO(txt6.Text, 0) & "," & ESNULO(txt7.Text, 0) & "," & ESNULO(txt8.Text, 0) & ","
+            SQL = SQL & ESNULO(txt9.Text, 0) & "," & ESNULO(txt10.Text, 0) & "," & ESNULO(txt11.Text, 0) & "," & ESNULO(txt12.Text, 0) & "," & ESNULO(txt13.Text, 0) & "," & ESNULO(txt14.Text, 0) & ",'"
+            SQL = SQL & VGUsuario & "','" & Format(Today, "dd/mm/yyyy") & "')"
 
             SQL1 = " select  * from CT_libroCorre where empresacodigo='" & VGParametros.empresacodigo & "'"
-            SQL1 = SQL1 & " and librocodigo='" & txt(0).Text & "' and libroanno='" & VGParamSistem.Anoproceso & "'"
+            SQL1 = SQL1 & " and librocodigo='" & txt0.Text & "' and libroanno='" & VGParamSistem.Anoproceso & "'"
             xx = Nothing
             xx = VGCNx.Execute(SQL1)
             If xx.RecordCount = 0 Then
@@ -235,43 +227,43 @@ Friend Class frmMantLibro
             SQL1 = "INSERT INTO CT_libroCorre (empresacodigo,librocodigo,libroanno,"
             SQL1 = SQL1 & "libronumcorr01,libronumcorr02,libronumcorr03,libronumcorr04,libronumcorr05,libronumcorr06,libronumcorr07,libronumcorr08,libronumcorr09,libronumcorr10,libronumcorr11,libronumcorr12,usuariocodigo,fechaact) "
             SQL1 = SQL1 & "VALUES ('" & VGParametros.empresacodigo & "',"
-            SQL1 = SQL1 & "'" & txt(0).Text & " ','" & VGParamSistem.Anoproceso & "',"
-            SQL1 = SQL1 & ESNULO(txt(3).Text, 0) & "," & ESNULO(txt(4).Text, 0) & "," & ESNULO(txt(5).Text, 0) & ","
-            SQL1 = SQL1 & ESNULO(txt(6).Text, 0) & "," & ESNULO(txt(7).Text, 0) & "," & ESNULO(txt(8).Text, 0) & ","
-            SQL1 = SQL1 & ESNULO(txt(9).Text, 0) & "," & ESNULO(txt(10).Text, 0) & "," & ESNULO(txt(11).Text, 0) & "," & ESNULO(txt(12).Text, 0) & "," & ESNULO(txt(13).Text, 0) & "," & ESNULO(txt(14).Text, 0) & ",'"
-            SQL1 = SQL1 & VGUsuario & "','" & VB6.Format(Today, "dd/mm/yyyy") & "')"
+            SQL1 = SQL1 & "'" & txt0.Text & " ','" & VGParamSistem.Anoproceso & "',"
+            SQL1 = SQL1 & ESNULO(txt3.Text, 0) & "," & ESNULO(txt4.Text, 0) & "," & ESNULO(txt5.Text, 0) & ","
+            SQL1 = SQL1 & ESNULO(txt6.Text, 0) & "," & ESNULO(txt7.Text, 0) & "," & ESNULO(txt8.Text, 0) & ","
+            SQL1 = SQL1 & ESNULO(txt9.Text, 0) & "," & ESNULO(txt10.Text, 0) & "," & ESNULO(txt11.Text, 0) & "," & ESNULO(txt12.Text, 0) & "," & ESNULO(txt13.Text, 0) & "," & ESNULO(txt14.Text, 0) & ",'"
+            SQL1 = SQL1 & VGUsuario & "','" & Format(Today, "dd/mm/yyyy") & "')"
 
         ElseIf modoedit = True Then
-            SQL = "UPDATE CT_LIBRO SET librodescripcion='" & Trim(UCase(txt(1).Text)) & "',"
-            SQL = SQL & "flagcontrol=" & chk(0).CheckState & ","
-            SQL = SQL & "libronumcorr01=" & ESNULO(txt(3).Text, 0) & ",libronumcorr02=" & ESNULO(txt(4).Text, 0) & ",libronumcorr03=" & ESNULO(txt(5).Text, 0) & ","
-            SQL = SQL & "libronumcorr04=" & ESNULO(txt(6).Text, 0) & ",libronumcorr05=" & ESNULO(txt(7).Text, 0) & ",libronumcorr06=" & ESNULO(txt(8).Text, 0) & ","
-            SQL = SQL & "libronumcorr07=" & ESNULO(txt(9).Text, 0) & ",libronumcorr08=" & ESNULO(txt(10).Text, 0) & ",libronumcorr09=" & ESNULO(txt(11).Text, 0) & ","
-            SQL = SQL & "libronumcorr10=" & ESNULO(txt(12).Text, 0) & ",libronumcorr11=" & ESNULO(txt(13).Text, 0) & ",libronumcorr12=" & ESNULO(txt(14).Text, 0) & ","
-            SQL = SQL & "usuariocodigo='" & VGUsuario & "',fechaact='" & VB6.Format(Today, "dd/mm/yyyy") & "' "
-            SQL = SQL & "WHERE librocodigo='" & txt(0).Text & "'"
+            SQL = "UPDATE CT_LIBRO SET librodescripcion='" & Trim(UCase(txt1.Text)) & "',"
+            SQL = SQL & "flagcontrol=" & chk0.CheckState & ","
+            SQL = SQL & "libronumcorr01=" & ESNULO(txt3.Text, 0) & ",libronumcorr02=" & ESNULO(txt4.Text, 0) & ",libronumcorr03=" & ESNULO(txt5.Text, 0) & ","
+            SQL = SQL & "libronumcorr04=" & ESNULO(txt6.Text, 0) & ",libronumcorr05=" & ESNULO(txt7.Text, 0) & ",libronumcorr06=" & ESNULO(txt8.Text, 0) & ","
+            SQL = SQL & "libronumcorr07=" & ESNULO(txt9.Text, 0) & ",libronumcorr08=" & ESNULO(txt10.Text, 0) & ",libronumcorr09=" & ESNULO(txt11.Text, 0) & ","
+            SQL = SQL & "libronumcorr10=" & ESNULO(txt12.Text, 0) & ",libronumcorr11=" & ESNULO(txt13.Text, 0) & ",libronumcorr12=" & ESNULO(txt14.Text, 0) & ","
+            SQL = SQL & "usuariocodigo='" & VGUsuario & "',fechaact='" & Format(Today, "dd/mm/yyyy") & "' "
+            SQL = SQL & "WHERE librocodigo='" & txt0.Text & "'"
 
             SQL1 = " select  * from CT_libroCorre where empresacodigo='" & VGParametros.empresacodigo & "'"
-            SQL1 = SQL1 & " and librocodigo='" & txt(0).Text & "' and libroanno='" & VGParamSistem.Anoproceso & "'"
+            SQL1 = SQL1 & " and librocodigo='" & txt0.Text & "' and libroanno='" & VGParamSistem.Anoproceso & "'"
             xx = Nothing
             xx = VGCNx.Execute(SQL1)
             If xx.RecordCount = 0 Then
                 SQL1 = "INSERT INTO CT_libroCorre (empresacodigo,librocodigo,libroanno,"
                 SQL1 = SQL1 & "libronumcorr01,libronumcorr02,libronumcorr03,libronumcorr04,libronumcorr05,libronumcorr06,libronumcorr07,libronumcorr08,libronumcorr09,libronumcorr10,libronumcorr11,libronumcorr12,usuariocodigo,fechaact) "
                 SQL1 = SQL1 & "VALUES ('" & VGParametros.empresacodigo & "',"
-                SQL1 = SQL1 & "'" & txt(0).Text & " ','" & VGParamSistem.Anoproceso & "',"
-                SQL1 = SQL1 & ESNULO(txt(3).Text, 0) & "," & ESNULO(txt(4).Text, 0) & "," & ESNULO(txt(5).Text, 0) & ","
-                SQL1 = SQL1 & ESNULO(txt(6).Text, 0) & "," & ESNULO(txt(7).Text, 0) & "," & ESNULO(txt(8).Text, 0) & ","
-                SQL1 = SQL1 & ESNULO(txt(9).Text, 0) & "," & ESNULO(txt(10).Text, 0) & "," & ESNULO(txt(11).Text, 0) & "," & ESNULO(txt(12).Text, 0) & "," & ESNULO(txt(13).Text, 0) & "," & ESNULO(txt(14).Text, 0) & ",'"
-                SQL1 = SQL1 & VGUsuario & "','" & VB6.Format(Today, "dd/mm/yyyy") & "')"
+                SQL1 = SQL1 & "'" & txt0.Text & " ','" & VGParamSistem.Anoproceso & "',"
+                SQL1 = SQL1 & ESNULO(txt3.Text, 0) & "," & ESNULO(txt4.Text, 0) & "," & ESNULO(txt5.Text, 0) & ","
+                SQL1 = SQL1 & ESNULO(txt6.Text, 0) & "," & ESNULO(txt7.Text, 0) & "," & ESNULO(txt8.Text, 0) & ","
+                SQL1 = SQL1 & ESNULO(txt9.Text, 0) & "," & ESNULO(txt10.Text, 0) & "," & ESNULO(txt11.Text, 0) & "," & ESNULO(txt12.Text, 0) & "," & ESNULO(txt13.Text, 0) & "," & ESNULO(txt14.Text, 0) & ",'"
+                SQL1 = SQL1 & VGUsuario & "','" & Format(Today, "dd/mm/yyyy") & "')"
             Else
                 SQL1 = "UPDATE CT_LIBROCorre SET "
-                SQL1 = SQL1 & "libronumcorr01=" & ESNULO(txt(3).Text, 0) & ",libronumcorr02=" & ESNULO(txt(4).Text, 0) & ",libronumcorr03=" & ESNULO(txt(5).Text, 0) & ","
-                SQL1 = SQL1 & "libronumcorr04=" & ESNULO(txt(6).Text, 0) & ",libronumcorr05=" & ESNULO(txt(7).Text, 0) & ",libronumcorr06=" & ESNULO(txt(8).Text, 0) & ","
-                SQL1 = SQL1 & "libronumcorr07=" & ESNULO(txt(9).Text, 0) & ",libronumcorr08=" & ESNULO(txt(10).Text, 0) & ",libronumcorr09=" & ESNULO(txt(11).Text, 0) & ","
-                SQL1 = SQL1 & "libronumcorr10=" & ESNULO(txt(12).Text, 0) & ",libronumcorr11=" & ESNULO(txt(13).Text, 0) & ",libronumcorr12=" & ESNULO(txt(14).Text, 0) & ","
-                SQL1 = SQL1 & "usuariocodigo='" & VGUsuario & "',fechaact='" & VB6.Format(Today, "dd/mm/yyyy") & "' "
-                SQL1 = SQL1 & "WHERE empresacodigo='" & VGParametros.empresacodigo & "' and librocodigo='" & txt(0).Text & "' AND "
+                SQL1 = SQL1 & "libronumcorr01=" & ESNULO(txt3.Text, 0) & ",libronumcorr02=" & ESNULO(txt4.Text, 0) & ",libronumcorr03=" & ESNULO(txt5.Text, 0) & ","
+                SQL1 = SQL1 & "libronumcorr04=" & ESNULO(txt6.Text, 0) & ",libronumcorr05=" & ESNULO(txt7.Text, 0) & ",libronumcorr06=" & ESNULO(txt8.Text, 0) & ","
+                SQL1 = SQL1 & "libronumcorr07=" & ESNULO(txt9.Text, 0) & ",libronumcorr08=" & ESNULO(txt10.Text, 0) & ",libronumcorr09=" & ESNULO(txt11.Text, 0) & ","
+                SQL1 = SQL1 & "libronumcorr10=" & ESNULO(txt12.Text, 0) & ",libronumcorr11=" & ESNULO(txt13.Text, 0) & ",libronumcorr12=" & ESNULO(txt14.Text, 0) & ","
+                SQL1 = SQL1 & "usuariocodigo='" & VGUsuario & "',fechaact='" & Format(Today, "dd/mm/yyyy") & "' "
+                SQL1 = SQL1 & "WHERE empresacodigo='" & VGParametros.empresacodigo & "' and librocodigo='" & txt0.Text & "' AND "
                 SQL1 = SQL1 & "libroanno='" & VGParamSistem.Anoproceso & "'"
             End If
         End If
@@ -292,10 +284,15 @@ Friend Class frmMantLibro
 x:
         If Err.Number = -2147217873 Then
             MsgBox("Esta intentando registrar Código de Sublibro Existente ", MsgBoxStyle.Information, Text)
-            txt(0).Focus()
+            txt0.Focus()
         Else
             MsgBox("Error inesperado: " & Err.Number & " " & Err.Description, MsgBoxStyle.Information, Text)
         End If
         VGCNx.RollbackTrans()
+    End Sub
+
+    Private Sub chk0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0.CheckedChanged
+        If modoinsert = True Or modoedit = True Then cAcepta.Enabled = ValidaDataIngreso()
+
     End Sub
 End Class

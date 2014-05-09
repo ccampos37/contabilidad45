@@ -13,7 +13,7 @@ Friend Class frmRepPlanCuentasSaldosIniciales
 	Sub Llenarcboniveles()
 		Dim i As Short
 		For i = 1 To VGnumnivelescuenta
-			cboNiveles.Items.Add("NIVEL " & VB6.Format(i, "0#"))
+            cboNiveles.Items.Add("NIVEL " & Format(i, "0#"))
 		Next 
 	End Sub
 	

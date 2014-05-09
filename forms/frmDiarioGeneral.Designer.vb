@@ -48,9 +48,6 @@
     Public WithEvents fraResumido As System.Windows.Forms.GroupBox
     Public WithEvents Ctr_Ayuda1 As AxCtr_AyudaArray
     Public WithEvents Ctr_Ayuda2 As AxCtr_AyudaArray
-    Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-    Public WithEvents optOpcion As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar mediante el Diseñador de Windows Forms.
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -79,8 +76,6 @@
         Me.Ctr_Ayuda11 = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
-        Me.optOpcion = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
         Me.Frame2.SuspendLayout()
         Me.Frame1.SuspendLayout()
         Me.fraDetallado.SuspendLayout()
@@ -91,8 +86,6 @@
         Me.fraResumido.SuspendLayout()
         CType(Me.Ctr_Ayuda10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ctr_Ayuda11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.optOpcion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Frame2
@@ -125,7 +118,6 @@
         Me.cmdBotones0.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones0.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me.cmdBotones0, CType(0, Short))
         Me.cmdBotones0.Location = New System.Drawing.Point(78, 284)
         Me.cmdBotones0.Name = "cmdBotones0"
         Me.cmdBotones0.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -139,7 +131,6 @@
         Me.cmdBotones1.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones1.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me.cmdBotones1, CType(1, Short))
         Me.cmdBotones1.Location = New System.Drawing.Point(185, 284)
         Me.cmdBotones1.Name = "cmdBotones1"
         Me.cmdBotones1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -168,7 +159,6 @@
         Me.optOpcion2.BackColor = System.Drawing.SystemColors.Control
         Me.optOpcion2.Cursor = System.Windows.Forms.Cursors.Default
         Me.optOpcion2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optOpcion.SetIndex(Me.optOpcion2, CType(2, Short))
         Me.optOpcion2.Location = New System.Drawing.Point(16, 56)
         Me.optOpcion2.Name = "optOpcion2"
         Me.optOpcion2.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -183,7 +173,6 @@
         Me.optOpcion0.BackColor = System.Drawing.SystemColors.Control
         Me.optOpcion0.Cursor = System.Windows.Forms.Cursors.Default
         Me.optOpcion0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optOpcion.SetIndex(Me.optOpcion0, CType(0, Short))
         Me.optOpcion0.Location = New System.Drawing.Point(16, 16)
         Me.optOpcion0.Name = "optOpcion0"
         Me.optOpcion0.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -198,7 +187,6 @@
         Me.optOpcion1.BackColor = System.Drawing.SystemColors.Control
         Me.optOpcion1.Cursor = System.Windows.Forms.Cursors.Default
         Me.optOpcion1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optOpcion.SetIndex(Me.optOpcion1, CType(1, Short))
         Me.optOpcion1.Location = New System.Drawing.Point(16, 40)
         Me.optOpcion1.Name = "optOpcion1"
         Me.optOpcion1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -370,9 +358,6 @@
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "Asiento"
         '
-        'optOpcion
-        '
-        '
         'frmRepDiarioGeneral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -404,8 +389,6 @@
         Me.fraResumido.ResumeLayout(False)
         CType(Me.Ctr_Ayuda10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ctr_Ayuda11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.optOpcion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

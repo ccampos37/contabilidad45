@@ -59,8 +59,8 @@ Friend Class FrmLibroDiarioSimplificado
     End Sub
 	
 	Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
-		cboMes.Text = VB6.GetItemString(cboMes, nMes - 1)
-		DTPickerFecInicio.Value = VB6.Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
+        cboMes.Text = VB6.GetItemString(cboMes, nMes - 1)
+        DTPickerFecInicio.Value = Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
 		DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
 	End Sub
 	

@@ -69,31 +69,31 @@ Friend Class frmRepMayor
 	End Property
 
 	Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
-		DTPickerFecInicio.Value = VB6.Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
-		DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
-	End Sub
-	
-	Function ValidarImpresion() As Boolean
-		If VB6.Format(DTPickerFecInicio.Value, "dd/mm/yyyy") > VB6.Format(DTPickerFecFinal.Value, "dd/mm/yyyy") Then
-			MsgBox("La fecha de Término no puede ser mayor a la Fecha de Inicio", MsgBoxStyle.Information, Text)
-			ValidarImpresion = False
-			DTPickerFecInicio.Focus()
-			Exit Function
-		End If
-		
-		ValidarImpresion = True
-	End Function
-	
-	Sub ImpresionMayorAnalitico()
+        DTPickerFecInicio.Value = Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
+        DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
+    End Sub
+
+    Function ValidarImpresion() As Boolean
+        If Format(DTPickerFecInicio.Value, "dd/mm/yyyy") > Format(DTPickerFecFinal.Value, "dd/mm/yyyy") Then
+            MsgBox("La fecha de Término no puede ser mayor a la Fecha de Inicio", MsgBoxStyle.Information, Text)
+            ValidarImpresion = False
+            DTPickerFecInicio.Focus()
+            Exit Function
+        End If
+
+        ValidarImpresion = True
+    End Function
+
+    Sub ImpresionMayorAnalitico()
         Dim arrform(2) As Object
-		Dim arrparm() As Object
-		ReDim arrparm(10)
+        Dim arrparm() As Object
+        ReDim arrparm(10)
         arrparm(0) = VGParamSistem.BDEmpresa
         arrparm(1) = VGParametros.empresacodigo
         arrparm(2) = VGParamSistem.Anoproceso
-        arrparm(3) = VB6.Format(Month(DTPickerFecInicio.Value) - 1, "0#")
-        arrparm(4) = VB6.Format(Month(DTPickerFecInicio.Value), "0#")
-        arrparm(5) = VB6.Format(Month(DTPickerFecFinal.Value), "0#")
+        arrparm(3) = Format(Month(DTPickerFecInicio.Value) - 1, "0#")
+        arrparm(4) = Format(Month(DTPickerFecInicio.Value), "0#")
+        arrparm(5) = Format(Month(DTPickerFecFinal.Value), "0#")
         arrparm(6) = IIf(IsNothing(Ctr_Ayucuenta0.xclave), "%", Trim(Ctr_Ayucuenta0.xclave))
         If Ctr_Ayucuenta0.xclave = Ctr_Ayucuenta1.xclave Then
             arrparm(7) = "%"
@@ -125,12 +125,12 @@ Friend Class frmRepMayor
         arrparm(1) = VGParametros.empresacodigo
         arrparm(2) = VGParamSistem.Anoproceso
         If chkAcumula.CheckState = 1 Then
-            arrparm(3) = VB6.Format(Month(DTPickerFecInicio.Value), "00")
-            arrparm(4) = VB6.Format(Month(DTPickerFecFinal.Value), "00")
+            arrparm(3) = Format(Month(DTPickerFecInicio.Value), "00")
+            arrparm(4) = Format(Month(DTPickerFecFinal.Value), "00")
             arrparm(9) = 1
         Else
-            arrparm(3) = VB6.Format(VGParamSistem.Mesproceso, "00")
-            arrparm(4) = VB6.Format(VGParamSistem.Mesproceso, "00")
+            arrparm(3) = Format(VGParamSistem.Mesproceso, "00")
+            arrparm(4) = Format(VGParamSistem.Mesproceso, "00")
             arrparm(9) = 0
         End If
         arrparm(5) = IIf(IsNothing(Ctr_Ayucuenta0.xclave), "%%", Trim(Ctr_Ayucuenta0.xclave))

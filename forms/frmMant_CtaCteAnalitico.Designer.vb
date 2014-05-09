@@ -16,8 +16,7 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
+    Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
 	Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
 	Public WithEvents _cmdBotones_2 As System.Windows.Forms.Button
 	Public WithEvents _cmdBotones_4 As System.Windows.Forms.Button
@@ -65,16 +64,12 @@
 	Public WithEvents Ctr_Analitico As Axctrlayuda_f.AxCtr_Ayuda
 	Public WithEvents Label2 As System.Windows.Forms.Label
 	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents cmdBotones As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	Public WithEvents lbTipAnal As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+     Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMant_CtaCteAnalitico))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.Shape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Shape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -124,8 +119,6 @@
         Me.Ctr_Analitico = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmdBotones = New Microsoft.VisualBasic.Compatibility.VB6.ButtonArray(Me.components)
-        Me.lbTipAnal = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.SSTab1.SuspendLayout()
         Me._SSTab1_TabPage0.SuspendLayout()
         Me.framebotones.SuspendLayout()
@@ -145,8 +138,6 @@
         CType(Me.CtrAy_Asiento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ctr_CtaCtble, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ctr_Analitico, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lbTipAnal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ShapeContainer1
@@ -220,7 +211,6 @@
         Me._cmdBotones_0.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_0, CType(0, Short))
         Me._cmdBotones_0.Location = New System.Drawing.Point(27, 13)
         Me._cmdBotones_0.Name = "_cmdBotones_0"
         Me._cmdBotones_0.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -234,7 +224,6 @@
         Me._cmdBotones_1.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_1, CType(1, Short))
         Me._cmdBotones_1.Location = New System.Drawing.Point(125, 13)
         Me._cmdBotones_1.Name = "_cmdBotones_1"
         Me._cmdBotones_1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -248,7 +237,6 @@
         Me._cmdBotones_2.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_2, CType(2, Short))
         Me._cmdBotones_2.Location = New System.Drawing.Point(223, 13)
         Me._cmdBotones_2.Name = "_cmdBotones_2"
         Me._cmdBotones_2.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -262,7 +250,6 @@
         Me._cmdBotones_4.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_4, CType(4, Short))
         Me._cmdBotones_4.Location = New System.Drawing.Point(419, 13)
         Me._cmdBotones_4.Name = "_cmdBotones_4"
         Me._cmdBotones_4.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -276,7 +263,6 @@
         Me._cmdBotones_3.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones.SetIndex(Me._cmdBotones_3, CType(3, Short))
         Me._cmdBotones_3.Location = New System.Drawing.Point(321, 13)
         Me._cmdBotones_3.Name = "_cmdBotones_3"
         Me._cmdBotones_3.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -302,7 +288,7 @@
         Me._SSTab1_TabPage1.Controls.Add(Me.cAcepta)
         Me._SSTab1_TabPage1.Location = New System.Drawing.Point(4, 22)
         Me._SSTab1_TabPage1.Name = "_SSTab1_TabPage1"
-        Me._SSTab1_TabPage1.Size = New System.Drawing.Size(726, 294)
+        Me._SSTab1_TabPage1.Size = New System.Drawing.Size(753, 372)
         Me._SSTab1_TabPage1.TabIndex = 1
         Me._SSTab1_TabPage1.Text = "Mantenimiento"
         '
@@ -502,7 +488,6 @@
         Me._lbTipAnal_0.BackColor = System.Drawing.SystemColors.Control
         Me._lbTipAnal_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lbTipAnal_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbTipAnal.SetIndex(Me._lbTipAnal_0, CType(0, Short))
         Me._lbTipAnal_0.Location = New System.Drawing.Point(268, 68)
         Me._lbTipAnal_0.Name = "_lbTipAnal_0"
         Me._lbTipAnal_0.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -744,9 +729,6 @@
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Cuenta Contable"
         '
-        'cmdBotones
-        '
-        '
         'frmMant_CtaCteAnalitico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -784,8 +766,6 @@
         CType(Me.CtrAy_Asiento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ctr_CtaCtble, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ctr_Analitico, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmdBotones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lbTipAnal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

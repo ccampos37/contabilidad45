@@ -28,7 +28,7 @@ Friend Class FrmMntIndicadorOportunidad
 		Dim rs2 As New ADODB.Recordset
 		ListView1.Columns.Clear()
 		ListView1.Items.Clear()
-		ListView1.Columns.Add("", "Presentacion de Libro", CInt(VB6.TwipsToPixelsX(VB6.PixelsToTwipsX(ListView1.Width) / 1)))
+        ListView1.Columns.Add("", "Presentacion de Libro", CInt((ListView1.Width) / 1))
 		ListView1.View = System.Windows.Forms.View.Details
 		rs1 = VGCNx.Execute("select * from ct_librossunatcorrelativos ")
 		rs1.MoveFirst()

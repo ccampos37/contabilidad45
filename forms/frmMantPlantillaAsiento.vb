@@ -40,8 +40,7 @@ Friend Class frmMantPlantillaAsiento
         cAcepta.Enabled = False
         lblNumRegAsientos.Text = CStr(Nothing)
         lblNumRegSubAs.Text = CStr(Nothing)
-        Me.Width = VB6.TwipsToPixelsX(6870)
-        Me.Height = VB6.TwipsToPixelsY(7650)
+
     End Sub
 
     Sub MuestraDatos1()
@@ -92,83 +91,22 @@ Friend Class frmMantPlantillaAsiento
         SSTab1.SelectedIndex = 0
         i_filaorigen = -1
     End Sub
-
-    Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
-        Dim Index As Short = cmdBotones.GetIndex(eventSender)
-        Dim SQL As String
-
-        'On Error GoTo X
-        SSTab1.TabPages.Item(1).Enabled = True
-
-        Select Case Index
-            Case 0 'nuevo
-                frmbotones.Visible = False
-                modoinsert = True
-                lblMensaje.Text = "Nuevo"
-                Call ModoPlantilla(True)
-                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto TDBGrid3.Columns().Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                Ctr_Ayuda1.xclave = TDBGrid3.Columns(0).Value : Ctr_Ayuda1.Ejecutar()
-                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto TDBGrid1.Columns().Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                Ctr_Ayuda2.xclave = TDBGrid1.Columns(0).Value : Ctr_Ayuda2.Ejecutar()
-                txt(0).Focus()
-                Call LimpiarValores()
-
-            Case 1 'modificar
-                If TDBGrid1.Row < 0 Then
-                    Exit Sub
-                End If
-                frmbotones.Visible = False
-                modoedit = True
-                lblMensaje.Text = "Editar"
-                Call ModoPlantilla(True)
-                'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(0).CtlEnabled = False
-
-            Case 2 'eliminar
-                If MsgBox("Desea eliminar el registro con Correlativo Nº " & CShort(TDBGrid2.Columns(2).Text) & " ?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "AVISO") = MsgBoxResult.Yes Then
-                    SQL = "DELETE FROM CT_PLANTILLAASIENTO WHERE subasientocodigo = '" & Trim(Ctr_Ayuda2.xclave) & "' AND asientocodigo = '" & Trim(Ctr_Ayuda1.xclave) & "' AND plantillaasientocorrela =" & CShort(TDBGrid2.Columns(2).Text)
-                    VGCNx.Execute(SQL)
-                    Call MuestraGrid2()
-                End If
-
-            Case 3 'imprimir
-                Call Impresion()
-
-            Case 4 ' salir
-                Me.Close()
-        End Select
-        Exit Sub
-
-X:
-        If Err.Number Then
-            Err.Clear()
-            Resume Next
-        End If
-
-    End Sub
-
     Sub EditarValores()
 
         With TDBGrid2
-            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            txt(0).Text = Trim(.Columns(2).Text)
+            txt0.Text = Trim(.Columns(2).Text)
             Ctr_Ayuda3.xclave = Trim(.Columns(3).Text) : Ctr_Ayuda3.Ejecutar()
             Ctr_Ayucuenta.xclave = Trim(.Columns(4).Text) : Ctr_Ayucuenta.Ejecutar()
             Ctr_Ayuda5.xclave = Trim(.Columns(7).Text) : Ctr_Ayuda5.Ejecutar()
-            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            txt(1).Text = Trim(.Columns(5).Text)
+            txt1.Text = Trim(.Columns(5).Text)
             chk.CheckState = IIf(CDbl(.Columns(6).Text) = 0, 0, 1)
             ChkAjuste.CheckState = IIf(CDbl(.Columns(10).Text) = 0, 0, 1)
-            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            txt(2).Text = .Columns(8).Text
-            'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-            txt(3).Text = .Columns(9).Text
+            txt2.Text = .Columns(8).Text
+            txt3.Text = .Columns(9).Text
         End With
         If modoinsert = True Then Call LimpiarValores()
 
     End Sub
-
-    'FIXIT: Declare 'LimpiarValores' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
     Public Sub LimpiarValores()
         Dim i As Short
         Ctr_Ayuda3.xclave = CStr(Nothing) : Ctr_Ayuda3.Ejecutar()
@@ -196,11 +134,11 @@ X:
             cAcepta.Enabled = ValidaDataIngreso()
             If Ctr_Ayucuenta.xclave = "00" Then
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(3).CtlEnabled = True
-                txt(3).Focus()
+                txt3.CtlEnabled = True
+                txt3.Focus()
             Else
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(3).CtlEnabled = False
+                txt3.CtlEnabled = False
             End If
         End If
 
@@ -210,11 +148,11 @@ X:
         If modoinsert = True Or modoedit = True Then
             If Ctr_Ayucuenta.xclave = "00" Then
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(3).CtlEnabled = True
-                txt(3).Focus()
+                txt3.CtlEnabled = True
+                txt3.Focus()
             Else
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(3).CtlEnabled = False
+                txt3.CtlEnabled = False
             End If
         End If
     End Sub
@@ -223,7 +161,7 @@ X:
         If modoinsert = True Or modoedit = True Then
             If eventArgs.keyAscii = 13 Then
                 If Ctr_Ayucuenta.xclave = "00" Then
-                    txt(3).Focus()
+                    txt3.Focus()
                 End If
             End If
         End If
@@ -237,16 +175,16 @@ X:
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
                 Ctr_Ayuda5.CtlEnabled = True
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(2).CtlEnabled = True
+                txt2.CtlEnabled = True
                 'UPGRADE_NOTE: BackColor se actualizó a CtlBackColor. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(2).CtlBackColor = System.Drawing.ColorTranslator.FromOle(&H80000005)
+                txt2.CtlBackColor = System.Drawing.ColorTranslator.FromOle(&H80000005)
             Case 1
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
                 Ctr_Ayuda5.CtlEnabled = False
                 'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(2).CtlEnabled = False
+                txt2.CtlEnabled = False
                 'UPGRADE_NOTE: BackColor se actualizó a CtlBackColor. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(2).CtlBackColor = System.Drawing.ColorTranslator.FromOle(ColorDesHabilitado)
+                txt2.CtlBackColor = System.Drawing.ColorTranslator.FromOle(ColorDesHabilitado)
         End Select
     End Sub
 
@@ -287,7 +225,7 @@ X:
 
     Sub ModoPlantilla(ByRef Flag_Normal As Boolean)
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        txt(0).CtlEnabled = Flag_Normal
+        txt0.CtlEnabled = Flag_Normal
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         Ctr_Ayuda3.CtlEnabled = Flag_Normal
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
@@ -295,13 +233,13 @@ X:
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         Ctr_Ayuda5.CtlEnabled = Flag_Normal
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        txt(1).CtlEnabled = Flag_Normal
+        txt1.CtlEnabled = Flag_Normal
         chk.Enabled = Flag_Normal
         ChkAjuste.Enabled = Flag_Normal
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        txt(2).CtlEnabled = Flag_Normal
+        txt2.CtlEnabled = Flag_Normal
         'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        txt(3).CtlEnabled = Flag_Normal
+        txt3.CtlEnabled = Flag_Normal
 
     End Sub
 
@@ -404,32 +342,32 @@ X:
 
         SQL = "SELECT cuentacodigo FROM ct_plantillaasiento WHERE asientocodigo='" & Trim(Ctr_Ayuda1.xclave) & "' AND "
         SQL = SQL & "subasientocodigo='" & Trim(Ctr_Ayuda2.xclave) & "' AND "
-        SQL = SQL & "plantillaasientocorrela=" & txt(0).Text
+        SQL = SQL & "plantillaasientocorrela=" & txt0.Text
         If modoinsert = True And VerificaDatoExistente(VGCNx, SQL) > 0 Then
-            MsgBox("El Correlativo Nº " & txt(0).Text & " existe en la Plantilla actual", MsgBoxStyle.Information, Text)
-            txt(0).Focus()
+            MsgBox("El Correlativo Nº " & txt0.Text & " existe en la Plantilla actual", MsgBoxStyle.Information, Text)
+            txt0.Focus()
             ValidaData = False
             Exit Function
         End If
 
         '  VGvardllgen = New dllgeneral.dll_general
-        If Not IsNothing(Ctr_Ayuda5.xclave) And (CInt(ESNULO(txt(2).Text, 0)) <= 0) = True Then
+        If Not IsNothing(Ctr_Ayuda5.xclave) And (CInt(ESNULO(txt2.Text, 0)) <= 0) = True Then
             MsgBox("Falta la Cuenta con IGV  ó Valor de IGV(%)", MsgBoxStyle.Information, Text)
             Ctr_Ayuda5.Focus()
             ValidaData = False
             Exit Function
         End If
-        If Not IsNothing(txt(3).Text) Then
-            If Func.Right(txt(3).Text, 1) <> "%" Then
+        If Not IsNothing(txt3.Text) Then
+            If Func.Right(txt3.Text, 1) <> "%" Then
                 MsgBox("La Cuenta Comodín debe terminar con un Caracter (%)", MsgBoxStyle.Information, Text)
                 ValidaData = False
                 'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-                txt(3).Text = txt(3).Text & "%"
+                txt3.Text = txt3.Text & "%"
                 Exit Function
             End If
-            If VerificaCriterioComodin(txt(3).Text) = False Then
+            If VerificaCriterioComodin(txt3.Text) = False Then
                 ValidaData = False
-                txt(3).Focus()
+                txt3.Focus()
                 Exit Function
             End If
         End If
@@ -443,15 +381,15 @@ X:
         If modoinsert = True Then
             SQL = "INSERT INTO ct_plantillaasiento (subasientocodigo,asientocodigo,plantillaasientocorrela,operacioncodigo,"
             SQL = SQL & "cuentacodigo,iddebeohaber,plantillaasientoinafecto,plantillaasientocuentaigv,plantillaasientovalorigv,plantillaasientocomodin,plantillaasientoctaajuste,usuariocodigo,fechaact) "
-            SQL = SQL & "VALUES ('" & Ctr_Ayuda2.xclave & "','" & Ctr_Ayuda1.xclave & "','" & txt(0).Text & "','"
-            SQL = SQL & Ctr_Ayuda3.xclave & "','" & Ctr_Ayucuenta.xclave & "','" & UCase(txt(1).Text) & "'," & chk.CheckState & ",'" & Ctr_Ayuda5.xclave & "',"
-            SQL = SQL & ESNULO(txt(2).Text, 0) & ",'" & txt(3).Text & "'," & ChkAjuste.CheckState & ",'" & VGUsuario & "','" & VB6.Format(Today, "dd/mm/yyyy") & "')"
+            SQL = SQL & "VALUES ('" & Ctr_Ayuda2.xclave & "','" & Ctr_Ayuda1.xclave & "','" & txt0.Text & "','"
+            SQL = SQL & Ctr_Ayuda3.xclave & "','" & Ctr_Ayucuenta.xclave & "','" & UCase(txt1.Text) & "'," & chk.CheckState & ",'" & Ctr_Ayuda5.xclave & "',"
+            SQL = SQL & ESNULO(txt2.Text, 0) & ",'" & txt3.Text & "'," & ChkAjuste.CheckState & ",'" & VGUsuario & "','" & Format(Today, "dd/mm/yyyy") & "')"
 
         ElseIf modoedit = True Then
             SQL = "UPDATE ct_plantillaasiento SET operacioncodigo='" & Ctr_Ayuda3.xclave & "',cuentacodigo='" & Ctr_Ayucuenta.xclave & "',"
-            SQL = SQL & "iddebeohaber='" & txt(1).Text & "',plantillaasientoinafecto=" & chk.CheckState & ",plantillaasientocuentaigv='" & Ctr_Ayuda5.xclave & "',"
-            SQL = SQL & "plantillaasientovalorigv=" & ESNULO(txt(2).Text, 0) & ",plantillaasientocomodin='" & txt(3).Text & "',plantillaasientoctaajuste=" & ChkAjuste.CheckState & ",usuariocodigo='" & VGUsuario & "',fechaact='" & VB6.Format(Today, "dd/mm/yyyy") & "'"
-            SQL = SQL & "WHERE subasientocodigo='" & Trim(Ctr_Ayuda2.xclave) & "' AND asientocodigo = '" & Trim(Ctr_Ayuda1.xclave) & "' AND plantillaasientocorrela =" & UCase(txt(0).Text)
+            SQL = SQL & "iddebeohaber='" & txt1.Text & "',plantillaasientoinafecto=" & chk.CheckState & ",plantillaasientocuentaigv='" & Ctr_Ayuda5.xclave & "',"
+            SQL = SQL & "plantillaasientovalorigv=" & ESNULO(txt2.Text, 0) & ",plantillaasientocomodin='" & txt3.Text & "',plantillaasientoctaajuste=" & ChkAjuste.CheckState & ",usuariocodigo='" & VGUsuario & "',fechaact='" & Format(Today, "dd/mm/yyyy") & "'"
+            SQL = SQL & "WHERE subasientocodigo='" & Trim(Ctr_Ayuda2.xclave) & "' AND asientocodigo = '" & Trim(Ctr_Ayuda1.xclave) & "' AND plantillaasientocorrela =" & UCase(txt0.Text)
         End If
 
         VGCNx.BeginTrans()
@@ -534,4 +472,49 @@ X:
 
     End Sub
 
+    Private Sub cmdBotones0_Click(sender As Object, e As EventArgs) Handles cmdBotones0.Click
+        frmbotones.Visible = False
+        modoinsert = True
+        lblMensaje.Text = "Nuevo"
+        Call ModoPlantilla(True)
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto TDBGrid3.Columns().Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        Ctr_Ayuda1.xclave = TDBGrid3.Columns(0).Value : Ctr_Ayuda1.Ejecutar()
+        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto TDBGrid1.Columns().Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        Ctr_Ayuda2.xclave = TDBGrid1.Columns(0).Value : Ctr_Ayuda2.Ejecutar()
+        txt0.Focus()
+        Call LimpiarValores()
+        SSTab1.TabPages.Item(1).Enabled = True
+    End Sub
+
+    Private Sub cmdBotones1_Click(sender As Object, e As EventArgs) Handles cmdBotones1.Click
+        If TDBGrid1.Row < 0 Then
+            Exit Sub
+        End If
+        frmbotones.Visible = False
+        modoedit = True
+        lblMensaje.Text = "Editar"
+        Call ModoPlantilla(True)
+        'UPGRADE_NOTE: Enabled se actualizó a CtlEnabled. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        txt0.CtlEnabled = False
+        SSTab1.TabPages.Item(1).Enabled = True
+    End Sub
+
+    Private Sub cmdBotones2_Click(sender As Object, e As EventArgs) Handles cmdBotones2.Click
+        If MsgBox("Desea eliminar el registro con Correlativo Nº " & CShort(TDBGrid2.Columns(2).Text) & " ?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "AVISO") = MsgBoxResult.Yes Then
+            SQL = "DELETE FROM CT_PLANTILLAASIENTO WHERE subasientocodigo = '" & Trim(Ctr_Ayuda2.xclave) & "' AND asientocodigo = '" & Trim(Ctr_Ayuda1.xclave) & "' AND plantillaasientocorrela =" & CShort(TDBGrid2.Columns(2).Text)
+            VGCNx.Execute(SQL)
+            Call MuestraGrid2()
+        End If
+        SSTab1.TabPages.Item(1).Enabled = True
+    End Sub
+
+    Private Sub cmdBotones3_Click(sender As Object, e As EventArgs) Handles cmdBotones3.Click
+        Call Impresion()
+        SSTab1.TabPages.Item(1).Enabled = True
+    End Sub
+
+    Private Sub cmdBotones4_Click(sender As Object, e As EventArgs) Handles cmdBotones4.Click
+        Me.Close()
+        SSTab1.TabPages.Item(1).Enabled = True
+    End Sub
 End Class

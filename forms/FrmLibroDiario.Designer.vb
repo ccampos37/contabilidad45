@@ -108,7 +108,7 @@
         'ctr_ayuSubasiento
         '
         Me.ctr_ayuSubasiento.Enabled = True
-        Me.ctr_ayuSubasiento.Location = New System.Drawing.Point(85, 43)
+        Me.ctr_ayuSubasiento.Location = New System.Drawing.Point(85, 57)
         Me.ctr_ayuSubasiento.Name = "ctr_ayuSubasiento"
         Me.ctr_ayuSubasiento.OcxState = CType(resources.GetObject("ctr_ayuSubasiento.OcxState"), System.Windows.Forms.AxHost.State)
         Me.ctr_ayuSubasiento.Size = New System.Drawing.Size(254, 22)
@@ -131,7 +131,7 @@
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label3.Location = New System.Drawing.Point(12, 53)
+        Me.Label3.Location = New System.Drawing.Point(12, 60)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label3.Size = New System.Drawing.Size(64, 20)

@@ -17,47 +17,45 @@
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
 	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _OptForma_0 As System.Windows.Forms.RadioButton
-	Public WithEvents _OptForma_1 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
-	Public WithEvents ChkCascada As System.Windows.Forms.CheckBox
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents _OpTipo_0 As System.Windows.Forms.RadioButton
-	Public WithEvents _OpTipo_1 As System.Windows.Forms.RadioButton
-	Public WithEvents Frame3 As System.Windows.Forms.GroupBox
-	Public WithEvents CmdAceptar As System.Windows.Forms.Button
-	Public WithEvents CmdCancelar As System.Windows.Forms.Button
-	Public WithEvents cmbNivel As System.Windows.Forms.ComboBox
-	Public WithEvents DTPicker1 As AxMSComCtl2.AxDTPicker
-	Public WithEvents CtrAyu_Moneda As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label4 As System.Windows.Forms.Label
-	Public WithEvents Label3 As System.Windows.Forms.Label
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents Frame4 As System.Windows.Forms.GroupBox
-	Public WithEvents ChkFiltcta As System.Windows.Forms.CheckBox
-	Public WithEvents CtrAyu_Cuenta As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Frame5 As System.Windows.Forms.GroupBox
-	Public WithEvents DtCfiltro As AxMSDataListLib.AxDataCombo
-	Public WithEvents Label5 As System.Windows.Forms.Label
-	Public WithEvents OpTipo As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	Public WithEvents OptForma As Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    Public WithEvents OptForma0 As System.Windows.Forms.RadioButton
+    Public WithEvents OptForma1 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    Public WithEvents ChkCascada As System.Windows.Forms.CheckBox
+    Public WithEvents Label2 As System.Windows.Forms.Label
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents OpTipo0 As System.Windows.Forms.RadioButton
+    Public WithEvents OpTipo1 As System.Windows.Forms.RadioButton
+    Public WithEvents Frame3 As System.Windows.Forms.GroupBox
+    Public WithEvents CmdAceptar As System.Windows.Forms.Button
+    Public WithEvents CmdCancelar As System.Windows.Forms.Button
+    Public WithEvents cmbNivel As System.Windows.Forms.ComboBox
+    Public WithEvents DTPicker1 As AxMSComCtl2.AxDTPicker
+    Public WithEvents CtrAyu_Moneda As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label4 As System.Windows.Forms.Label
+    Public WithEvents Label3 As System.Windows.Forms.Label
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents Frame4 As System.Windows.Forms.GroupBox
+    Public WithEvents ChkFiltcta As System.Windows.Forms.CheckBox
+    Public WithEvents CtrAyu_Cuenta As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Frame5 As System.Windows.Forms.GroupBox
+    Public WithEvents DtCfiltro As AxMSDataListLib.AxDataCombo
+    Public WithEvents Label5 As System.Windows.Forms.Label
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLibroBalancedeComprobacion))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Frame1 = New System.Windows.Forms.GroupBox()
-        Me._OptForma_0 = New System.Windows.Forms.RadioButton()
-        Me._OptForma_1 = New System.Windows.Forms.RadioButton()
+        Me.OptForma0 = New System.Windows.Forms.RadioButton()
+        Me.OptForma1 = New System.Windows.Forms.RadioButton()
         Me.Frame2 = New System.Windows.Forms.GroupBox()
         Me.ChkCascada = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Frame3 = New System.Windows.Forms.GroupBox()
-        Me._OpTipo_0 = New System.Windows.Forms.RadioButton()
-        Me._OpTipo_1 = New System.Windows.Forms.RadioButton()
+        Me.OpTipo0 = New System.Windows.Forms.RadioButton()
+        Me.OpTipo1 = New System.Windows.Forms.RadioButton()
         Me.CmdAceptar = New System.Windows.Forms.Button()
         Me.CmdCancelar = New System.Windows.Forms.Button()
         Me.Frame4 = New System.Windows.Forms.GroupBox()
@@ -72,8 +70,6 @@
         Me.CtrAyu_Cuenta = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.DtCfiltro = New AxMSDataListLib.AxDataCombo()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.OpTipo = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
-        Me.OptForma = New Microsoft.VisualBasic.Compatibility.VB6.RadioButtonArray(Me.components)
         Me.Frame1.SuspendLayout()
         Me.Frame2.SuspendLayout()
         Me.Frame3.SuspendLayout()
@@ -83,15 +79,13 @@
         Me.Frame5.SuspendLayout()
         CType(Me.CtrAyu_Cuenta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DtCfiltro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OpTipo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OptForma, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Frame1
         '
         Me.Frame1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Frame1.Controls.Add(Me._OptForma_0)
-        Me.Frame1.Controls.Add(Me._OptForma_1)
+        Me.Frame1.Controls.Add(Me.OptForma0)
+        Me.Frame1.Controls.Add(Me.OptForma1)
         Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Frame1.Location = New System.Drawing.Point(231, 233)
         Me.Frame1.Name = "Frame1"
@@ -102,36 +96,34 @@
         Me.Frame1.TabStop = False
         Me.Frame1.Text = "Forma"
         '
-        '_OptForma_0
+        'OptForma0
         '
-        Me._OptForma_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._OptForma_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._OptForma_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.OptForma.SetIndex(Me._OptForma_0, CType(0, Short))
-        Me._OptForma_0.Location = New System.Drawing.Point(8, 18)
-        Me._OptForma_0.Name = "_OptForma_0"
-        Me._OptForma_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._OptForma_0.Size = New System.Drawing.Size(63, 21)
-        Me._OptForma_0.TabIndex = 21
-        Me._OptForma_0.TabStop = True
-        Me._OptForma_0.Text = "Mensual "
-        Me._OptForma_0.UseVisualStyleBackColor = False
-        Me._OptForma_0.Visible = False
+        Me.OptForma0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.OptForma0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.OptForma0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.OptForma0.Location = New System.Drawing.Point(8, 18)
+        Me.OptForma0.Name = "OptForma0"
+        Me.OptForma0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.OptForma0.Size = New System.Drawing.Size(63, 21)
+        Me.OptForma0.TabIndex = 21
+        Me.OptForma0.TabStop = True
+        Me.OptForma0.Text = "Mensual "
+        Me.OptForma0.UseVisualStyleBackColor = False
+        Me.OptForma0.Visible = False
         '
-        '_OptForma_1
+        'OptForma1
         '
-        Me._OptForma_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._OptForma_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._OptForma_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.OptForma.SetIndex(Me._OptForma_1, CType(1, Short))
-        Me._OptForma_1.Location = New System.Drawing.Point(111, 18)
-        Me._OptForma_1.Name = "_OptForma_1"
-        Me._OptForma_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._OptForma_1.Size = New System.Drawing.Size(84, 21)
-        Me._OptForma_1.TabIndex = 20
-        Me._OptForma_1.TabStop = True
-        Me._OptForma_1.Text = "Acumulado "
-        Me._OptForma_1.UseVisualStyleBackColor = False
+        Me.OptForma1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.OptForma1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.OptForma1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.OptForma1.Location = New System.Drawing.Point(111, 18)
+        Me.OptForma1.Name = "OptForma1"
+        Me.OptForma1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.OptForma1.Size = New System.Drawing.Size(84, 21)
+        Me.OptForma1.TabIndex = 20
+        Me.OptForma1.TabStop = True
+        Me.OptForma1.Text = "Acumulado "
+        Me.OptForma1.UseVisualStyleBackColor = False
         '
         'Frame2
         '
@@ -175,8 +167,8 @@
         'Frame3
         '
         Me.Frame3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Frame3.Controls.Add(Me._OpTipo_0)
-        Me.Frame3.Controls.Add(Me._OpTipo_1)
+        Me.Frame3.Controls.Add(Me.OpTipo0)
+        Me.Frame3.Controls.Add(Me.OpTipo1)
         Me.Frame3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Frame3.Location = New System.Drawing.Point(34, 233)
         Me.Frame3.Name = "Frame3"
@@ -187,36 +179,34 @@
         Me.Frame3.TabStop = False
         Me.Frame3.Text = "Tipo"
         '
-        '_OpTipo_0
+        'OpTipo0
         '
-        Me._OpTipo_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._OpTipo_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._OpTipo_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.OpTipo.SetIndex(Me._OpTipo_0, CType(0, Short))
-        Me._OpTipo_0.Location = New System.Drawing.Point(8, 18)
-        Me._OpTipo_0.Name = "_OpTipo_0"
-        Me._OpTipo_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._OpTipo_0.Size = New System.Drawing.Size(83, 16)
-        Me._OpTipo_0.TabIndex = 15
-        Me._OpTipo_0.TabStop = True
-        Me._OpTipo_0.Text = "Historico"
-        Me._OpTipo_0.UseVisualStyleBackColor = False
+        Me.OpTipo0.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.OpTipo0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.OpTipo0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.OpTipo0.Location = New System.Drawing.Point(8, 18)
+        Me.OpTipo0.Name = "OpTipo0"
+        Me.OpTipo0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.OpTipo0.Size = New System.Drawing.Size(83, 16)
+        Me.OpTipo0.TabIndex = 15
+        Me.OpTipo0.TabStop = True
+        Me.OpTipo0.Text = "Historico"
+        Me.OpTipo0.UseVisualStyleBackColor = False
         '
-        '_OpTipo_1
+        'OpTipo1
         '
-        Me._OpTipo_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._OpTipo_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._OpTipo_1.Enabled = False
-        Me._OpTipo_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.OpTipo.SetIndex(Me._OpTipo_1, CType(1, Short))
-        Me._OpTipo_1.Location = New System.Drawing.Point(104, 18)
-        Me._OpTipo_1.Name = "_OpTipo_1"
-        Me._OpTipo_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._OpTipo_1.Size = New System.Drawing.Size(66, 16)
-        Me._OpTipo_1.TabIndex = 14
-        Me._OpTipo_1.TabStop = True
-        Me._OpTipo_1.Text = "Ajustado"
-        Me._OpTipo_1.UseVisualStyleBackColor = False
+        Me.OpTipo1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.OpTipo1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.OpTipo1.Enabled = False
+        Me.OpTipo1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.OpTipo1.Location = New System.Drawing.Point(104, 18)
+        Me.OpTipo1.Name = "OpTipo1"
+        Me.OpTipo1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.OpTipo1.Size = New System.Drawing.Size(66, 16)
+        Me.OpTipo1.TabIndex = 14
+        Me.OpTipo1.TabStop = True
+        Me.OpTipo1.Text = "Ajustado"
+        Me.OpTipo1.UseVisualStyleBackColor = False
         '
         'CmdAceptar
         '
@@ -336,7 +326,7 @@
         Me.Frame5.Controls.Add(Me.ChkFiltcta)
         Me.Frame5.Controls.Add(Me.CtrAyu_Cuenta)
         Me.Frame5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame5.Location = New System.Drawing.Point(33, 171)
+        Me.Frame5.Location = New System.Drawing.Point(33, 173)
         Me.Frame5.Name = "Frame5"
         Me.Frame5.Padding = New System.Windows.Forms.Padding(0)
         Me.Frame5.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -388,9 +378,6 @@
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "Filtro de Movimientos :"
         '
-        'OptForma
-        '
-        '
         'FrmLibroBalancedeComprobacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -403,9 +390,9 @@
         Me.Controls.Add(Me.CmdAceptar)
         Me.Controls.Add(Me.CmdCancelar)
         Me.Controls.Add(Me.Frame4)
-        Me.Controls.Add(Me.Frame5)
         Me.Controls.Add(Me.DtCfiltro)
         Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Frame5)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Location = New System.Drawing.Point(4, 30)
         Me.Name = "FrmLibroBalancedeComprobacion"
@@ -421,8 +408,6 @@
         Me.Frame5.ResumeLayout(False)
         CType(Me.CtrAyu_Cuenta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtCfiltro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OpTipo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OptForma, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

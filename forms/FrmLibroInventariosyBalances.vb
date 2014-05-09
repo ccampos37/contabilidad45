@@ -14,7 +14,7 @@ Friend Class FrmLibroInventariosyBalances
 		
 		ListView1.Columns.Clear()
 		ListView1.Items.Clear()
-		ListView1.Columns.Add("", "Tipo de Reporte", CInt(VB6.TwipsToPixelsX(VB6.PixelsToTwipsX(ListView1.Width) / 1)))
+        ListView1.Columns.Add("", "Tipo de Reporte", CInt((ListView1.Width) / 1))
 		ListView1.View = System.Windows.Forms.View.Details
 		Do While Not rss.EOF
 			itmX = ListView1.Items.Add(Str(rss.Fields("correlativo").Value + 0) & "  " + rss.Fields("formatocodigo").Value + "  " + rss.Fields("formatodescripcion2").Value)

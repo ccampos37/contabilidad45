@@ -53,8 +53,7 @@ Friend Class frmMantPlanCuentas
         Ctr_Ayuda4.CadenaCone = VGCNxSql
         cAcepta.Enabled = False
         lblNumReg.Text = CStr(Nothing)
-        Me.Width = VB6.TwipsToPixelsX(11310)
-        Me.Height = VB6.TwipsToPixelsY(8250)
+
         FLAGMOVIMIENTODISTRI = False
         FLAGDISTRIBUCION = False
         Call IniciaGridDist()
@@ -103,13 +102,13 @@ Friend Class frmMantPlanCuentas
             Text6.ValorTxt = Trim(ESNULO((.Columns(6).Text), Nothing))
 
 
-            chk(0).CheckState = IIf(CDbl(Trim(.Columns(7).Text)) = -1, 1, 0)
+            chk0.CheckState = IIf(CDbl(Trim(.Columns(7).Text)) = -1, 1, 0)
             Ctr_Ayuda1.Codigo = Trim(ESNULO((.Columns(8).Text), Nothing)) : Ctr_Ayuda1.LlenayDevuelve()
-            chk(1).CheckState = IIf(CDbl(Trim(.Columns(9).Text)) = -1, 1, 0)
-            chk(2).CheckState = IIf(CDbl(Trim(.Columns(10).Text)) = -1, 1, 0)
-            chk(3).CheckState = IIf(CDbl(Trim(.Columns(13).Text)) = -1, 1, 0)
-            chk(4).CheckState = IIf(CDbl(Trim(.Columns(14).Text)) = -1, 1, 0)
-            chk(5).CheckState = IIf(CDbl(Trim(.Columns(17).Text)) = 1, 1, 0)
+            chk1.CheckState = IIf(CDbl(Trim(.Columns(9).Text)) = -1, 1, 0)
+            chk2.CheckState = IIf(CDbl(Trim(.Columns(10).Text)) = -1, 1, 0)
+            chk3.CheckState = IIf(CDbl(Trim(.Columns(13).Text)) = -1, 1, 0)
+            chk4.CheckState = IIf(CDbl(Trim(.Columns(14).Text)) = -1, 1, 0)
+            chk5.CheckState = IIf(CDbl(Trim(.Columns(17).Text)) = 1, 1, 0)
             lblNivel.Text = Trim(ESNULO((.Columns(11).Text), Nothing))
             Ctr_Ayuda4.Codigo = ESNULO((.Columns(15).Text), Nothing) : Ctr_Ayuda4.LlenayDevuelve()
 
@@ -156,11 +155,11 @@ Friend Class frmMantPlanCuentas
         Text5.ValorTxt = Nothing
         Text6.ValorTxt = Nothing
 
-
-        For i = 0 To 3
-            chk(i).CheckState = System.Windows.Forms.CheckState.Unchecked
-        Next
-        chk(4).CheckState = System.Windows.Forms.CheckState.Checked
+        chk0.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk1.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk2.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk3.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk4.CheckState = System.Windows.Forms.CheckState.Checked
         lblNivel.Text = CStr(Nothing)
         'cboTipoAjuste.SelText = Empty
 
@@ -196,7 +195,7 @@ Friend Class frmMantPlanCuentas
 
         If modoinsert = True Then
             VGCNx.BeginTrans()
-            SQL = GrabarPlanCuenta(0, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk(1).CheckState, chk(0).CheckState, chk(2).CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk(3).CheckState, (Ctr_Ayuda4.Codigo), Func.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk(5).CheckState))
+            SQL = GrabarPlanCuenta(0, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk1.CheckState, chk0.CheckState, chk2.CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk3.CheckState, (Ctr_Ayuda4.Codigo), Func.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk5.CheckState))
             VGCNx.Execute(SQL)
 
             If CShort(lblNivel.Text) = VGnumnivelescuenta And FLAGDISTRIBUCION = True Then
@@ -209,7 +208,7 @@ Friend Class frmMantPlanCuentas
 
         ElseIf modoedit = True Then
             VGCNx.BeginTrans()
-            SQL = GrabarPlanCuenta(1, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk(1).CheckState, chk(0).CheckState, chk(2).CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk(3).CheckState, (Ctr_Ayuda4.Codigo), Func.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk(5).CheckState))
+            SQL = GrabarPlanCuenta(1, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk1.CheckState, chk0.CheckState, chk2.CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk3.CheckState, (Ctr_Ayuda4.Codigo), Func.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk5.CheckState))
             VGCNx.Execute(SQL)
 
             If CShort(lblNivel.Text) = VGnumnivelescuenta And FLAGDISTRIBUCION = True Then
@@ -298,7 +297,7 @@ X:
         End If
 
         If CInt(lblNivel.Text) > 1 Then
-            If chk(0).CheckState = 1 And IsNothing(Ctr_Ayuda1.Codigo) Then
+            If chk0.CheckState = 1 And IsNothing(Ctr_Ayuda1.Codigo) Then
                 MsgBox("Falta indicar el Tipo de Analítico", MsgBoxStyle.Information, Text)
                 ValidarData = False
                 Ctr_Ayuda1.Focus()
@@ -306,44 +305,15 @@ X:
             End If
         End If
 
-        If chk(3).CheckState = 1 And FLAGDISTRIBUCION = False Then
+        If chk3.CheckState = 1 And FLAGDISTRIBUCION = False Then
             MsgBox("No Existe Porcentaje de Distribución para esta cuenta, Deshabilitar el check", MsgBoxStyle.Information, Text)
             ValidarData = False
-            chk(3).Focus()
+            chk3.Focus()
             Exit Function
         End If
 
         ValidarData = True
     End Function
-
-    Private Sub chk_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles chk.CheckStateChanged
-        Dim Index As Short = chk.GetIndex(eventSender)
-        Select Case Index
-            Case 0
-                Ctr_Ayuda1.Enabled = IIf(chk(0).CheckState = 0, False, True)
-                If chk(0).CheckState = 0 Then Ctr_Ayuda1.Codigo = CStr(Nothing) : Ctr_Ayuda1.Codigo = CStr(Nothing)
-
-            Case 3
-                If chk(3).CheckState = 1 Then
-                    If FLAGMOVIMIENTODISTRI = False Then
-                        cmdDistribucion.Visible = True
-                        SSTab1.TabPages.Item(2).Enabled = True
-                        SSTab1.SelectedIndex = 2
-                        FLAGMOVIMIENTODISTRI = False
-                        Call LlenarPorcentajes()
-                    End If
-                Else
-                    cmdDistribucion.Visible = False
-                    SSTab1.TabPages.Item(2).Enabled = False
-                End If
-        End Select
-
-        If modoedit = True Then
-            cAcepta.Enabled = True
-        End If
-
-    End Sub
-
     Private Sub frmMantPlanCuentas_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         rs = Nothing
         rsDist = Nothing
@@ -592,11 +562,11 @@ X:
         Text6.Enabled = Not flagULTIMONIVEL
         Text6.ValorTxt = 0
 
+            chk0.Enabled = flagULTIMONIVEL
+            chk1.Enabled = flagULTIMONIVEL
+            chk2.Enabled = flagULTIMONIVEL
+            chk3.Enabled = flagULTIMONIVEL
 
-
-        For i = 0 To 3
-            chk(i).Enabled = flagULTIMONIVEL
-        Next
         cmdDistribucion.Visible = flagULTIMONIVEL
         Ctr_Ayuda1.Enabled = flagULTIMONIVEL
         cboTipoAjuste.Enabled = flagULTIMONIVEL
@@ -615,12 +585,15 @@ X:
         Text5.Enabled = True
         Text6.Enabled = True
 
-        For i = 0 To 4
-            chk(i).Enabled = True
-        Next
-        Ctr_Ayuda1.Enabled = True
-        Ctr_Ayuda4.Enabled = True
-        cboTipoAjuste.Enabled = True
+        chk0.Enabled = True
+        chk1.Enabled = True
+        chk2.Enabled = True
+        chk3.Enabled = True
+        chk4.Enabled = True
+
+            Ctr_Ayuda1.Enabled = True
+            Ctr_Ayuda4.Enabled = True
+            cboTipoAjuste.Enabled = True
 
     End Sub
 
@@ -632,7 +605,7 @@ X:
             Case 0
                 strSQL = "INSERT INTO ct_cuenta (empresacodigo,cuentacodigo, cuentadescripcion, cuentalineaactivo,cuentalineapasivo, cuentalineaegp, cuentanatu, cuentanategp,"
                 strSQL = strSQL & "cuentaestadoccostos, cuentaestadoanalitico,cuentadocumento, cuentanivel, tipoanaliticocodigo,cuentaestadodistribucion,tipocuentacodigo,usuariocodigo, fechaact, CUENTAGRUPO,tipoajuste,cuentaestado,cuentaadicionacargo) "
-                strSQL = strSQL & " VALUES ('" & VGParametros.empresacodigo & "','" & xCod & "','" & xDes & "'," & xLinAct & "," & xLinPas & "," & xLinEgp & ",'" & xNatu & "','" & xNatuegp & "'," & xCtaCostos & "," & xCtaAnalitico & "," & xCtaDoc & "," & xCtaNivel & ",'" & xTipoAnalitico & "'," & xCtaDist & ",'" & xTipoCuenta & "','" & VGUsuario & "','" & VB6.Format(Now, "dd/mm/yyyy") & "','01','" & xTipoAJuste & "','1','" & xAdicionaCargo & "')"
+                strSQL = strSQL & " VALUES ('" & VGParametros.empresacodigo & "','" & xCod & "','" & xDes & "'," & xLinAct & "," & xLinPas & "," & xLinEgp & ",'" & xNatu & "','" & xNatuegp & "'," & xCtaCostos & "," & xCtaAnalitico & "," & xCtaDoc & "," & xCtaNivel & ",'" & xTipoAnalitico & "'," & xCtaDist & ",'" & xTipoCuenta & "','" & VGUsuario & "','" & Format(Now, "dd/mm/yyyy") & "','01','" & xTipoAJuste & "','1','" & xAdicionaCargo & "')"
 
             Case 1
                 strSQL = "UPDATE CT_CUENTA SET "
@@ -650,7 +623,7 @@ X:
                 strSQL = strSQL & "cuentaestadodistribucion=" & ESNULO(xCtaDist, 0) & ","
                 strSQL = strSQL & "tipocuentacodigo='" & xTipoCuenta & "',"
                 strSQL = strSQL & "usuariocodigo='" & VGUsuario & "',"
-                strSQL = strSQL & "fechaact='" & VB6.Format(Now, "dd/mm/yyyy") & "',"
+                strSQL = strSQL & "fechaact='" & Format(Now, "dd/mm/yyyy") & "',"
                 strSQL = strSQL & "cuentagrupo='01',"
                 strSQL = strSQL & "tipoajuste='" & xTipoAJuste & "', "
                 strSQL = strSQL & "cuentaadicionacargo='" & xAdicionaCargo & "' "
@@ -694,7 +667,7 @@ X:
             MsgBox("El Total de % Distribución no se ha completado al 100%", MsgBoxStyle.Information, Text)
         Else
             cAcepta.Enabled = IIf(rsDist.RecordCount > 0 And FLAGMOVIMIENTODISTRI = True, True, False)
-            chk(3).CheckState = IIf(rsDist.RecordCount > 0, 1, 0)
+            chk3.CheckState = IIf(rsDist.RecordCount > 0, 1, 0)
             SSTab1.SelectedIndex = 1
             SSTab1.TabPages.Item(1).Enabled = True
         End If
@@ -839,7 +812,7 @@ X:
                 rsDist.MoveNext()
             Loop
         End If
-        DevuelveTotPor = CDbl(VB6.Format(nSum, "###0.#0"))
+        DevuelveTotPor = CDbl(Format(nSum, "###0.#0"))
     End Function
 
     Private Sub TDBGrid2_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles TDBGrid2.ClickEvent
@@ -993,7 +966,7 @@ xx:
                 End If
 
             Case 2
-                If cmdDistribucion.Visible = False Or chk(3).Enabled = False Then
+                If cmdDistribucion.Visible = False Or chk3.Enabled = False Then
                     SSTab1.SelectedIndex = 1
                 Else
                     SSTab1.SelectedIndex = 2
@@ -1062,6 +1035,31 @@ xx:
         Call ConfiguraModoEdicion()
     End Sub
 
+    Private Sub chk0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0.CheckedChanged
+        Ctr_Ayuda1.Enabled = IIf(chk0.CheckState = 0, False, True)
+        If chk0.CheckState = 0 Then Ctr_Ayuda1.Codigo = CStr(Nothing) : Ctr_Ayuda1.Codigo = CStr(Nothing)
 
+        If modoedit = True Then
+            cAcepta.Enabled = True
+        End If
+    End Sub
 
+    Private Sub chk3_CheckedChanged(sender As Object, e As EventArgs) Handles chk3.CheckedChanged
+        If chk3.CheckState = 1 Then
+            If FLAGMOVIMIENTODISTRI = False Then
+                cmdDistribucion.Visible = True
+                SSTab1.TabPages.Item(2).Enabled = True
+                SSTab1.SelectedIndex = 2
+                FLAGMOVIMIENTODISTRI = False
+                Call LlenarPorcentajes()
+            End If
+        Else
+            cmdDistribucion.Visible = False
+            SSTab1.TabPages.Item(2).Enabled = False
+        End If
+
+        If modoedit = True Then
+            cAcepta.Enabled = True
+        End If
+    End Sub
 End Class

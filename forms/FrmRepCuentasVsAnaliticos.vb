@@ -22,7 +22,7 @@ Friend Class FrmRepCuentasVsAnaliticos
 	Private Sub CargaNivel()
 		Dim i As Short
 		For i = 1 To VGnumnivelescuenta
-			cmbNivel.Items.Add(VB6.Format(i, "0"))
+            cmbNivel.Items.Add(Format(i, "0"))
 		Next 
 		cmbNivel.SelectedIndex = 0
 	End Sub

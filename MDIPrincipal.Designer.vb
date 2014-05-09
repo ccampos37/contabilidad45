@@ -270,15 +270,16 @@
         Me.mnu06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_01_01 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnu06_04 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnu06_04_01 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnu06_04_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_02 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_02_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_02_02 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_02_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_02_14 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu06_02_10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnu06_04 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnu06_04_01 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnu06_04_03 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PruebasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu08 = New System.Windows.Forms.ToolStripMenuItem()
         Me.cryRpt = New AxCrystal.AxCrystalReport()
         Me.StatusBar1 = New System.Windows.Forms.StatusStrip()
@@ -304,7 +305,6 @@
         Me.ImgListIcono = New System.Windows.Forms.ImageList(Me.components)
         Me.mnu00_01 = New Microsoft.VisualBasic.Compatibility.VB6.ToolStripMenuItemArray(Me.components)
         Me.mnu00_01_01 = New Microsoft.VisualBasic.Compatibility.VB6.ToolStripMenuItemArray(Me.components)
-        Me.PruebasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainMenu1.SuspendLayout()
         CType(Me.cryRpt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusBar1.SuspendLayout()
@@ -319,7 +319,7 @@
         Me.MainMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu01, Me.mnu00, Me.mnu02, Me.mnu03, Me.mnu04, Me.mnu05, Me.mnu06, Me.mnu08})
         Me.MainMenu1.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu1.Name = "MainMenu1"
-        Me.MainMenu1.Size = New System.Drawing.Size(724, 24)
+        Me.MainMenu1.Size = New System.Drawing.Size(786, 24)
         Me.MainMenu1.TabIndex = 3
         '
         'mnu01
@@ -1020,6 +1020,25 @@
         Me.mnu06_01_01.Size = New System.Drawing.Size(123, 22)
         Me.mnu06_01_01.Text = "Form 682"
         '
+        'mnu06_04
+        '
+        Me.mnu06_04.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu06_04_01, Me.mnu06_04_03})
+        Me.mnu06_04.Name = "mnu06_04"
+        Me.mnu06_04.Size = New System.Drawing.Size(173, 22)
+        Me.mnu06_04.Text = "DAO"
+        '
+        'mnu06_04_01
+        '
+        Me.mnu06_04_01.Name = "mnu06_04_01"
+        Me.mnu06_04_01.Size = New System.Drawing.Size(122, 22)
+        Me.mnu06_04_01.Text = "Compras"
+        '
+        'mnu06_04_03
+        '
+        Me.mnu06_04_03.Name = "mnu06_04_03"
+        Me.mnu06_04_03.Size = New System.Drawing.Size(122, 22)
+        Me.mnu06_04_03.Text = "Ventas"
+        '
         'mnu06_02
         '
         Me.mnu06_02.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu06_02_01, Me.mnu06_02_02, Me.mnu06_02_03, Me.mnu06_02_14, Me.mnu06_02_10})
@@ -1057,24 +1076,11 @@
         Me.mnu06_02_10.Size = New System.Drawing.Size(231, 22)
         Me.mnu06_02_10.Text = "Otros"
         '
-        'mnu06_04
+        'PruebasToolStripMenuItem
         '
-        Me.mnu06_04.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu06_04_01, Me.mnu06_04_03})
-        Me.mnu06_04.Name = "mnu06_04"
-        Me.mnu06_04.Size = New System.Drawing.Size(173, 22)
-        Me.mnu06_04.Text = "DAO"
-        '
-        'mnu06_04_01
-        '
-        Me.mnu06_04_01.Name = "mnu06_04_01"
-        Me.mnu06_04_01.Size = New System.Drawing.Size(122, 22)
-        Me.mnu06_04_01.Text = "Compras"
-        '
-        'mnu06_04_03
-        '
-        Me.mnu06_04_03.Name = "mnu06_04_03"
-        Me.mnu06_04_03.Size = New System.Drawing.Size(122, 22)
-        Me.mnu06_04_03.Text = "Ventas"
+        Me.PruebasToolStripMenuItem.Name = "PruebasToolStripMenuItem"
+        Me.PruebasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.PruebasToolStripMenuItem.Text = "Pruebas"
         '
         'mnu08
         '
@@ -1095,9 +1101,9 @@
         'StatusBar1
         '
         Me.StatusBar1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me._StatusBar1_Panel1, Me._StatusBar1_Panel2, Me._StatusBar1_Panel3, Me._StatusBar1_Panel4, Me._StatusBar1_Panel5, Me._StatusBar1_Panel6})
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 580)
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 299)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(724, 22)
+        Me.StatusBar1.Size = New System.Drawing.Size(786, 22)
         Me.StatusBar1.TabIndex = 0
         '
         '_StatusBar1_Panel1
@@ -1338,16 +1344,10 @@
         'mnu00_01_01
         '
         '
-        'PruebasToolStripMenuItem
-        '
-        Me.PruebasToolStripMenuItem.Name = "PruebasToolStripMenuItem"
-        Me.PruebasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.PruebasToolStripMenuItem.Text = "Pruebas"
-        '
         'MDIPrincipal
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(724, 602)
+        Me.ClientSize = New System.Drawing.Size(786, 321)
         Me.Controls.Add(Me.cryRpt)
         Me.Controls.Add(Me.StatusBar1)
         Me.Controls.Add(Me.ToolComprob)
@@ -1376,5 +1376,5 @@
 
     End Sub
     Friend WithEvents PruebasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-#End Region 
+#End Region
 End Class

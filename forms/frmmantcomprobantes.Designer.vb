@@ -23,8 +23,7 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents DTPFechaContab As AxMSComCtl2.AxDTPicker
+    Public WithEvents DTPFechaContab As AxMSComCtl2.AxDTPicker
 	Public WithEvents CtrAyu_SubAsiento As Axctrlayuda_f.AxCtr_Ayuda
 	Public WithEvents CtrAyu_Asiento As Axctrlayuda_f.AxCtr_Ayuda
 	Public WithEvents Label5 As System.Windows.Forms.Label
@@ -77,120 +76,109 @@
 	Public WithEvents lbtipref As System.Windows.Forms.Label
 	Public WithEvents lbconv As System.Windows.Forms.Label
 	Public WithEvents lb_vcambio As System.Windows.Forms.Label
-	Public WithEvents _lbTipAnal_0 As System.Windows.Forms.Label
-	Public WithEvents lbAnalitico As System.Windows.Forms.Label
-	Public WithEvents Label11 As System.Windows.Forms.Label
-	Public WithEvents Label12 As System.Windows.Forms.Label
-	Public WithEvents lbccosto As System.Windows.Forms.Label
-	Public WithEvents lbruc As System.Windows.Forms.Label
-	Public WithEvents Shape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents Shape4 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents lbtipdoc As System.Windows.Forms.Label
-	Public WithEvents lbndocum As System.Windows.Forms.Label
-	Public WithEvents lbFechaDoc As System.Windows.Forms.Label
-	Public WithEvents lbFechVen As System.Windows.Forms.Label
-	Public WithEvents Label19 As System.Windows.Forms.Label
-	Public WithEvents Label20 As System.Windows.Forms.Label
-	Public WithEvents Label21 As System.Windows.Forms.Label
-	Public WithEvents Label22 As System.Windows.Forms.Label
-	Public WithEvents Label23 As System.Windows.Forms.Label
-	Public WithEvents Label24 As System.Windows.Forms.Label
-	Public WithEvents FramDetalle As System.Windows.Forms.GroupBox
-	Public WithEvents _SSTab2_TabPage0 As System.Windows.Forms.TabPage
-	Public WithEvents SSTab2 As System.Windows.Forms.TabControl
-	Public WithEvents _StBar_Panel1 As System.Windows.Forms.ToolStripStatusLabel
-	Public WithEvents _StBar_Panel2 As System.Windows.Forms.ToolStripStatusLabel
-	Public WithEvents _StBar_Panel3 As System.Windows.Forms.ToolStripStatusLabel
-	Public WithEvents _StBar_Panel4 As System.Windows.Forms.ToolStripStatusLabel
-	Public WithEvents StBar As System.Windows.Forms.StatusStrip
-	Public WithEvents TDBG_Det As AxTrueOleDBGrid70.AxTDBGrid
-	Public WithEvents Shape10 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents Label7 As System.Windows.Forms.Label
-	Public WithEvents lbnregdetalle As System.Windows.Forms.Label
-	Public WithEvents Shape9 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents frameGrid As System.Windows.Forms.GroupBox
-	Public WithEvents ChkGrabado As System.Windows.Forms.CheckBox
-	Public WithEvents DTPFechaComprobCab As AxMSComCtl2.AxDTPicker
-	Public WithEvents TxGlosaComprobCab As AxTextFer.AxTxFer
-	Public WithEvents TxObsComprobCab As AxTextFer.AxTxFer
-	Public WithEvents TxCtrNref As AxTextFer.AxTxFer
-	Public WithEvents lbNumComprobCablibro As System.Windows.Forms.Label
-	Public WithEvents _leNComprob_0 As System.Windows.Forms.Label
-	Public WithEvents lbnemoref As System.Windows.Forms.Label
-	Public WithEvents Shape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents leDebe As System.Windows.Forms.Label
-	Public WithEvents Shape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents leHaber As System.Windows.Forms.Label
-	Public WithEvents leSoles As System.Windows.Forms.Label
-	Public WithEvents LeDolares As System.Windows.Forms.Label
-	Public WithEvents _LbTotales_0 As System.Windows.Forms.Label
-	Public WithEvents _LbTotales_1 As System.Windows.Forms.Label
-	Public WithEvents _LbTotales_3 As System.Windows.Forms.Label
-	Public WithEvents _LbTotales_4 As System.Windows.Forms.Label
-	Public WithEvents leDifer As System.Windows.Forms.Label
-	Public WithEvents _LbTotales_2 As System.Windows.Forms.Label
-	Public WithEvents _LbTotales_5 As System.Windows.Forms.Label
-	Public WithEvents _leNComprob_1 As System.Windows.Forms.Label
-	Public WithEvents lbNumComprobCab As System.Windows.Forms.Label
-	Public WithEvents _leFechaComprob_7 As System.Windows.Forms.Label
-	Public WithEvents leGlosa As System.Windows.Forms.Label
-	Public WithEvents leObservaciones As System.Windows.Forms.Label
-	Public WithEvents FrameCabecera As System.Windows.Forms.GroupBox
-	Public WithEvents TDBGrid1 As AxTrueOleDBGrid70.AxTDBGrid
-	Public WithEvents FrameCcosto As System.Windows.Forms.GroupBox
-	Public WithEvents Cmdsalir As System.Windows.Forms.Button
-	Public WithEvents CmdAceptar As System.Windows.Forms.Button
-	Public WithEvents Frame5 As System.Windows.Forms.GroupBox
-	Public WithEvents Txtimpo As System.Windows.Forms.TextBox
-	Public WithEvents TxtIgv As System.Windows.Forms.TextBox
-	Public WithEvents TxtInaf As System.Windows.Forms.TextBox
-	Public WithEvents TxtTot As System.Windows.Forms.TextBox
-	Public WithEvents TxtPerc As System.Windows.Forms.TextBox
-	Public WithEvents Labelimpo As System.Windows.Forms.Label
-	Public WithEvents Labeligv As System.Windows.Forms.Label
-	Public WithEvents Labelinaf As System.Windows.Forms.Label
-	Public WithEvents Labeltot As System.Windows.Forms.Label
-	Public WithEvents Labelperc As System.Windows.Forms.Label
-	Public WithEvents Frame1 As System.Windows.Forms.GroupBox
-	Public WithEvents CtrAyu_Analitico1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_Cuenta1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_Cuenta2 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label27 As System.Windows.Forms.Label
-	Public WithEvents Label14 As System.Windows.Forms.Label
-	Public WithEvents Frame4 As System.Windows.Forms.GroupBox
-	Public WithEvents TxNdoc1 As AxTextFer.AxTxFer
-	Public WithEvents TxSerie1 As AxTextFer.AxTxFer
-	Public WithEvents DTP_fecha1 As AxMSComCtl2.AxDTPicker
-	Public WithEvents CtrAyu_Moneda1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_TipDoc1 As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents TxFer1 As AxTextFer.AxTxFer
-	Public WithEvents Label26 As System.Windows.Forms.Label
-	Public WithEvents Label28 As System.Windows.Forms.Label
-	Public WithEvents Label17 As System.Windows.Forms.Label
-	Public WithEvents Label16 As System.Windows.Forms.Label
-	Public WithEvents Label15 As System.Windows.Forms.Label
-	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
-	Public WithEvents FrameIngreso As System.Windows.Forms.GroupBox
-	Public WithEvents _SSTabMant_TabPage1 As System.Windows.Forms.TabPage
-	Public WithEvents SSTabMant As System.Windows.Forms.TabControl
-	Public WithEvents LbTotales As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lbTipAnal As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents leFechaComprob As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents leNComprob As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents ShapeContainer7 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer6 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer5 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer4 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer3 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-	'Se puede modificar mediante el Diseñador de Windows Forms.
-	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+    Public WithEvents lbTipAnal0 As System.Windows.Forms.Label
+    Public WithEvents lbAnalitico As System.Windows.Forms.Label
+    Public WithEvents Label11 As System.Windows.Forms.Label
+    Public WithEvents Label12 As System.Windows.Forms.Label
+    Public WithEvents lbccosto As System.Windows.Forms.Label
+    Public WithEvents lbruc As System.Windows.Forms.Label
+    Public WithEvents Shape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents Shape4 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents lbtipdoc As System.Windows.Forms.Label
+    Public WithEvents lbndocum As System.Windows.Forms.Label
+    Public WithEvents lbFechaDoc As System.Windows.Forms.Label
+    Public WithEvents lbFechVen As System.Windows.Forms.Label
+    Public WithEvents Label19 As System.Windows.Forms.Label
+    Public WithEvents Label20 As System.Windows.Forms.Label
+    Public WithEvents Label21 As System.Windows.Forms.Label
+    Public WithEvents Label22 As System.Windows.Forms.Label
+    Public WithEvents Label23 As System.Windows.Forms.Label
+    Public WithEvents Label24 As System.Windows.Forms.Label
+    Public WithEvents FramDetalle As System.Windows.Forms.GroupBox
+    Public WithEvents _SSTab2_TabPage0 As System.Windows.Forms.TabPage
+    Public WithEvents SSTab2 As System.Windows.Forms.TabControl
+    Public WithEvents TDBG_Det As AxTrueOleDBGrid70.AxTDBGrid
+    Public WithEvents Shape10 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents Label7 As System.Windows.Forms.Label
+    Public WithEvents lbnregdetalle As System.Windows.Forms.Label
+    Public WithEvents Shape9 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents frameGrid As System.Windows.Forms.GroupBox
+    Public WithEvents ChkGrabado As System.Windows.Forms.CheckBox
+    Public WithEvents DTPFechaComprobCab As AxMSComCtl2.AxDTPicker
+    Public WithEvents TxGlosaComprobCab As AxTextFer.AxTxFer
+    Public WithEvents TxObsComprobCab As AxTextFer.AxTxFer
+    Public WithEvents TxCtrNref As AxTextFer.AxTxFer
+    Public WithEvents lbNumComprobCablibro As System.Windows.Forms.Label
+    Public WithEvents leNComprob0 As System.Windows.Forms.Label
+    Public WithEvents lbnemoref As System.Windows.Forms.Label
+    Public WithEvents Shape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents leDebe As System.Windows.Forms.Label
+    Public WithEvents Shape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents leHaber As System.Windows.Forms.Label
+    Public WithEvents leSoles As System.Windows.Forms.Label
+    Public WithEvents LeDolares As System.Windows.Forms.Label
+    Public WithEvents LbTotales0 As System.Windows.Forms.Label
+    Public WithEvents LbTotales1 As System.Windows.Forms.Label
+    Public WithEvents LbTotales3 As System.Windows.Forms.Label
+    Public WithEvents LbTotales4 As System.Windows.Forms.Label
+    Public WithEvents leDifer As System.Windows.Forms.Label
+    Public WithEvents LbTotales2 As System.Windows.Forms.Label
+    Public WithEvents LbTotales5 As System.Windows.Forms.Label
+    Public WithEvents leNComprob1 As System.Windows.Forms.Label
+    Public WithEvents lbNumComprobCab As System.Windows.Forms.Label
+    Public WithEvents leFechaComprob7 As System.Windows.Forms.Label
+    Public WithEvents leGlosa As System.Windows.Forms.Label
+    Public WithEvents leObservaciones As System.Windows.Forms.Label
+    Public WithEvents FrameCabecera As System.Windows.Forms.GroupBox
+    Public WithEvents TDBGrid1 As AxTrueOleDBGrid70.AxTDBGrid
+    Public WithEvents FrameCcosto As System.Windows.Forms.GroupBox
+    Public WithEvents Cmdsalir As System.Windows.Forms.Button
+    Public WithEvents CmdAceptar As System.Windows.Forms.Button
+    Public WithEvents Frame5 As System.Windows.Forms.GroupBox
+    Public WithEvents Txtimpo As System.Windows.Forms.TextBox
+    Public WithEvents TxtIgv As System.Windows.Forms.TextBox
+    Public WithEvents TxtInaf As System.Windows.Forms.TextBox
+    Public WithEvents TxtTot As System.Windows.Forms.TextBox
+    Public WithEvents TxtPerc As System.Windows.Forms.TextBox
+    Public WithEvents Labelimpo As System.Windows.Forms.Label
+    Public WithEvents Labeligv As System.Windows.Forms.Label
+    Public WithEvents Labelinaf As System.Windows.Forms.Label
+    Public WithEvents Labeltot As System.Windows.Forms.Label
+    Public WithEvents Labelperc As System.Windows.Forms.Label
+    Public WithEvents Frame1 As System.Windows.Forms.GroupBox
+    Public WithEvents CtrAyu_Analitico1 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_Cuenta1 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_Cuenta2 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label27 As System.Windows.Forms.Label
+    Public WithEvents Label14 As System.Windows.Forms.Label
+    Public WithEvents Frame4 As System.Windows.Forms.GroupBox
+    Public WithEvents TxNdoc1 As AxTextFer.AxTxFer
+    Public WithEvents TxSerie1 As AxTextFer.AxTxFer
+    Public WithEvents DTP_fecha1 As AxMSComCtl2.AxDTPicker
+    Public WithEvents CtrAyu_Moneda1 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_TipDoc1 As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents TxFer1 As AxTextFer.AxTxFer
+    Public WithEvents Label26 As System.Windows.Forms.Label
+    Public WithEvents Label28 As System.Windows.Forms.Label
+    Public WithEvents Label17 As System.Windows.Forms.Label
+    Public WithEvents Label16 As System.Windows.Forms.Label
+    Public WithEvents Label15 As System.Windows.Forms.Label
+    Public WithEvents Frame2 As System.Windows.Forms.GroupBox
+    Public WithEvents FrameIngreso As System.Windows.Forms.GroupBox
+    Public WithEvents _SSTabMant_TabPage1 As System.Windows.Forms.TabPage
+    Public WithEvents SSTabMant As System.Windows.Forms.TabControl
+    Public WithEvents ShapeContainer7 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer6 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer5 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer4 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer3 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar mediante el Diseñador de Windows Forms.
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmantcomprobantes))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ShapeContainer7 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.Shape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Shape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -262,7 +250,7 @@
         Me.lbtipref = New System.Windows.Forms.Label()
         Me.lbconv = New System.Windows.Forms.Label()
         Me.lb_vcambio = New System.Windows.Forms.Label()
-        Me._lbTipAnal_0 = New System.Windows.Forms.Label()
+        Me.lbTipAnal0 = New System.Windows.Forms.Label()
         Me.lbAnalitico = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -278,11 +266,6 @@
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.StBar = New System.Windows.Forms.StatusStrip()
-        Me._StBar_Panel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me._StBar_Panel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me._StBar_Panel3 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me._StBar_Panel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.frameGrid = New System.Windows.Forms.GroupBox()
         Me.TDBG_Det = New AxTrueOleDBGrid70.AxTDBGrid()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -294,22 +277,22 @@
         Me.TxObsComprobCab = New AxTextFer.AxTxFer()
         Me.TxCtrNref = New AxTextFer.AxTxFer()
         Me.lbNumComprobCablibro = New System.Windows.Forms.Label()
-        Me._leNComprob_0 = New System.Windows.Forms.Label()
+        Me.leNComprob0 = New System.Windows.Forms.Label()
         Me.lbnemoref = New System.Windows.Forms.Label()
         Me.leDebe = New System.Windows.Forms.Label()
         Me.leHaber = New System.Windows.Forms.Label()
         Me.leSoles = New System.Windows.Forms.Label()
         Me.LeDolares = New System.Windows.Forms.Label()
-        Me._LbTotales_0 = New System.Windows.Forms.Label()
-        Me._LbTotales_1 = New System.Windows.Forms.Label()
-        Me._LbTotales_3 = New System.Windows.Forms.Label()
-        Me._LbTotales_4 = New System.Windows.Forms.Label()
+        Me.LbTotales0 = New System.Windows.Forms.Label()
+        Me.LbTotales1 = New System.Windows.Forms.Label()
+        Me.LbTotales3 = New System.Windows.Forms.Label()
+        Me.LbTotales4 = New System.Windows.Forms.Label()
         Me.leDifer = New System.Windows.Forms.Label()
-        Me._LbTotales_2 = New System.Windows.Forms.Label()
-        Me._LbTotales_5 = New System.Windows.Forms.Label()
-        Me._leNComprob_1 = New System.Windows.Forms.Label()
+        Me.LbTotales2 = New System.Windows.Forms.Label()
+        Me.LbTotales5 = New System.Windows.Forms.Label()
+        Me.leNComprob1 = New System.Windows.Forms.Label()
         Me.lbNumComprobCab = New System.Windows.Forms.Label()
-        Me._leFechaComprob_7 = New System.Windows.Forms.Label()
+        Me.leFechaComprob7 = New System.Windows.Forms.Label()
         Me.leGlosa = New System.Windows.Forms.Label()
         Me.leObservaciones = New System.Windows.Forms.Label()
         Me.FrameIngreso = New System.Windows.Forms.GroupBox()
@@ -347,10 +330,6 @@
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.LbTotales = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
-        Me.lbTipAnal = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
-        Me.leFechaComprob = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
-        Me.leNComprob = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.SSTabMant.SuspendLayout()
         Me._SSTabMant_TabPage0.SuspendLayout()
         Me.Frame3.SuspendLayout()
@@ -384,7 +363,6 @@
         CType(Me.CtrAyu_TipRef, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxNref, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dtp_FechaDocRef, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StBar.SuspendLayout()
         Me.frameGrid.SuspendLayout()
         CType(Me.TDBG_Det, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FrameCabecera.SuspendLayout()
@@ -408,10 +386,6 @@
         CType(Me.CtrAyu_Moneda1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CtrAyu_TipDoc1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxFer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LbTotales, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lbTipAnal, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.leFechaComprob, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.leNComprob, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ShapeContainer7
@@ -480,7 +454,7 @@
         Me.ShapeContainer5.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer5.Name = "ShapeContainer5"
         Me.ShapeContainer5.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.Shape3, Me.Shape4})
-        Me.ShapeContainer5.Size = New System.Drawing.Size(819, 169)
+        Me.ShapeContainer5.Size = New System.Drawing.Size(814, 171)
         Me.ShapeContainer5.TabIndex = 92
         Me.ShapeContainer5.TabStop = False
         '
@@ -508,7 +482,7 @@
         Me.ShapeContainer4.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer4.Name = "ShapeContainer4"
         Me.ShapeContainer4.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.Shilu1})
-        Me.ShapeContainer4.Size = New System.Drawing.Size(813, 187)
+        Me.ShapeContainer4.Size = New System.Drawing.Size(815, 223)
         Me.ShapeContainer4.TabIndex = 3
         Me.ShapeContainer4.TabStop = False
         '
@@ -528,7 +502,7 @@
         Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer3.Name = "ShapeContainer3"
         Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.Shilu2})
-        Me.ShapeContainer3.Size = New System.Drawing.Size(824, 573)
+        Me.ShapeContainer3.Size = New System.Drawing.Size(827, 599)
         Me.ShapeContainer3.TabIndex = 95
         Me.ShapeContainer3.TabStop = False
         '
@@ -609,7 +583,7 @@
         Me.SSTabMant.Location = New System.Drawing.Point(4, 4)
         Me.SSTabMant.Name = "SSTabMant"
         Me.SSTabMant.SelectedIndex = 1
-        Me.SSTabMant.Size = New System.Drawing.Size(832, 599)
+        Me.SSTabMant.Size = New System.Drawing.Size(835, 625)
         Me.SSTabMant.TabIndex = 0
         '
         '_SSTabMant_TabPage0
@@ -618,7 +592,7 @@
         Me._SSTabMant_TabPage0.Controls.Add(Me.FrameConsulta)
         Me._SSTabMant_TabPage0.Location = New System.Drawing.Point(4, 22)
         Me._SSTabMant_TabPage0.Name = "_SSTabMant_TabPage0"
-        Me._SSTabMant_TabPage0.Size = New System.Drawing.Size(824, 573)
+        Me._SSTabMant_TabPage0.Size = New System.Drawing.Size(827, 599)
         Me._SSTabMant_TabPage0.TabIndex = 0
         Me._SSTabMant_TabPage0.Text = "Consulta"
         '
@@ -855,14 +829,13 @@
         '_SSTabMant_TabPage1
         '
         Me._SSTabMant_TabPage1.Controls.Add(Me.SSTab2)
-        Me._SSTabMant_TabPage1.Controls.Add(Me.StBar)
         Me._SSTabMant_TabPage1.Controls.Add(Me.frameGrid)
         Me._SSTabMant_TabPage1.Controls.Add(Me.FrameCabecera)
         Me._SSTabMant_TabPage1.Controls.Add(Me.FrameIngreso)
         Me._SSTabMant_TabPage1.Controls.Add(Me.ShapeContainer3)
         Me._SSTabMant_TabPage1.Location = New System.Drawing.Point(4, 22)
         Me._SSTabMant_TabPage1.Name = "_SSTabMant_TabPage1"
-        Me._SSTabMant_TabPage1.Size = New System.Drawing.Size(824, 573)
+        Me._SSTabMant_TabPage1.Size = New System.Drawing.Size(827, 599)
         Me._SSTabMant_TabPage1.TabIndex = 1
         Me._SSTabMant_TabPage1.Text = "Mantenimiento"
         '
@@ -874,7 +847,7 @@
         Me.SSTab2.Location = New System.Drawing.Point(8, 357)
         Me.SSTab2.Name = "SSTab2"
         Me.SSTab2.SelectedIndex = 0
-        Me.SSTab2.Size = New System.Drawing.Size(821, 213)
+        Me.SSTab2.Size = New System.Drawing.Size(823, 249)
         Me.SSTab2.TabIndex = 1
         '
         '_SSTab2_TabPage0
@@ -883,7 +856,7 @@
         Me._SSTab2_TabPage0.Controls.Add(Me.ShapeContainer4)
         Me._SSTab2_TabPage0.Location = New System.Drawing.Point(4, 22)
         Me._SSTab2_TabPage0.Name = "_SSTab2_TabPage0"
-        Me._SSTab2_TabPage0.Size = New System.Drawing.Size(813, 187)
+        Me._SSTab2_TabPage0.Size = New System.Drawing.Size(815, 223)
         Me._SSTab2_TabPage0.TabIndex = 0
         Me._SSTab2_TabPage0.Text = "&Ingreso del detalle"
         '
@@ -917,7 +890,7 @@
         Me.FramDetalle.Controls.Add(Me.lbtipref)
         Me.FramDetalle.Controls.Add(Me.lbconv)
         Me.FramDetalle.Controls.Add(Me.lb_vcambio)
-        Me.FramDetalle.Controls.Add(Me._lbTipAnal_0)
+        Me.FramDetalle.Controls.Add(Me.lbTipAnal0)
         Me.FramDetalle.Controls.Add(Me.lbAnalitico)
         Me.FramDetalle.Controls.Add(Me.Label11)
         Me.FramDetalle.Controls.Add(Me.Label12)
@@ -939,7 +912,7 @@
         Me.FramDetalle.Name = "FramDetalle"
         Me.FramDetalle.Padding = New System.Windows.Forms.Padding(0)
         Me.FramDetalle.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FramDetalle.Size = New System.Drawing.Size(819, 182)
+        Me.FramDetalle.Size = New System.Drawing.Size(814, 184)
         Me.FramDetalle.TabIndex = 2
         Me.FramDetalle.TabStop = False
         '
@@ -1222,19 +1195,18 @@
         Me.lb_vcambio.TabIndex = 70
         Me.lb_vcambio.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        '_lbTipAnal_0
+        'lbTipAnal0
         '
-        Me._lbTipAnal_0.AutoSize = True
-        Me._lbTipAnal_0.BackColor = System.Drawing.SystemColors.Control
-        Me._lbTipAnal_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lbTipAnal_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbTipAnal.SetIndex(Me._lbTipAnal_0, CType(0, Short))
-        Me._lbTipAnal_0.Location = New System.Drawing.Point(268, 58)
-        Me._lbTipAnal_0.Name = "_lbTipAnal_0"
-        Me._lbTipAnal_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lbTipAnal_0.Size = New System.Drawing.Size(77, 13)
-        Me._lbTipAnal_0.TabIndex = 19
-        Me._lbTipAnal_0.Text = "Tipo Analitico :"
+        Me.lbTipAnal0.AutoSize = True
+        Me.lbTipAnal0.BackColor = System.Drawing.SystemColors.Control
+        Me.lbTipAnal0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lbTipAnal0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lbTipAnal0.Location = New System.Drawing.Point(268, 58)
+        Me.lbTipAnal0.Name = "lbTipAnal0"
+        Me.lbTipAnal0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lbTipAnal0.Size = New System.Drawing.Size(77, 13)
+        Me.lbTipAnal0.TabIndex = 19
+        Me.lbTipAnal0.Text = "Tipo Analitico :"
         '
         'lbAnalitico
         '
@@ -1429,68 +1401,6 @@
         Me.Label24.TabIndex = 3
         Me.Label24.Text = "Moneda :"
         '
-        'StBar
-        '
-        Me.StBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me._StBar_Panel1, Me._StBar_Panel2, Me._StBar_Panel3, Me._StBar_Panel4})
-        Me.StBar.Location = New System.Drawing.Point(0, 551)
-        Me.StBar.Name = "StBar"
-        Me.StBar.Size = New System.Drawing.Size(824, 22)
-        Me.StBar.TabIndex = 53
-        '
-        '_StBar_Panel1
-        '
-        Me._StBar_Panel1.AutoSize = False
-        Me._StBar_Panel1.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me._StBar_Panel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
-        Me._StBar_Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me._StBar_Panel1.Name = "_StBar_Panel1"
-        Me._StBar_Panel1.Size = New System.Drawing.Size(204, 22)
-        Me._StBar_Panel1.Text = "Asiento : "
-        Me._StBar_Panel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        '_StBar_Panel2
-        '
-        Me._StBar_Panel2.AutoSize = False
-        Me._StBar_Panel2.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me._StBar_Panel2.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
-        Me._StBar_Panel2.Margin = New System.Windows.Forms.Padding(0)
-        Me._StBar_Panel2.Name = "_StBar_Panel2"
-        Me._StBar_Panel2.Size = New System.Drawing.Size(297, 22)
-        Me._StBar_Panel2.Text = "Sub Asiento :"
-        Me._StBar_Panel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        '_StBar_Panel3
-        '
-        Me._StBar_Panel3.AutoSize = False
-        Me._StBar_Panel3.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me._StBar_Panel3.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
-        Me._StBar_Panel3.Margin = New System.Windows.Forms.Padding(0)
-        Me._StBar_Panel3.Name = "_StBar_Panel3"
-        Me._StBar_Panel3.Size = New System.Drawing.Size(96, 22)
-        Me._StBar_Panel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        '_StBar_Panel4
-        '
-        Me._StBar_Panel4.AutoSize = False
-        Me._StBar_Panel4.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me._StBar_Panel4.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
-        Me._StBar_Panel4.Image = CType(resources.GetObject("_StBar_Panel4.Image"), System.Drawing.Image)
-        Me._StBar_Panel4.Margin = New System.Windows.Forms.Padding(0)
-        Me._StBar_Panel4.Name = "_StBar_Panel4"
-        Me._StBar_Panel4.Size = New System.Drawing.Size(212, 22)
-        Me._StBar_Panel4.Spring = True
-        Me._StBar_Panel4.Text = "Estado :"
-        Me._StBar_Panel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me._StBar_Panel4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        '
         'frameGrid
         '
         Me.frameGrid.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -1551,22 +1461,22 @@
         Me.FrameCabecera.Controls.Add(Me.TxObsComprobCab)
         Me.FrameCabecera.Controls.Add(Me.TxCtrNref)
         Me.FrameCabecera.Controls.Add(Me.lbNumComprobCablibro)
-        Me.FrameCabecera.Controls.Add(Me._leNComprob_0)
+        Me.FrameCabecera.Controls.Add(Me.leNComprob0)
         Me.FrameCabecera.Controls.Add(Me.lbnemoref)
         Me.FrameCabecera.Controls.Add(Me.leDebe)
         Me.FrameCabecera.Controls.Add(Me.leHaber)
         Me.FrameCabecera.Controls.Add(Me.leSoles)
         Me.FrameCabecera.Controls.Add(Me.LeDolares)
-        Me.FrameCabecera.Controls.Add(Me._LbTotales_0)
-        Me.FrameCabecera.Controls.Add(Me._LbTotales_1)
-        Me.FrameCabecera.Controls.Add(Me._LbTotales_3)
-        Me.FrameCabecera.Controls.Add(Me._LbTotales_4)
+        Me.FrameCabecera.Controls.Add(Me.LbTotales0)
+        Me.FrameCabecera.Controls.Add(Me.LbTotales1)
+        Me.FrameCabecera.Controls.Add(Me.LbTotales3)
+        Me.FrameCabecera.Controls.Add(Me.LbTotales4)
         Me.FrameCabecera.Controls.Add(Me.leDifer)
-        Me.FrameCabecera.Controls.Add(Me._LbTotales_2)
-        Me.FrameCabecera.Controls.Add(Me._LbTotales_5)
-        Me.FrameCabecera.Controls.Add(Me._leNComprob_1)
+        Me.FrameCabecera.Controls.Add(Me.LbTotales2)
+        Me.FrameCabecera.Controls.Add(Me.LbTotales5)
+        Me.FrameCabecera.Controls.Add(Me.leNComprob1)
         Me.FrameCabecera.Controls.Add(Me.lbNumComprobCab)
-        Me.FrameCabecera.Controls.Add(Me._leFechaComprob_7)
+        Me.FrameCabecera.Controls.Add(Me.leFechaComprob7)
         Me.FrameCabecera.Controls.Add(Me.leGlosa)
         Me.FrameCabecera.Controls.Add(Me.leObservaciones)
         Me.FrameCabecera.Controls.Add(Me.ShapeContainer7)
@@ -1642,20 +1552,19 @@
         Me.lbNumComprobCablibro.Text = "000001"
         Me.lbNumComprobCablibro.Visible = False
         '
-        '_leNComprob_0
+        'leNComprob0
         '
-        Me._leNComprob_0.AutoSize = True
-        Me._leNComprob_0.BackColor = System.Drawing.SystemColors.Control
-        Me._leNComprob_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._leNComprob_0.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.leNComprob.SetIndex(Me._leNComprob_0, CType(0, Short))
-        Me._leNComprob_0.Location = New System.Drawing.Point(223, 19)
-        Me._leNComprob_0.Name = "_leNComprob_0"
-        Me._leNComprob_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._leNComprob_0.Size = New System.Drawing.Size(87, 13)
-        Me._leNComprob_0.TabIndex = 92
-        Me._leNComprob_0.Text = "Nº. Comp. Libro :"
-        Me._leNComprob_0.Visible = False
+        Me.leNComprob0.AutoSize = True
+        Me.leNComprob0.BackColor = System.Drawing.SystemColors.Control
+        Me.leNComprob0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.leNComprob0.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.leNComprob0.Location = New System.Drawing.Point(223, 19)
+        Me.leNComprob0.Name = "leNComprob0"
+        Me.leNComprob0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.leNComprob0.Size = New System.Drawing.Size(87, 13)
+        Me.leNComprob0.TabIndex = 92
+        Me.leNComprob0.Text = "Nº. Comp. Libro :"
+        Me.leNComprob0.Visible = False
         '
         'lbnemoref
         '
@@ -1723,65 +1632,61 @@
         Me.LeDolares.TabIndex = 66
         Me.LeDolares.Text = "DOLARES US$"
         '
-        '_LbTotales_0
+        'LbTotales0
         '
-        Me._LbTotales_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me._LbTotales_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me._LbTotales_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._LbTotales_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.LbTotales.SetIndex(Me._LbTotales_0, CType(0, Short))
-        Me._LbTotales_0.Location = New System.Drawing.Point(502, 47)
-        Me._LbTotales_0.Name = "_LbTotales_0"
-        Me._LbTotales_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._LbTotales_0.Size = New System.Drawing.Size(109, 18)
-        Me._LbTotales_0.TabIndex = 65
-        Me._LbTotales_0.Text = "0.00 "
-        Me._LbTotales_0.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.LbTotales0.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.LbTotales0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LbTotales0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LbTotales0.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.LbTotales0.Location = New System.Drawing.Point(502, 47)
+        Me.LbTotales0.Name = "LbTotales0"
+        Me.LbTotales0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LbTotales0.Size = New System.Drawing.Size(109, 18)
+        Me.LbTotales0.TabIndex = 65
+        Me.LbTotales0.Text = "0.00 "
+        Me.LbTotales0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        '_LbTotales_1
+        'LbTotales1
         '
-        Me._LbTotales_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me._LbTotales_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me._LbTotales_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._LbTotales_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.LbTotales.SetIndex(Me._LbTotales_1, CType(1, Short))
-        Me._LbTotales_1.Location = New System.Drawing.Point(502, 67)
-        Me._LbTotales_1.Name = "_LbTotales_1"
-        Me._LbTotales_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._LbTotales_1.Size = New System.Drawing.Size(109, 18)
-        Me._LbTotales_1.TabIndex = 64
-        Me._LbTotales_1.Text = "0.00 "
-        Me._LbTotales_1.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.LbTotales1.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.LbTotales1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LbTotales1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LbTotales1.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.LbTotales1.Location = New System.Drawing.Point(502, 67)
+        Me.LbTotales1.Name = "LbTotales1"
+        Me.LbTotales1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LbTotales1.Size = New System.Drawing.Size(109, 18)
+        Me.LbTotales1.TabIndex = 64
+        Me.LbTotales1.Text = "0.00 "
+        Me.LbTotales1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        '_LbTotales_3
+        'LbTotales3
         '
-        Me._LbTotales_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me._LbTotales_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me._LbTotales_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._LbTotales_3.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.LbTotales.SetIndex(Me._LbTotales_3, CType(3, Short))
-        Me._LbTotales_3.Location = New System.Drawing.Point(621, 46)
-        Me._LbTotales_3.Name = "_LbTotales_3"
-        Me._LbTotales_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._LbTotales_3.Size = New System.Drawing.Size(109, 18)
-        Me._LbTotales_3.TabIndex = 63
-        Me._LbTotales_3.Text = "0.00 "
-        Me._LbTotales_3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.LbTotales3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.LbTotales3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LbTotales3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LbTotales3.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.LbTotales3.Location = New System.Drawing.Point(621, 46)
+        Me.LbTotales3.Name = "LbTotales3"
+        Me.LbTotales3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LbTotales3.Size = New System.Drawing.Size(109, 18)
+        Me.LbTotales3.TabIndex = 63
+        Me.LbTotales3.Text = "0.00 "
+        Me.LbTotales3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        '_LbTotales_4
+        'LbTotales4
         '
-        Me._LbTotales_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me._LbTotales_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me._LbTotales_4.Cursor = System.Windows.Forms.Cursors.Default
-        Me._LbTotales_4.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.LbTotales.SetIndex(Me._LbTotales_4, CType(4, Short))
-        Me._LbTotales_4.Location = New System.Drawing.Point(620, 67)
-        Me._LbTotales_4.Name = "_LbTotales_4"
-        Me._LbTotales_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._LbTotales_4.Size = New System.Drawing.Size(109, 18)
-        Me._LbTotales_4.TabIndex = 62
-        Me._LbTotales_4.Text = "0.00 "
-        Me._LbTotales_4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.LbTotales4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.LbTotales4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LbTotales4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LbTotales4.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.LbTotales4.Location = New System.Drawing.Point(620, 67)
+        Me.LbTotales4.Name = "LbTotales4"
+        Me.LbTotales4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LbTotales4.Size = New System.Drawing.Size(109, 18)
+        Me.LbTotales4.TabIndex = 62
+        Me.LbTotales4.Text = "0.00 "
+        Me.LbTotales4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'leDifer
         '
@@ -1796,49 +1701,46 @@
         Me.leDifer.TabIndex = 61
         Me.leDifer.Text = "DIFER."
         '
-        '_LbTotales_2
+        'LbTotales2
         '
-        Me._LbTotales_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(254, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me._LbTotales_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me._LbTotales_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._LbTotales_2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.LbTotales.SetIndex(Me._LbTotales_2, CType(2, Short))
-        Me._LbTotales_2.Location = New System.Drawing.Point(502, 101)
-        Me._LbTotales_2.Name = "_LbTotales_2"
-        Me._LbTotales_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._LbTotales_2.Size = New System.Drawing.Size(109, 18)
-        Me._LbTotales_2.TabIndex = 60
-        Me._LbTotales_2.Text = "0.00 "
-        Me._LbTotales_2.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.LbTotales2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(254, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.LbTotales2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LbTotales2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LbTotales2.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.LbTotales2.Location = New System.Drawing.Point(502, 101)
+        Me.LbTotales2.Name = "LbTotales2"
+        Me.LbTotales2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LbTotales2.Size = New System.Drawing.Size(109, 18)
+        Me.LbTotales2.TabIndex = 60
+        Me.LbTotales2.Text = "0.00 "
+        Me.LbTotales2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        '_LbTotales_5
+        'LbTotales5
         '
-        Me._LbTotales_5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(254, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me._LbTotales_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me._LbTotales_5.Cursor = System.Windows.Forms.Cursors.Default
-        Me._LbTotales_5.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.LbTotales.SetIndex(Me._LbTotales_5, CType(5, Short))
-        Me._LbTotales_5.Location = New System.Drawing.Point(621, 101)
-        Me._LbTotales_5.Name = "_LbTotales_5"
-        Me._LbTotales_5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._LbTotales_5.Size = New System.Drawing.Size(109, 18)
-        Me._LbTotales_5.TabIndex = 59
-        Me._LbTotales_5.Text = "0.00 "
-        Me._LbTotales_5.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.LbTotales5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(254, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.LbTotales5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LbTotales5.Cursor = System.Windows.Forms.Cursors.Default
+        Me.LbTotales5.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.LbTotales5.Location = New System.Drawing.Point(621, 101)
+        Me.LbTotales5.Name = "LbTotales5"
+        Me.LbTotales5.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LbTotales5.Size = New System.Drawing.Size(109, 18)
+        Me.LbTotales5.TabIndex = 59
+        Me.LbTotales5.Text = "0.00 "
+        Me.LbTotales5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        '_leNComprob_1
+        'leNComprob1
         '
-        Me._leNComprob_1.AutoSize = True
-        Me._leNComprob_1.BackColor = System.Drawing.SystemColors.Control
-        Me._leNComprob_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._leNComprob_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.leNComprob.SetIndex(Me._leNComprob_1, CType(1, Short))
-        Me._leNComprob_1.Location = New System.Drawing.Point(11, 15)
-        Me._leNComprob_1.Name = "_leNComprob_1"
-        Me._leNComprob_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._leNComprob_1.Size = New System.Drawing.Size(94, 13)
-        Me._leNComprob_1.TabIndex = 52
-        Me._leNComprob_1.Text = "Nº. Comprobante :"
+        Me.leNComprob1.AutoSize = True
+        Me.leNComprob1.BackColor = System.Drawing.SystemColors.Control
+        Me.leNComprob1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.leNComprob1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.leNComprob1.Location = New System.Drawing.Point(11, 15)
+        Me.leNComprob1.Name = "leNComprob1"
+        Me.leNComprob1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.leNComprob1.Size = New System.Drawing.Size(94, 13)
+        Me.leNComprob1.TabIndex = 52
+        Me.leNComprob1.Text = "Nº. Comprobante :"
         '
         'lbNumComprobCab
         '
@@ -1853,20 +1755,19 @@
         Me.lbNumComprobCab.TabIndex = 51
         Me.lbNumComprobCab.Text = "0000010000"
         '
-        '_leFechaComprob_7
+        'leFechaComprob7
         '
-        Me._leFechaComprob_7.AutoSize = True
-        Me._leFechaComprob_7.BackColor = System.Drawing.SystemColors.Control
-        Me._leFechaComprob_7.Cursor = System.Windows.Forms.Cursors.Default
-        Me._leFechaComprob_7.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.leFechaComprob.SetIndex(Me._leFechaComprob_7, CType(7, Short))
-        Me._leFechaComprob_7.Location = New System.Drawing.Point(11, 37)
-        Me._leFechaComprob_7.Name = "_leFechaComprob_7"
-        Me._leFechaComprob_7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._leFechaComprob_7.Size = New System.Drawing.Size(91, 13)
-        Me._leFechaComprob_7.TabIndex = 50
-        Me._leFechaComprob_7.Text = "Fecha Comprob. :"
-        Me._leFechaComprob_7.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.leFechaComprob7.AutoSize = True
+        Me.leFechaComprob7.BackColor = System.Drawing.SystemColors.Control
+        Me.leFechaComprob7.Cursor = System.Windows.Forms.Cursors.Default
+        Me.leFechaComprob7.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.leFechaComprob7.Location = New System.Drawing.Point(11, 37)
+        Me.leFechaComprob7.Name = "leFechaComprob7"
+        Me.leFechaComprob7.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.leFechaComprob7.Size = New System.Drawing.Size(91, 13)
+        Me.leFechaComprob7.TabIndex = 50
+        Me.leFechaComprob7.Text = "Fecha Comprob. :"
+        Me.leFechaComprob7.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'leGlosa
         '
@@ -2005,7 +1906,7 @@
         Me.Txtimpo.MaxLength = 12
         Me.Txtimpo.Name = "Txtimpo"
         Me.Txtimpo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Txtimpo.Size = New System.Drawing.Size(81, 19)
+        Me.Txtimpo.Size = New System.Drawing.Size(81, 20)
         Me.Txtimpo.TabIndex = 118
         '
         'TxtIgv
@@ -2018,7 +1919,7 @@
         Me.TxtIgv.MaxLength = 12
         Me.TxtIgv.Name = "TxtIgv"
         Me.TxtIgv.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtIgv.Size = New System.Drawing.Size(81, 19)
+        Me.TxtIgv.Size = New System.Drawing.Size(81, 20)
         Me.TxtIgv.TabIndex = 117
         '
         'TxtInaf
@@ -2031,7 +1932,7 @@
         Me.TxtInaf.MaxLength = 12
         Me.TxtInaf.Name = "TxtInaf"
         Me.TxtInaf.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtInaf.Size = New System.Drawing.Size(81, 19)
+        Me.TxtInaf.Size = New System.Drawing.Size(81, 20)
         Me.TxtInaf.TabIndex = 116
         '
         'TxtTot
@@ -2044,7 +1945,7 @@
         Me.TxtTot.MaxLength = 12
         Me.TxtTot.Name = "TxtTot"
         Me.TxtTot.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtTot.Size = New System.Drawing.Size(81, 19)
+        Me.TxtTot.Size = New System.Drawing.Size(81, 20)
         Me.TxtTot.TabIndex = 115
         '
         'TxtPerc
@@ -2057,7 +1958,7 @@
         Me.TxtPerc.MaxLength = 12
         Me.TxtPerc.Name = "TxtPerc"
         Me.TxtPerc.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtPerc.Size = New System.Drawing.Size(81, 19)
+        Me.TxtPerc.Size = New System.Drawing.Size(81, 20)
         Me.TxtPerc.TabIndex = 114
         '
         'Labelimpo
@@ -2329,7 +2230,7 @@
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(843, 606)
+        Me.ClientSize = New System.Drawing.Size(851, 624)
         Me.Controls.Add(Me.SSTabMant)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -2356,7 +2257,6 @@
         CType(Me.Dtc_Campo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TDBG_Consulta, System.ComponentModel.ISupportInitialize).EndInit()
         Me._SSTabMant_TabPage1.ResumeLayout(False)
-        Me._SSTabMant_TabPage1.PerformLayout()
         Me.SSTab2.ResumeLayout(False)
         Me._SSTab2_TabPage0.ResumeLayout(False)
         Me.FramDetalle.ResumeLayout(False)
@@ -2379,8 +2279,6 @@
         CType(Me.CtrAyu_TipRef, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxNref, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dtp_FechaDocRef, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.StBar.ResumeLayout(False)
-        Me.StBar.PerformLayout()
         Me.frameGrid.ResumeLayout(False)
         Me.frameGrid.PerformLayout()
         CType(Me.TDBG_Det, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2395,6 +2293,7 @@
         CType(Me.TDBGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame5.ResumeLayout(False)
         Me.Frame1.ResumeLayout(False)
+        Me.Frame1.PerformLayout()
         Me.Frame4.ResumeLayout(False)
         CType(Me.CtrAyu_Analitico1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtrAyu_Cuenta1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2406,10 +2305,6 @@
         CType(Me.CtrAyu_Moneda1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtrAyu_TipDoc1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxFer1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LbTotales, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lbTipAnal, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.leFechaComprob, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.leNComprob, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

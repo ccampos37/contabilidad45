@@ -106,6 +106,6 @@ Friend Class FrmCreacionEmpresa
 		'UPGRADE_NOTE: Refresh se actualizó a CtlRefresh. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         DataGrid1.Refresh()
 		Rsql1 = VGCNx.Execute("select codigo=max(empresacodigo)+1 from co_multiempresas where empresacodigo<'90'")
-		codigo = VB6.Format(Rsql1.Fields("codigo").Value, "00")
+        codigo = Format(Rsql1.Fields("codigo").Value, "00")
 	End Sub
 End Class

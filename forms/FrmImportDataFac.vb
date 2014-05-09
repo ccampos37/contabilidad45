@@ -8,14 +8,15 @@ Friend Class FrmImportDataFac
 	Dim rstrans As ADODB.Recordset
 	Dim NombreArchivo As String
 	Dim SerieSubAsiento(10) As String
-	Private Sub CmdArchivo_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdArchivo.Click
-		'UPGRADE_WARNING: Filter tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
-		cmdg_archivoOpen.Filter = "Archivos de Exportacion|EXPO*.EX"
-		cmdg_archivoOpen.ShowDialog()
-		NombreArchivo = cmdg_archivoOpen.FileName
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        TxArchivo1.Text = NombreArchivo
-	End Sub
+
+    Private Sub CmdArchivo_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles CmdArchivo.Click
+        'UPGRADE_WARNING: Filter tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
+        cmdg_archivoOpen.Filter = "Archivos de Exportacion|EXPO*.EX"
+        cmdg_archivoOpen.ShowDialog()
+        NombreArchivo = cmdg_archivoOpen.FileName
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        TxArchivo.text = NombreArchivo
+    End Sub
 	Private Sub cmdCancelar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancelar.Click
 		Me.Close()
 	End Sub
@@ -60,102 +61,102 @@ Friend Class FrmImportDataFac
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			.Parameters("@BaseVenta") = BaseOrigen
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Parameters("@Mes") = VB6.Format(Month(DTPPerido.Value), "00")
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Parameters("@Ano") = Year(DTPPerido.Value)
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Parameters("@tipanal") = rsparimpo.Fields("tipanal").Value
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Parameters("@User") = VGParamSistem.Usuario
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Execute. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			.Execute()
-		End With
-		Comando = New ADODB.Command
-		If paso1 = 1 Then
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			If procedimiento = "" Then procedimiento = "vt_generaasiento1_pro"
-			With Comando
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandType. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.CommandText = "" & procedimiento & "" ' "vt_generaasiento1_pro"
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.ActiveConnection. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.ActiveConnection = VGGeneral.ConnectionString
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters.Refresh()
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@BaseConta") = VGParamSistem.BDEmpresa
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@BaseVenta") = VGParamSistem.BDEmpresa
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@BaseParam") = rsparimpo.Fields("BaseVenta").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@empresa") = VGParametros.empresacodigo
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Libro") = rsparimpo.Fields("Libro").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Mes") = VB6.Format(Month(DTPPerido._Value), "00")
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Ano") = Year(DTPPerido._Value)
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@ctasoles") = rsparimpo.Fields("cuentasoles").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@ctadolares") = rsparimpo.Fields("cuentadolares").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@ctaIGV") = rsparimpo.Fields("ctaigv").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@tipanal") = rsparimpo.Fields("tipanal").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Compu") = VGcomputer
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Usuario") = VGParamSistem.Usuario
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Execute. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Execute()
-			End With
-		Else
-			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			If procedimiento = "" Then procedimiento = "vt_generaasiento_pro"
-			With Comando
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandType. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.CommandText = "" & procedimiento & "" '  "vt_generaasiento_pro"
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.ActiveConnection. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.ActiveConnection = VGGeneral.ConnectionString
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters.Refresh()
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@BaseConta") = VGParamSistem.BDEmpresa
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@BaseVenta") = BaseOrigen
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@BaseParam") = rsparimpo.Fields("BaseVenta").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@empresa") = VGParametros.empresacodigo
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Libro") = rsparimpo.Fields("Libro").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Mes") = VB6.Format(Month(DTPPerido._Value), "00")
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Ano") = Year(DTPPerido._Value)
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@ctatotal") = rsparimpo.Fields("ctatotal").Value
-				'        .Parameters("@ctasoles") = rsparimpo!cuentasoles
-				'        .Parameters("@ctadolares") = rsparimpo!cuentadolares
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@ctaIGV") = rsparimpo.Fields("ctaigv").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@tipanal") = rsparimpo.Fields("tipanal").Value
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Compu") = VGcomputer
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Parameters("@Usuario") = VGParamSistem.Usuario
-				'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Execute. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				.Execute()
-			End With
-		End If
+            .Parameters("@Mes") = Format(Month(DTPPerido.Value), "00")
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            .Parameters("@Ano") = Year(DTPPerido.Value)
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            .Parameters("@tipanal") = rsparimpo.Fields("tipanal").Value
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            .Parameters("@User") = VGParamSistem.Usuario
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Execute. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            .Execute()
+        End With
+        Comando = New ADODB.Command
+        If paso1 = 1 Then
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            If procedimiento = "" Then procedimiento = "vt_generaasiento1_pro"
+            With Comando
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandType. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .CommandText = "" & procedimiento & "" ' "vt_generaasiento1_pro"
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.ActiveConnection. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .ActiveConnection = VGGeneral.ConnectionString
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters.Refresh()
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@BaseConta") = VGParamSistem.BDEmpresa
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@BaseVenta") = VGParamSistem.BDEmpresa
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@BaseParam") = rsparimpo.Fields("BaseVenta").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@empresa") = VGParametros.empresacodigo
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Libro") = rsparimpo.Fields("Libro").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Mes") = Format(Month(DTPPerido._Value), "00")
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Ano") = Year(DTPPerido._Value)
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@ctasoles") = rsparimpo.Fields("cuentasoles").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@ctadolares") = rsparimpo.Fields("cuentadolares").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@ctaIGV") = rsparimpo.Fields("ctaigv").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@tipanal") = rsparimpo.Fields("tipanal").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Compu") = VGcomputer
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Usuario") = VGParamSistem.Usuario
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Execute. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Execute()
+            End With
+        Else
+            'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            If procedimiento = "" Then procedimiento = "vt_generaasiento_pro"
+            With Comando
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandType. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.CommandText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto procedimiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .CommandText = "" & procedimiento & "" '  "vt_generaasiento_pro"
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.ActiveConnection. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .ActiveConnection = VGGeneral.ConnectionString
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters.Refresh()
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@BaseConta") = VGParamSistem.BDEmpresa
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@BaseVenta") = BaseOrigen
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@BaseParam") = rsparimpo.Fields("BaseVenta").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@empresa") = VGParametros.empresacodigo
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Libro") = rsparimpo.Fields("Libro").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Mes") = Format(Month(DTPPerido._Value), "00")
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Ano") = Year(DTPPerido._Value)
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@ctatotal") = rsparimpo.Fields("ctatotal").Value
+                '        .Parameters("@ctasoles") = rsparimpo!cuentasoles
+                '        .Parameters("@ctadolares") = rsparimpo!cuentadolares
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@ctaIGV") = rsparimpo.Fields("ctaigv").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@tipanal") = rsparimpo.Fields("tipanal").Value
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Compu") = VGcomputer
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Parameters. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Parameters("@Usuario") = VGParamSistem.Usuario
+                'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto Comando.Execute. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                .Execute()
+            End With
+        End If
 		VGGeneral.CommitTrans()
 		'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
@@ -257,4 +258,13 @@ restarurar:
 		cboSerie.SelectedIndex = -1
 		
 	End Sub
+
+    Private Sub Jck_Txt1_Load(sender As Object, e As EventArgs) Handles Jck_Txt1.Load
+
+    End Sub
+
+    Private Function TxArchivo() As Object
+        Throw New NotImplementedException
+    End Function
+
 End Class

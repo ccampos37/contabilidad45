@@ -1,4 +1,0 @@
-﻿
-Class VB
-
-End Class

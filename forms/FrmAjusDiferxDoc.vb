@@ -12,15 +12,14 @@ Friend Class FrmAjusDiferxDoc
     End Sub
 
     Private Sub FrmAjusDiferxDoc_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-        Call Ctr_AyudaCCosto.conexion(VGCNx) : Ctr_AyudaCCosto.Filtro = "empresacodigo ='" & VGParametros.empresacodigo & "'"
+        Call Ctr_AyudaCCosto.ConectarBD() : Ctr_AyudaCCosto.Filtro = "empresacodigo ='" & VGParametros.empresacodigo & "'"
         DateTimePicker1.Value = Fecha(2, VGParamSistem.FechaTrabajo)
     End Sub
     Private Function ValidaIngreso() As Boolean
-        'UPGRADE_NOTE: tipocambio se actualizó a tipocambio_Renamed. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         Dim tipocambio_Renamed As Short
         tipocambio_Renamed = 0
         ValidaIngreso = False
-        If Ctr_AyudaCCosto.xclave = "" Then
+        If Ctr_AyudaCCosto.Codigo = "" Then
             MsgBox("Debe Ingresar un Centro de Costo", MsgBoxStyle.Exclamation)
             Ctr_AyudaCCosto.Focus()
             Exit Function
@@ -36,9 +35,7 @@ Friend Class FrmAjusDiferxDoc
     Private Sub GenAjuste()
         On Error GoTo Ajuste
         VGGeneral.BeginTrans()
-        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
-
         EliminaAjustes()
         '  Mayoriza
 
@@ -64,7 +61,7 @@ Friend Class FrmAjusDiferxDoc
             .Parameters("@NombrePC").Value = VGcomputer
             .Parameters("@TipoCambio1").Value = XRecuperaTipoCambio((DateTimePicker1.Value), 1, VGCnxCT)
             .Parameters("@TipoCambio2").Value = XRecuperaTipoCambio((DateTimePicker1.Value), 2, VGCnxCT)
-            .Parameters("@CCosto").Value = Ctr_AyudaCCosto.xclave
+            .Parameters("@CCosto").Value = Ctr_AyudaCCosto.Codigo
             rs = .Execute
         End With
 
@@ -77,13 +74,11 @@ Friend Class FrmAjusDiferxDoc
             MsgBox("El Ajuste de Diferencia de Cambio de Documentos " & Chr(13) & "Cancelados No se Realizará porque no Encontro " & Chr(13) & "Ni un Documento a Ajustar ", MsgBoxStyle.Exclamation)
 
         End If
-        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-        System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
+         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
         Exit Sub
 
 Ajuste:
         VGGeneral.RollbackTrans()
-        'UPGRADE_WARNING: Screen propiedad Screen.MousePointer tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
         System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
         MsgBox("No se genero el Ajuste " & Chr(13) & Err.Description, MsgBoxStyle.Exclamation)
     End Sub
@@ -94,14 +89,12 @@ Ajuste:
 
         'Eliminando asientos de ajuste
         'Ajuste Ganancia
-        SQL = "Delete From ct_cabcomprob" & Year(DateTimePicker1.Value) & " Where empresacodigo='" & VGParametros.empresacodigo & "' " & "And cabcomprobmes=" & Month(DateTimePicker1.Value) & " AND cabcomprobnumero='" & VB6.Format(Month(DateTimePicker1.Value), "00") & "05500001' " & " AND subasientocodigo='0099' AND asientocodigo='055'"
+        SQL = "Delete From ct_cabcomprob" & Year(DateTimePicker1.Value) & " Where empresacodigo='" & VGParametros.empresacodigo & "' " & "And cabcomprobmes=" & Month(DateTimePicker1.Value) & " AND cabcomprobnumero='" & Format(Month(DateTimePicker1.Value), "00") & "05500001' " & " AND subasientocodigo='0099' AND asientocodigo='055'"
         rs1 = VGCNx.Execute(SQL)
-        'UPGRADE_NOTE: El objeto rs1 no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         rs1 = Nothing
         'Ajuste Perdida
-        SQL = "Delete From ct_cabcomprob" & Year(DateTimePicker1.Value) & " Where empresacodigo='" & VGParametros.empresacodigo & "' " & "And cabcomprobmes=" & Month(DateTimePicker1.Value) & " AND cabcomprobnumero='" & VB6.Format(Month(DateTimePicker1.Value), "00") & "05500002' " & " AND subasientocodigo='0099' AND asientocodigo='055'"
+        SQL = "Delete From ct_cabcomprob" & Year(DateTimePicker1.Value) & " Where empresacodigo='" & VGParametros.empresacodigo & "' " & "And cabcomprobmes=" & Month(DateTimePicker1.Value) & " AND cabcomprobnumero='" & Format(Month(DateTimePicker1.Value), "00") & "05500002' " & " AND subasientocodigo='0099' AND asientocodigo='055'"
         rs1 = VGCNx.Execute(SQL)
-        'UPGRADE_NOTE: El objeto rs1 no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         rs1 = Nothing
     End Sub
     Private Sub Mayoriza()
@@ -118,9 +111,5 @@ Ajuste:
             .Parameters("@user").Value = VGParamSistem.Usuario
             .Execute()
         End With
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
     End Sub
 End Class

@@ -11,7 +11,7 @@ Friend Class frmRepEstructuras
 	Private Sub frmRepEstructuras_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 		Call LlenarcboTipoReporte()
 		ProgressBar1.Visible = False
-		Call ConfiguraForm()
+
 	End Sub
 	
 	Sub LlenarcboTipoReporte()
@@ -20,32 +20,24 @@ Friend Class frmRepEstructuras
 		cboTipoReporte.Items.Add("Estado de Ganáncias y Pérdidas")
 	End Sub
 	
-	Sub ConfiguraForm()
-		Width = VB6.TwipsToPixelsX(5190)
-		Height = VB6.TwipsToPixelsY(2655)
-		'Left = (MDIPrincipal.Width - Me.Width) / 2
-		'Top = ((MDIPrincipal.Height - Me.Height) / 2) - 600
-	End Sub
-	
+    Sub prueba()
+        ProgressBar1.Minimum = 1
+        ProgressBar1.Maximum = 100
+        ProgressBar1.Visible = True
 
-	Sub prueba()
-		ProgressBar1.Minimum = 1
-		ProgressBar1.Maximum = 100
-		ProgressBar1.Visible = True
-		
-		ProgressBar1.Value = 10
-		
-		ProgressBar1.Value = 30
-		
-		ProgressBar1.Value = 50
-		
-		ProgressBar1.Value = 60
-		
-		'ProgressBar1.Value = 100
-		
-		'ProgressBar1.Visible = False
-		
-	End Sub
+        ProgressBar1.Value = 10
+
+        ProgressBar1.Value = 30
+
+        ProgressBar1.Value = 50
+
+        ProgressBar1.Value = 60
+
+        'ProgressBar1.Value = 100
+
+        'ProgressBar1.Visible = False
+
+    End Sub
 
     Private Sub cmdBotones0_Click(sender As Object, e As EventArgs) Handles cmdBotones0.Click
         Call prueba()

@@ -127,7 +127,7 @@ ERRAR:
         'VALIDANDO SI EXISTE EL USUARIO
         RSPASS = New ADODB.Recordset
         'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-        RSPASS.Open("SELECT * FROM " & UCase(CLMENU.TablaUsu) & " WHERE USUARIOCODIGO='" & TxUser.CtlText & "'", VGConfig, ADODB.CursorTypeEnum.adOpenKeyset)
+        RSPASS.Open("SELECT * FROM " & UCase(CLMENU.TablaUsu) & " WHERE USUARIOCODIGO='" & TxUser.Text & "'", VGConfig, ADODB.CursorTypeEnum.adOpenKeyset)
         If RSPASS.RecordCount = 0 Then
             MsgBox("NO SE ENCUENTRA EL USUARIO ", MsgBoxStyle.Exclamation)
             TxUser.Focus()
@@ -136,12 +136,12 @@ ERRAR:
 
         'VALIDANDO SI EXISTE EL PWD
         If CDbl(VGTipoCod) = 1 Then
-            Pwd = CODIFICASQL((TxPwd.CtlText))
+            Pwd = CODIFICASQL((TxPwd.Text))
         Else
-            Pwd = CODIFICA((TxPwd.CtlText), NUMMAGICO)
+            Pwd = CODIFICA((TxPwd.Text), NUMMAGICO)
         End If
         RSPASS = Nothing
-        SQL = "SELECT * FROM " & UCase(CLMENU.TablaUsu) & " WHERE USUARIOCODIGO='" & TxUser.CtlText & "'"
+        SQL = "SELECT * FROM " & UCase(CLMENU.TablaUsu) & " WHERE USUARIOCODIGO='" & TxUser.Text & "'"
         SQL = SQL & " AND USUarioPASSWORD='" & Pwd & "'"
         RSPASS = VGConfig.Execute(SQL)
         If RSPASS.RecordCount = 0 Then
@@ -186,12 +186,12 @@ ERRAR:
 
 
     End Sub
-    Private Sub TxPwd_KeyPressEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyPressEvent) Handles TxPwd.KeyPressEvent
+    Private Sub TxPwd_KeyPressEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyPressEvent)
         If eventArgs.keyAscii = 13 Then System.Windows.Forms.SendKeys.Send("{tab}")
     End Sub
-    Private Sub TxUser_KeyPressEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyPressEvent) Handles TxUser.KeyPressEvent
+    Private Sub TxUser_KeyPressEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxTextFer.__TxFer_KeyPressEvent)
         If eventArgs.keyAscii = 13 Then
-            TxUser.CtlText = UCase(TxUser.CtlText)
+            TxUser.Text = UCase(TxUser.Text)
             System.Windows.Forms.SendKeys.Send("{tab}")
         End If
     End Sub
@@ -213,15 +213,15 @@ ERRAR:
 
         End If
         If Not VERIFICAUSUARIO() Then Exit Sub
-        tccambio = XRecuperaTipoCambio(CDate(VB6.Format(DTPfecha.Value, "dd/mm/yyyy")), tipocambio.Venta, VGCNx)
+        tccambio = XRecuperaTipoCambio(DTPfecha.Value, tipocambio.Venta, VGCNx)
         If tccambio = 0 Then
             MsgBox("No existe tipo de cambio para esta fecha", MsgBoxStyle.Information)
         End If
         MDIPrincipal.StatusBar1.Items.Item(1).Text = "Mes Proceso : " & DesMes(VGParamSistem.Mesproceso)
         MDIPrincipal.StatusBar1.Items.Item(2).Text = "Año Proceso :" & VGParamSistem.Anoproceso
         MDIPrincipal.StatusBar1.Items.Item(3).Text = "Fecha de Trabajo (" & VGParamSistem.FechaTrabajo & ")"
-        MDIPrincipal.StatusBar1.Items.Item(4).Text = "Tipo Cambio  (" & VB6.Format(tccambio, "#.000") & ")"
-        VGUsuario = UCase(TxUser.CtlText)
+        MDIPrincipal.StatusBar1.Items.Item(4).Text = "Tipo Cambio  (" & Format(tccambio, "#.000") & ")"
+        VGUsuario = UCase(TxUser.Text)
         Dim Clsmenu As New ClassMenu
         Clsmenu.Conexion = VGConfig
         MainContab.VGtipo = TIPOSISTEMA.contab
@@ -232,10 +232,10 @@ ERRAR:
         Call Clsmenu.HabilitarMenuNom(VGUsuario)
         Call adicionarcamposCT()
         Call CargarParametrosContabilidad()
-        If TxUser.CtlText <> "" Then
-            VGParamSistem.Usuario = TxUser.CtlText
+        If TxUser.Text <> "" Then
+            VGParamSistem.Usuario = TxUser.Text
             VGParamSistem.Pwd = ""
-            MDIPrincipal.Text = MDIPrincipal.Text & " Usuario : " & TxUser.CtlText
+            MDIPrincipal.Text = MDIPrincipal.Text & " Usuario : " & TxUser.Text
         Else
             MDIPrincipal.Text = MDIPrincipal.Text & " Usuario : Sin Usuario "
         End If

@@ -54,7 +54,7 @@ Friend Class ClassMenu
                     rsaux.AddNew()
                     CodigoMenu = ""
                     For I = 0 To UBound(ContNiv) - 1
-                        CodigoMenu = CodigoMenu & IIf(ContNiv(I) > 0, VB6.Format(ContNiv(I), "00"), "")
+                        CodigoMenu = CodigoMenu & IIf(ContNiv(I) > 0, Format(ContNiv(I), "00"), "")
                     Next
                     rsaux.Fields("tipodesistema").Value = MainContab.VGtipo
                     rsaux.Fields("Men_CodIGO").Value = RTrim(CodigoMenu)

@@ -82,12 +82,12 @@ Friend Class frmParametros
 
         ListView1.Columns.Clear()
         ListView1.Items.Clear()
-        ListView1.Columns.Add("", "Número Dígitos", CInt(VB6.TwipsToPixelsX(VB6.PixelsToTwipsX(ListView1.Width) / 1)))
+        ListView1.Columns.Add("", "Número Dígitos", CInt(((ListView1.Width) / 1)))
         ListView1.View = System.Windows.Forms.View.Details
 
         ListView2.Columns.Clear()
         ListView2.Items.Clear()
-        ListView2.Columns.Add("", "Número Dígitos", CInt(VB6.TwipsToPixelsX(VB6.PixelsToTwipsX(ListView2.Width) / 1)))
+        ListView2.Columns.Add("", "Número Dígitos", CInt(((ListView2.Width) / 1)))
         ListView2.View = System.Windows.Forms.View.Details
         For I = 1 To 9
             itmX = ListView1.Items.Add(CStr(I))
@@ -204,7 +204,7 @@ Friend Class frmParametros
             SQL = SQL & " ingresoformatorapido) "
             SQL = SQL & "VALUES ('" & Trim(txt0.Text) & "','" & Trim(txt1.Text) & "'," & chk0.CheckState & ""
             SQL = SQL & ",'" & Trim(txt2.Text) & "','" & Trim(txt3.Text) & "'," & chk1.CheckState & "," & chk2.CheckState
-            SQL = SQL & ",'" & strvalor & "','" & ValorMoneda & "'," & VGnumnivelescuenta & "," & txt(4).Text
+            SQL = SQL & ",'" & strvalor & "','" & ValorMoneda & "'," & VGnumnivelescuenta & "," & txt4.Text
             SQL = SQL & "," & chk4.CheckState & ",'" & Ctr_AyudaCuentaAjuste0.xclave & "'"
             SQL = SQL & ",'" & Ctr_AyudaCuentaAjuste1.xclave & "','" & VGUsuario & "','" & Today & "'"
             SQL = SQL & ",'" & Trim(Ctr_Codigo0.xclave) & "','" & Trim(Ctr_Codigo1.xclave) & "'"

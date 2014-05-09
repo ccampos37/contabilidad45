@@ -23,40 +23,86 @@
 	End Sub
 	'Requerido por el Diseñador de Windows Forms
 	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar mediante el Diseñador de Windows Forms.
     'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAjusDiferxDoc))
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Ctr_AyudaCCosto = New Ctr_Ayuda.Ctr_Ayuda()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Ctr_AyudaCCosto = New Axctrlayuda_f.AxCtr_Ayuda()
         Me.Command2 = New System.Windows.Forms.Button()
         Me.Command1 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.Ctr_AyudaCCosto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.Ctr_AyudaCCosto)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 24)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(299, 131)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
+        '
+        'Ctr_AyudaCCosto
+        '
+        Me.Ctr_AyudaCCosto.CampoDevCod = "centrocostocodigo"
+        Me.Ctr_AyudaCCosto.CampoDevDesc = "centrocostodescripcion"
+        Me.Ctr_AyudaCCosto.Codigo = ""
+        Me.Ctr_AyudaCCosto.Descripcion = ""
+        Me.Ctr_AyudaCCosto.ListaAlias = "centrocostocodigo,centrocostodescripcion"
+        Me.Ctr_AyudaCCosto.ListaCampos = "centrocostocodigo(1),centrocostodescripcion(2)"
+        Me.Ctr_AyudaCCosto.Location = New System.Drawing.Point(41, 95)
+        Me.Ctr_AyudaCCosto.LongCod = "10"
+        Me.Ctr_AyudaCCosto.LongDesc = "150"
+        Me.Ctr_AyudaCCosto.Name = "Ctr_AyudaCCosto"
+        Me.Ctr_AyudaCCosto.NombreTabla = "ct_centrocosto"
+        Me.Ctr_AyudaCCosto.Requerido = True
+        Me.Ctr_AyudaCCosto.Size = New System.Drawing.Size(244, 20)
+        Me.Ctr_AyudaCCosto.TabIndex = 20
+        Me.Ctr_AyudaCCosto.Titulo = "Busqueda Centro Costo"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(41, 42)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label4.ForeColor = System.Drawing.Color.Maroon
+        Me.Label4.Location = New System.Drawing.Point(44, 75)
+        Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label4.Size = New System.Drawing.Size(197, 17)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Centro Costo - ajuste por pérdida:"
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label3.ForeColor = System.Drawing.Color.Maroon
+        Me.Label3.Location = New System.Drawing.Point(38, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label3.Size = New System.Drawing.Size(83, 17)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Fecha ajuste:"
         '
         'GroupBox2
         '
@@ -69,15 +115,6 @@
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Opciones"
-        '
-        'Ctr_AyudaCCosto
-        '
-        Me.Ctr_AyudaCCosto.Enabled = True
-        Me.Ctr_AyudaCCosto.Location = New System.Drawing.Point(47, 95)
-        Me.Ctr_AyudaCCosto.Name = "Ctr_AyudaCCosto"
-        Me.Ctr_AyudaCCosto.OcxState = CType(resources.GetObject("Ctr_AyudaCCosto.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.Ctr_AyudaCCosto.Size = New System.Drawing.Size(212, 20)
-        Me.Ctr_AyudaCCosto.TabIndex = 14
         '
         'Command2
         '
@@ -105,38 +142,6 @@
         Me.Command1.TabIndex = 17
         Me.Command1.UseVisualStyleBackColor = False
         '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.White
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label3.ForeColor = System.Drawing.Color.Maroon
-        Me.Label3.Location = New System.Drawing.Point(38, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label3.Size = New System.Drawing.Size(83, 17)
-        Me.Label3.TabIndex = 17
-        Me.Label3.Text = "Fecha ajuste:"
-        '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.Color.White
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label4.ForeColor = System.Drawing.Color.Maroon
-        Me.Label4.Location = New System.Drawing.Point(44, 75)
-        Me.Label4.Name = "Label4"
-        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label4.Size = New System.Drawing.Size(197, 17)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Centro Costo - ajuste por pérdida:"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(41, 42)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 19
-        '
         'FrmAjusDiferxDoc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,17 +161,16 @@
         Me.Text = "Ajuste de Difer x Cambio por documento"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.Ctr_AyudaCCosto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Public WithEvents Ctr_AyudaCCosto As Axctrlayuda_f.AxCtr_Ayuda
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Public WithEvents Command2 As System.Windows.Forms.Button
     Public WithEvents Command1 As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Public WithEvents Label4 As System.Windows.Forms.Label
     Public WithEvents Label3 As System.Windows.Forms.Label
-#End Region 
+    Friend WithEvents Ctr_AyudaCCosto As Ctr_Ayuda.Ctr_Ayuda
+#End Region
 End Class

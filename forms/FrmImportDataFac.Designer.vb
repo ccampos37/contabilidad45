@@ -32,7 +32,6 @@
 	Public WithEvents Label1 As System.Windows.Forms.Label
 	Public WithEvents Frame2 As System.Windows.Forms.GroupBox
 	Public WithEvents CmdArchivo As System.Windows.Forms.Button
-    Public WithEvents TxArchivo1 As AxTextFer.AxTxFer
     Public WithEvents _Opt_1 As System.Windows.Forms.RadioButton
     Public WithEvents _Opt_0 As System.Windows.Forms.RadioButton
     Public WithEvents Frame1 As System.Windows.Forms.GroupBox
@@ -51,7 +50,6 @@
         Me.DTPPerido = New AxMSComCtl2.AxDTPicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CmdArchivo = New System.Windows.Forms.Button()
-        Me.TxArchivo1 = New AxTextFer.AxTxFer()
         Me.Frame1 = New System.Windows.Forms.GroupBox()
         Me._Opt_1 = New System.Windows.Forms.RadioButton()
         Me._Opt_0 = New System.Windows.Forms.RadioButton()
@@ -59,7 +57,6 @@
         Me.Jck_Txt1 = New Jck_txt.Jck_Txt()
         Me.Frame2.SuspendLayout()
         CType(Me.DTPPerido, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxArchivo1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -162,16 +159,6 @@
         Me.CmdArchivo.Text = "..."
         Me.CmdArchivo.UseVisualStyleBackColor = False
         '
-        'TxArchivo1
-        '
-        Me.TxArchivo1.Enabled = True
-        Me.TxArchivo1.Location = New System.Drawing.Point(4, 91)
-        Me.TxArchivo1.Name = "TxArchivo1"
-        Me.TxArchivo1.OcxState = CType(resources.GetObject("TxArchivo1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxArchivo1.Size = New System.Drawing.Size(436, 24)
-        Me.TxArchivo1.TabIndex = 3
-        Me.TxArchivo1.Visible = False
-        '
         'Frame1
         '
         Me.Frame1.BackColor = System.Drawing.SystemColors.Control
@@ -253,7 +240,6 @@
         Me.Controls.Add(Me.CmdProcesar)
         Me.Controls.Add(Me.Frame2)
         Me.Controls.Add(Me.CmdArchivo)
-        Me.Controls.Add(Me.TxArchivo1)
         Me.Controls.Add(Me.Frame1)
         Me.Controls.Add(Me.Label2)
         Me.Cursor = System.Windows.Forms.Cursors.Default
@@ -268,11 +254,10 @@
         Me.Text = "Importacion de datos y Generacion de Asiento Factura"
         Me.Frame2.ResumeLayout(False)
         CType(Me.DTPPerido, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxArchivo1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Jck_Txt1 As Jck_txt.Jck_Txt
-#End Region 
+#End Region
 End Class

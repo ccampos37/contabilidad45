@@ -27,10 +27,10 @@ Partial Class FrmMntMoneda
         '
         'TablasBasicas1
         '
-        Me.TablasBasicas1.Location = New System.Drawing.Point(38, 27)
+        Me.TablasBasicas1.Location = New System.Drawing.Point(23, 13)
         Me.TablasBasicas1.Name = "TablasBasicas1"
-        Me.TablasBasicas1.Size = New System.Drawing.Size(589, 449)
-        Me.TablasBasicas1.TabIndex = 3
+        Me.TablasBasicas1.Size = New System.Drawing.Size(571, 434)
+        Me.TablasBasicas1.TabIndex = 0
         '
         'FrmMntMoneda
         '

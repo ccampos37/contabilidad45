@@ -174,8 +174,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="Ctr_Ayuda">
-      <HintPath>..\comun\dll\Ctr_Ayuda.dll</HintPath>
+    <Reference Include="Ctr_Ayuda, Version=1.0.5213.5004, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\comun\dll\Ctr_Ayuda.dll</HintPath>
     </Reference>
     <Reference Include="Ctr_Txt">
       <HintPath>..\comun\dll\Ctr_Txt.dll</HintPath>
@@ -294,8 +295,9 @@
     </COMReference>
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="TablasBasicas">
-      <HintPath>..\comun\utilitarios\Control Tablas Basicas\bin\TablasBasicas.dll</HintPath>
+    <Reference Include="TablasBasicas, Version=1.0.5191.30622, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\comun\dll\TablasBasicas.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -332,513 +334,502 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMnttotalLineaEGP.Designer.vb">
+    <Compile Include="Forms\FrmMnttotalLineaEGP.Designer.vb">
       <DependentUpon>FrmMnttotalLineaEGP.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMnttotalLineaEGP.vb">
+    <Compile Include="Forms\FrmMnttotalLineaEGP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntEstructuraLineagastos.Designer.vb">
+    <Compile Include="Forms\FrmMntEstructuraLineagastos.Designer.vb">
       <DependentUpon>FrmMntEstructuraLineagastos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntEstructuraLineagastos.vb">
+    <Compile Include="Forms\FrmMntEstructuraLineagastos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntEstructuraBalance.designer.vb">
+    <Compile Include="Forms\FrmMntEstructuraBalance.designer.vb">
       <DependentUpon>FrmMntEstructuraBalance.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntEstructuraBalance.vb">
+    <Compile Include="Forms\FrmMntEstructuraBalance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntEstructuraGana_perd.Designer.vb">
+    <Compile Include="Forms\FrmMntEstructuraGana_perd.Designer.vb">
       <DependentUpon>FrmMntEstructuraGana_perd.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntEstructuraGana_perd.vb">
+    <Compile Include="Forms\FrmMntEstructuraGana_perd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntTipoCuenta.Designer.vb">
+    <Compile Include="Forms\FrmMntTipoCuenta.Designer.vb">
       <DependentUpon>FrmMntTipoCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntTipoCuenta.vb">
+    <Compile Include="Forms\FrmMntTipoCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMntEstructuraParamkibrosAux.Designer.vb">
+    <Compile Include="Forms\frmMntEstructuraParamkibrosAux.Designer.vb">
       <DependentUpon>frmMntEstructuraParamkibrosAux.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMntEstructuraParamkibrosAux.vb">
+    <Compile Include="Forms\frmMntEstructuraParamkibrosAux.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntMoneda.Designer.vb">
+    <Compile Include="Forms\FrmMntMoneda.Designer.vb">
       <DependentUpon>FrmMntMoneda.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntMoneda.vb">
+    <Compile Include="Forms\FrmMntMoneda.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntOperacion.Designer.vb">
+    <Compile Include="Forms\FrmMntOperacion.Designer.vb">
       <DependentUpon>FrmMntOperacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntOperacion.vb">
+    <Compile Include="Forms\FrmMntOperacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmAjusDiferxDoc.Designer.vb">
+    <Compile Include="Forms\FrmAjusDiferxDoc.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmAjusDiferxDoc.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmAjusDiferxDoc.vb">
+    <Compile Include="Forms\FrmAjusDiferxDoc.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmannos.Designer.vb">
+    <Compile Include="Forms\frmannos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmannos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmannos.vb">
+    <Compile Include="Forms\frmannos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmConsultaComprobantes.Designer.vb">
+    <Compile Include="Forms\frmConsultaComprobantes.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmConsultaComprobantes.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmConsultaComprobantes.vb">
+    <Compile Include="Forms\frmConsultaComprobantes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmContabCobrar.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>FrmContabCobrar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FrmContabCobrar.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FrmContabPagar.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>FrmContabPagar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FrmContabPagar.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FrmCreacionEmpresa.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>FrmCreacionEmpresa.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FrmCreacionEmpresa.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FrmDaoCompras.Designer.vb">
+    <Compile Include="Forms\FrmDaoCompras.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmDaoCompras.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmDaoCompras.vb">
+    <Compile Include="Forms\FrmDaoCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmDaoVentas.Designer.vb">
+    <Compile Include="Forms\FrmDaoVentas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmDaoVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmDaoVentas.vb">
+    <Compile Include="Forms\FrmDaoVentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmDiarioGeneral.Designer.vb">
+    <Compile Include="Forms\frmDiarioGeneral.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmDiarioGeneral.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmDiarioGeneral.vb">
+    <Compile Include="Forms\frmDiarioGeneral.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmDocPend.Designer.vb">
+    <Compile Include="Forms\FrmDocPend.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmDocPend.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmDocPend.vb">
+    <Compile Include="Forms\FrmDocPend.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmError.Designer.vb">
+    <Compile Include="Forms\frmError.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmError.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmError.vb">
+    <Compile Include="Forms\frmError.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmgenerasaldosAnaliticos.Designer.vb">
+    <Compile Include="Forms\FrmgenerasaldosAnaliticos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmgenerasaldosAnaliticos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmgenerasaldosAnaliticos.vb">
+    <Compile Include="Forms\FrmgenerasaldosAnaliticos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmGenerasaldosini.Designer.vb">
+    <Compile Include="Forms\FrmGenerasaldosini.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmGenerasaldosini.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmGenerasaldosini.vb">
+    <Compile Include="Forms\FrmGenerasaldosini.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmImportDataFac.Designer.vb">
+    <Compile Include="Forms\FrmImportDataFac.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmImportDataFac.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmImportDataFac.vb">
+    <Compile Include="Forms\FrmImportDataFac.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmInventariosyBalances.Designer.vb">
+    <Compile Include="Forms\FrmInventariosyBalances.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmInventariosyBalances.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmInventariosyBalances.vb">
+    <Compile Include="Forms\FrmInventariosyBalances.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroBalancedecomprobacion.Designer.vb">
+    <Compile Include="Forms\FrmLibroBalancedecomprobacion.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroBalancedecomprobacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroBalancedecomprobacion.vb">
+    <Compile Include="Forms\FrmLibroBalancedecomprobacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibrocajayBancos.Designer.vb">
+    <Compile Include="Forms\FrmLibrocajayBancos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibrocajayBancos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibrocajayBancos.vb">
+    <Compile Include="Forms\FrmLibrocajayBancos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroDiario.Designer.vb">
+    <Compile Include="Forms\FrmLibroDiario.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroDiario.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroDiario.vb">
+    <Compile Include="Forms\FrmLibroDiario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroDiarioSimplificado.Designer.vb">
+    <Compile Include="Forms\FrmLibroDiarioSimplificado.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroDiarioSimplificado.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroDiarioSimplificado.vb">
+    <Compile Include="Forms\FrmLibroDiarioSimplificado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroInventarios.Designer.vb">
+    <Compile Include="Forms\FrmLibroInventarios.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroInventarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroInventarios.vb">
+    <Compile Include="Forms\FrmLibroInventarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroInventariosyBalances.Designer.vb">
+    <Compile Include="Forms\FrmLibroInventariosyBalances.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroInventariosyBalances.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroInventariosyBalances.vb">
+    <Compile Include="Forms\FrmLibroInventariosyBalances.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroMayor.Designer.vb">
+    <Compile Include="Forms\FrmLibroMayor.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroMayor.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroMayor.vb">
+    <Compile Include="Forms\FrmLibroMayor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroregistrodeCompras.Designer.vb">
+    <Compile Include="Forms\FrmLibroregistrodeCompras.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroregistrodeCompras.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroregistrodeCompras.vb">
+    <Compile Include="Forms\FrmLibroregistrodeCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibroRegistrodeventas.Designer.vb">
+    <Compile Include="Forms\FrmLibroRegistrodeventas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibroRegistrodeventas.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibroRegistrodeventas.vb">
+    <Compile Include="Forms\FrmLibroRegistrodeventas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmLibrosElectPrincipales.Designer.vb">
+    <Compile Include="Forms\FrmLibrosElectPrincipales.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmLibrosElectPrincipales.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmLibrosElectPrincipales.vb">
+    <Compile Include="Forms\FrmLibrosElectPrincipales.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmlogin.Designer.vb">
+    <Compile Include="Forms\frmlogin.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmlogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmlogin.vb">
+    <Compile Include="Forms\frmlogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMantAsiento.Designer.vb">
+    <Compile Include="Forms\frmMntAsiento.Designer.vb">
       <SubType>Code</SubType>
-      <DependentUpon>frmMantAsiento.vb</DependentUpon>
+      <DependentUpon>frmMntAsiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMantAsiento.vb">
+    <Compile Include="Forms\frmMntAsiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmmantcomprobantes.Designer.vb">
+    <Compile Include="Forms\frmmantcomprobantes.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmmantcomprobantes.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmmantcomprobantes.vb">
+    <Compile Include="Forms\frmmantcomprobantes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMantEntidad.Designer.vb">
+    <Compile Include="Forms\frmMntEntidad.Designer.vb">
       <SubType>Code</SubType>
-      <DependentUpon>frmMantEntidad.vb</DependentUpon>
+      <DependentUpon>frmMntEntidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMantEntidad.vb">
+    <Compile Include="Forms\frmMntEntidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMantLibro.Designer.vb">
+    <Compile Include="Forms\frmMantLibro.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMantLibro.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMantLibro.vb">
+    <Compile Include="Forms\frmMantLibro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMantPlanCuentas.Designer.vb">
+    <Compile Include="Forms\frmMantPlanCuentas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMantPlanCuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMantPlanCuentas.vb">
+    <Compile Include="Forms\frmMantPlanCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMantPlantillaAsiento.Designer.vb">
+    <Compile Include="Forms\frmMantPlantillaAsiento.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMantPlantillaAsiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMantPlantillaAsiento.vb">
+    <Compile Include="Forms\frmMantPlantillaAsiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMntSaldosInicialPlan.Designer.vb">
+    <Compile Include="Forms\frmMntSaldosInicialPlan.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMntSaldosInicialPlan.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMntSaldosInicialPlan.vb">
+    <Compile Include="Forms\frmMntSaldosInicialPlan.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMantSubAsiento.Designer.vb">
+    <Compile Include="Forms\frmMantSubAsiento.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMantSubAsiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMantSubAsiento.vb">
+    <Compile Include="Forms\frmMantSubAsiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMantTipoAnalitico.Designer.vb">
+    <Compile Include="Forms\FrmMantTipoAnalitico.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmMantTipoAnalitico.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMantTipoAnalitico.vb">
+    <Compile Include="Forms\FrmMantTipoAnalitico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmMant_CtaCteAnalitico.Designer.vb">
+    <Compile Include="Forms\frmMant_CtaCteAnalitico.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmMant_CtaCteAnalitico.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMant_CtaCteAnalitico.vb">
+    <Compile Include="Forms\frmMant_CtaCteAnalitico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntcentroCosto.Designer.vb">
+    <Compile Include="Forms\FrmMntcentroCosto.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmMntcentroCosto.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntcentroCosto.vb">
+    <Compile Include="Forms\FrmMntcentroCosto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntDocumentos.Designer.vb">
+    <Compile Include="Forms\FrmMntDocumentos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmMntDocumentos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntDocumentos.vb">
+    <Compile Include="Forms\FrmMntDocumentos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntIndicadorOportunidad.Designer.vb">
+    <Compile Include="Forms\FrmMntIndicadorOportunidad.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmMntIndicadorOportunidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntIndicadorOportunidad.vb">
+    <Compile Include="Forms\FrmMntIndicadorOportunidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmMntTipoCambio.Designer.vb">
+    <Compile Include="Forms\FrmMntTipoCambio.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmMntTipoCambio.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmMntTipoCambio.vb">
+    <Compile Include="Forms\FrmMntTipoCambio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmParametros.Designer.vb">
+    <Compile Include="Forms\frmParametros.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmParametros.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmParametros.vb">
+    <Compile Include="Forms\frmParametros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmRepBalanceComp.Designer.vb">
+    <Compile Include="Forms\FrmRepBalanceComp.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmRepBalanceComp.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmRepBalanceComp.vb">
+    <Compile Include="Forms\FrmRepBalanceComp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepCajaBancos.Designer.vb">
+    <Compile Include="Forms\frmRepCajaBancos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepCajaBancos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepCajaBancos.vb">
+    <Compile Include="Forms\frmRepCajaBancos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepCentrodecostos.Designer.vb">
+    <Compile Include="Forms\frmRepCentrodecostos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepCentrodecostos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepCentrodecostos.vb">
+    <Compile Include="Forms\frmRepCentrodecostos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepCentrodeCostosAcumulado.Designer.vb">
+    <Compile Include="Forms\frmRepCentrodeCostosAcumulado.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepCentrodeCostosAcumulado.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepCentrodeCostosAcumulado.vb">
+    <Compile Include="Forms\frmRepCentrodeCostosAcumulado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmRepCompras.Designer.vb">
+    <Compile Include="Forms\FrmRepCompras.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmRepCompras.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmRepCompras.vb">
+    <Compile Include="Forms\FrmRepCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepComprob.Designer.vb">
+    <Compile Include="Forms\frmRepComprob.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepComprob.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepComprob.vb">
+    <Compile Include="Forms\frmRepComprob.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepCtaCteAnalitico.Designer.vb">
+    <Compile Include="Forms\frmRepCtaCteAnalitico.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepCtaCteAnalitico.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepCtaCteAnalitico.vb">
+    <Compile Include="Forms\frmRepCtaCteAnalitico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmRepCuentasVsAnaliticos.Designer.vb">
+    <Compile Include="Forms\FrmRepCuentasVsAnaliticos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmRepCuentasVsAnaliticos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmRepCuentasVsAnaliticos.vb">
+    <Compile Include="Forms\FrmRepCuentasVsAnaliticos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepEstadoGP.Designer.vb">
+    <Compile Include="Forms\frmRepEstadoGP.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepEstadoGP.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepEstadoGP.vb">
+    <Compile Include="Forms\frmRepEstadoGP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepEstadosFinancieros.Designer.vb">
+    <Compile Include="Forms\frmRepEstadosFinancieros.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepEstadosFinancieros.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepEstadosFinancieros.vb">
+    <Compile Include="Forms\frmRepEstadosFinancieros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepEstructuras.Designer.vb">
+    <Compile Include="Forms\frmRepEstructuras.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepEstructuras.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepEstructuras.vb">
+    <Compile Include="Forms\frmRepEstructuras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepHonorarios.Designer.vb">
+    <Compile Include="Forms\frmRepHonorarios.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepHonorarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepHonorarios.vb">
+    <Compile Include="Forms\frmRepHonorarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepLibrosAuxiliares.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>frmRepLibrosAuxiliares.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\frmRepLibrosAuxiliares.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmRepListadoCtasDist.Designer.vb">
+    <Compile Include="Forms\frmRepListadoCtasDist.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepListadoCtasDist.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepListadoCtasDist.vb">
+    <Compile Include="Forms\frmRepListadoCtasDist.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepMovimientoCuentas.Designer.vb">
+    <Compile Include="Forms\frmRepMovimientoCuentas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepMovimientoCuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepMovimientoCuentas.vb">
+    <Compile Include="Forms\frmRepMovimientoCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepParametro.Designer.vb">
+    <Compile Include="Forms\frmRepParametro.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepParametro.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepParametro.vb">
+    <Compile Include="Forms\frmRepParametro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepPlanCuentas.Designer.vb">
+    <Compile Include="Forms\frmRepPlanCuentas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepPlanCuentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepPlanCuentas.vb">
+    <Compile Include="Forms\frmRepPlanCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepPlanCuentasSaldosIniciales.Designer.vb">
+    <Compile Include="Forms\frmRepPlanCuentasSaldosIniciales.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepPlanCuentasSaldosIniciales.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepPlanCuentasSaldosIniciales.vb">
+    <Compile Include="Forms\frmRepPlanCuentasSaldosIniciales.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmRepPlantillaSubAsientos.Designer.vb">
+    <Compile Include="Forms\frmRepPlantillaSubAsientos.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmRepPlantillaSubAsientos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmRepPlantillaSubAsientos.vb">
+    <Compile Include="Forms\frmRepPlantillaSubAsientos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmRepVentas.Designer.vb">
+    <Compile Include="Forms\FrmRepVentas.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmRepVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmRepVentas.vb">
+    <Compile Include="Forms\FrmRepVentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmselanomes.Designer.vb">
+    <Compile Include="Forms\frmselanomes.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmselanomes.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmselanomes.vb">
+    <Compile Include="Forms\frmselanomes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FrmSunat682.Designer.vb">
+    <Compile Include="Forms\FrmSunat682.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>FrmSunat682.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\FrmSunat682.vb">
+    <Compile Include="Forms\FrmSunat682.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmUsuarios.Designer.vb">
+    <Compile Include="Forms\frmUsuarios.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmUsuarios.vb">
+    <Compile Include="Forms\frmUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmValidarComprobantes.Designer.vb">
+    <Compile Include="forms1\frmValidarComprobantes.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>frmValidarComprobantes.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmValidarComprobantes.vb">
+    <Compile Include="forms1\frmValidarComprobantes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="class\MainContab.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="forms\VB.vb" />
+    <Compile Include="Forms\FrmContabCobrar.Designer.vb">
+      <DependentUpon>FrmContabCobrar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmContabCobrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmContabPagar.Designer.vb">
+      <DependentUpon>FrmContabPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmContabPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCreacionEmpresa.Designer.vb">
+      <DependentUpon>FrmCreacionEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCreacionEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MDIPrincipal.Designer.vb">
       <SubType>Code</SubType>
       <DependentUpon>MDIPrincipal.vb</DependentUpon>
@@ -894,224 +885,223 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntEstructuraLineagastos.resx">
+    <EmbeddedResource Include="Forms\FrmMntEstructuraLineagastos.resx">
       <DependentUpon>FrmMntEstructuraLineagastos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntEstructuraBalance.resX">
+    <EmbeddedResource Include="Forms\FrmMntEstructuraBalance.resX">
       <DependentUpon>FrmMntEstructuraBalance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntEstructuraGana_perd.resx">
+    <EmbeddedResource Include="Forms\FrmMntEstructuraGana_perd.resx">
       <DependentUpon>FrmMntEstructuraGana_perd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMntEstructuraParamkibrosAux.resx">
+    <EmbeddedResource Include="Forms\frmMntEstructuraParamkibrosAux.resx">
       <DependentUpon>frmMntEstructuraParamkibrosAux.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntMoneda.resx">
+    <EmbeddedResource Include="Forms\FrmMntMoneda.resx">
       <DependentUpon>FrmMntMoneda.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntOperacion.resx">
+    <EmbeddedResource Include="Forms\FrmMntOperacion.resx">
       <DependentUpon>FrmMntOperacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmAjusDiferxDoc.resX">
+    <EmbeddedResource Include="Forms\FrmAjusDiferxDoc.resX">
       <DependentUpon>FrmAjusDiferxDoc.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmannos.resX">
+    <EmbeddedResource Include="Forms\frmannos.resX">
       <DependentUpon>frmannos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmConsultaComprobantes.resX">
+    <EmbeddedResource Include="Forms\frmConsultaComprobantes.resX">
       <DependentUpon>frmConsultaComprobantes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmContabCobrar.resX">
-      <DependentUpon>FrmContabCobrar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmContabPagar.resX">
-      <DependentUpon>FrmContabPagar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmCreacionEmpresa.resX">
-      <DependentUpon>FrmCreacionEmpresa.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmDaoCompras.resX">
+    <EmbeddedResource Include="Forms\FrmDaoCompras.resX">
       <DependentUpon>FrmDaoCompras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmDaoVentas.resX">
+    <EmbeddedResource Include="Forms\FrmDaoVentas.resX">
       <DependentUpon>FrmDaoVentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmDiarioGeneral.resX">
+    <EmbeddedResource Include="Forms\frmDiarioGeneral.resX">
       <DependentUpon>frmDiarioGeneral.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmDocPend.resX">
+    <EmbeddedResource Include="Forms\FrmDocPend.resX">
       <DependentUpon>FrmDocPend.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmError.resX">
+    <EmbeddedResource Include="Forms\frmError.resX">
       <DependentUpon>frmError.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmgenerasaldosAnaliticos.resX">
+    <EmbeddedResource Include="Forms\FrmgenerasaldosAnaliticos.resX">
       <DependentUpon>FrmgenerasaldosAnaliticos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmGenerasaldosini.resX">
+    <EmbeddedResource Include="Forms\FrmGenerasaldosini.resX">
       <DependentUpon>FrmGenerasaldosini.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmImportDataFac.resX">
+    <EmbeddedResource Include="Forms\FrmImportDataFac.resX">
       <DependentUpon>FrmImportDataFac.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmInventariosyBalances.resX">
+    <EmbeddedResource Include="Forms\FrmInventariosyBalances.resX">
       <DependentUpon>FrmInventariosyBalances.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroBalancedecomprobacion.resX">
+    <EmbeddedResource Include="Forms\FrmLibroBalancedecomprobacion.resX">
       <DependentUpon>FrmLibroBalancedecomprobacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibrocajayBancos.resX">
+    <EmbeddedResource Include="Forms\FrmLibrocajayBancos.resX">
       <DependentUpon>FrmLibrocajayBancos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroDiario.resX">
+    <EmbeddedResource Include="Forms\FrmLibroDiario.resX">
       <DependentUpon>FrmLibroDiario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroDiarioSimplificado.resX">
+    <EmbeddedResource Include="Forms\FrmLibroDiarioSimplificado.resX">
       <DependentUpon>FrmLibroDiarioSimplificado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroInventarios.resX">
+    <EmbeddedResource Include="Forms\FrmLibroInventarios.resX">
       <DependentUpon>FrmLibroInventarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroInventariosyBalances.resX">
+    <EmbeddedResource Include="Forms\FrmLibroInventariosyBalances.resX">
       <DependentUpon>FrmLibroInventariosyBalances.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroMayor.resX">
+    <EmbeddedResource Include="Forms\FrmLibroMayor.resX">
       <DependentUpon>FrmLibroMayor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroregistrodeCompras.resX">
+    <EmbeddedResource Include="Forms\FrmLibroregistrodeCompras.resX">
       <DependentUpon>FrmLibroregistrodeCompras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibroRegistrodeventas.resX">
+    <EmbeddedResource Include="Forms\FrmLibroRegistrodeventas.resX">
       <DependentUpon>FrmLibroRegistrodeventas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmLibrosElectPrincipales.resX">
+    <EmbeddedResource Include="Forms\FrmLibrosElectPrincipales.resX">
       <DependentUpon>FrmLibrosElectPrincipales.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmlogin.resX">
+    <EmbeddedResource Include="Forms\frmlogin.resX">
       <DependentUpon>frmlogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantAsiento.resX">
-      <DependentUpon>frmMantAsiento.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmMntAsiento.resX">
+      <DependentUpon>frmMntAsiento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmmantcomprobantes.resX">
+    <EmbeddedResource Include="Forms\frmmantcomprobantes.resX">
       <DependentUpon>frmmantcomprobantes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantEntidad.resX">
-      <DependentUpon>frmMantEntidad.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmMntEntidad.resX">
+      <DependentUpon>frmMntEntidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantLibro.resX">
+    <EmbeddedResource Include="Forms\frmMantLibro.resX">
       <DependentUpon>frmMantLibro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantPlanCuentas.resX">
+    <EmbeddedResource Include="Forms\frmMantPlanCuentas.resX">
       <DependentUpon>frmMantPlanCuentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantPlantillaAsiento.resX">
+    <EmbeddedResource Include="Forms\frmMantPlantillaAsiento.resX">
       <DependentUpon>frmMantPlantillaAsiento.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMntSaldosInicialPlan.resX">
+    <EmbeddedResource Include="Forms\frmMntSaldosInicialPlan.resX">
       <DependentUpon>frmMntSaldosInicialPlan.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMantSubAsiento.resX">
+    <EmbeddedResource Include="Forms\frmMantSubAsiento.resX">
       <DependentUpon>frmMantSubAsiento.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMantTipoAnalitico.resX">
+    <EmbeddedResource Include="Forms\FrmMantTipoAnalitico.resX">
       <DependentUpon>FrmMantTipoAnalitico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMant_CtaCteAnalitico.resX">
+    <EmbeddedResource Include="Forms\frmMant_CtaCteAnalitico.resX">
       <DependentUpon>frmMant_CtaCteAnalitico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntcentroCosto.resX">
+    <EmbeddedResource Include="Forms\FrmMntcentroCosto.resX">
       <DependentUpon>FrmMntcentroCosto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntDocumentos.resX">
+    <EmbeddedResource Include="Forms\FrmMntDocumentos.resX">
       <DependentUpon>FrmMntDocumentos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntIndicadorOportunidad.resX">
+    <EmbeddedResource Include="Forms\FrmMntIndicadorOportunidad.resX">
       <DependentUpon>FrmMntIndicadorOportunidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntTipoCambio.resX">
+    <EmbeddedResource Include="Forms\FrmMntTipoCambio.resX">
       <DependentUpon>FrmMntTipoCambio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMntTipoCuenta.resx">
+    <EmbeddedResource Include="Forms\FrmMntTipoCuenta.resx">
       <DependentUpon>FrmMntTipoCuenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmMnttotalLineaEGP.resx">
+    <EmbeddedResource Include="Forms\FrmMnttotalLineaEGP.resx">
       <DependentUpon>FrmMnttotalLineaEGP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmParametros.resX">
+    <EmbeddedResource Include="Forms\frmParametros.resX">
       <DependentUpon>frmParametros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmRepBalanceComp.resX">
+    <EmbeddedResource Include="Forms\FrmRepBalanceComp.resX">
       <DependentUpon>FrmRepBalanceComp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepCajaBancos.resX">
+    <EmbeddedResource Include="Forms\frmRepCajaBancos.resX">
       <DependentUpon>frmRepCajaBancos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepCentrodecostos.resX">
+    <EmbeddedResource Include="Forms\frmRepCentrodecostos.resX">
       <DependentUpon>frmRepCentrodecostos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepCentrodeCostosAcumulado.resX">
+    <EmbeddedResource Include="Forms\frmRepCentrodeCostosAcumulado.resX">
       <DependentUpon>frmRepCentrodeCostosAcumulado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmRepCompras.resX">
+    <EmbeddedResource Include="Forms\FrmRepCompras.resX">
       <DependentUpon>FrmRepCompras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepComprob.resX">
+    <EmbeddedResource Include="Forms\frmRepComprob.resX">
       <DependentUpon>frmRepComprob.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepCtaCteAnalitico.resX">
+    <EmbeddedResource Include="Forms\frmRepCtaCteAnalitico.resX">
       <DependentUpon>frmRepCtaCteAnalitico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmRepCuentasVsAnaliticos.resX">
+    <EmbeddedResource Include="Forms\FrmRepCuentasVsAnaliticos.resX">
       <DependentUpon>FrmRepCuentasVsAnaliticos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepEstadoGP.resX">
+    <EmbeddedResource Include="Forms\frmRepEstadoGP.resX">
       <DependentUpon>frmRepEstadoGP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepEstadosFinancieros.resX">
+    <EmbeddedResource Include="Forms\frmRepEstadosFinancieros.resX">
       <DependentUpon>frmRepEstadosFinancieros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepEstructuras.resX">
+    <EmbeddedResource Include="Forms\frmRepEstructuras.resX">
       <DependentUpon>frmRepEstructuras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepHonorarios.resX">
+    <EmbeddedResource Include="Forms\frmRepHonorarios.resX">
       <DependentUpon>frmRepHonorarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepLibrosAuxiliares.resX">
-      <DependentUpon>frmRepLibrosAuxiliares.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepListadoCtasDist.resX">
+    <EmbeddedResource Include="Forms\frmRepListadoCtasDist.resX">
       <DependentUpon>frmRepListadoCtasDist.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepMovimientoCuentas.resX">
+    <EmbeddedResource Include="Forms\frmRepMovimientoCuentas.resX">
       <DependentUpon>frmRepMovimientoCuentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepParametro.resX">
+    <EmbeddedResource Include="Forms\frmRepParametro.resX">
       <DependentUpon>frmRepParametro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepPlanCuentas.resX">
+    <EmbeddedResource Include="Forms\frmRepPlanCuentas.resX">
       <DependentUpon>frmRepPlanCuentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepPlanCuentasSaldosIniciales.resX">
+    <EmbeddedResource Include="Forms\frmRepPlanCuentasSaldosIniciales.resX">
       <DependentUpon>frmRepPlanCuentasSaldosIniciales.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmRepPlantillaSubAsientos.resX">
+    <EmbeddedResource Include="Forms\frmRepPlantillaSubAsientos.resX">
       <DependentUpon>frmRepPlantillaSubAsientos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmRepVentas.resX">
+    <EmbeddedResource Include="Forms\FrmRepVentas.resX">
       <DependentUpon>FrmRepVentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmselanomes.resX">
+    <EmbeddedResource Include="Forms\frmselanomes.resX">
       <DependentUpon>frmselanomes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FrmSunat682.resX">
+    <EmbeddedResource Include="Forms\FrmSunat682.resX">
       <DependentUpon>FrmSunat682.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmUsuarios.resX">
+    <EmbeddedResource Include="Forms\frmUsuarios.resX">
       <DependentUpon>frmUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmValidarComprobantes.resX">
+    <EmbeddedResource Include="forms1\frmValidarComprobantes.resX">
       <DependentUpon>frmValidarComprobantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmContabCobrar.resX">
+      <DependentUpon>FrmContabCobrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmContabPagar.resX">
+      <DependentUpon>FrmContabPagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCreacionEmpresa.resX">
+      <DependentUpon>FrmCreacionEmpresa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resX">
       <DependentUpon>MDIPrincipal.vb</DependentUpon>

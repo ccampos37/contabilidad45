@@ -20,8 +20,8 @@ Friend Class frmRepCajaBancos
         arrparm(0) = VGParamSistem.BDEmpresa
         arrparm(1) = VGParametros.empresacodigo
         arrparm(2) = VGParamSistem.Anoproceso
-        arrparm(3) = VB6.Format(CDbl(VGParamSistem.Mesproceso) - 1, "0#")
-        arrparm(4) = VB6.Format(VGParamSistem.Mesproceso, "0#")
+        arrparm(3) = Format(CDbl(VGParamSistem.Mesproceso) - 1, "0#")
+        arrparm(4) = Format(VGParamSistem.Mesproceso, "0#")
         arrparm(5) = IIf(IsNothing(Ctr_Ayuda1.xclave), "10%", Trim(Ctr_Ayuda1.xclave) & "%%")
         arrparm(6) = "%%"
 
