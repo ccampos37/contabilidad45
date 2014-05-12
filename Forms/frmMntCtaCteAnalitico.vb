@@ -2,82 +2,82 @@ Option Strict Off
 Option Explicit On
 Imports Func = Contabilidad.ModFuncionesGen
 
-Friend Class frmMant_CtaCteAnalitico
-	Inherits System.Windows.Forms.Form
-	Dim modoinsert As Boolean
-	Dim modoedit As Boolean
-	Dim ClsMM1 As ClsMantMov1
-	Dim rs As New ADODB.Recordset
-	
-	Private Sub Ctr_Analitico_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_Analitico.AlDevolverDato
-		Dim dato As String
-		If Ctr_CtaCtble.xclave <> "" Then
-			dato = "empresacodigo='" & VGParametros.empresacodigo & "' and cuentacodigo='" & Ctr_CtaCtble.xclave & "'and year(ctacteanaliticofechaconta) < " & VGParamSistem.Anoproceso & ""
-			dato = dato & " and analiticocodigo='" & Ctr_Analitico.xclave & "'"
-			Mostrar((dato))
-		End If
-	End Sub
-	
-	Private Sub Ctr_CtaCtble_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_CtaCtble.AlDevolverDato
-		Dim dato As String
-		dato = "empresacodigo='" & VGParametros.empresacodigo & "' and cuentacodigo='" & Ctr_CtaCtble.xclave & "'and year(ctacteanaliticofechaconta) < " & VGParamSistem.Anoproceso & ""
-		
-		Mostrar((dato))
-		
-	End Sub
-	
-	Private Sub frmMant_CtaCteAnalitico_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		Ctr_CtaCtble.Conexion(VGCNx)
-		Ctr_CtaCtble.Filtro = " cuentanivel=" & VGnumnivelescuenta & " and cuentaestadoanalitico=1 and empresacodigo='" & VGParametros.empresacodigo & "'"
-		Ctr_Analitico.Conexion(VGCNx)
-		CtrAy_Asiento.Conexion(VGCNx)
-		CtrAyu_Moneda.Conexion(VGCNx)
-		CtrAyu_Opera.Conexion(VGCNx)
-		CtrAyu_TipAnal.Conexion(VGCNx)
-		CtrAyu_TipDoc.Conexion(VGCNx)
-		SSTab1.SelectedIndex = 0
-		SSTab1.TabPages.Item(1).Enabled = False
-		framebotones.Visible = False
-	End Sub
+Friend Class frmMntCtaCteAnalitico
+    Inherits System.Windows.Forms.Form
+    Dim modoinsert As Boolean
+    Dim modoedit As Boolean
+    Dim ClsMM1 As ClsMantMov1
+    Dim rs As New ADODB.Recordset
 
-	Sub eliminar()
-		Dim rssql As New ADODB.Recordset
-		SQL = "delete from  dbo.ct_ctacteanalitico" & VGParamSistem.Anoproceso & " where "
-		SQL = SQL & " empresacodigo='" & VGParametros.empresacodigo & "'"
-		SQL = SQL & " and cuentacodigo+asientocodigo+subasientocodigo='" & rs.Fields("cuentacodigo").Value & rs.Fields("asientocodigo").Value & rs.Fields("subasientocodigo").Value & "'"
-		SQL = SQL & " and analiticocodigo='" & rs.Fields("analiticocodigo").Value & "'"
-		SQL = SQL & " and documentocodigo+ctacteanaliticonumdocumento='" & rs.Fields("documentocodigo").Value & rs.Fields("ctacteanaliticonumdocumento").Value & "'"
-		SQL = SQL & " and cabcomprobmes=0 "
-		rssql = VGCNx.Execute(SQL)
-		If modoedit = False Then Call Ctr_Analitico.Ejecutar()
-	End Sub
-	Sub Limpiar()
-		CtrAy_Asiento.xclave = CStr(Nothing) : CtrAy_Asiento.Ejecutar()
-		CtrAyu_Moneda.xclave = CStr(Nothing) : CtrAyu_Moneda.Ejecutar()
-		CtrAyu_Opera.xclave = CStr(Nothing) : CtrAyu_Opera.Ejecutar()
-		CtrAyu_TipAnal.xclave = CStr(Nothing) : CtrAyu_TipAnal.Ejecutar()
-		CtrAyu_TipDoc.xclave = CStr(Nothing) : CtrAyu_TipDoc.Ejecutar()
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxGlosa.Text = Nothing
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxMonto.Text = Nothing
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxSerie.Text = Nothing
-		'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
-		TxNdoc.Text = Nothing
-	End Sub
-	
-	Sub Edicion()
+    Private Sub Ctr_Analitico_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_Analitico.AlDevolverDato
+        Dim dato As String
+        If Ctr_CtaCtble.xclave <> "" Then
+            dato = "empresacodigo='" & VGParametros.empresacodigo & "' and cuentacodigo='" & Ctr_CtaCtble.xclave & "'and year(ctacteanaliticofechaconta) < " & VGParamSistem.Anoproceso & ""
+            dato = dato & " and analiticocodigo='" & Ctr_Analitico.xclave & "'"
+            Mostrar((dato))
+        End If
+    End Sub
+
+    Private Sub Ctr_CtaCtble_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_CtaCtble.AlDevolverDato
+        Dim dato As String
+        dato = "empresacodigo='" & VGParametros.empresacodigo & "' and cuentacodigo='" & Ctr_CtaCtble.xclave & "'and year(ctacteanaliticofechaconta) < " & VGParamSistem.Anoproceso & ""
+
+        Mostrar((dato))
+
+    End Sub
+
+    Private Sub frmMant_CtaCteAnalitico_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+        Ctr_CtaCtble.Conexion(VGCNx)
+        Ctr_CtaCtble.Filtro = " cuentanivel=" & VGnumnivelescuenta & " and cuentaestadoanalitico=1 and empresacodigo='" & VGParametros.empresacodigo & "'"
+        Ctr_Analitico.Conexion(VGCNx)
+        CtrAy_Asiento.Conexion(VGCNx)
+        CtrAyu_Moneda.Conexion(VGCNx)
+        CtrAyu_Opera.Conexion(VGCNx)
+        CtrAyu_TipAnal.Conexion(VGCNx)
+        CtrAyu_TipDoc.Conexion(VGCNx)
+        SSTab1.SelectedIndex = 0
+        SSTab1.TabPages.Item(1).Enabled = False
+        framebotones.Visible = False
+    End Sub
+
+    Sub eliminar()
+        Dim rssql As New ADODB.Recordset
+        SQL = "delete from  dbo.ct_ctacteanalitico" & VGParamSistem.Anoproceso & " where "
+        SQL = SQL & " empresacodigo='" & VGParametros.empresacodigo & "'"
+        SQL = SQL & " and cuentacodigo+asientocodigo+subasientocodigo='" & rs.Fields("cuentacodigo").Value & rs.Fields("asientocodigo").Value & rs.Fields("subasientocodigo").Value & "'"
+        SQL = SQL & " and analiticocodigo='" & rs.Fields("analiticocodigo").Value & "'"
+        SQL = SQL & " and documentocodigo+ctacteanaliticonumdocumento='" & rs.Fields("documentocodigo").Value & rs.Fields("ctacteanaliticonumdocumento").Value & "'"
+        SQL = SQL & " and cabcomprobmes=0 "
+        rssql = VGCNx.Execute(SQL)
+        If modoedit = False Then Call Ctr_Analitico.Ejecutar()
+    End Sub
+    Sub Limpiar()
+        CtrAy_Asiento.xclave = CStr(Nothing) : CtrAy_Asiento.Ejecutar()
+        CtrAyu_Moneda.xclave = CStr(Nothing) : CtrAyu_Moneda.Ejecutar()
+        CtrAyu_Opera.xclave = CStr(Nothing) : CtrAyu_Opera.Ejecutar()
+        CtrAyu_TipAnal.xclave = CStr(Nothing) : CtrAyu_TipAnal.Ejecutar()
+        CtrAyu_TipDoc.xclave = CStr(Nothing) : CtrAyu_TipDoc.Ejecutar()
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        TxGlosa.Text = Nothing
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        TxMonto.Text = Nothing
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        TxSerie.Text = Nothing
+        'UPGRADE_NOTE: Text se actualizó a CtlText. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+        TxNdoc.Text = Nothing
+    End Sub
+
+    Sub Edicion()
         'cabcomprobmes , detcomprobitem, cabcomprobnumero, subasientocodigo, asientocodigo, documentocodigo, operacioncodigo, cuentacodigo, ""
-		'SQL = SQL & "ctacteanaliticofechaconta, analiticocodigo, ctacteanaliticonumdocumento, ctacteanaliticofechadoc, ctacteanaliticoglosa, ctacteanaliticodebe,"
-		'SQL = SQL & "ctacteanaliticoussdebe, ctacteanaliticohaber, ctacteanaliticousshaber, ctacteanaliticocancel, ctacteanaliticofechaven,monedacodigo,ctacteanaliticosaldo "
-		
-		If rs.RecordCount > 0 Then
-			With rs
-				lblNroComprobante.Text = .Fields("cabcomprobnumero").Value
-				CtrAyu_Opera.xclave = .Fields("operacioncodigo").Value : CtrAyu_Opera.Ejecutar()
-				Ctr_CtaCtble.xclave = .Fields("cuentacodigo").Value : Ctr_CtaCtble.Ejecutar()
-				CtrAy_Asiento.xclave = .Fields("asientocodigo").Value : CtrAy_Asiento.Ejecutar()
+        'SQL = SQL & "ctacteanaliticofechaconta, analiticocodigo, ctacteanaliticonumdocumento, ctacteanaliticofechadoc, ctacteanaliticoglosa, ctacteanaliticodebe,"
+        'SQL = SQL & "ctacteanaliticoussdebe, ctacteanaliticohaber, ctacteanaliticousshaber, ctacteanaliticocancel, ctacteanaliticofechaven,monedacodigo,ctacteanaliticosaldo "
+
+        If rs.RecordCount > 0 Then
+            With rs
+                lblNroComprobante.Text = .Fields("cabcomprobnumero").Value
+                CtrAyu_Opera.xclave = .Fields("operacioncodigo").Value : CtrAyu_Opera.Ejecutar()
+                Ctr_CtaCtble.xclave = .Fields("cuentacodigo").Value : Ctr_CtaCtble.Ejecutar()
+                CtrAy_Asiento.xclave = .Fields("asientocodigo").Value : CtrAy_Asiento.Ejecutar()
                 CtrAyu_TipAnal.xclave = Func.Right(Trim(.Fields("analiticocodigo").Value), 3) : CtrAyu_TipAnal.Ejecutar()
                 Ctr_Analitico.xclave = .Fields("analiticocodigo").Value : Ctr_Analitico.Ejecutar()
                 CtrAyu_TipDoc.xclave = .Fields("documentocodigo").Value : CtrAyu_TipDoc.Ejecutar()
@@ -233,20 +233,20 @@ xx:
         VGValorCambio = RecuperaTipoCambio(Format(Dtp_FechaDoc._Value, "dd/mm/yyyy"), CmbTcambio.SelectedIndex + 1)
         lb_vcambio.Text = Format(VGValorCambio, "#.000 ")
     End Sub
-	
-	Private Sub Mostrar(ByRef dato As String)
-		Dim RSQL As New ADODB.Recordset
-		Dim SQL As String
-		SQL = "Select * from ct_ctacteanalitico" & VGParamSistem.Anoproceso & " where " & dato & ""
-		rs = VGCNx.Execute(SQL)
-		TDBG_CtaCte.DataSource = rs
-		'UPGRADE_NOTE: Refresh se actualizó a CtlRefresh. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+
+    Private Sub Mostrar(ByRef dato As String)
+        Dim RSQL As New ADODB.Recordset
+        Dim SQL As String
+        SQL = "Select * from ct_ctacteanalitico" & VGParamSistem.Anoproceso & " where " & dato & ""
+        rs = VGCNx.Execute(SQL)
+        TDBG_CtaCte.DataSource = rs
+        'UPGRADE_NOTE: Refresh se actualizó a CtlRefresh. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         TDBG_CtaCte.Refresh()
-		If Ctr_CtaCtble.xclave <> "" And Ctr_Analitico.xclave <> "" Then
-			framebotones.Visible = True
-		Else
-			framebotones.Visible = False
-		End If
-		
-	End Sub
+        If Ctr_CtaCtble.xclave <> "" And Ctr_Analitico.xclave <> "" Then
+            framebotones.Visible = True
+        Else
+            framebotones.Visible = False
+        End If
+
+    End Sub
 End Class

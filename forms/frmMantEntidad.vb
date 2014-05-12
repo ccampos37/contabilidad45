@@ -1,7 +1,7 @@
 Option Strict Off
 Option Explicit On
+Imports VB = Microsoft.VisualBasic
 Imports System.Data
-Imports Func = Contabilidad.ModFuncionesGen
 
 Friend Class frmMantEntidad
     Inherits System.Windows.Forms.Form
@@ -281,7 +281,7 @@ X:
 
         SSTab1.TabPages.Item(0).Enabled = True
 
-        xVarCbo = Trim(Func.Left(VB6.GetItemString(cboTipoCont, cboTipoCont.SelectedIndex), 2))
+        xVarCbo = Trim(VB.Left(VB6.GetItemString(cboTipoCont, cboTipoCont.SelectedIndex), 2))
 
         If modoinsert = True Then
             SQL = "INSERT CT_ENTIDAD(entidadcodigo,entidadrazonsocial,entidaddireccion,entidadtelefono,entidadruc,entidadtipocontri,usuariocodigo,fechaact) "
@@ -404,9 +404,9 @@ X:
     ''UPGRADE_WARNING: IsEmpty se actualizó a IsNothing y tiene un nuevo comportamiento. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
     'If IsNothing(rs.Sort) Then
     '    rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
-    'ElseIf Right(rs.Sort, 3) = "asc" Then
+    'ElseIf VB.Right(rs.Sort, 3) = "asc" Then
     '    rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " desc"
-    'ElseIf Right(rs.Sort, 4) = "desc" Then
+    'ElseIf VB.Right(rs.Sort, 4) = "desc" Then
     '    rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
     'End If
     'Call ConfiguraTdbgrid()

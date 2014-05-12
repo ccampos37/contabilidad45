@@ -8,8 +8,7 @@ Friend Class FrmMntEstructuraBalance
 	Dim rs As New ADODB.Recordset
 	Dim datos As String
 	Private Sub cmdImprimir_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdImprimir.Click
-		Dim cadena As String
-		Dim aparam(1) As Object
+        Dim aparam(1) As Object
 		Dim aform(1) As Object
 		Dim cNomRepor As String
 		cNomRepor = "unimedida.RPT"
@@ -67,7 +66,7 @@ Friend Class FrmMntEstructuraBalance
 			txttipolinea1.Text = rs.Fields("strucbalancedato1").Value
 			ChkN1.CheckState = IIf(rs.Fields("strucbalanceinvval1").Value, 1, 0)
 			txtCtas1.Text = rs.Fields("strucbalancenivel1").Value
-            Txtdesc1.Text = ESNULO(rs.Fields("strucbalancedescrip1"), "")
+			Txtdesc1.Text = rs.Fields("strucbalancedescrip1").Value
 			'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto ESNULO(). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Txtsigno1.Text = ESNULO(rs.Fields("strucbalancesigno1"), "")
 			
@@ -114,26 +113,25 @@ EliErr:
 		If nTra = 1 Then VGCNx.RollbackTrans()
 	End Sub
 	Private Sub cmdgrabar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdgrabar.Click
-		Dim cUni As String
-		If resp = "S" Then
-			If txtlinea.Text = "" Then
-				MsgBox("Ingrese Numero de linea", MsgBoxStyle.Information, "Mensaje")
-				txtlinea.Focus()
-				Exit Sub
-			Else
-				If Existe(1, Trim(txtlinea.Text), "ct_strucbalance", "strucbalancelinea", False) Then
-					MsgBox("El código de Linea ya existe", MsgBoxStyle.Information, "Mensaje")
-					txtlinea.Focus()
-					Exit Sub
-				End If
-			End If
-			If Not IsNumeric(txtlinea.Text) Then
-				MsgBox("LINEA es numerico ", MsgBoxStyle.Information, "Mensaje")
-				txtlinea.Focus()
-				Exit Sub
-				
-			End If
-		End If
+        If resp = "S" Then
+            If txtlinea.Text = "" Then
+                MsgBox("Ingrese Numero de linea", MsgBoxStyle.Information, "Mensaje")
+                txtlinea.Focus()
+                Exit Sub
+            Else
+                If Existe(1, Trim(txtlinea.Text), "ct_strucbalance", "strucbalancelinea", False) Then
+                    MsgBox("El código de Linea ya existe", MsgBoxStyle.Information, "Mensaje")
+                    txtlinea.Focus()
+                    Exit Sub
+                End If
+            End If
+            If Not IsNumeric(txtlinea.Text) Then
+                MsgBox("LINEA es numerico ", MsgBoxStyle.Information, "Mensaje")
+                txtlinea.Focus()
+                Exit Sub
+
+            End If
+        End If
 		VGCommandoSP = New ADODB.Command
 		VGCommandoSP.let_ActiveConnection(VGGeneral)
 		VGCommandoSP.CommandType = ADODB.CommandTypeEnum.adCmdStoredProc
@@ -195,26 +193,24 @@ EliErr:
 	Sub Listado(ByRef wcad As Object)
 		'UPGRADE_NOTE: El objeto DbGrid1.DataSource no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		DbGrid1.DataSource = Nothing
-		Dim nCursor As String
+
 		rs = VGCNx.Execute(datos)
 		DbGrid1.DataSource = rs
 		With DbGrid1
 			.Columns(0).Caption = "Lin"
-			.Columns(0).Width = VB6.TwipsToPixelsX(400)
-			.Columns(1).Caption = "Tip"
-			.Columns(1).Width = VB6.TwipsToPixelsX(400)
-			.Columns(2).Caption = "Neg"
-			.Columns(2).Width = VB6.TwipsToPixelsX(400)
-			.Columns(3).Caption = "Cuentas"
-			.Columns(3).Width = VB6.TwipsToPixelsX(2000)
-			.Columns(4).Caption = "descripcion Linea"
-			.Columns(4).Width = VB6.TwipsToPixelsX(3000)
-			.Columns(5).Caption = "Signo Rep"
-			.Columns(5).Width = VB6.TwipsToPixelsX(300)
+
+            .Columns(1).Caption = "Tip"
+
+            .Columns(2).Caption = "Neg"
+
+            .Columns(3).Caption = "Cuentas"
+
+            .Columns(4).Caption = "descripcion Linea"
+
+            .Columns(5).Caption = "Signo Rep"
+
 			.MarqueeStyle = MSDataGridLib.MarqueeStyleConstants.dbgHighlightRow
-			'UPGRADE_NOTE: Refresh se actualizó a CtlRefresh. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
             .Refresh()
 		End With
 	End Sub
-
 End Class

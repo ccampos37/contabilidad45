@@ -1,75 +1,75 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class frmMant_CtaCteAnalitico
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class frmMntCtaCteAnalitico
 #Region "Código generado por el Diseñador de Windows Forms "
-	<System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
-		MyBase.New()
-		'Llamada necesaria para el Diseñador de Windows Forms.
-		InitializeComponent()
-	End Sub
-	'Form invalida a Dispose para limpiar la lista de componentes.
-	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
-		If Disposing Then
-			If Not components Is Nothing Then
-				components.Dispose()
-			End If
-		End If
-		MyBase.Dispose(Disposing)
-	End Sub
-	'Requerido por el Diseñador de Windows Forms
-	Private components As System.ComponentModel.IContainer
+    <System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
+        MyBase.New()
+        'Llamada necesaria para el Diseñador de Windows Forms.
+        InitializeComponent()
+    End Sub
+    'Form invalida a Dispose para limpiar la lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
+        If Disposing Then
+            If Not components Is Nothing Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(Disposing)
+    End Sub
+    'Requerido por el Diseñador de Windows Forms
+    Private components As System.ComponentModel.IContainer
     Public WithEvents _cmdBotones_0 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_2 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_4 As System.Windows.Forms.Button
-	Public WithEvents _cmdBotones_3 As System.Windows.Forms.Button
-	Public WithEvents framebotones As System.Windows.Forms.GroupBox
-	Public WithEvents TDBG_CtaCte As AxTrueOleDBGrid70.AxTDBGrid
-	Public WithEvents _SSTab1_TabPage0 As System.Windows.Forms.TabPage
-	Public WithEvents CmbID As System.Windows.Forms.ComboBox
-	Public WithEvents CmbTcambio As System.Windows.Forms.ComboBox
-	Public WithEvents TxMonto As AxTextFer.AxTxFer
-	Public WithEvents TxNdoc As AxTextFer.AxTxFer
-	Public WithEvents TxSerie As AxTextFer.AxTxFer
-	Public WithEvents CtrAyu_Moneda As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_TipDoc As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_TipAnal As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents CtrAyu_Opera As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Dtp_FechaDoc As AxMSComCtl2.AxDTPicker
-	Public WithEvents DtpFech_Ven As AxMSComCtl2.AxDTPicker
-	Public WithEvents TxGlosa As AxTextFer.AxTxFer
-	Public WithEvents CtrAy_Asiento As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label3 As System.Windows.Forms.Label
-	Public WithEvents lb_vcambio As System.Windows.Forms.Label
-	Public WithEvents _lbTipAnal_0 As System.Windows.Forms.Label
-	Public WithEvents Label11 As System.Windows.Forms.Label
-	Public WithEvents lbccosto As System.Windows.Forms.Label
-	Public WithEvents Shape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents Shape4 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents lbtipdoc As System.Windows.Forms.Label
-	Public WithEvents lbndocum As System.Windows.Forms.Label
-	Public WithEvents lbFechaDoc As System.Windows.Forms.Label
-	Public WithEvents lbFechVen As System.Windows.Forms.Label
-	Public WithEvents Label19 As System.Windows.Forms.Label
-	Public WithEvents Label20 As System.Windows.Forms.Label
-	Public WithEvents Label21 As System.Windows.Forms.Label
-	Public WithEvents Label22 As System.Windows.Forms.Label
-	Public WithEvents Label23 As System.Windows.Forms.Label
-	Public WithEvents Label24 As System.Windows.Forms.Label
-	Public WithEvents lblNroComprobante As System.Windows.Forms.Label
-	Public WithEvents FramDetalle As System.Windows.Forms.GroupBox
-	Public WithEvents cCancela As System.Windows.Forms.Button
-	Public WithEvents cAcepta As System.Windows.Forms.Button
-	Public WithEvents _SSTab1_TabPage1 As System.Windows.Forms.TabPage
-	Public WithEvents SSTab1 As System.Windows.Forms.TabControl
-	Public WithEvents Ctr_CtaCtble As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Ctr_Analitico As Axctrlayuda_f.AxCtr_Ayuda
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents Label1 As System.Windows.Forms.Label
-     Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents _cmdBotones_1 As System.Windows.Forms.Button
+    Public WithEvents _cmdBotones_2 As System.Windows.Forms.Button
+    Public WithEvents _cmdBotones_4 As System.Windows.Forms.Button
+    Public WithEvents _cmdBotones_3 As System.Windows.Forms.Button
+    Public WithEvents framebotones As System.Windows.Forms.GroupBox
+    Public WithEvents TDBG_CtaCte As AxTrueOleDBGrid70.AxTDBGrid
+    Public WithEvents _SSTab1_TabPage0 As System.Windows.Forms.TabPage
+    Public WithEvents CmbID As System.Windows.Forms.ComboBox
+    Public WithEvents CmbTcambio As System.Windows.Forms.ComboBox
+    Public WithEvents TxMonto As AxTextFer.AxTxFer
+    Public WithEvents TxNdoc As AxTextFer.AxTxFer
+    Public WithEvents TxSerie As AxTextFer.AxTxFer
+    Public WithEvents CtrAyu_Moneda As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_TipDoc As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_TipAnal As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents CtrAyu_Opera As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Dtp_FechaDoc As AxMSComCtl2.AxDTPicker
+    Public WithEvents DtpFech_Ven As AxMSComCtl2.AxDTPicker
+    Public WithEvents TxGlosa As AxTextFer.AxTxFer
+    Public WithEvents CtrAy_Asiento As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label3 As System.Windows.Forms.Label
+    Public WithEvents lb_vcambio As System.Windows.Forms.Label
+    Public WithEvents _lbTipAnal_0 As System.Windows.Forms.Label
+    Public WithEvents Label11 As System.Windows.Forms.Label
+    Public WithEvents lbccosto As System.Windows.Forms.Label
+    Public WithEvents Shape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents Shape4 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents lbtipdoc As System.Windows.Forms.Label
+    Public WithEvents lbndocum As System.Windows.Forms.Label
+    Public WithEvents lbFechaDoc As System.Windows.Forms.Label
+    Public WithEvents lbFechVen As System.Windows.Forms.Label
+    Public WithEvents Label19 As System.Windows.Forms.Label
+    Public WithEvents Label20 As System.Windows.Forms.Label
+    Public WithEvents Label21 As System.Windows.Forms.Label
+    Public WithEvents Label22 As System.Windows.Forms.Label
+    Public WithEvents Label23 As System.Windows.Forms.Label
+    Public WithEvents Label24 As System.Windows.Forms.Label
+    Public WithEvents lblNroComprobante As System.Windows.Forms.Label
+    Public WithEvents FramDetalle As System.Windows.Forms.GroupBox
+    Public WithEvents cCancela As System.Windows.Forms.Button
+    Public WithEvents cAcepta As System.Windows.Forms.Button
+    Public WithEvents _SSTab1_TabPage1 As System.Windows.Forms.TabPage
+    Public WithEvents SSTab1 As System.Windows.Forms.TabControl
+    Public WithEvents Ctr_CtaCtble As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Ctr_Analitico As Axctrlayuda_f.AxCtr_Ayuda
+    Public WithEvents Label2 As System.Windows.Forms.Label
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar mediante el Diseñador de Windows Forms.
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMant_CtaCteAnalitico))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMntCtaCteAnalitico))
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.Shape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Shape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -142,11 +142,11 @@
         '
         'ShapeContainer1
         '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 13)
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 15)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.Shape3, Me.Shape4})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(689, 151)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(919, 187)
         Me.ShapeContainer1.TabIndex = 44
         Me.ShapeContainer1.TabStop = False
         '
@@ -173,10 +173,11 @@
         Me.SSTab1.Controls.Add(Me._SSTab1_TabPage0)
         Me.SSTab1.Controls.Add(Me._SSTab1_TabPage1)
         Me.SSTab1.ItemSize = New System.Drawing.Size(42, 18)
-        Me.SSTab1.Location = New System.Drawing.Point(7, 28)
+        Me.SSTab1.Location = New System.Drawing.Point(9, 34)
+        Me.SSTab1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SSTab1.Name = "SSTab1"
         Me.SSTab1.SelectedIndex = 1
-        Me.SSTab1.Size = New System.Drawing.Size(761, 398)
+        Me.SSTab1.Size = New System.Drawing.Size(1015, 490)
         Me.SSTab1.TabIndex = 0
         '
         '_SSTab1_TabPage0
@@ -184,8 +185,9 @@
         Me._SSTab1_TabPage0.Controls.Add(Me.framebotones)
         Me._SSTab1_TabPage0.Controls.Add(Me.TDBG_CtaCte)
         Me._SSTab1_TabPage0.Location = New System.Drawing.Point(4, 22)
+        Me._SSTab1_TabPage0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._SSTab1_TabPage0.Name = "_SSTab1_TabPage0"
-        Me._SSTab1_TabPage0.Size = New System.Drawing.Size(753, 372)
+        Me._SSTab1_TabPage0.Size = New System.Drawing.Size(1007, 464)
         Me._SSTab1_TabPage0.TabIndex = 0
         Me._SSTab1_TabPage0.Text = "Consulta"
         '
@@ -198,11 +200,12 @@
         Me.framebotones.Controls.Add(Me._cmdBotones_4)
         Me.framebotones.Controls.Add(Me._cmdBotones_3)
         Me.framebotones.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.framebotones.Location = New System.Drawing.Point(95, 283)
+        Me.framebotones.Location = New System.Drawing.Point(127, 348)
+        Me.framebotones.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.framebotones.Name = "framebotones"
         Me.framebotones.Padding = New System.Windows.Forms.Padding(0)
         Me.framebotones.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.framebotones.Size = New System.Drawing.Size(529, 73)
+        Me.framebotones.Size = New System.Drawing.Size(705, 90)
         Me.framebotones.TabIndex = 35
         Me.framebotones.TabStop = False
         '
@@ -211,10 +214,11 @@
         Me._cmdBotones_0.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdBotones_0.Location = New System.Drawing.Point(27, 13)
+        Me._cmdBotones_0.Location = New System.Drawing.Point(36, 16)
+        Me._cmdBotones_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdBotones_0.Name = "_cmdBotones_0"
         Me._cmdBotones_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_0.Size = New System.Drawing.Size(92, 41)
+        Me._cmdBotones_0.Size = New System.Drawing.Size(123, 50)
         Me._cmdBotones_0.TabIndex = 40
         Me._cmdBotones_0.Text = "&Nuevo"
         Me._cmdBotones_0.UseVisualStyleBackColor = False
@@ -224,10 +228,11 @@
         Me._cmdBotones_1.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdBotones_1.Location = New System.Drawing.Point(125, 13)
+        Me._cmdBotones_1.Location = New System.Drawing.Point(167, 16)
+        Me._cmdBotones_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdBotones_1.Name = "_cmdBotones_1"
         Me._cmdBotones_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_1.Size = New System.Drawing.Size(92, 41)
+        Me._cmdBotones_1.Size = New System.Drawing.Size(123, 50)
         Me._cmdBotones_1.TabIndex = 39
         Me._cmdBotones_1.Text = "E&ditar"
         Me._cmdBotones_1.UseVisualStyleBackColor = False
@@ -237,10 +242,11 @@
         Me._cmdBotones_2.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdBotones_2.Location = New System.Drawing.Point(223, 13)
+        Me._cmdBotones_2.Location = New System.Drawing.Point(297, 16)
+        Me._cmdBotones_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdBotones_2.Name = "_cmdBotones_2"
         Me._cmdBotones_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_2.Size = New System.Drawing.Size(92, 44)
+        Me._cmdBotones_2.Size = New System.Drawing.Size(123, 54)
         Me._cmdBotones_2.TabIndex = 38
         Me._cmdBotones_2.Text = "&Eliminar"
         Me._cmdBotones_2.UseVisualStyleBackColor = False
@@ -250,10 +256,11 @@
         Me._cmdBotones_4.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdBotones_4.Location = New System.Drawing.Point(419, 13)
+        Me._cmdBotones_4.Location = New System.Drawing.Point(559, 16)
+        Me._cmdBotones_4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdBotones_4.Name = "_cmdBotones_4"
         Me._cmdBotones_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_4.Size = New System.Drawing.Size(92, 41)
+        Me._cmdBotones_4.Size = New System.Drawing.Size(123, 50)
         Me._cmdBotones_4.TabIndex = 37
         Me._cmdBotones_4.Text = "&Salir"
         Me._cmdBotones_4.UseVisualStyleBackColor = False
@@ -263,10 +270,11 @@
         Me._cmdBotones_3.BackColor = System.Drawing.SystemColors.Control
         Me._cmdBotones_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdBotones_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdBotones_3.Location = New System.Drawing.Point(321, 13)
+        Me._cmdBotones_3.Location = New System.Drawing.Point(428, 16)
+        Me._cmdBotones_3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdBotones_3.Name = "_cmdBotones_3"
         Me._cmdBotones_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdBotones_3.Size = New System.Drawing.Size(92, 41)
+        Me._cmdBotones_3.Size = New System.Drawing.Size(123, 50)
         Me._cmdBotones_3.TabIndex = 36
         Me._cmdBotones_3.Text = "&Imprimir"
         Me._cmdBotones_3.UseVisualStyleBackColor = False
@@ -276,9 +284,10 @@
         '
         Me.TDBG_CtaCte.DataSource = Nothing
         Me.TDBG_CtaCte.Location = New System.Drawing.Point(7, 33)
+        Me.TDBG_CtaCte.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TDBG_CtaCte.Name = "TDBG_CtaCte"
         Me.TDBG_CtaCte.OcxState = CType(resources.GetObject("TDBG_CtaCte.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TDBG_CtaCte.Size = New System.Drawing.Size(723, 244)
+        Me.TDBG_CtaCte.Size = New System.Drawing.Size(904, 305)
         Me.TDBG_CtaCte.TabIndex = 1
         '
         '_SSTab1_TabPage1
@@ -287,8 +296,9 @@
         Me._SSTab1_TabPage1.Controls.Add(Me.cCancela)
         Me._SSTab1_TabPage1.Controls.Add(Me.cAcepta)
         Me._SSTab1_TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me._SSTab1_TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._SSTab1_TabPage1.Name = "_SSTab1_TabPage1"
-        Me._SSTab1_TabPage1.Size = New System.Drawing.Size(753, 372)
+        Me._SSTab1_TabPage1.Size = New System.Drawing.Size(1007, 464)
         Me._SSTab1_TabPage1.TabIndex = 1
         Me._SSTab1_TabPage1.Text = "Mantenimiento"
         '
@@ -326,11 +336,12 @@
         Me.FramDetalle.Controls.Add(Me.lblNroComprobante)
         Me.FramDetalle.Controls.Add(Me.ShapeContainer1)
         Me.FramDetalle.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.FramDetalle.Location = New System.Drawing.Point(13, 81)
+        Me.FramDetalle.Location = New System.Drawing.Point(17, 100)
+        Me.FramDetalle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.FramDetalle.Name = "FramDetalle"
         Me.FramDetalle.Padding = New System.Windows.Forms.Padding(0)
         Me.FramDetalle.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FramDetalle.Size = New System.Drawing.Size(689, 164)
+        Me.FramDetalle.Size = New System.Drawing.Size(919, 202)
         Me.FramDetalle.TabIndex = 4
         Me.FramDetalle.TabStop = False
         '
@@ -341,10 +352,11 @@
         Me.CmbID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbID.ForeColor = System.Drawing.SystemColors.WindowText
         Me.CmbID.Items.AddRange(New Object() {"D - Debe", "H - Haber"})
-        Me.CmbID.Location = New System.Drawing.Point(584, 12)
+        Me.CmbID.Location = New System.Drawing.Point(779, 15)
+        Me.CmbID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CmbID.Name = "CmbID"
         Me.CmbID.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.CmbID.Size = New System.Drawing.Size(96, 21)
+        Me.CmbID.Size = New System.Drawing.Size(127, 24)
         Me.CmbID.TabIndex = 6
         '
         'CmbTcambio
@@ -354,107 +366,119 @@
         Me.CmbTcambio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbTcambio.ForeColor = System.Drawing.SystemColors.WindowText
         Me.CmbTcambio.Items.AddRange(New Object() {"01 - Compra", "02 - Venta", "03 - Promedio"})
-        Me.CmbTcambio.Location = New System.Drawing.Point(585, 57)
+        Me.CmbTcambio.Location = New System.Drawing.Point(780, 70)
+        Me.CmbTcambio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CmbTcambio.Name = "CmbTcambio"
         Me.CmbTcambio.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.CmbTcambio.Size = New System.Drawing.Size(96, 21)
+        Me.CmbTcambio.Size = New System.Drawing.Size(127, 24)
         Me.CmbTcambio.TabIndex = 5
         '
         'TxMonto
         '
         Me.TxMonto.Enabled = True
         Me.TxMonto.Location = New System.Drawing.Point(584, 104)
+        Me.TxMonto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxMonto.Name = "TxMonto"
         Me.TxMonto.OcxState = CType(resources.GetObject("TxMonto.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxMonto.Size = New System.Drawing.Size(98, 21)
+        Me.TxMonto.Size = New System.Drawing.Size(123, 25)
         Me.TxMonto.TabIndex = 7
         '
         'TxNdoc
         '
         Me.TxNdoc.Enabled = True
         Me.TxNdoc.Location = New System.Drawing.Point(305, 90)
+        Me.TxNdoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxNdoc.Name = "TxNdoc"
         Me.TxNdoc.OcxState = CType(resources.GetObject("TxNdoc.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxNdoc.Size = New System.Drawing.Size(114, 20)
+        Me.TxNdoc.Size = New System.Drawing.Size(142, 25)
         Me.TxNdoc.TabIndex = 8
         '
         'TxSerie
         '
         Me.TxSerie.Enabled = True
         Me.TxSerie.Location = New System.Drawing.Point(260, 90)
+        Me.TxSerie.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxSerie.Name = "TxSerie"
         Me.TxSerie.OcxState = CType(resources.GetObject("TxSerie.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxSerie.Size = New System.Drawing.Size(44, 20)
+        Me.TxSerie.Size = New System.Drawing.Size(55, 25)
         Me.TxSerie.TabIndex = 9
         '
         'CtrAyu_Moneda
         '
         Me.CtrAyu_Moneda.Enabled = True
         Me.CtrAyu_Moneda.Location = New System.Drawing.Point(585, 34)
+        Me.CtrAyu_Moneda.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CtrAyu_Moneda.Name = "CtrAyu_Moneda"
         Me.CtrAyu_Moneda.OcxState = CType(resources.GetObject("CtrAyu_Moneda.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.CtrAyu_Moneda.Size = New System.Drawing.Size(96, 21)
+        Me.CtrAyu_Moneda.Size = New System.Drawing.Size(120, 26)
         Me.CtrAyu_Moneda.TabIndex = 10
         '
         'CtrAyu_TipDoc
         '
         Me.CtrAyu_TipDoc.Enabled = True
         Me.CtrAyu_TipDoc.Location = New System.Drawing.Point(75, 89)
+        Me.CtrAyu_TipDoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CtrAyu_TipDoc.Name = "CtrAyu_TipDoc"
         Me.CtrAyu_TipDoc.OcxState = CType(resources.GetObject("CtrAyu_TipDoc.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.CtrAyu_TipDoc.Size = New System.Drawing.Size(138, 21)
+        Me.CtrAyu_TipDoc.Size = New System.Drawing.Size(172, 26)
         Me.CtrAyu_TipDoc.TabIndex = 11
         '
         'CtrAyu_TipAnal
         '
         Me.CtrAyu_TipAnal.Enabled = True
         Me.CtrAyu_TipAnal.Location = New System.Drawing.Point(345, 63)
+        Me.CtrAyu_TipAnal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CtrAyu_TipAnal.Name = "CtrAyu_TipAnal"
         Me.CtrAyu_TipAnal.OcxState = CType(resources.GetObject("CtrAyu_TipAnal.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.CtrAyu_TipAnal.Size = New System.Drawing.Size(160, 28)
+        Me.CtrAyu_TipAnal.Size = New System.Drawing.Size(200, 35)
         Me.CtrAyu_TipAnal.TabIndex = 12
         '
         'CtrAyu_Opera
         '
         Me.CtrAyu_Opera.Enabled = True
         Me.CtrAyu_Opera.Location = New System.Drawing.Point(75, 35)
+        Me.CtrAyu_Opera.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CtrAyu_Opera.Name = "CtrAyu_Opera"
         Me.CtrAyu_Opera.OcxState = CType(resources.GetObject("CtrAyu_Opera.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.CtrAyu_Opera.Size = New System.Drawing.Size(431, 21)
+        Me.CtrAyu_Opera.Size = New System.Drawing.Size(539, 26)
         Me.CtrAyu_Opera.TabIndex = 13
         '
         'Dtp_FechaDoc
         '
         Me.Dtp_FechaDoc.Location = New System.Drawing.Point(76, 112)
+        Me.Dtp_FechaDoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Dtp_FechaDoc.Name = "Dtp_FechaDoc"
         Me.Dtp_FechaDoc.OcxState = CType(resources.GetObject("Dtp_FechaDoc.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.Dtp_FechaDoc.Size = New System.Drawing.Size(86, 21)
+        Me.Dtp_FechaDoc.Size = New System.Drawing.Size(107, 26)
         Me.Dtp_FechaDoc.TabIndex = 14
         '
         'DtpFech_Ven
         '
         Me.DtpFech_Ven.Location = New System.Drawing.Point(253, 113)
+        Me.DtpFech_Ven.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DtpFech_Ven.Name = "DtpFech_Ven"
         Me.DtpFech_Ven.OcxState = CType(resources.GetObject("DtpFech_Ven.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.DtpFech_Ven.Size = New System.Drawing.Size(112, 21)
+        Me.DtpFech_Ven.Size = New System.Drawing.Size(140, 26)
         Me.DtpFech_Ven.TabIndex = 15
         '
         'TxGlosa
         '
         Me.TxGlosa.Enabled = True
         Me.TxGlosa.Location = New System.Drawing.Point(74, 136)
+        Me.TxGlosa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxGlosa.Name = "TxGlosa"
         Me.TxGlosa.OcxState = CType(resources.GetObject("TxGlosa.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TxGlosa.Size = New System.Drawing.Size(429, 20)
+        Me.TxGlosa.Size = New System.Drawing.Size(536, 25)
         Me.TxGlosa.TabIndex = 16
         '
         'CtrAy_Asiento
         '
         Me.CtrAy_Asiento.Enabled = True
         Me.CtrAy_Asiento.Location = New System.Drawing.Point(75, 63)
+        Me.CtrAy_Asiento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CtrAy_Asiento.Name = "CtrAy_Asiento"
         Me.CtrAy_Asiento.OcxState = CType(resources.GetObject("CtrAy_Asiento.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.CtrAy_Asiento.Size = New System.Drawing.Size(192, 27)
+        Me.CtrAy_Asiento.Size = New System.Drawing.Size(240, 34)
         Me.CtrAy_Asiento.TabIndex = 33
         '
         'Label3
@@ -462,10 +486,11 @@
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label3.Location = New System.Drawing.Point(8, 16)
+        Me.Label3.Location = New System.Drawing.Point(11, 20)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label3.Size = New System.Drawing.Size(57, 21)
+        Me.Label3.Size = New System.Drawing.Size(76, 26)
         Me.Label3.TabIndex = 34
         Me.Label3.Text = "Nro. Comp."
         '
@@ -475,10 +500,11 @@
         Me.lb_vcambio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lb_vcambio.Cursor = System.Windows.Forms.Cursors.Default
         Me.lb_vcambio.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lb_vcambio.Location = New System.Drawing.Point(585, 82)
+        Me.lb_vcambio.Location = New System.Drawing.Point(780, 101)
+        Me.lb_vcambio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_vcambio.Name = "lb_vcambio"
         Me.lb_vcambio.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lb_vcambio.Size = New System.Drawing.Size(96, 18)
+        Me.lb_vcambio.Size = New System.Drawing.Size(127, 22)
         Me.lb_vcambio.TabIndex = 30
         Me.lb_vcambio.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
@@ -488,10 +514,11 @@
         Me._lbTipAnal_0.BackColor = System.Drawing.SystemColors.Control
         Me._lbTipAnal_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lbTipAnal_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._lbTipAnal_0.Location = New System.Drawing.Point(268, 68)
+        Me._lbTipAnal_0.Location = New System.Drawing.Point(357, 84)
+        Me._lbTipAnal_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lbTipAnal_0.Name = "_lbTipAnal_0"
         Me._lbTipAnal_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lbTipAnal_0.Size = New System.Drawing.Size(77, 13)
+        Me._lbTipAnal_0.Size = New System.Drawing.Size(101, 17)
         Me._lbTipAnal_0.TabIndex = 29
         Me._lbTipAnal_0.Text = "Tipo Analitico :"
         '
@@ -501,10 +528,11 @@
         Me.Label11.BackColor = System.Drawing.SystemColors.Control
         Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label11.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label11.Location = New System.Drawing.Point(8, 42)
+        Me.Label11.Location = New System.Drawing.Point(11, 52)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label11.Size = New System.Drawing.Size(61, 13)
+        Me.Label11.Size = New System.Drawing.Size(81, 17)
         Me.Label11.TabIndex = 28
         Me.Label11.Text = "Cod Oper. :"
         '
@@ -514,10 +542,11 @@
         Me.lbccosto.BackColor = System.Drawing.SystemColors.Control
         Me.lbccosto.Cursor = System.Windows.Forms.Cursors.Default
         Me.lbccosto.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbccosto.Location = New System.Drawing.Point(8, 67)
+        Me.lbccosto.Location = New System.Drawing.Point(11, 82)
+        Me.lbccosto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbccosto.Name = "lbccosto"
         Me.lbccosto.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbccosto.Size = New System.Drawing.Size(42, 13)
+        Me.lbccosto.Size = New System.Drawing.Size(55, 17)
         Me.lbccosto.TabIndex = 27
         Me.lbccosto.Text = "Asiento"
         '
@@ -526,10 +555,11 @@
         Me.lbtipdoc.BackColor = System.Drawing.SystemColors.Control
         Me.lbtipdoc.Cursor = System.Windows.Forms.Cursors.Default
         Me.lbtipdoc.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbtipdoc.Location = New System.Drawing.Point(8, 92)
+        Me.lbtipdoc.Location = New System.Drawing.Point(11, 113)
+        Me.lbtipdoc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbtipdoc.Name = "lbtipdoc"
         Me.lbtipdoc.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbtipdoc.Size = New System.Drawing.Size(68, 17)
+        Me.lbtipdoc.Size = New System.Drawing.Size(91, 21)
         Me.lbtipdoc.TabIndex = 26
         Me.lbtipdoc.Text = "Tipo doc. :"
         '
@@ -539,10 +569,11 @@
         Me.lbndocum.BackColor = System.Drawing.SystemColors.Control
         Me.lbndocum.Cursor = System.Windows.Forms.Cursors.Default
         Me.lbndocum.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbndocum.Location = New System.Drawing.Point(216, 93)
+        Me.lbndocum.Location = New System.Drawing.Point(288, 114)
+        Me.lbndocum.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbndocum.Name = "lbndocum"
         Me.lbndocum.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbndocum.Size = New System.Drawing.Size(49, 13)
+        Me.lbndocum.Size = New System.Drawing.Size(62, 17)
         Me.lbndocum.TabIndex = 25
         Me.lbndocum.Text = "Nº doc. :"
         '
@@ -552,10 +583,11 @@
         Me.lbFechaDoc.BackColor = System.Drawing.SystemColors.Control
         Me.lbFechaDoc.Cursor = System.Windows.Forms.Cursors.Default
         Me.lbFechaDoc.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbFechaDoc.Location = New System.Drawing.Point(8, 118)
+        Me.lbFechaDoc.Location = New System.Drawing.Point(11, 145)
+        Me.lbFechaDoc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbFechaDoc.Name = "lbFechaDoc"
         Me.lbFechaDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbFechaDoc.Size = New System.Drawing.Size(67, 13)
+        Me.lbFechaDoc.Size = New System.Drawing.Size(86, 17)
         Me.lbFechaDoc.TabIndex = 24
         Me.lbFechaDoc.Text = "Fecha doc. :"
         '
@@ -565,10 +597,11 @@
         Me.lbFechVen.BackColor = System.Drawing.SystemColors.Control
         Me.lbFechVen.Cursor = System.Windows.Forms.Cursors.Default
         Me.lbFechVen.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbFechVen.Location = New System.Drawing.Point(167, 117)
+        Me.lbFechVen.Location = New System.Drawing.Point(223, 144)
+        Me.lbFechVen.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbFechVen.Name = "lbFechVen"
         Me.lbFechVen.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lbFechVen.Size = New System.Drawing.Size(89, 13)
+        Me.lbFechVen.Size = New System.Drawing.Size(115, 17)
         Me.lbFechVen.TabIndex = 23
         Me.lbFechVen.Text = "Fecha de Venc. :"
         '
@@ -578,10 +611,11 @@
         Me.Label19.BackColor = System.Drawing.SystemColors.Control
         Me.Label19.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label19.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label19.Location = New System.Drawing.Point(518, 15)
+        Me.Label19.Location = New System.Drawing.Point(691, 18)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label19.Size = New System.Drawing.Size(57, 13)
+        Me.Label19.Size = New System.Drawing.Size(74, 17)
         Me.Label19.TabIndex = 22
         Me.Label19.Text = "Indicador :"
         '
@@ -591,10 +625,11 @@
         Me.Label20.BackColor = System.Drawing.SystemColors.Control
         Me.Label20.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label20.Location = New System.Drawing.Point(518, 62)
+        Me.Label20.Location = New System.Drawing.Point(691, 76)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label20.Size = New System.Drawing.Size(60, 13)
+        Me.Label20.Size = New System.Drawing.Size(76, 17)
         Me.Label20.TabIndex = 21
         Me.Label20.Text = "T/Cambio :"
         '
@@ -604,10 +639,11 @@
         Me.Label21.BackColor = System.Drawing.SystemColors.Control
         Me.Label21.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label21.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label21.Location = New System.Drawing.Point(520, 85)
+        Me.Label21.Location = New System.Drawing.Point(693, 105)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label21.Size = New System.Drawing.Size(60, 13)
+        Me.Label21.Size = New System.Drawing.Size(76, 17)
         Me.Label21.TabIndex = 20
         Me.Label21.Text = "V/Cambio :"
         '
@@ -617,10 +653,11 @@
         Me.Label22.BackColor = System.Drawing.SystemColors.Control
         Me.Label22.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(519, 107)
+        Me.Label22.Location = New System.Drawing.Point(692, 132)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label22.Size = New System.Drawing.Size(43, 13)
+        Me.Label22.Size = New System.Drawing.Size(55, 17)
         Me.Label22.TabIndex = 19
         Me.Label22.Text = "Monto :"
         '
@@ -629,10 +666,11 @@
         Me.Label23.BackColor = System.Drawing.SystemColors.Control
         Me.Label23.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label23.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label23.Location = New System.Drawing.Point(8, 140)
+        Me.Label23.Location = New System.Drawing.Point(11, 172)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
         Me.Label23.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label23.Size = New System.Drawing.Size(33, 13)
+        Me.Label23.Size = New System.Drawing.Size(44, 16)
         Me.Label23.TabIndex = 18
         Me.Label23.Text = "Glosa :"
         '
@@ -642,10 +680,11 @@
         Me.Label24.BackColor = System.Drawing.SystemColors.Control
         Me.Label24.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label24.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label24.Location = New System.Drawing.Point(520, 41)
+        Me.Label24.Location = New System.Drawing.Point(693, 50)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label24.Size = New System.Drawing.Size(52, 13)
+        Me.Label24.Size = New System.Drawing.Size(67, 17)
         Me.Label24.TabIndex = 17
         Me.Label24.Text = "Moneda :"
         '
@@ -655,10 +694,11 @@
         Me.lblNroComprobante.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblNroComprobante.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblNroComprobante.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblNroComprobante.Location = New System.Drawing.Point(76, 11)
+        Me.lblNroComprobante.Location = New System.Drawing.Point(101, 14)
+        Me.lblNroComprobante.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblNroComprobante.Name = "lblNroComprobante"
         Me.lblNroComprobante.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblNroComprobante.Size = New System.Drawing.Size(182, 20)
+        Me.lblNroComprobante.Size = New System.Drawing.Size(243, 25)
         Me.lblNroComprobante.TabIndex = 43
         '
         'cCancela
@@ -666,10 +706,11 @@
         Me.cCancela.BackColor = System.Drawing.SystemColors.Control
         Me.cCancela.Cursor = System.Windows.Forms.Cursors.Default
         Me.cCancela.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cCancela.Location = New System.Drawing.Point(381, 255)
+        Me.cCancela.Location = New System.Drawing.Point(508, 314)
+        Me.cCancela.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cCancela.Name = "cCancela"
         Me.cCancela.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cCancela.Size = New System.Drawing.Size(86, 23)
+        Me.cCancela.Size = New System.Drawing.Size(115, 28)
         Me.cCancela.TabIndex = 41
         Me.cCancela.Text = "&Cancelar"
         Me.cCancela.UseVisualStyleBackColor = False
@@ -679,10 +720,11 @@
         Me.cAcepta.BackColor = System.Drawing.SystemColors.Control
         Me.cAcepta.Cursor = System.Windows.Forms.Cursors.Default
         Me.cAcepta.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cAcepta.Location = New System.Drawing.Point(278, 255)
+        Me.cAcepta.Location = New System.Drawing.Point(371, 314)
+        Me.cAcepta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cAcepta.Name = "cAcepta"
         Me.cAcepta.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cAcepta.Size = New System.Drawing.Size(86, 23)
+        Me.cAcepta.Size = New System.Drawing.Size(115, 28)
         Me.cAcepta.TabIndex = 42
         Me.cAcepta.Text = "&Aceptar"
         Me.cAcepta.UseVisualStyleBackColor = False
@@ -691,18 +733,20 @@
         '
         Me.Ctr_CtaCtble.Enabled = True
         Me.Ctr_CtaCtble.Location = New System.Drawing.Point(106, 4)
+        Me.Ctr_CtaCtble.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Ctr_CtaCtble.Name = "Ctr_CtaCtble"
         Me.Ctr_CtaCtble.OcxState = CType(resources.GetObject("Ctr_CtaCtble.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.Ctr_CtaCtble.Size = New System.Drawing.Size(271, 23)
+        Me.Ctr_CtaCtble.Size = New System.Drawing.Size(339, 29)
         Me.Ctr_CtaCtble.TabIndex = 3
         '
         'Ctr_Analitico
         '
         Me.Ctr_Analitico.Enabled = True
         Me.Ctr_Analitico.Location = New System.Drawing.Point(469, 4)
+        Me.Ctr_Analitico.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Ctr_Analitico.Name = "Ctr_Analitico"
         Me.Ctr_Analitico.OcxState = CType(resources.GetObject("Ctr_Analitico.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.Ctr_Analitico.Size = New System.Drawing.Size(271, 20)
+        Me.Ctr_Analitico.Size = New System.Drawing.Size(339, 25)
         Me.Ctr_Analitico.TabIndex = 31
         '
         'Label2
@@ -710,10 +754,11 @@
         Me.Label2.BackColor = System.Drawing.SystemColors.Control
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(383, 8)
+        Me.Label2.Location = New System.Drawing.Point(511, 10)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(50, 18)
+        Me.Label2.Size = New System.Drawing.Size(67, 22)
         Me.Label2.TabIndex = 32
         Me.Label2.Text = "Analitico"
         '
@@ -722,19 +767,20 @@
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(18, 9)
+        Me.Label1.Location = New System.Drawing.Point(24, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(98, 18)
+        Me.Label1.Size = New System.Drawing.Size(131, 22)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Cuenta Contable"
         '
-        'frmMant_CtaCteAnalitico
+        'frmMntCtaCteAnalitico
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(780, 438)
+        Me.ClientSize = New System.Drawing.Size(1040, 539)
         Me.Controls.Add(Me.SSTab1)
         Me.Controls.Add(Me.Ctr_CtaCtble)
         Me.Controls.Add(Me.Ctr_Analitico)
@@ -742,7 +788,8 @@
         Me.Controls.Add(Me.Label1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Location = New System.Drawing.Point(4, 23)
-        Me.Name = "frmMant_CtaCteAnalitico"
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Name = "frmMntCtaCteAnalitico"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento de Cta Cte Analiticos - Apertura"
@@ -769,5 +816,5 @@
         Me.ResumeLayout(False)
 
     End Sub
-#End Region 
+#End Region
 End Class

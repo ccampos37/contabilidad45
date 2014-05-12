@@ -1,34 +1,34 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class frmMantSubAsiento
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class frmMntSubAsiento
 #Region "Código generado por el Diseñador de Windows Forms "
-	<System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
-		MyBase.New()
-		'Llamada necesaria para el Diseñador de Windows Forms.
-		InitializeComponent()
-		'Éste es un formulario MDI secundario.
-		'Este código simula la funcionalidad de VB6 
-		' de cargar automáticamente
-		' y mostrar el formulario primario de
-		' un MDI secundario.
-		Me.MDIParent = Contabilidad.MDIPrincipal
-		Contabilidad.MDIPrincipal.Show
-	End Sub
-	'Form invalida a Dispose para limpiar la lista de componentes.
-	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
-		If Disposing Then
-			If Not components Is Nothing Then
-				components.Dispose()
-			End If
-		End If
-		MyBase.Dispose(Disposing)
-	End Sub
-	'Requerido por el Diseñador de Windows Forms
-	Private components As System.ComponentModel.IContainer
+    <System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
+        MyBase.New()
+        'Llamada necesaria para el Diseñador de Windows Forms.
+        InitializeComponent()
+        'Éste es un formulario MDI secundario.
+        'Este código simula la funcionalidad de VB6 
+        ' de cargar automáticamente
+        ' y mostrar el formulario primario de
+        ' un MDI secundario.
+        Me.MDIParent = Contabilidad.MDIPrincipal
+        Contabilidad.MDIPrincipal.Show()
+    End Sub
+    'Form invalida a Dispose para limpiar la lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
+        If Disposing Then
+            If Not components Is Nothing Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(Disposing)
+    End Sub
+    'Requerido por el Diseñador de Windows Forms
+    Private components As System.ComponentModel.IContainer
     Public WithEvents lblNumReg As System.Windows.Forms.Label
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents Label3 As System.Windows.Forms.Label
-	Public WithEvents TDBGrid1 As AxTrueOleDBGrid70.AxTDBGrid
-	Public WithEvents _SSTab1_TabPage0 As System.Windows.Forms.TabPage
-	Public WithEvents lblMensaje As System.Windows.Forms.Label
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents Label3 As System.Windows.Forms.Label
+    Public WithEvents TDBGrid1 As AxTrueOleDBGrid70.AxTDBGrid
+    Public WithEvents _SSTab1_TabPage0 As System.Windows.Forms.TabPage
+    Public WithEvents lblMensaje As System.Windows.Forms.Label
     Public WithEvents TDBGrid3 As AxTrueOleDBGrid70.AxTDBGrid
     Public WithEvents chk As System.Windows.Forms.CheckBox
     Public WithEvents Ctr_Ayuda2 As Axctrlayuda_f.AxCtr_Ayuda
@@ -80,7 +80,7 @@
     'Se puede modificar mediante el Diseñador de Windows Forms.
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantSubAsiento))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMntSubAsiento))
         Me.SSTab1 = New System.Windows.Forms.TabControl()
         Me._SSTab1_TabPage0 = New System.Windows.Forms.TabPage()
         Me.lblNumReg = New System.Windows.Forms.Label()
@@ -134,33 +134,30 @@
         Me.txt10 = New AxTextFer.AxTxFer()
         Me.txt9 = New AxTextFer.AxTxFer()
         Me.txt8 = New AxTextFer.AxTxFer()
-        Me.TXT0 = New Jck_txt.Jck_Txt()
-        Me.txt1 = New Jck_txt.Jck_Txt()
-        Me.txt14 = New Jck_txt.Jck_Txt()
-        Me.SSTab1.SuspendLayout
-        Me._SSTab1_TabPage0.SuspendLayout
-        CType(Me.TDBGrid1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me._SSTab1_TabPage1.SuspendLayout
-        Me.Frame1.SuspendLayout
-        Me.gbDatos.SuspendLayout
-        CType(Me.Ctr_Ayuda2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Ctr_Ayuda1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TDBGrid3,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.frmbotones.SuspendLayout
-        Me._SSTab1_TabPage2.SuspendLayout
-        CType(Me.txt3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt13,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt12,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt11,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt7,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt6,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt5,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt10,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt9,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txt8,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.SSTab1.SuspendLayout()
+        Me._SSTab1_TabPage0.SuspendLayout()
+        CType(Me.TDBGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me._SSTab1_TabPage1.SuspendLayout()
+        Me.Frame1.SuspendLayout()
+        Me.gbDatos.SuspendLayout()
+        CType(Me.Ctr_Ayuda2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ctr_Ayuda1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TDBGrid3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.frmbotones.SuspendLayout()
+        Me._SSTab1_TabPage2.SuspendLayout()
+        CType(Me.txt3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'SSTab1
         '
@@ -188,7 +185,7 @@
         '
         'lblNumReg
         '
-        Me.lblNumReg.BackColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(128,Byte),Integer))
+        Me.lblNumReg.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblNumReg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblNumReg.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblNumReg.ForeColor = System.Drawing.Color.Yellow
@@ -216,7 +213,7 @@
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(128,Byte),Integer))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(2, 48)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -229,7 +226,7 @@
         Me.TDBGrid1.DataSource = Nothing
         Me.TDBGrid1.Location = New System.Drawing.Point(2, 69)
         Me.TDBGrid1.Name = "TDBGrid1"
-        Me.TDBGrid1.OcxState = CType(resources.GetObject("TDBGrid1.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.TDBGrid1.OcxState = CType(resources.GetObject("TDBGrid1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.TDBGrid1.Size = New System.Drawing.Size(438, 235)
         Me.TDBGrid1.TabIndex = 8
         '
@@ -251,7 +248,7 @@
         Me.lblMensaje.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblMensaje.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(128,Byte),Integer))
+        Me.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblMensaje.Location = New System.Drawing.Point(168, 491)
         Me.lblMensaje.Name = "lblMensaje"
         Me.lblMensaje.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -271,7 +268,7 @@
         Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Frame1.Size = New System.Drawing.Size(436, 394)
         Me.Frame1.TabIndex = 7
-        Me.Frame1.TabStop = false
+        Me.Frame1.TabStop = False
         '
         'gbDatos
         '
@@ -291,7 +288,7 @@
         Me.gbDatos.Name = "gbDatos"
         Me.gbDatos.Size = New System.Drawing.Size(435, 166)
         Me.gbDatos.TabIndex = 7
-        Me.gbDatos.TabStop = false
+        Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "GroupBox1"
         '
         '_lbl_0
@@ -328,7 +325,7 @@
         Me.chk.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.chk.Size = New System.Drawing.Size(30, 20)
         Me.chk.TabIndex = 5
-        Me.chk.UseVisualStyleBackColor = false
+        Me.chk.UseVisualStyleBackColor = False
         '
         '_lbl_2
         '
@@ -356,10 +353,10 @@
         '
         'Ctr_Ayuda2
         '
-        Me.Ctr_Ayuda2.Enabled = true
+        Me.Ctr_Ayuda2.Enabled = True
         Me.Ctr_Ayuda2.Location = New System.Drawing.Point(138, 70)
         Me.Ctr_Ayuda2.Name = "Ctr_Ayuda2"
-        Me.Ctr_Ayuda2.OcxState = CType(resources.GetObject("Ctr_Ayuda2.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.Ctr_Ayuda2.OcxState = CType(resources.GetObject("Ctr_Ayuda2.OcxState"), System.Windows.Forms.AxHost.State)
         Me.Ctr_Ayuda2.Size = New System.Drawing.Size(224, 23)
         Me.Ctr_Ayuda2.TabIndex = 2
         '
@@ -377,10 +374,10 @@
         '
         'Ctr_Ayuda1
         '
-        Me.Ctr_Ayuda1.Enabled = true
+        Me.Ctr_Ayuda1.Enabled = True
         Me.Ctr_Ayuda1.Location = New System.Drawing.Point(138, 16)
         Me.Ctr_Ayuda1.Name = "Ctr_Ayuda1"
-        Me.Ctr_Ayuda1.OcxState = CType(resources.GetObject("Ctr_Ayuda1.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.Ctr_Ayuda1.OcxState = CType(resources.GetObject("Ctr_Ayuda1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.Ctr_Ayuda1.Size = New System.Drawing.Size(225, 21)
         Me.Ctr_Ayuda1.TabIndex = 0
         '
@@ -401,7 +398,7 @@
         Me.TDBGrid3.DataSource = Nothing
         Me.TDBGrid3.Location = New System.Drawing.Point(2, 168)
         Me.TDBGrid3.Name = "TDBGrid3"
-        Me.TDBGrid3.OcxState = CType(resources.GetObject("TDBGrid3.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.TDBGrid3.OcxState = CType(resources.GetObject("TDBGrid3.OcxState"), System.Windows.Forms.AxHost.State)
         Me.TDBGrid3.Size = New System.Drawing.Size(432, 218)
         Me.TDBGrid3.TabIndex = 37
         '
@@ -416,7 +413,7 @@
         Me.cAcepta.Size = New System.Drawing.Size(76, 23)
         Me.cAcepta.TabIndex = 27
         Me.cAcepta.Text = "&Aceptar"
-        Me.cAcepta.UseVisualStyleBackColor = false
+        Me.cAcepta.UseVisualStyleBackColor = False
         '
         'cCancela
         '
@@ -429,7 +426,7 @@
         Me.cCancela.Size = New System.Drawing.Size(76, 23)
         Me.cCancela.TabIndex = 28
         Me.cCancela.Text = "&Cancelar"
-        Me.cCancela.UseVisualStyleBackColor = false
+        Me.cCancela.UseVisualStyleBackColor = False
         '
         'frmbotones
         '
@@ -446,7 +443,7 @@
         Me.frmbotones.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.frmbotones.Size = New System.Drawing.Size(382, 37)
         Me.frmbotones.TabIndex = 31
-        Me.frmbotones.TabStop = false
+        Me.frmbotones.TabStop = False
         '
         'cmdBotones0
         '
@@ -459,7 +456,7 @@
         Me.cmdBotones0.Size = New System.Drawing.Size(72, 22)
         Me.cmdBotones0.TabIndex = 36
         Me.cmdBotones0.Text = "&Nuevo"
-        Me.cmdBotones0.UseVisualStyleBackColor = false
+        Me.cmdBotones0.UseVisualStyleBackColor = False
         '
         'cmdBotones1
         '
@@ -472,7 +469,7 @@
         Me.cmdBotones1.Size = New System.Drawing.Size(72, 22)
         Me.cmdBotones1.TabIndex = 35
         Me.cmdBotones1.Text = "E&ditar"
-        Me.cmdBotones1.UseVisualStyleBackColor = false
+        Me.cmdBotones1.UseVisualStyleBackColor = False
         '
         'cmdBotones2
         '
@@ -485,7 +482,7 @@
         Me.cmdBotones2.Size = New System.Drawing.Size(72, 22)
         Me.cmdBotones2.TabIndex = 34
         Me.cmdBotones2.Text = "&Eliminar"
-        Me.cmdBotones2.UseVisualStyleBackColor = false
+        Me.cmdBotones2.UseVisualStyleBackColor = False
         '
         'cmdBotones4
         '
@@ -498,7 +495,7 @@
         Me.cmdBotones4.Size = New System.Drawing.Size(72, 22)
         Me.cmdBotones4.TabIndex = 33
         Me.cmdBotones4.Text = "&Salir"
-        Me.cmdBotones4.UseVisualStyleBackColor = false
+        Me.cmdBotones4.UseVisualStyleBackColor = False
         '
         'cmdBotones3
         '
@@ -511,7 +508,7 @@
         Me.cmdBotones3.Size = New System.Drawing.Size(72, 22)
         Me.cmdBotones3.TabIndex = 32
         Me.cmdBotones3.Text = "&Imprimir"
-        Me.cmdBotones3.UseVisualStyleBackColor = false
+        Me.cmdBotones3.UseVisualStyleBackColor = False
         '
         '_SSTab1_TabPage2
         '
@@ -691,109 +688,109 @@
         '
         'txt3
         '
-        Me.txt3.Enabled = true
+        Me.txt3.Enabled = True
         Me.txt3.Location = New System.Drawing.Point(155, 80)
         Me.txt3.Name = "txt3"
-        Me.txt3.OcxState = CType(resources.GetObject("txt3.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt3.OcxState = CType(resources.GetObject("txt3.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt3.Size = New System.Drawing.Size(151, 23)
         Me.txt3.TabIndex = 11
         '
         'txt2
         '
-        Me.txt2.Enabled = true
+        Me.txt2.Enabled = True
         Me.txt2.Location = New System.Drawing.Point(155, 57)
         Me.txt2.Name = "txt2"
-        Me.txt2.OcxState = CType(resources.GetObject("txt2.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt2.OcxState = CType(resources.GetObject("txt2.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt2.Size = New System.Drawing.Size(151, 23)
         Me.txt2.TabIndex = 10
         '
         'txt13
         '
-        Me.txt13.Enabled = true
+        Me.txt13.Enabled = True
         Me.txt13.Location = New System.Drawing.Point(155, 310)
         Me.txt13.Name = "txt13"
-        Me.txt13.OcxState = CType(resources.GetObject("txt13.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt13.OcxState = CType(resources.GetObject("txt13.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt13.Size = New System.Drawing.Size(151, 23)
         Me.txt13.TabIndex = 21
         '
         'txt12
         '
-        Me.txt12.Enabled = true
+        Me.txt12.Enabled = True
         Me.txt12.Location = New System.Drawing.Point(155, 287)
         Me.txt12.Name = "txt12"
-        Me.txt12.OcxState = CType(resources.GetObject("txt12.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt12.OcxState = CType(resources.GetObject("txt12.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt12.Size = New System.Drawing.Size(151, 23)
         Me.txt12.TabIndex = 20
         '
         'txt11
         '
-        Me.txt11.Enabled = true
+        Me.txt11.Enabled = True
         Me.txt11.Location = New System.Drawing.Point(155, 264)
         Me.txt11.Name = "txt11"
-        Me.txt11.OcxState = CType(resources.GetObject("txt11.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt11.OcxState = CType(resources.GetObject("txt11.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt11.Size = New System.Drawing.Size(151, 23)
         Me.txt11.TabIndex = 19
         '
         'txt7
         '
-        Me.txt7.Enabled = true
+        Me.txt7.Enabled = True
         Me.txt7.Location = New System.Drawing.Point(155, 172)
         Me.txt7.Name = "txt7"
-        Me.txt7.OcxState = CType(resources.GetObject("txt7.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt7.OcxState = CType(resources.GetObject("txt7.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt7.Size = New System.Drawing.Size(151, 23)
         Me.txt7.TabIndex = 15
         '
         'txt6
         '
-        Me.txt6.Enabled = true
+        Me.txt6.Enabled = True
         Me.txt6.Location = New System.Drawing.Point(155, 149)
         Me.txt6.Name = "txt6"
-        Me.txt6.OcxState = CType(resources.GetObject("txt6.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt6.OcxState = CType(resources.GetObject("txt6.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt6.Size = New System.Drawing.Size(151, 23)
         Me.txt6.TabIndex = 14
         '
         'txt5
         '
-        Me.txt5.Enabled = true
+        Me.txt5.Enabled = True
         Me.txt5.Location = New System.Drawing.Point(155, 126)
         Me.txt5.Name = "txt5"
-        Me.txt5.OcxState = CType(resources.GetObject("txt5.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt5.OcxState = CType(resources.GetObject("txt5.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt5.Size = New System.Drawing.Size(151, 23)
         Me.txt5.TabIndex = 13
         '
         'txt4
         '
-        Me.txt4.Enabled = true
+        Me.txt4.Enabled = True
         Me.txt4.Location = New System.Drawing.Point(155, 103)
         Me.txt4.Name = "txt4"
-        Me.txt4.OcxState = CType(resources.GetObject("txt4.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt4.OcxState = CType(resources.GetObject("txt4.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt4.Size = New System.Drawing.Size(151, 23)
         Me.txt4.TabIndex = 12
         '
         'txt10
         '
-        Me.txt10.Enabled = true
+        Me.txt10.Enabled = True
         Me.txt10.Location = New System.Drawing.Point(155, 241)
         Me.txt10.Name = "txt10"
-        Me.txt10.OcxState = CType(resources.GetObject("txt10.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt10.OcxState = CType(resources.GetObject("txt10.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt10.Size = New System.Drawing.Size(151, 23)
         Me.txt10.TabIndex = 18
         '
         'txt9
         '
-        Me.txt9.Enabled = true
+        Me.txt9.Enabled = True
         Me.txt9.Location = New System.Drawing.Point(155, 218)
         Me.txt9.Name = "txt9"
-        Me.txt9.OcxState = CType(resources.GetObject("txt9.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt9.OcxState = CType(resources.GetObject("txt9.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt9.Size = New System.Drawing.Size(151, 23)
         Me.txt9.TabIndex = 17
         '
         'txt8
         '
-        Me.txt8.Enabled = true
+        Me.txt8.Enabled = True
         Me.txt8.Location = New System.Drawing.Point(155, 195)
         Me.txt8.Name = "txt8"
-        Me.txt8.OcxState = CType(resources.GetObject("txt8.OcxState"),System.Windows.Forms.AxHost.State)
+        Me.txt8.OcxState = CType(resources.GetObject("txt8.OcxState"), System.Windows.Forms.AxHost.State)
         Me.txt8.Size = New System.Drawing.Size(151, 23)
         Me.txt8.TabIndex = 16
         '
@@ -807,8 +804,8 @@
         Me.TXT0.Location = New System.Drawing.Point(140, 43)
         Me.TXT0.longitud = 12
         Me.TXT0.Name = "TXT0"
-        Me.TXT0.negativos = false
-        Me.TXT0.Requerido = true
+        Me.TXT0.negativos = False
+        Me.TXT0.Requerido = True
         Me.TXT0.Size = New System.Drawing.Size(81, 21)
         Me.TXT0.TabIndex = 31
         Me.TXT0.tipoCaracter = 3
@@ -824,8 +821,8 @@
         Me.txt1.Location = New System.Drawing.Point(140, 92)
         Me.txt1.longitud = 30
         Me.txt1.Name = "txt1"
-        Me.txt1.negativos = false
-        Me.txt1.Requerido = true
+        Me.txt1.negativos = False
+        Me.txt1.Requerido = True
         Me.txt1.Size = New System.Drawing.Size(293, 21)
         Me.txt1.TabIndex = 32
         Me.txt1.tipoCaracter = 3
@@ -841,8 +838,8 @@
         Me.txt14.Location = New System.Drawing.Point(138, 121)
         Me.txt14.longitud = 30
         Me.txt14.Name = "txt14"
-        Me.txt14.negativos = false
-        Me.txt14.Requerido = true
+        Me.txt14.negativos = False
+        Me.txt14.Requerido = True
         Me.txt14.Size = New System.Drawing.Size(293, 23)
         Me.txt14.TabIndex = 34
         Me.txt14.tipoCaracter = 3
@@ -850,7 +847,7 @@
         '
         'frmMantSubAsiento
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(477, 556)
@@ -858,40 +855,37 @@
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Location = New System.Drawing.Point(3, 22)
-        Me.MaximizeBox = false
-        Me.MinimizeBox = false
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmMantSubAsiento"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Text = "Sub Asiento"
-        Me.SSTab1.ResumeLayout(false)
-        Me._SSTab1_TabPage0.ResumeLayout(false)
-        CType(Me.TDBGrid1,System.ComponentModel.ISupportInitialize).EndInit
-        Me._SSTab1_TabPage1.ResumeLayout(false)
-        Me.Frame1.ResumeLayout(false)
-        Me.gbDatos.ResumeLayout(false)
-        CType(Me.Ctr_Ayuda2,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Ctr_Ayuda1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TDBGrid3,System.ComponentModel.ISupportInitialize).EndInit
-        Me.frmbotones.ResumeLayout(false)
-        Me._SSTab1_TabPage2.ResumeLayout(false)
-        CType(Me.txt3,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt2,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt13,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt12,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt11,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt7,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt6,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt5,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt4,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt10,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt9,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txt8,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
+        Me.SSTab1.ResumeLayout(False)
+        Me._SSTab1_TabPage0.ResumeLayout(False)
+        CType(Me.TDBGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me._SSTab1_TabPage1.ResumeLayout(False)
+        Me.Frame1.ResumeLayout(False)
+        Me.gbDatos.ResumeLayout(False)
+        CType(Me.Ctr_Ayuda2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ctr_Ayuda1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TDBGrid3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.frmbotones.ResumeLayout(False)
+        Me._SSTab1_TabPage2.ResumeLayout(False)
+        CType(Me.txt3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
 
-End Sub
+    End Sub
     Friend WithEvents gbDatos As System.Windows.Forms.GroupBox
-    Friend WithEvents TXT0 As Jck_txt.Jck_Txt
-    Friend WithEvents txt14 As Jck_txt.Jck_Txt
-    Friend WithEvents txt1 As Jck_txt.Jck_Txt
 #End Region
 End Class

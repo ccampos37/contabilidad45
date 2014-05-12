@@ -1,13 +1,11 @@
 Option Strict Off
 Option Explicit On
-Friend Class frmMntCentroCosto
+Public Class frmMntCentroCosto
     Inherits System.Windows.Forms.Form
-    'FIXIT: Declare 'a_Array' con un tipo de datos de enlace en tiempo de compilación          FixIT90210ae-R1672-R1B8ZE
     Dim a_Array(12, 12) As Object
 
     Private Sub frmMantCentroCosto_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-        'Me.Width = VB6.TwipsToPixelsX(7590) : Me.Height = VB6.TwipsToPixelsY(6390)
-        CentrarForm(MDIPrincipal, Me)
+
 
         a_Array(0, 0) = "empresacodigo"
         a_Array(0, 1) = "centrocostocodigo"
@@ -84,19 +82,19 @@ Friend Class frmMntCentroCosto
         a_Array(6, 7) = False
 
 
-        mTablaBasica1.CadenaCone = VGCNxSql
-        mTablaBasica1.NombreTabla = "ct_centrocosto"
-        mTablaBasica1.TitForm = "Centro de Costo"
-        mTablaBasica1.Filtro = "WHERE centrocostocodigo<>'00' And empresacodigo='" & VGParametros.empresacodigo & "'"
-        mTablaBasica1.Arreglo = a_Array
-        mTablaBasica1.Setear_Controles()
-        mTablaBasica1.Obtener_Campos()
-        mTablaBasica1.cargar_datos()
+        TablasBasicas1.CadenaCone = VGCNxSql
+        TablasBasicas1.NombreTabla = "ct_centrocosto"
+        TablasBasicas1.TitForm = "Centro de Costo"
+        TablasBasicas1.Filtro = "WHERE centrocostocodigo<>'00' And empresacodigo='" & VGParametros.empresacodigo & "'"
+        TablasBasicas1.Arreglo = a_Array
+        TablasBasicas1.Setear_Controles()
+        TablasBasicas1.Obtener_Campos()
+        TablasBasicas1.cargar_datos()
 
     End Sub
 
     'FIXIT: Declare 'indice' con un tipo de datos de enlace en tiempo de compilación           FixIT90210ae-R1672-R1B8ZE
-    Private Sub mTablaBasica1_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxMantTablaBasica.__mTablaBasica_ClickEvent)
+    Private Sub TablasBasicas1_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxMantTablaBasica.__mTablaBasica_ClickEvent)
         Dim arrparm(3) As Object
         Dim arrform(0) As Object
         If eventArgs.indice = 3 Then

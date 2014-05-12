@@ -70,14 +70,8 @@ Friend Class frmRepLibrosAuxiliares
 		End Select
 	End Sub
 	
-	Private Sub cmdBotones_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBotones.Click
-		Dim Index As Short = cmdBotones.GetIndex(eventSender)
-		Select Case Index
-			Case 0
-				
-			Case 1 : Me.Close()
-				
-		End Select
-		
-	End Sub
+    Private Sub cmdBotones1_Click(sender As Object, e As EventArgs) Handles cmdBotones1.Click
+        Me.Close()
+    End Sub
+
 End Class

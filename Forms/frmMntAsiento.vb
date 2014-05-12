@@ -9,11 +9,6 @@ Friend Class frmMntAsiento
     Dim rs As New ADODB.Recordset
     Dim rsAsiento As ADODB.Recordset
 
-    'UPGRADE_WARNING: El evento ChkCargo.CheckStateChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-    Private Sub ChkCargo_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles ChkCargo.CheckStateChanged
-        If modoinsert = True Or modoedit = True Then cAcepta.Enabled = ValidaDataIngreso()
-    End Sub
-
     Private Sub frmMantAsiento_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         Ctr_Ayuda1.conexion(VGCNx)
         Call ConfiguraForm()
@@ -23,12 +18,8 @@ Friend Class frmMntAsiento
     End Sub
 
     Private Sub frmMantAsiento_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-        'UPGRADE_NOTE: El objeto rs no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         rs = Nothing
-        'UPGRADE_NOTE: El objeto rsAsiento no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         rsAsiento = Nothing
-        'UPGRADE_NOTE: El objeto VGvardllgen no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-        '  VGvardllgen = Nothing
     End Sub
 
     Sub ConfiguraForm()
@@ -64,8 +55,6 @@ Friend Class frmMntAsiento
 
         Dim SQL1 As String = ""
         'On Error GoTo X
-
-        '  VGvardllgen = New dllgeneral.dll_general
         VGCNx.BeginTrans()
 
         If modoinsert = True Then
@@ -75,7 +64,7 @@ Friend Class frmMntAsiento
             SQL = SQL & ESNULO(txt3.Text, 0) & "," & ESNULO(txt4.Text, 0) & "," & ESNULO(txt5.Text, 0) & ","
             SQL = SQL & ESNULO(txt6.Text, 0) & "," & ESNULO(txt7.Text, 0) & "," & ESNULO(txt8.Text, 0) & ","
             SQL = SQL & ESNULO(txt9.Text, 0) & "," & ESNULO(txt10.Text, 0) & "," & ESNULO(txt11.Text, 0) & "," & ESNULO(txt12.Text, 0) & "," & ESNULO(txt13.Text, 0) & "," & ESNULO(txt14.Text, 0) & ",'"
-            SQL = SQL & VGUsuario & "','" & Format(Today, "dd/mm/yyyy") & "','" & IIf(Not IsNothing(Ctr_Ayuda1.xclave), Trim(Ctr_Ayuda1.xclave), "00") & "','" & ChkCargo.CheckState & "')"
+            SQL = SQL & VGUsuario & "','" & Today & "','" & IIf(Not IsNothing(Ctr_Ayuda1.xclave), Trim(Ctr_Ayuda1.xclave), "00") & "','" & ChkCargo.CheckState & "')"
 
             SQL1 = "INSERT INTO CT_ASIENTOCORRE (empresacodigo,asientocodigo,asientoanno,"
             SQL1 = SQL1 & "asientonumcorr01,asientonumcorr02,asientonumcorr03,asientonumcorr04,asientonumcorr05,asientonumcorr06,asientonumcorr07,asientonumcorr08,asientonumcorr09,asientonumcorr10,asientonumcorr11,asientonumcorr12,usuariocodigo,fechaact) "
@@ -84,7 +73,7 @@ Friend Class frmMntAsiento
             SQL1 = SQL1 & ESNULO(txt3.Text, 0) & "," & ESNULO(txt4.Text, 0) & "," & ESNULO(txt5.Text, 0) & ","
             SQL1 = SQL1 & ESNULO(txt6.Text, 0) & "," & ESNULO(txt7.Text, 0) & "," & ESNULO(txt8.Text, 0) & ","
             SQL1 = SQL1 & ESNULO(txt9.Text, 0) & "," & ESNULO(txt10.Text, 0) & "," & ESNULO(txt11.Text, 0) & "," & ESNULO(txt12.Text, 0) & "," & ESNULO(txt13.Text, 0) & "," & ESNULO(txt14.Text, 0) & ",'"
-            SQL1 = SQL1 & VGUsuario & "','" & Format(Today, "dd/mm/yyyy") & "')"
+            SQL1 = SQL1 & VGUsuario & "','" & Today & "')"
 
 
         ElseIf modoedit = True Then
@@ -92,7 +81,7 @@ Friend Class frmMntAsiento
             SQL = SQL & "flaggrabado=" & chk0.CheckState & ","
             SQL = SQL & "controlnref=" & chk1.CheckState & ","
             SQL = SQL & "nemotecref='" & txt2.Text & "',"
-            SQL = SQL & "usuariocodigo='" & VGUsuario & "',fechaact='" & Format(Today, "dd/mm/yyyy") & "',"
+            SQL = SQL & "usuariocodigo='" & VGUsuario & "',fechaact='" & Today & "',"
             SQL = SQL & "librocodigo='" & IIf(Not IsNothing(Ctr_Ayuda1.xclave), Trim(Ctr_Ayuda1.xclave), "00") & "', "
             SQL = SQL & "asientoadicionacargo='" & ChkCargo.CheckState & "' "
             SQL = SQL & "WHERE asientocodigo='" & txt0.Text & "'"
@@ -102,7 +91,7 @@ Friend Class frmMntAsiento
             SQL1 = SQL1 & "asientonumcorr04=" & ESNULO(txt6.Text, 0) & ",asientonumcorr05=" & ESNULO(txt7.Text, 0) & ",asientonumcorr06=" & ESNULO(txt8.Text, 0) & ","
             SQL1 = SQL1 & "asientonumcorr07=" & ESNULO(txt9.Text, 0) & ",asientonumcorr08=" & ESNULO(txt10.Text, 0) & ",asientonumcorr09=" & ESNULO(txt11.Text, 0) & ","
             SQL1 = SQL1 & "asientonumcorr10=" & ESNULO(txt12.Text, 0) & ",asientonumcorr11=" & ESNULO(txt13.Text, 0) & ",asientonumcorr12=" & ESNULO(txt14.Text, 0) & ","
-            SQL1 = SQL1 & "usuariocodigo='" & VGUsuario & "',fechaact='" & Format(Today, "dd/mm/yyyy") & "' "
+            SQL1 = SQL1 & "usuariocodigo='" & VGUsuario & "',fechaact='" & Today & "' "
             SQL1 = SQL1 & "WHERE empresacodigo='" & VGParametros.empresacodigo & "' and  asientocodigo='" & txt0.Text & "' AND "
             SQL1 = SQL1 & "asientoanno='" & VGParamSistem.Anoproceso & "'"
 
@@ -112,8 +101,6 @@ Friend Class frmMntAsiento
         VGCNx.Execute(SQL1)
         VGCNx.CommitTrans()
 
-        '  VGvardllgen = Nothing
-        frmbotones.Visible = True
         modoinsert = False : modoedit = False
         Call MuestraDatosAsiento()
         cAcepta.Enabled = False
@@ -177,10 +164,10 @@ X:
     End Sub
 
     Sub EditarAsiento()
-        Dim i As Short
         If rs.RecordCount > 0 Then
             With TDBGridAsientos
                 txt0.Text = .Columns(0).Value
+                txt0.Enabled = False
                 txt1.Text = .Columns(1).Value
                 chk0.CheckState = IIf(.Columns(2).Value = 0, 0, 1)
                 chk1.CheckState = IIf(.Columns(3).Value = 0, 0, 1)
@@ -222,7 +209,6 @@ X:
     End Sub
 
     Function ValidaDataIngreso() As Boolean
-        Dim i As Short
         If IsNothing(txt0.Text) Then
             ValidaDataIngreso = False
             Exit Function
@@ -239,10 +225,10 @@ X:
         SSTab1.SelectedIndex = 1
         SSTab1.TabPages.Item(1).Enabled = True
         SSTab1.TabPages.Item(2).Enabled = True
-        Call LimpiarForm(Me, "")
+        Call Limpiar()
         txt0.Focus()
         Call ModoEditable(True, Me, "")
-        frmbotones.Visible = False
+
         modoinsert = True
     End Sub
 
@@ -255,7 +241,6 @@ X:
         SSTab1.TabPages.Item(2).Enabled = True
 
         modoedit = True
-        frmbotones.Visible = False
         Call EditarAsiento()
         Call ModoEditable(True, Me, "")
     End Sub
@@ -281,33 +266,47 @@ X:
         Me.Close()
     End Sub
 
-    Private Sub txt0_Change(sender As Object, e As EventArgs)
-        If modoinsert = True Or modoedit = True Then
-            cAcepta.Enabled = ValidaDataIngreso()
-        End If
-    End Sub
-
-    Private Sub txt1_Change(sender As Object, e As EventArgs)
-        If modoinsert = True Or modoedit = True Then
-            cAcepta.Enabled = ValidaDataIngreso()
-        End If
-    End Sub
-
-    Private Sub txt2_Change(sender As Object, e As EventArgs)
-        If modoinsert = True Or modoedit = True Then
-            cAcepta.Enabled = ValidaDataIngreso()
-        End If
-    End Sub
-
-    Private Sub ChkCargo_CheckedChanged(sender As Object, e As EventArgs) Handles ChkCargo.CheckedChanged
-        cAcepta.Enabled = True
-    End Sub
-
     Private Sub chk0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0.CheckedChanged
         cAcepta.Enabled = True
     End Sub
 
     Private Sub chk1_CheckedChanged(sender As Object, e As EventArgs) Handles chk1.CheckedChanged
         cAcepta.Enabled = True
+    End Sub
+
+    Private Sub limpiar()
+        txt0.Text = ""
+        txt1.Text = ""
+        txt2.Text = ""
+        txt0.Enabled = True
+    End Sub
+
+
+    Private Sub txt0_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt0.KeyPress
+        If modoinsert = True Or modoedit = True Then
+            cAcepta.Enabled = True
+        End If
+    End Sub
+
+    Private Sub txt1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1.KeyPress
+        cAcepta.Enabled = True
+
+    End Sub
+
+
+    Private Sub txt2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt2.KeyPress
+        If modoinsert = True Or modoedit = True Then
+            cAcepta.Enabled = True
+        End If
+    End Sub
+
+    Private Sub txt1_Load(sender As Object, e As EventArgs) Handles txt1.Load
+
+    End Sub
+
+    Private Sub ChkCargo_CheckedChanged(sender As Object, e As EventArgs) Handles ChkCargo.CheckedChanged
+        If modoinsert = True Or modoedit = True Then
+            cAcepta.Enabled = True
+        End If
     End Sub
 End Class

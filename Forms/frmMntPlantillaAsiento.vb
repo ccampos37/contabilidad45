@@ -1,7 +1,7 @@
 Option Strict Off
 Option Explicit On
 Imports Func = Contabilidad.ModFuncionesGen
-Friend Class frmMantPlantillaAsiento
+Friend Class frmMntPlantillaAsiento
     Inherits System.Windows.Forms.Form
 
     Dim modoinsert As Boolean

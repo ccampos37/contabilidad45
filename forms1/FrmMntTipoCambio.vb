@@ -1,11 +1,10 @@
 ﻿Option Strict Off
 Option Explicit On
-Friend Class FrmMntTipocambio
+Public Class FrmMntTipocambio
     Inherits System.Windows.Forms.Form
     Dim a_Array(12, 12) As Object
     Private Sub FrmMntTipoCambio_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         Dim filtro As String = ""
-        CentrarForm(MDIPrincipal, Me)
 
         'Nombre Campos:
         a_Array(0, 0) = "Tipocambiofecha"
@@ -64,19 +63,23 @@ Friend Class FrmMntTipocambio
         a_Array(6, 3) = False
         a_Array(6, 4) = False
         a_Array(6, 5) = False
+        Try
+            TablasBasicas1.CadenaCone = VGCNxSql
+            TablasBasicas1.NombreTabla = "ct_Tipocambio"
+            TablasBasicas1.TitForm = "Tipo de Cambio"
+            filtro = "WHERE Month(tipocambiofecha)=" & VGParamSistem.Mesproceso & " AND YEAR(tipoocambiofecha)=" & VGParamSistem.Anoproceso & ""
+            TablasBasicas1.Filtro = filtro
+            TablasBasicas1.Arreglo = a_Array
+            TablasBasicas1.Setear_Controles()
+            TablasBasicas1.Obtener_Campos()
+            TablasBasicas1.cargar_datos()
 
-        mTablaBasica1.CadenaCone = VGCNxSql
-        mTablaBasica1.NombreTabla = "ct_Tipocambio"
-        mTablaBasica1.TitForm = "Tipo de Cambio"
-        filtro = "WHERE Month(tipocambiofecha)=" & VGParamSistem.Mesproceso & " AND YEAR(tipoocambiofecha)=" & VGParamSistem.Anoproceso & ""
-        mTablaBasica1.Filtro = filtro
-        mTablaBasica1.Arreglo = a_Array
-        mTablaBasica1.Setear_Controles()
-        mTablaBasica1.Obtener_Campos()
-        mTablaBasica1.cargar_datos()
+        Catch ex As Exception
+            MsgBox("Error -->" + ex.Message)
+        End Try
     End Sub
 
-    Private Sub mTablaBasica1_Load(sender As Object, e As EventArgs) Handles mTablaBasica1.Load
+    Private Sub TablasBasicas1_Load(sender As Object, e As EventArgs) Handles TablasBasicas1.Load
 
     End Sub
 End Class

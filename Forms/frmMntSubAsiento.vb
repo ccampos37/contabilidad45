@@ -1,7 +1,7 @@
 Option Strict Off
 Option Explicit On
 Imports Func = Contabilidad.ModFuncionesGen
-Friend Class frmMantSubAsiento
+Friend Class frmMntSubAsiento
     Inherits System.Windows.Forms.Form
 
     Dim modoinsert As Boolean
@@ -234,7 +234,7 @@ X:
     End Sub
 
     Sub EditarSubAsiento()
-        Dim i As Short
+
         If rs.RecordCount > 0 Then
             With TDBGrid3
                 txt2.Text = TDBGrid3.Columns(5).Value

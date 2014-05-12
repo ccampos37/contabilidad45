@@ -186,11 +186,11 @@
         Me.frmbotones.Controls.Add(Me.cmdBotones1)
         Me.frmbotones.Controls.Add(Me.cmdBotones0)
         Me.frmbotones.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.frmbotones.Location = New System.Drawing.Point(32, 309)
+        Me.frmbotones.Location = New System.Drawing.Point(32, 316)
         Me.frmbotones.Name = "frmbotones"
         Me.frmbotones.Padding = New System.Windows.Forms.Padding(0)
         Me.frmbotones.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.frmbotones.Size = New System.Drawing.Size(382, 37)
+        Me.frmbotones.Size = New System.Drawing.Size(398, 54)
         Me.frmbotones.TabIndex = 7
         Me.frmbotones.TabStop = False
         '
@@ -199,10 +199,10 @@
         Me.cmdBotones3.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones3.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones3.Location = New System.Drawing.Point(229, 11)
+        Me.cmdBotones3.Location = New System.Drawing.Point(228, 15)
         Me.cmdBotones3.Name = "cmdBotones3"
         Me.cmdBotones3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdBotones3.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones3.Size = New System.Drawing.Size(72, 36)
         Me.cmdBotones3.TabIndex = 12
         Me.cmdBotones3.Text = "&Imprimir"
         Me.cmdBotones3.UseVisualStyleBackColor = False
@@ -212,10 +212,10 @@
         Me.cmdBotones4.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones4.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones4.Location = New System.Drawing.Point(304, 11)
+        Me.cmdBotones4.Location = New System.Drawing.Point(303, 15)
         Me.cmdBotones4.Name = "cmdBotones4"
         Me.cmdBotones4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdBotones4.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones4.Size = New System.Drawing.Size(72, 36)
         Me.cmdBotones4.TabIndex = 11
         Me.cmdBotones4.Text = "&Salir"
         Me.cmdBotones4.UseVisualStyleBackColor = False
@@ -225,10 +225,10 @@
         Me.cmdBotones2.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones2.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones2.Location = New System.Drawing.Point(154, 11)
+        Me.cmdBotones2.Location = New System.Drawing.Point(153, 15)
         Me.cmdBotones2.Name = "cmdBotones2"
         Me.cmdBotones2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdBotones2.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones2.Size = New System.Drawing.Size(72, 36)
         Me.cmdBotones2.TabIndex = 10
         Me.cmdBotones2.Text = "&Eliminar"
         Me.cmdBotones2.UseVisualStyleBackColor = False
@@ -238,10 +238,10 @@
         Me.cmdBotones1.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones1.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones1.Location = New System.Drawing.Point(79, 11)
+        Me.cmdBotones1.Location = New System.Drawing.Point(78, 15)
         Me.cmdBotones1.Name = "cmdBotones1"
         Me.cmdBotones1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdBotones1.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones1.Size = New System.Drawing.Size(72, 36)
         Me.cmdBotones1.TabIndex = 9
         Me.cmdBotones1.Text = "E&ditar"
         Me.cmdBotones1.UseVisualStyleBackColor = False
@@ -251,10 +251,10 @@
         Me.cmdBotones0.BackColor = System.Drawing.SystemColors.Control
         Me.cmdBotones0.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdBotones0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdBotones0.Location = New System.Drawing.Point(4, 11)
+        Me.cmdBotones0.Location = New System.Drawing.Point(3, 16)
         Me.cmdBotones0.Name = "cmdBotones0"
         Me.cmdBotones0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdBotones0.Size = New System.Drawing.Size(72, 22)
+        Me.cmdBotones0.Size = New System.Drawing.Size(72, 36)
         Me.cmdBotones0.TabIndex = 8
         Me.cmdBotones0.Text = "&Nuevo"
         Me.cmdBotones0.UseVisualStyleBackColor = False
@@ -265,7 +265,7 @@
         Me.TDBGridAsientos.Location = New System.Drawing.Point(5, 61)
         Me.TDBGridAsientos.Name = "TDBGridAsientos"
         Me.TDBGridAsientos.OcxState = CType(resources.GetObject("TDBGridAsientos.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.TDBGridAsientos.Size = New System.Drawing.Size(434, 218)
+        Me.TDBGridAsientos.Size = New System.Drawing.Size(453, 249)
         Me.TDBGridAsientos.TabIndex = 22
         '
         'Label1
@@ -336,12 +336,13 @@
         Me.txt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.txt2.decimales = 0
         Me.txt2.formato = "999"
-        Me.txt2.Location = New System.Drawing.Point(121, 93)
+        Me.txt2.Location = New System.Drawing.Point(121, 129)
         Me.txt2.longitud = 50
+        Me.txt2.Margin = New System.Windows.Forms.Padding(4)
         Me.txt2.Name = "txt2"
         Me.txt2.negativos = False
         Me.txt2.Requerido = True
-        Me.txt2.Size = New System.Drawing.Size(305, 21)
+        Me.txt2.Size = New System.Drawing.Size(308, 21)
         Me.txt2.TabIndex = 52
         Me.txt2.tipoCaracter = 3
         Me.txt2.tipoletra = 1
@@ -353,12 +354,13 @@
         Me.txt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.txt1.decimales = 0
         Me.txt1.formato = "999"
-        Me.txt1.Location = New System.Drawing.Point(122, 34)
+        Me.txt1.Location = New System.Drawing.Point(122, 49)
         Me.txt1.longitud = 30
+        Me.txt1.Margin = New System.Windows.Forms.Padding(4)
         Me.txt1.Name = "txt1"
         Me.txt1.negativos = False
         Me.txt1.Requerido = True
-        Me.txt1.Size = New System.Drawing.Size(304, 21)
+        Me.txt1.Size = New System.Drawing.Size(313, 21)
         Me.txt1.TabIndex = 51
         Me.txt1.tipoCaracter = 3
         Me.txt1.tipoletra = 1
@@ -370,12 +372,13 @@
         Me.txt0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.txt0.decimales = 0
         Me.txt0.formato = "999"
-        Me.txt0.Location = New System.Drawing.Point(122, 7)
+        Me.txt0.Location = New System.Drawing.Point(124, 12)
         Me.txt0.longitud = 3
+        Me.txt0.Margin = New System.Windows.Forms.Padding(4)
         Me.txt0.Name = "txt0"
         Me.txt0.negativos = False
         Me.txt0.Requerido = True
-        Me.txt0.Size = New System.Drawing.Size(137, 21)
+        Me.txt0.Size = New System.Drawing.Size(314, 21)
         Me.txt0.TabIndex = 50
         Me.txt0.tipoCaracter = 1
         Me.txt0.tipoletra = 3
@@ -386,10 +389,10 @@
         Me.ChkCargo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ChkCargo.Cursor = System.Windows.Forms.Cursors.Default
         Me.ChkCargo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ChkCargo.Location = New System.Drawing.Point(8, 146)
+        Me.ChkCargo.Location = New System.Drawing.Point(11, 189)
         Me.ChkCargo.Name = "ChkCargo"
         Me.ChkCargo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ChkCargo.Size = New System.Drawing.Size(126, 15)
+        Me.ChkCargo.Size = New System.Drawing.Size(126, 17)
         Me.ChkCargo.TabIndex = 49
         Me.ChkCargo.Text = "Adiciona Cargo"
         Me.ChkCargo.UseVisualStyleBackColor = False
@@ -399,7 +402,7 @@
         Me.chk0.BackColor = System.Drawing.SystemColors.Control
         Me.chk0.Cursor = System.Windows.Forms.Cursors.Default
         Me.chk0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chk0.Location = New System.Drawing.Point(122, 57)
+        Me.chk0.Location = New System.Drawing.Point(122, 77)
         Me.chk0.Name = "chk0"
         Me.chk0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.chk0.Size = New System.Drawing.Size(30, 20)
@@ -411,7 +414,7 @@
         Me.chk1.BackColor = System.Drawing.SystemColors.Control
         Me.chk1.Cursor = System.Windows.Forms.Cursors.Default
         Me.chk1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chk1.Location = New System.Drawing.Point(122, 75)
+        Me.chk1.Location = New System.Drawing.Point(122, 103)
         Me.chk1.Name = "chk1"
         Me.chk1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.chk1.Size = New System.Drawing.Size(21, 20)
@@ -421,10 +424,10 @@
         'Ctr_Ayuda1
         '
         Me.Ctr_Ayuda1.Enabled = True
-        Me.Ctr_Ayuda1.Location = New System.Drawing.Point(121, 120)
+        Me.Ctr_Ayuda1.Location = New System.Drawing.Point(125, 157)
         Me.Ctr_Ayuda1.Name = "Ctr_Ayuda1"
         Me.Ctr_Ayuda1.OcxState = CType(resources.GetObject("Ctr_Ayuda1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.Ctr_Ayuda1.Size = New System.Drawing.Size(313, 21)
+        Me.Ctr_Ayuda1.Size = New System.Drawing.Size(308, 26)
         Me.Ctr_Ayuda1.TabIndex = 5
         '
         'Label2
@@ -432,7 +435,7 @@
         Me.Label2.BackColor = System.Drawing.SystemColors.Control
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(8, 56)
+        Me.Label2.Location = New System.Drawing.Point(8, 76)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label2.Size = New System.Drawing.Size(98, 18)
@@ -444,7 +447,7 @@
         Me._lbl_1.BackColor = System.Drawing.SystemColors.Control
         Me._lbl_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lbl_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._lbl_1.Location = New System.Drawing.Point(8, 34)
+        Me._lbl_1.Location = New System.Drawing.Point(8, 46)
         Me._lbl_1.Name = "_lbl_1"
         Me._lbl_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lbl_1.Size = New System.Drawing.Size(105, 19)
@@ -468,7 +471,7 @@
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label3.Location = New System.Drawing.Point(8, 78)
+        Me.Label3.Location = New System.Drawing.Point(8, 106)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label3.Size = New System.Drawing.Size(113, 19)
@@ -480,7 +483,7 @@
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(8, 100)
+        Me.Label4.Location = New System.Drawing.Point(8, 137)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label4.Size = New System.Drawing.Size(111, 22)
@@ -492,7 +495,7 @@
         Me.Label5.BackColor = System.Drawing.SystemColors.Control
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(9, 125)
+        Me.Label5.Location = New System.Drawing.Point(8, 166)
         Me.Label5.Name = "Label5"
         Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label5.Size = New System.Drawing.Size(79, 17)
@@ -563,7 +566,7 @@
         Me.txt8.Location = New System.Drawing.Point(127, 164)
         Me.txt8.Name = "txt8"
         Me.txt8.OcxState = CType(resources.GetObject("txt8.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt8.Size = New System.Drawing.Size(77, 20)
+        Me.txt8.Size = New System.Drawing.Size(96, 25)
         Me.txt8.TabIndex = 28
         '
         'txt9
@@ -572,7 +575,7 @@
         Me.txt9.Location = New System.Drawing.Point(336, 49)
         Me.txt9.Name = "txt9"
         Me.txt9.OcxState = CType(resources.GetObject("txt9.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt9.Size = New System.Drawing.Size(79, 20)
+        Me.txt9.Size = New System.Drawing.Size(99, 25)
         Me.txt9.TabIndex = 29
         '
         'txt10
@@ -581,7 +584,7 @@
         Me.txt10.Location = New System.Drawing.Point(336, 70)
         Me.txt10.Name = "txt10"
         Me.txt10.OcxState = CType(resources.GetObject("txt10.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt10.Size = New System.Drawing.Size(79, 20)
+        Me.txt10.Size = New System.Drawing.Size(99, 25)
         Me.txt10.TabIndex = 30
         '
         'txt4
@@ -590,7 +593,7 @@
         Me.txt4.Location = New System.Drawing.Point(127, 72)
         Me.txt4.Name = "txt4"
         Me.txt4.OcxState = CType(resources.GetObject("txt4.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt4.Size = New System.Drawing.Size(77, 20)
+        Me.txt4.Size = New System.Drawing.Size(96, 25)
         Me.txt4.TabIndex = 24
         '
         'txt5
@@ -599,7 +602,7 @@
         Me.txt5.Location = New System.Drawing.Point(127, 95)
         Me.txt5.Name = "txt5"
         Me.txt5.OcxState = CType(resources.GetObject("txt5.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt5.Size = New System.Drawing.Size(77, 20)
+        Me.txt5.Size = New System.Drawing.Size(96, 25)
         Me.txt5.TabIndex = 25
         '
         'txt6
@@ -608,7 +611,7 @@
         Me.txt6.Location = New System.Drawing.Point(127, 118)
         Me.txt6.Name = "txt6"
         Me.txt6.OcxState = CType(resources.GetObject("txt6.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt6.Size = New System.Drawing.Size(77, 20)
+        Me.txt6.Size = New System.Drawing.Size(96, 25)
         Me.txt6.TabIndex = 26
         '
         'txt7
@@ -617,7 +620,7 @@
         Me.txt7.Location = New System.Drawing.Point(127, 141)
         Me.txt7.Name = "txt7"
         Me.txt7.OcxState = CType(resources.GetObject("txt7.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt7.Size = New System.Drawing.Size(77, 20)
+        Me.txt7.Size = New System.Drawing.Size(96, 25)
         Me.txt7.TabIndex = 27
         '
         'txt11
@@ -626,7 +629,7 @@
         Me.txt11.Location = New System.Drawing.Point(336, 93)
         Me.txt11.Name = "txt11"
         Me.txt11.OcxState = CType(resources.GetObject("txt11.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt11.Size = New System.Drawing.Size(79, 20)
+        Me.txt11.Size = New System.Drawing.Size(99, 25)
         Me.txt11.TabIndex = 31
         '
         'txt12
@@ -635,7 +638,7 @@
         Me.txt12.Location = New System.Drawing.Point(336, 116)
         Me.txt12.Name = "txt12"
         Me.txt12.OcxState = CType(resources.GetObject("txt12.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt12.Size = New System.Drawing.Size(79, 20)
+        Me.txt12.Size = New System.Drawing.Size(99, 25)
         Me.txt12.TabIndex = 32
         '
         'txt13
@@ -644,7 +647,7 @@
         Me.txt13.Location = New System.Drawing.Point(336, 139)
         Me.txt13.Name = "txt13"
         Me.txt13.OcxState = CType(resources.GetObject("txt13.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt13.Size = New System.Drawing.Size(79, 20)
+        Me.txt13.Size = New System.Drawing.Size(99, 25)
         Me.txt13.TabIndex = 33
         '
         'txt3
@@ -653,7 +656,7 @@
         Me.txt3.Location = New System.Drawing.Point(127, 48)
         Me.txt3.Name = "txt3"
         Me.txt3.OcxState = CType(resources.GetObject("txt3.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt3.Size = New System.Drawing.Size(77, 20)
+        Me.txt3.Size = New System.Drawing.Size(96, 25)
         Me.txt3.TabIndex = 23
         '
         'txt14
@@ -662,7 +665,7 @@
         Me.txt14.Location = New System.Drawing.Point(336, 161)
         Me.txt14.Name = "txt14"
         Me.txt14.OcxState = CType(resources.GetObject("txt14.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt14.Size = New System.Drawing.Size(80, 20)
+        Me.txt14.Size = New System.Drawing.Size(100, 25)
         Me.txt14.TabIndex = 34
         '
         '_lbl_5
@@ -811,7 +814,7 @@
         '
         'frmMntAsiento
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(486, 416)

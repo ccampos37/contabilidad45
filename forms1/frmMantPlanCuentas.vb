@@ -1,18 +1,17 @@
 Option Strict Off
 Option Explicit On
-Imports VB = Microsoft.VisualBasic
+Imports Func = Contabilidad.ModFuncionesGen
 Friend Class frmMantPlanCuentas
-	Inherits System.Windows.Forms.Form
-	
-	Dim modoinsert As Boolean
-	Dim modoedit As Boolean
-	Dim i_filaorigen As Short
-	Dim rs As New ADODB.Recordset
-	Dim rsDist As New ADODB.Recordset
-	Dim cCta As String
-	Dim dCta As String
+    Inherits System.Windows.Forms.Form
+
+    Dim modoinsert As Boolean
+    Dim modoedit As Boolean
+    Dim i_filaorigen As Short
+    Dim rs As New ADODB.Recordset
+    Dim rsDist As New ADODB.Recordset
+    Dim cCta As String
+    Dim dCta As String
     Dim xCuenta As String
-    Dim xdllgen As New dllgeneral.dll_general
     Dim FLAGMOVIMIENTODISTRI As Boolean
     Dim FLAGDISTRIBUCION As Boolean
     Dim l_error As String
@@ -24,8 +23,7 @@ Friend Class frmMantPlanCuentas
         l_error = CStr(Nothing)
         Call ConfiguraForm()
         Call MuestraDatos(CStr(Nothing))
-        Call Arbol((txtBuscar.CtlText))
-        xdllgen = New dllgeneral.dll_general
+        Call Arbol((txtBuscar.Text))
         If Len(l_error) > 0 Then
             frmError.RichError.Text = l_error
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Arrow
@@ -55,8 +53,7 @@ Friend Class frmMantPlanCuentas
         Ctr_Ayuda4.CadenaCone = VGCNxSql
         cAcepta.Enabled = False
         lblNumReg.Text = CStr(Nothing)
-        Me.Width = VB6.TwipsToPixelsX(11310)
-        Me.Height = VB6.TwipsToPixelsY(8250)
+
         FLAGMOVIMIENTODISTRI = False
         FLAGDISTRIBUCION = False
         Call IniciaGridDist()
@@ -87,33 +84,33 @@ Friend Class frmMantPlanCuentas
     End Sub
 
     Private Sub cmdBuscar_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdBuscar.Click
-        VGvardllgen = New dllgeneral.dll_general
-        txtBuscar.CtlText = VGvardllgen.ESNULO((txtBuscar.CtlText), "%")
-        Call MuestraDatos((txtBuscar.CtlText))
-        Call Arbol((txtBuscar.CtlText))
+        '  '  VGvardllgen = New dllgeneral.dll_general
+        txtBuscar.Text = ESNULO((txtBuscar.Text), "%")
+        Call MuestraDatos((txtBuscar.Text))
+        Call Arbol((txtBuscar.Text))
     End Sub
 
     Sub EditarValores()
         With TDBGrid1
 
-            Text0.ValorTxt = Trim(xdllgen.ESNULO((.Columns(0).Text), Nothing))
-            Text1.ValorTxt = Trim(xdllgen.ESNULO((.Columns(1).Text), Nothing))
-            Text2.ValorTxt = Trim(xdllgen.ESNULO((.Columns(2).Text), Nothing))
-            Text3.ValorTxt = Trim(xdllgen.ESNULO((.Columns(3).Text), Nothing))
-            Text4.ValorTxt = Trim(xdllgen.ESNULO((.Columns(4).Text), Nothing))
-            Text5.ValorTxt = Trim(xdllgen.ESNULO((.Columns(5).Text), Nothing))
-            Text6.ValorTxt = Trim(xdllgen.ESNULO((.Columns(6).Text), Nothing))
+            Text0.ValorTxt = Trim(ESNULO((.Columns(0).Text), Nothing))
+            Text1.ValorTxt = Trim(ESNULO((.Columns(1).Text), Nothing))
+            Text2.ValorTxt = Trim(ESNULO((.Columns(2).Text), Nothing))
+            Text3.ValorTxt = Trim(ESNULO((.Columns(3).Text), Nothing))
+            Text4.ValorTxt = Trim(ESNULO((.Columns(4).Text), Nothing))
+            Text5.ValorTxt = Trim(ESNULO((.Columns(5).Text), Nothing))
+            Text6.ValorTxt = Trim(ESNULO((.Columns(6).Text), Nothing))
 
 
-            chk(0).CheckState = IIf(CDbl(Trim(.Columns(7).Text)) = -1, 1, 0)
-            Ctr_Ayuda1.Codigo = Trim(xdllgen.ESNULO((.Columns(8).Text), Nothing)) : Ctr_Ayuda1.LlenayDevuelve()
-            chk(1).CheckState = IIf(CDbl(Trim(.Columns(9).Text)) = -1, 1, 0)
-            chk(2).CheckState = IIf(CDbl(Trim(.Columns(10).Text)) = -1, 1, 0)
-            chk(3).CheckState = IIf(CDbl(Trim(.Columns(13).Text)) = -1, 1, 0)
-            chk(4).CheckState = IIf(CDbl(Trim(.Columns(14).Text)) = -1, 1, 0)
-            chk(5).CheckState = IIf(CDbl(Trim(.Columns(17).Text)) = 1, 1, 0)
-            lblNivel.Text = Trim(xdllgen.ESNULO((.Columns(11).Text), Nothing))
-            Ctr_Ayuda4.Codigo = xdllgen.ESNULO((.Columns(15).Text), Nothing) : Ctr_Ayuda4.LlenayDevuelve()
+            chk0.CheckState = IIf(CDbl(Trim(.Columns(7).Text)) = -1, 1, 0)
+            Ctr_Ayuda1.Codigo = Trim(ESNULO((.Columns(8).Text), Nothing)) : Ctr_Ayuda1.LlenayDevuelve()
+            chk1.CheckState = IIf(CDbl(Trim(.Columns(9).Text)) = -1, 1, 0)
+            chk2.CheckState = IIf(CDbl(Trim(.Columns(10).Text)) = -1, 1, 0)
+            chk3.CheckState = IIf(CDbl(Trim(.Columns(13).Text)) = -1, 1, 0)
+            chk4.CheckState = IIf(CDbl(Trim(.Columns(14).Text)) = -1, 1, 0)
+            chk5.CheckState = IIf(CDbl(Trim(.Columns(17).Text)) = 1, 1, 0)
+            lblNivel.Text = Trim(ESNULO((.Columns(11).Text), Nothing))
+            Ctr_Ayuda4.Codigo = ESNULO((.Columns(15).Text), Nothing) : Ctr_Ayuda4.LlenayDevuelve()
 
             cboTipoAjuste.SelectedIndex = CShort(.Columns(16).Text)
 
@@ -158,11 +155,11 @@ Friend Class frmMantPlanCuentas
         Text5.ValorTxt = Nothing
         Text6.ValorTxt = Nothing
 
-
-        For i = 0 To 3
-            chk(i).CheckState = System.Windows.Forms.CheckState.Unchecked
-        Next
-        chk(4).CheckState = System.Windows.Forms.CheckState.Checked
+        chk0.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk1.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk2.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk3.CheckState = System.Windows.Forms.CheckState.Unchecked
+        chk4.CheckState = System.Windows.Forms.CheckState.Checked
         lblNivel.Text = CStr(Nothing)
         'cboTipoAjuste.SelText = Empty
 
@@ -198,7 +195,7 @@ Friend Class frmMantPlanCuentas
 
         If modoinsert = True Then
             VGCNx.BeginTrans()
-            SQL = GrabarPlanCuenta(0, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk(1).CheckState, chk(0).CheckState, chk(2).CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk(3).CheckState, (Ctr_Ayuda4.Codigo), VB.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk(5).CheckState))
+            SQL = GrabarPlanCuenta(0, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk1.CheckState, chk0.CheckState, chk2.CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk3.CheckState, (Ctr_Ayuda4.Codigo), Func.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk5.CheckState))
             VGCNx.Execute(SQL)
 
             If CShort(lblNivel.Text) = VGnumnivelescuenta And FLAGDISTRIBUCION = True Then
@@ -207,11 +204,11 @@ Friend Class frmMantPlanCuentas
             End If
 
             VGCNx.CommitTrans()
-            Call Arbol((txtBuscar.CtlText))
+            Call Arbol((txtBuscar.Text))
 
         ElseIf modoedit = True Then
             VGCNx.BeginTrans()
-            SQL = GrabarPlanCuenta(1, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk(1).CheckState, chk(0).CheckState, chk(2).CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk(3).CheckState, (Ctr_Ayuda4.Codigo), VB.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk(5).CheckState))
+            SQL = GrabarPlanCuenta(1, Text0.ValorTxt, Text1.ValorTxt, Val(Text2.ValorTxt), Val(Text3.ValorTxt), Val(Text5.ValorTxt), Text4.ValorTxt, Text6.ValorTxt, chk1.CheckState, chk0.CheckState, chk2.CheckState, CShort(lblNivel.Text), (Ctr_Ayuda1.Codigo), chk3.CheckState, (Ctr_Ayuda4.Codigo), Func.Left(VB6.GetItemString(cboTipoAjuste, cboTipoAjuste.SelectedIndex), 2), CStr(chk5.CheckState))
             VGCNx.Execute(SQL)
 
             If CShort(lblNivel.Text) = VGnumnivelescuenta And FLAGDISTRIBUCION = True Then
@@ -224,7 +221,7 @@ Friend Class frmMantPlanCuentas
             VGCNx.CommitTrans()
         End If
 
-        Call MuestraDatos(VB.Right(Trim(cCta), CInt(Len(Trim(cCta))) - 1))
+        Call MuestraDatos(Func.Right(Trim(cCta), CInt(Len(Trim(cCta))) - 1))
         Toolbar1.Visible = True : TreeView1.Enabled = True
         Text0.Enabled = True
         modoinsert = False : modoedit = False
@@ -246,7 +243,7 @@ X:
     End Sub
 
     Function ValidarData() As Boolean
-        Dim i As Short
+
         Dim SQL As String
         If IsNothing(lblNivel.Text) Then
             MsgBox("No se ha podido registrar el Número de Nivel de la Cuenta Contable", MsgBoxStyle.Information, Text)
@@ -271,8 +268,8 @@ X:
         End If
 
         If CInt(lblNivel.Text) > 1 Then
-            SQL = "SELECT cuentacodigo FROM CT_CUENTA WHERE cuentacodigo='" & VB.Left(Text0.ValorTxt, VG_aNIVELES(CDbl(lblNivel.Text) - 2)) & "'"
-            If xdllgen.VerificaDatoExistente(VGCNx, SQL) <= 0 Then
+            SQL = "SELECT cuentacodigo FROM CT_CUENTA WHERE cuentacodigo='" & Func.Left(Text0.ValorTxt, VG_aNIVELES(CDbl(lblNivel.Text) - 2)) & "'"
+            If VerificaDatoExistente(VGCNx, SQL) <= 0 Then
                 MsgBox("La Cuenta a registrar no tiene la Cuenta Superior Correspondiente ", MsgBoxStyle.Information, Text)
                 ValidarData = False
                 Text0.Focus()
@@ -281,7 +278,7 @@ X:
         End If
 
         SQL = "SELECT cuentacodigo FROM CT_CUENTA WHERE cuentacodigo='" & Text0.ValorTxt & "' and empresacodigo='" & VGParametros.empresacodigo & "'"
-        If modoinsert = True And xdllgen.VerificaDatoExistente(VGCNx, SQL) > 0 Then
+        If modoinsert = True And VerificaDatoExistente(VGCNx, SQL) > 0 Then
             MsgBox("La Cuenta se encuentra registrada en la Base Datos, Debe registrar otra", MsgBoxStyle.Information, Text)
             ValidarData = False
             Text0.Focus()
@@ -300,7 +297,7 @@ X:
         End If
 
         If CInt(lblNivel.Text) > 1 Then
-            If chk(0).CheckState = 1 And IsNothing(Ctr_Ayuda1.Codigo) Then
+            If chk0.CheckState = 1 And IsNothing(Ctr_Ayuda1.Codigo) Then
                 MsgBox("Falta indicar el Tipo de Analítico", MsgBoxStyle.Information, Text)
                 ValidarData = False
                 Ctr_Ayuda1.Focus()
@@ -308,44 +305,15 @@ X:
             End If
         End If
 
-        If chk(3).CheckState = 1 And FLAGDISTRIBUCION = False Then
+        If chk3.CheckState = 1 And FLAGDISTRIBUCION = False Then
             MsgBox("No Existe Porcentaje de Distribución para esta cuenta, Deshabilitar el check", MsgBoxStyle.Information, Text)
             ValidarData = False
-            chk(3).Focus()
+            chk3.Focus()
             Exit Function
         End If
 
         ValidarData = True
     End Function
-
-    Private Sub chk_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles chk.CheckStateChanged
-        Dim Index As Short = chk.GetIndex(eventSender)
-        Select Case Index
-            Case 0
-                Ctr_Ayuda1.Enabled = IIf(chk(0).CheckState = 0, False, True)
-                If chk(0).CheckState = 0 Then Ctr_Ayuda1.Codigo = CStr(Nothing) : Ctr_Ayuda1.Codigo = CStr(Nothing)
-
-            Case 3
-                If chk(3).CheckState = 1 Then
-                    If FLAGMOVIMIENTODISTRI = False Then
-                        cmdDistribucion.Visible = True
-                        SSTab1.TabPages.Item(2).Enabled = True
-                        SSTab1.SelectedIndex = 2
-                        FLAGMOVIMIENTODISTRI = False
-                        Call LlenarPorcentajes()
-                    End If
-                Else
-                    cmdDistribucion.Visible = False
-                    SSTab1.TabPages.Item(2).Enabled = False
-                End If
-        End Select
-
-        If modoedit = True Then
-            cAcepta.Enabled = True
-        End If
-
-    End Sub
-
     Private Sub frmMantPlanCuentas_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         rs = Nothing
         rsDist = Nothing
@@ -378,9 +346,9 @@ X:
         On Error Resume Next
         If IsNothing(rs.Sort) Then
             rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
-        ElseIf VB.Right(rs.Sort, 3) = "asc" Then
+        ElseIf Func.Right(rs.Sort, 3) = "asc" Then
             rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " desc"
-        ElseIf VB.Right(rs.Sort, 4) = "desc" Then
+        ElseIf Func.Right(rs.Sort, 4) = "desc" Then
             rs.Sort = TDBGrid1.Columns.Item(eventArgs.colIndex).DataField & " asc"
         End If
         Call ConfiguraTdbgrid()
@@ -462,7 +430,7 @@ X:
                     .cryRpt.set_StoredProcParam(1, Trim(xCuenta) & "%")
                     .cryRpt.set_Formulas(0, "@Emp='" & VGParametros.NomEmpresa & "'")
                     .cryRpt.ReportFileName = VGParamSistem.RutaReport & "rptPlanCuentas.rpt"
-                    .cryRpt.Connect = vgCADENAREPORT
+                    .cryRpt.Connect = vGCadenaReport
                     .cryRpt.DiscardSavedData = True
                     .cryRpt.Action = 1
                 End With
@@ -482,25 +450,25 @@ X:
 
 
     Private Sub text0_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text0.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
     Private Sub text1_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text1.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
     Private Sub text2_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text2.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
     Private Sub text3_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text3.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
     Private Sub text4_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text4.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
     Private Sub text5_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text5.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
     Private Sub text6_eChange(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Text6.eChange
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
 
 
@@ -508,11 +476,11 @@ X:
 
 
     Private Sub Ctr_Ayuda4_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent)
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
 
     Private Sub cboTipoAjuste_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboTipoAjuste.SelectedIndexChanged
-        cAcepta.Enabled = IIf(xdllgen.ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
+        cAcepta.Enabled = IIf(ESNULO((lblNivel.Text), 0) = VGnumnivelescuenta, ValidarCuentaUltimoNivel(), ValidarCuentaNivel())
     End Sub
 
     Function ValidarCuentaUltimoNivel() As Boolean
@@ -594,11 +562,11 @@ X:
         Text6.Enabled = Not flagULTIMONIVEL
         Text6.ValorTxt = 0
 
+            chk0.Enabled = flagULTIMONIVEL
+            chk1.Enabled = flagULTIMONIVEL
+            chk2.Enabled = flagULTIMONIVEL
+            chk3.Enabled = flagULTIMONIVEL
 
-
-        For i = 0 To 3
-            chk(i).Enabled = flagULTIMONIVEL
-        Next
         cmdDistribucion.Visible = flagULTIMONIVEL
         Ctr_Ayuda1.Enabled = flagULTIMONIVEL
         cboTipoAjuste.Enabled = flagULTIMONIVEL
@@ -617,42 +585,45 @@ X:
         Text5.Enabled = True
         Text6.Enabled = True
 
-        For i = 0 To 4
-            chk(i).Enabled = True
-        Next
-        Ctr_Ayuda1.Enabled = True
-        Ctr_Ayuda4.Enabled = True
-        cboTipoAjuste.Enabled = True
+        chk0.Enabled = True
+        chk1.Enabled = True
+        chk2.Enabled = True
+        chk3.Enabled = True
+        chk4.Enabled = True
+
+            Ctr_Ayuda1.Enabled = True
+            Ctr_Ayuda4.Enabled = True
+            cboTipoAjuste.Enabled = True
 
     End Sub
 
     Function GrabarPlanCuenta(ByRef tipooperacion As Short, ByRef xCod As String, ByRef xDes As String, ByRef xLinAct As Double, ByRef xLinPas As Double, ByRef xLinEgp As Double, ByRef xNatu As String, ByRef xNatuegp As String, ByRef xCtaCostos As Short, ByRef xCtaAnalitico As Short, ByRef xCtaDoc As Short, ByRef xCtaNivel As Short, ByRef xTipoAnalitico As String, ByRef xCtaDist As Short, ByRef xTipoCuenta As String, ByRef xTipoAJuste As String, ByRef xAdicionaCargo As String) As String
-        Dim strSQL As String
+        Dim strSQL As String = ""
 
         xTipoAnalitico = IIf(IsDBNull(xTipoAnalitico) Or IsNothing(xTipoAnalitico), "00", xTipoAnalitico)
         Select Case tipooperacion
             Case 0
                 strSQL = "INSERT INTO ct_cuenta (empresacodigo,cuentacodigo, cuentadescripcion, cuentalineaactivo,cuentalineapasivo, cuentalineaegp, cuentanatu, cuentanategp,"
                 strSQL = strSQL & "cuentaestadoccostos, cuentaestadoanalitico,cuentadocumento, cuentanivel, tipoanaliticocodigo,cuentaestadodistribucion,tipocuentacodigo,usuariocodigo, fechaact, CUENTAGRUPO,tipoajuste,cuentaestado,cuentaadicionacargo) "
-                strSQL = strSQL & " VALUES ('" & VGParametros.empresacodigo & "','" & xCod & "','" & xDes & "'," & xLinAct & "," & xLinPas & "," & xLinEgp & ",'" & xNatu & "','" & xNatuegp & "'," & xCtaCostos & "," & xCtaAnalitico & "," & xCtaDoc & "," & xCtaNivel & ",'" & xTipoAnalitico & "'," & xCtaDist & ",'" & xTipoCuenta & "','" & VGusuario & "','" & VB6.Format(Now, "dd/mm/yyyy") & "','01','" & xTipoAJuste & "','1','" & xAdicionaCargo & "')"
+                strSQL = strSQL & " VALUES ('" & VGParametros.empresacodigo & "','" & xCod & "','" & xDes & "'," & xLinAct & "," & xLinPas & "," & xLinEgp & ",'" & xNatu & "','" & xNatuegp & "'," & xCtaCostos & "," & xCtaAnalitico & "," & xCtaDoc & "," & xCtaNivel & ",'" & xTipoAnalitico & "'," & xCtaDist & ",'" & xTipoCuenta & "','" & VGUsuario & "','" & Format(Now, "dd/mm/yyyy") & "','01','" & xTipoAJuste & "','1','" & xAdicionaCargo & "')"
 
             Case 1
                 strSQL = "UPDATE CT_CUENTA SET "
                 strSQL = strSQL & "cuentadescripcion='" & xDes & "',"
-                strSQL = strSQL & "cuentalineaactivo=" & xdllgen.ESNULO(xLinAct, 0) & ","
-                strSQL = strSQL & "cuentalineapasivo=" & xdllgen.ESNULO(xLinPas, 0) & ","
-                strSQL = strSQL & "cuentalineaegp=" & xdllgen.ESNULO(xLinEgp, 0) & ","
-                strSQL = strSQL & "cuentanatu='" & xdllgen.ESNULO(xNatu, "") & "',"
-                strSQL = strSQL & "cuentanategp='" & xdllgen.ESNULO(xNatuegp, "") & "',"
-                strSQL = strSQL & "cuentaestadoccostos=" & xdllgen.ESNULO(xCtaCostos, 0) & ","
-                strSQL = strSQL & "cuentaestadoanalitico=" & xdllgen.ESNULO(xCtaAnalitico, 0) & ","
-                strSQL = strSQL & "cuentadocumento=" & xdllgen.ESNULO(xCtaDoc, 0) & ","
-                strSQL = strSQL & "cuentanivel=" & xdllgen.ESNULO(xCtaNivel, 0) & ","
+                strSQL = strSQL & "cuentalineaactivo=" & ESNULO(xLinAct, 0) & ","
+                strSQL = strSQL & "cuentalineapasivo=" & ESNULO(xLinPas, 0) & ","
+                strSQL = strSQL & "cuentalineaegp=" & ESNULO(xLinEgp, 0) & ","
+                strSQL = strSQL & "cuentanatu='" & ESNULO(xNatu, "") & "',"
+                strSQL = strSQL & "cuentanategp='" & ESNULO(xNatuegp, "") & "',"
+                strSQL = strSQL & "cuentaestadoccostos=" & ESNULO(xCtaCostos, 0) & ","
+                strSQL = strSQL & "cuentaestadoanalitico=" & ESNULO(xCtaAnalitico, 0) & ","
+                strSQL = strSQL & "cuentadocumento=" & ESNULO(xCtaDoc, 0) & ","
+                strSQL = strSQL & "cuentanivel=" & ESNULO(xCtaNivel, 0) & ","
                 strSQL = strSQL & "tipoanaliticocodigo='" & xTipoAnalitico & "',"
-                strSQL = strSQL & "cuentaestadodistribucion=" & xdllgen.ESNULO(xCtaDist, 0) & ","
+                strSQL = strSQL & "cuentaestadodistribucion=" & ESNULO(xCtaDist, 0) & ","
                 strSQL = strSQL & "tipocuentacodigo='" & xTipoCuenta & "',"
-                strSQL = strSQL & "usuariocodigo='" & VGusuario & "',"
-                strSQL = strSQL & "fechaact='" & VB6.Format(Now, "dd/mm/yyyy") & "',"
+                strSQL = strSQL & "usuariocodigo='" & VGUsuario & "',"
+                strSQL = strSQL & "fechaact='" & Format(Now, "dd/mm/yyyy") & "',"
                 strSQL = strSQL & "cuentagrupo='01',"
                 strSQL = strSQL & "tipoajuste='" & xTipoAJuste & "', "
                 strSQL = strSQL & "cuentaadicionacargo='" & xAdicionaCargo & "' "
@@ -673,7 +644,7 @@ X:
             rsDist.MoveFirst()
             For i = 0 To rsDist.RecordCount - 1
                 SQL = "INSERT ct_distribucion (empresacodigo,cuentacodigo,distribucioncargo,distribucionabono,distribucionporcen,usuariocodigo,fechaact) VALUES "
-                SQL = SQL & "('" & VGParametros.empresacodigo & "','" & rsDist.Fields(0).Value & "','" & rsDist.Fields(1).Value & "','" & rsDist.Fields(2).Value & "'," & rsDist.Fields(3).Value & ",'" & VGusuario & "','" & Today & "')"
+                SQL = SQL & "('" & VGParametros.empresacodigo & "','" & rsDist.Fields(0).Value & "','" & rsDist.Fields(1).Value & "','" & rsDist.Fields(2).Value & "'," & rsDist.Fields(3).Value & ",'" & VGUsuario & "','" & Today & "')"
                 VGCNx.Execute(SQL)
                 rsDist.MoveNext()
             Next
@@ -686,7 +657,7 @@ X:
         Dim NombreTabla As String
         NombreTabla = "CT_SALDOS" & VGParamSistem.Anoproceso
         SQL = "INSERT " & NombreTabla & "(empresacodigo,cuentacodigo,usuariocodigo,fechaact)"
-        SQL = SQL & "VALUES ('" & VGParametros.empresacodigo & "','" & Text0.ValorTxt & "','" & VGusuario & "','" & Today & "')"
+        SQL = SQL & "VALUES ('" & VGParametros.empresacodigo & "','" & Text0.ValorTxt & "','" & VGUsuario & "','" & Today & "')"
         VGCNx.Execute(SQL)
 
     End Sub
@@ -696,7 +667,7 @@ X:
             MsgBox("El Total de % Distribución no se ha completado al 100%", MsgBoxStyle.Information, Text)
         Else
             cAcepta.Enabled = IIf(rsDist.RecordCount > 0 And FLAGMOVIMIENTODISTRI = True, True, False)
-            chk(3).CheckState = IIf(rsDist.RecordCount > 0, 1, 0)
+            chk3.CheckState = IIf(rsDist.RecordCount > 0, 1, 0)
             SSTab1.SelectedIndex = 1
             SSTab1.TabPages.Item(1).Enabled = True
         End If
@@ -831,7 +802,7 @@ X:
     End Function
 
     Function DevuelveTotPor() As Double
-        Dim i As Short
+
         Dim nSum As Double
         nSum = 0
         If rsDist.RecordCount > 0 Then
@@ -841,7 +812,7 @@ X:
                 rsDist.MoveNext()
             Loop
         End If
-        DevuelveTotPor = CDbl(VB6.Format(nSum, "###0.#0"))
+        DevuelveTotPor = CDbl(Format(nSum, "###0.#0"))
     End Function
 
     Private Sub TDBGrid2_ClickEvent(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles TDBGrid2.ClickEvent
@@ -893,8 +864,8 @@ X:
         Dim K As Short
         Dim nodX As System.Windows.Forms.TreeNode
 
-        VGvardllgen = New dllgeneral.dll_general
-        xCta = VGvardllgen.ESNULO(xCta, "%")
+        '  '  VGvardllgen = New dllgeneral.dll_general
+        xCta = ESNULO(xCta, "%")
 
         SQL = "SELECT A.cuentacodigo,A.cuentadescripcion, A.cuentanivel FROM CT_CUENTA A "
         SQL = SQL & "WHERE empresacodigo='" & VGParametros.empresacodigo & "' and cuentacodigo<>'00' and A.cuentacodigo like '" & xCta & "%' "
@@ -939,9 +910,10 @@ xx:
 
     Private Sub TreeView1_NodeClick(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.TreeNodeMouseClickEventArgs) Handles TreeView1.NodeMouseClick
         Dim NODE As System.Windows.Forms.TreeNode = eventArgs.Node
+
         If Not IsNothing(NODE.Name) Then
-            xCuenta = VB.Right(Trim(NODE.Name), Len(Trim(NODE.Name)) - 1)
-            MuestraDatos(VB.Right(Trim(NODE.Name), Len(Trim(NODE.Name)) - 1))
+            xCuenta = Func.Right(Trim(NODE.Name), Len(Trim(NODE.Name)) - 1)
+            MuestraDatos(Func.Right(Trim(NODE.Name), Len(Trim(NODE.Name)) - 1))
         End If
     End Sub
 
@@ -979,7 +951,7 @@ xx:
     Sub GrabaTipoCuenta(ByRef xCta As String, ByRef xValor As String, ByRef xNivel As Short)
         Dim SQL As String
         SQL = "UPDATE ct_cuenta SET tipocuentacodigo='" & xValor & "' "
-        SQL = SQL & "WHERE empresacodigo='" & VGParametros.empresacodigo & "' and left(cuentacodigo,2)='" & xCta & "' AND cuentanivel>" & xNivel
+        SQL = SQL & "WHERE empresacodigo='" & VGParametros.empresacodigo & "' and Func.Left(cuentacodigo,2)='" & xCta & "' AND cuentanivel>" & xNivel
         VGCNx.Execute(SQL)
     End Sub
 
@@ -994,7 +966,7 @@ xx:
                 End If
 
             Case 2
-                If cmdDistribucion.Visible = False Or chk(3).Enabled = False Then
+                If cmdDistribucion.Visible = False Or chk3.Enabled = False Then
                     SSTab1.SelectedIndex = 1
                 Else
                     SSTab1.SelectedIndex = 2
@@ -1018,7 +990,7 @@ xx:
 
         Dim i As Short
         Dim sw As Boolean
-        'txt(Index).CtlText = UCase(txt(Index).CtlText)
+        'txt(Index).Text = UCase(txt(Index).Text)
 
         If modoinsert = True Then
             For i = 0 To VGnumnivelescuenta
@@ -1063,6 +1035,31 @@ xx:
         Call ConfiguraModoEdicion()
     End Sub
 
+    Private Sub chk0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0.CheckedChanged
+        Ctr_Ayuda1.Enabled = IIf(chk0.CheckState = 0, False, True)
+        If chk0.CheckState = 0 Then Ctr_Ayuda1.Codigo = CStr(Nothing) : Ctr_Ayuda1.Codigo = CStr(Nothing)
 
+        If modoedit = True Then
+            cAcepta.Enabled = True
+        End If
+    End Sub
 
+    Private Sub chk3_CheckedChanged(sender As Object, e As EventArgs) Handles chk3.CheckedChanged
+        If chk3.CheckState = 1 Then
+            If FLAGMOVIMIENTODISTRI = False Then
+                cmdDistribucion.Visible = True
+                SSTab1.TabPages.Item(2).Enabled = True
+                SSTab1.SelectedIndex = 2
+                FLAGMOVIMIENTODISTRI = False
+                Call LlenarPorcentajes()
+            End If
+        Else
+            cmdDistribucion.Visible = False
+            SSTab1.TabPages.Item(2).Enabled = False
+        End If
+
+        If modoedit = True Then
+            cAcepta.Enabled = True
+        End If
+    End Sub
 End Class

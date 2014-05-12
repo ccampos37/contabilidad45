@@ -1,7 +1,7 @@
 Option Strict Off
 Option Explicit On
 Imports Func = Contabilidad.ModFuncionesGen
-Friend Class frmMantPlanCuentas
+Friend Class frmMntPlanCuentas
     Inherits System.Windows.Forms.Form
 
     Dim modoinsert As Boolean
@@ -140,7 +140,6 @@ Friend Class frmMantPlanCuentas
     End Sub
 
     Public Sub LimpiarValores()
-        Dim i As Short
         Ctr_Ayuda1.Codigo = CStr(Nothing)
         Ctr_Ayuda1.Descripcion = CStr(Nothing)
         Ctr_Ayuda4.Codigo = CStr(Nothing)
@@ -539,8 +538,7 @@ X:
     End Function
 
     Sub ModoEdicion(ByRef flagULTIMONIVEL As Boolean) 'True: Ultimo Nivel  False:Otros Niveles
-        Dim i As Short
-
+ 
         Text0.Enabled = True
         Text1.Enabled = True
 
@@ -562,10 +560,10 @@ X:
         Text6.Enabled = Not flagULTIMONIVEL
         Text6.ValorTxt = 0
 
-            chk0.Enabled = flagULTIMONIVEL
-            chk1.Enabled = flagULTIMONIVEL
-            chk2.Enabled = flagULTIMONIVEL
-            chk3.Enabled = flagULTIMONIVEL
+        chk0.Enabled = flagULTIMONIVEL
+        chk1.Enabled = flagULTIMONIVEL
+        chk2.Enabled = flagULTIMONIVEL
+        chk3.Enabled = flagULTIMONIVEL
 
         cmdDistribucion.Visible = flagULTIMONIVEL
         Ctr_Ayuda1.Enabled = flagULTIMONIVEL
@@ -574,9 +572,6 @@ X:
     End Sub
 
     Sub ModoNormal()
-        Dim i As Short
-
-
         Text0.Enabled = True
         Text1.Enabled = True
         Text2.Enabled = True
@@ -591,9 +586,9 @@ X:
         chk3.Enabled = True
         chk4.Enabled = True
 
-            Ctr_Ayuda1.Enabled = True
-            Ctr_Ayuda4.Enabled = True
-            cboTipoAjuste.Enabled = True
+        Ctr_Ayuda1.Enabled = True
+        Ctr_Ayuda4.Enabled = True
+        cboTipoAjuste.Enabled = True
 
     End Sub
 

@@ -60,7 +60,7 @@ Xmain:
 	
 	Public Sub mnu01_04_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_04_01.Click
         Try
-            FrmMantTipoAnalitico.Show()
+            FrmMntTipoAnalitico.Show()
 
         Catch ex As Exception
             MsgBox("error --> " + " " + ex.ToString)
@@ -72,7 +72,7 @@ Xmain:
 	End Sub
 	
 	Private Sub mnu01_01_05_Click()
-		frmMantLibro.Show()
+        frmMntLibro.Show()
 	End Sub
 	
 	Public Sub mnu01_06_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_01.Click
@@ -81,13 +81,13 @@ Xmain:
 	
 	Public Sub mnu01_06_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_02.Click
 		If ValidaAsientos = True Then
-			frmMantSubAsiento.Show()
+            frmMntSubAsiento.Show()
 		End If
 	End Sub
 	
 	Public Sub mnu01_06_03_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_06_03.Click
 		If ValidaAsientos = True Then
-			If ValidaSubAsientos("%") = True Then frmMantPlantillaAsiento.Show()
+            If ValidaSubAsientos("%") = True Then frmMntPlantillaAsiento.Show()
 		End If
 	End Sub
 	
@@ -135,7 +135,7 @@ Xmain:
     End Sub
 
     Public Sub mnu01_12_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_12.Click
-        frmMantPlanCuentas.Show()
+        frmMntPlanCuentas.Show()
     End Sub
 
     Public Sub mnu01_13_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu01_13.Click
@@ -164,7 +164,7 @@ Xmain:
 
 
     Public Sub mnu02_04_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu02_04.Click
-        frmMant_CtaCteAnalitico.ShowDialog()
+        frmMntCtaCteAnalitico.ShowDialog()
     End Sub
 
     Public Sub mnu03_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu03_01.Click

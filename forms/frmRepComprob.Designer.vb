@@ -37,8 +37,6 @@
         Me.Frame1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxCompIni = New Jck_txt.Jck_Txt()
-        Me.Txcomprfin = New Jck_txt.Jck_Txt()
         Me.Frame1.SuspendLayout()
         Me.SuspendLayout()
         '

@@ -1,11 +1,11 @@
 Option Strict Off
 Option Explicit On
-Public Class FrmMantTipoAnalitico
+Public Class FrmMntTipoAnalitico
     Inherits System.Windows.Forms.Form
     Dim a_Array(12, 12) As Object
     Private Sub FrmMantTipoAnalitico_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 
- 
+
         a_Array(0, 0) = "tipoanaliticocodigo"
         a_Array(0, 1) = "tipoanaliticodescripcion"
         a_Array(0, 2) = "tipoanaliticodigitos"
@@ -59,7 +59,7 @@ Public Class FrmMantTipoAnalitico
         a_Array(6, 2) = False
         a_Array(6, 3) = False
         a_Array(6, 4) = False
- 
+
 
         TablasBasicas1.CadenaCone = VGCNxSql
         TablasBasicas1.NombreTabla = "ct_TipoAnalitico"

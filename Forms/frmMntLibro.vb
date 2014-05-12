@@ -1,31 +1,31 @@
 Option Strict Off
 Option Explicit On
 Imports Func = Contabilidad.ModFuncionesGen
-Friend Class frmMantLibro
-	Inherits System.Windows.Forms.Form
-	
-	Dim modoinsert As Boolean
-	Dim modoedit As Boolean
-	Dim rs As New ADODB.Recordset
-	Dim rsLibro As ADODB.Recordset
-	
-	Private Sub frmMantLibro_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		Call ConfiguraForm()
+Friend Class frmMntLibro
+    Inherits System.Windows.Forms.Form
+
+    Dim modoinsert As Boolean
+    Dim modoedit As Boolean
+    Dim rs As New ADODB.Recordset
+    Dim rsLibro As ADODB.Recordset
+
+    Private Sub frmMantLibro_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+        Call ConfiguraForm()
         Call MuestraDatosLibro()
     End Sub
-	
-	Private Sub frmMantLibro_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-		rs = Nothing
+
+    Private Sub frmMantLibro_FormClosed(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        rs = Nothing
         rsLibro = Nothing
 
-	End Sub
-	
-	Sub ConfiguraForm()
-		SSTab1.SelectedIndex = 0
-		SSTab1.TabPages.Item(1).Enabled = False
-		SSTab1.TabPages.Item(2).Enabled = False
-		cAcepta.Enabled = False
-		lblNumReg.Text = CStr(Nothing)
+    End Sub
+
+    Sub ConfiguraForm()
+        SSTab1.SelectedIndex = 0
+        SSTab1.TabPages.Item(1).Enabled = False
+        SSTab1.TabPages.Item(2).Enabled = False
+        cAcepta.Enabled = False
+        lblNumReg.Text = CStr(Nothing)
     End Sub
 
     'FIXIT: Declare 'MuestraDatosLibro' con un tipo de datos de enlace en tiempo de compilación     FixIT90210ae-R1672-R1B8ZE
