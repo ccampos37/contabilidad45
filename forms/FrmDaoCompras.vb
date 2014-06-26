@@ -90,4 +90,8 @@ Friend Class FrmDaoCompras
 		cuenta = RSparCompras!paramlibauxcuenta
 		
 	End Sub
+
+    Private Sub DataGrid1_Enter(sender As Object, e As EventArgs) Handles DataGrid1.Enter
+
+    End Sub
 End Class

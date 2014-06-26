@@ -334,6 +334,12 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmMntSubAsiento.designer.vb">
+      <DependentUpon>frmMntSubAsiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMntSubAsiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmMnttotalLineaEGP.Designer.vb">
       <DependentUpon>FrmMnttotalLineaEGP.vb</DependentUpon>
     </Compile>
@@ -590,13 +596,6 @@
       <DependentUpon>frmMntSaldosInicialPlan.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmMntSaldosInicialPlan.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmMntSubAsiento.Designer.vb">
-      <SubType>Code</SubType>
-      <DependentUpon>frmMntSubAsiento.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmMntSubAsiento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmMntTipoAnalitico.Designer.vb">
@@ -885,6 +884,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMntSubAsiento.resX">
+      <DependentUpon>frmMntSubAsiento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMntEstructuraLineagastos.resx">
       <DependentUpon>FrmMntEstructuraLineagastos.vb</DependentUpon>
     </EmbeddedResource>
@@ -993,10 +995,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMntSaldosInicialPlan.resX">
       <DependentUpon>frmMntSaldosInicialPlan.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMntSubAsiento.resX">
-      <DependentUpon>frmMntSubAsiento.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMntTipoAnalitico.resX">
       <DependentUpon>FrmMntTipoAnalitico.vb</DependentUpon>

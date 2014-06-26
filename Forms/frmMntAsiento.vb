@@ -26,7 +26,6 @@ Friend Class frmMntAsiento
         SSTab1.SelectedIndex = 0
         SSTab1.TabPages.Item(1).Enabled = False
         SSTab1.TabPages.Item(2).Enabled = False
-        cAcepta.Enabled = False
         lblNumReg.Text = CStr(Nothing)
 
     End Sub
@@ -103,10 +102,9 @@ Friend Class frmMntAsiento
 
         modoinsert = False : modoedit = False
         Call MuestraDatosAsiento()
-        cAcepta.Enabled = False
-        '  VGvardllgen = Nothing
         Call ModoEditable(False, Me, "")
         SSTab1.SelectedIndex = 0
+        SSTab1.TabPages.Item(0).Enabled = True
         SSTab1.TabPages.Item(1).Enabled = False
         SSTab1.TabPages.Item(2).Enabled = False
         Exit Sub
@@ -123,9 +121,8 @@ X:
     End Sub
 
     Private Sub cCancela_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cCancela.Click
-        frmbotones.Visible = True
         modoinsert = False : modoedit = False
-        cAcepta.Enabled = False
+
         SSTab1.SelectedIndex = 0
         SSTab1.TabPages.Item(0).Enabled = True
         SSTab1.TabPages.Item(1).Enabled = False
@@ -159,9 +156,6 @@ X:
         Call EditarAsiento()
     End Sub
 
-    Private Sub chk_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs)
-        If modoinsert = True Or modoedit = True Then cAcepta.Enabled = ValidaDataIngreso()
-    End Sub
 
     Sub EditarAsiento()
         If rs.RecordCount > 0 Then
@@ -266,13 +260,6 @@ X:
         Me.Close()
     End Sub
 
-    Private Sub chk0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0.CheckedChanged
-        cAcepta.Enabled = True
-    End Sub
-
-    Private Sub chk1_CheckedChanged(sender As Object, e As EventArgs) Handles chk1.CheckedChanged
-        cAcepta.Enabled = True
-    End Sub
 
     Private Sub limpiar()
         txt0.Text = ""
@@ -282,31 +269,4 @@ X:
     End Sub
 
 
-    Private Sub txt0_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt0.KeyPress
-        If modoinsert = True Or modoedit = True Then
-            cAcepta.Enabled = True
-        End If
-    End Sub
-
-    Private Sub txt1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1.KeyPress
-        cAcepta.Enabled = True
-
-    End Sub
-
-
-    Private Sub txt2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt2.KeyPress
-        If modoinsert = True Or modoedit = True Then
-            cAcepta.Enabled = True
-        End If
-    End Sub
-
-    Private Sub txt1_Load(sender As Object, e As EventArgs) Handles txt1.Load
-
-    End Sub
-
-    Private Sub ChkCargo_CheckedChanged(sender As Object, e As EventArgs) Handles ChkCargo.CheckedChanged
-        If modoinsert = True Or modoedit = True Then
-            cAcepta.Enabled = True
-        End If
-    End Sub
 End Class

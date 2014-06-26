@@ -243,7 +243,7 @@ Mayor:
     End Sub
 
     Public Sub mnu04_01_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu04_01.Click
-        frmRepDiarioGeneral.Show()
+        frmDiarioGeneral.Show()
     End Sub
 
     Public Sub mnu04_02_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles mnu04_02.Click

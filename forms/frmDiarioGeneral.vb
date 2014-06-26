@@ -1,33 +1,29 @@
 Option Strict Off
 Option Explicit On
-Friend Class frmRepDiarioGeneral
-	Inherits System.Windows.Forms.Form
-	Dim NombreTabla As String
-	
-	Private Sub frmRepDiarioGeneral_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-		Call ConfiguraForm()
-		Call Llenacbomes()
-		NombreTabla = "CT_CABCOMPROB" & VGParamSistem.Anoproceso
-		If IsNumeric(VGParamSistem.Anoproceso) Then
-			Call SeleccionarMes(CShort(VGParamSistem.Mesproceso), CShort(VGParamSistem.Anoproceso))
-		End If
-	End Sub
-	
-	Sub ConfiguraForm()
+Friend Class frmDiarioGeneral
+    Inherits System.Windows.Forms.Form
+    Dim NombreTabla As String
+
+    Private Sub frmRepDiarioGeneral_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+        Call ConfiguraForm()
+        Call Llenacbomes()
+        NombreTabla = "CT_CABCOMPROB" & VGParamSistem.Anoproceso
+        If IsNumeric(VGParamSistem.Anoproceso) Then
+            Call SeleccionarMes(CShort(VGParamSistem.Mesproceso), CShort(VGParamSistem.Anoproceso))
+        End If
+    End Sub
+
+    Sub ConfiguraForm()
         optOpcion0.Checked = True
-        Ctr_Ayuda10.Conexion(VGCNx)
-        Ctr_Ayuda11.Conexion(VGCNx)
-        Ctr_Ayuda11.Filtro = "asientocodigo='" & Ctr_Ayuda1(0).xclave & "'"
-        Ctr_Ayuda20.Conexion(VGCNx)
+        Ctr_Ayuda20.conexion(VGCNx)
         Ctr_Ayuda21.Conexion(VGCNx)
-		
-	End Sub
+
+    End Sub
     Sub Llenacbomes()
-        Dim i As Short
-        ' '  VGvardllgen = New dllgeneral.dll_general
+        Dim i As integer
         cboMes.Items.Clear()
         For i = 1 To 12
-            cboMes.Items.Add(DesMes(Str(i)))
+            cboMes.Items.Add(DesMes(Format(i, "00")))
         Next
         'UPGRADE_NOTE: El objeto VGvardllgen no se puede destruir hasta que no se realice la recolección de los elementos no utilizados. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         ' '  VGvardllgen = Nothing
@@ -36,27 +32,15 @@ Friend Class frmRepDiarioGeneral
 
     Sub SeleccionarMes(ByRef nMes As Short, ByRef nAnno As Short)
         cboMes.Text = VB6.GetItemString(cboMes, nMes - 1)
-        DTPickerFecInicio.Value = Format("01/" & nMes & "/" & nAnno, "dd/mm/yyyy")
-        DTPickerFecFinal.Value = DateAdd(Microsoft.VisualBasic.DateInterval.Day, -1, DateAdd(Microsoft.VisualBasic.DateInterval.Month, 1, DTPickerFecInicio.Value))
     End Sub
 
     'UPGRADE_WARNING: El evento cboMes.SelectedIndexChanged se puede desencadenar cuando se inicializa el formulario. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
-    Private Sub cboMes_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboMes.SelectedIndexChanged
+    Private Sub cboMes_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs)
         Call SeleccionarMes(cboMes.SelectedIndex + 1, CShort(VGParamSistem.Anoproceso))
     End Sub
 
     Function ValidaData() As Boolean
         Dim SQL As String
-        ' '  VGvardllgen = New dllgeneral.dll_general
-        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto DTPickerFecFinal.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-        'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto DTPickerFecInicio.Value. Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-        If DTPickerFecInicio.Value > DTPickerFecFinal.Value Then
-            MsgBox("La Fecha de Término es menor a la Fecha de Inicio", MsgBoxStyle.Information, Text)
-            DTPickerFecInicio.Focus()
-            ValidaData = False
-            Exit Function
-        End If
-
         SQL = "select name from sysobjects where name='" & NombreTabla & "'"
         'UPGRADE_WARNING: No se puede resolver la propiedad predeterminada del objeto VerificaDatoExistente(VGCNx, SQL). Haga clic aquí para obtener más información: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If VerificaDatoExistente(VGCNx, SQL) > 0 Then
@@ -82,66 +66,28 @@ Friend Class frmRepDiarioGeneral
         ValidaData = True
     End Function
 
-    Private Sub DTPickerFecInicio_Enter(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles DTPickerFecInicio.Enter
-        DTPickerFecInicio.CalendarBackColor = System.Drawing.ColorTranslator.FromOle(&HE2FDFE)
-    End Sub
-
-    Private Sub DTPickerFecFinal_Enter(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles DTPickerFecFinal.Enter
-        DTPickerFecFinal.CalendarBackColor = System.Drawing.ColorTranslator.FromOle(&HE2FDFE)
-    End Sub
-
-    Private Sub Ctr_Ayuda1_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_Ayuda1.AlDevolverDato
-        Dim Index As Short = Ctr_Ayuda1.GetIndex(eventSender)
-        If Index = 0 Then
-            Ctr_Ayuda1(1).Filtro = "asientocodigo='" & Trim(Ctr_Ayuda1(0).xclave) & "'"
-        End If
-
-    End Sub
-
-    Private Sub Ctr_Ayuda2_AlDevolverDato(ByVal eventSender As System.Object, ByVal eventArgs As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent) Handles Ctr_Ayuda2.AlDevolverDato
-        Dim Index As Short = Ctr_Ayuda2.GetIndex(eventSender)
-        If Index = 0 Then
-            Ctr_Ayuda2(1).Filtro = "asientocodigo='" & Trim(Ctr_Ayuda2(0).xclave) & "'"
-        End If
-
-    End Sub
-
     Private Sub cmdBotones0_Click(sender As Object, e As EventArgs) Handles cmdBotones0.Click
         Dim cMes As String
         Dim arrform(2) As Object
-        Dim arrparm() As Object 'Detallado
+        Dim arrparm(6) As Object 'Detallado
+        arrparm(0) = VGParamSistem.BDEmpresa
+        arrparm(1) = VGParametros.empresacodigo
+        arrparm(2) = VGParamSistem.Anoproceso
+        If cboMes.SelectedIndex >= 0 Then
+            cMes = Format(cboMes.SelectedIndex + 1, "0#")
+        Else
+            cMes = Format(VGParamSistem.Mesproceso, "0#")
+        End If
+        arrparm(3) = cMes
+        arrparm(4) = IIf(IsNothing(Ctr_Ayuda20.xclave), "%%", Ctr_Ayuda20.xclave)
+        arrparm(5) = IIf(IsNothing(Ctr_Ayuda21.xclave), "%%", Ctr_Ayuda21.xclave)
         If optOpcion0.Checked = True Then
-            ReDim arrparm(7) 'Store Procedure:CT_DIARIO2_REP
-            arrparm(0) = VGParamSistem.BDEmpresa
-            arrparm(1) = VGParametros.empresacodigo
-            arrparm(2) = VGParamSistem.Anoproceso
-            If cboMes.SelectedIndex >= 0 Then
-                cMes = Format(cboMes.SelectedIndex + 1, "0#")
-            Else
-                cMes = Format(VGParamSistem.Mesproceso, "0#")
-            End If
-            arrparm(3) = cMes
-            arrparm(4) = "%%"
-            arrparm(5) = IIf(IsNothing(Ctr_Ayuda2(0).xclave), "%%", Ctr_Ayuda2(0).xclave)
-            arrparm(6) = IIf(IsNothing(Ctr_Ayuda2(1).xclave), "%%", Ctr_Ayuda2(1).xclave)
-            arrform(0) = "@TituloReporte='" & "Libro Diario Detallado - Asiento: " & Ctr_Ayuda1(0).xclave & " " & Ctr_Ayuda1(0).xnombre & "'"
+            arrform(0) = "@TituloReporte='" & "Libro Diario Detallado - Asiento: " & Ctr_Ayuda20.xclave & " " & Ctr_Ayuda20.xnombre & "'"
             arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'DESMES(VGParamSistem.Mesproceso)
-            Call ImpresionRptProc("rptLibroDiarioDetallado.rpt", arrform, arrparm)
+            Call ImpresionRptProc("ct_DiarioDetallado.rpt", arrform, arrparm)
         Else 'Resumido Store Procedure:CT_DIARIO1_REP
-            ReDim arrparm(6)
-            arrparm(0) = VGParamSistem.BDEmpresa
-            arrparm(1) = VGParametros.empresacodigo
-            arrparm(2) = VGParamSistem.Anoproceso
-            If cboMes.SelectedIndex >= 0 Then
-                cMes = Format(cboMes.SelectedIndex + 1, "0#")
-            Else
-                cMes = Format(VGParamSistem.Mesproceso, "0#")
-            End If
-            arrparm(3) = cMes
-            arrparm(4) = IIf(IsNothing(Ctr_Ayuda1(0).xclave), "%%", Ctr_Ayuda1(0).xclave)
-            arrparm(5) = IIf(IsNothing(Ctr_Ayuda1(1).xclave), "%%", Ctr_Ayuda1(1).xclave)
-            arrform(0) = "@TituloReporte='" & "Libro Diario Resumido - Asiento: " & Ctr_Ayuda1(0).xclave & " " & Ctr_Ayuda1(0).xnombre & "'"
-            arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'DESMES(VGParamSistem.Mesproceso)
+            arrform(0) = "@TituloReporte='" & "Libro Diario Resumido - Asiento: " & Ctr_Ayuda20.xclave & " " & Ctr_Ayuda20.xnombre & "'"
+            arrform(1) = "@Mes='" & DesMes(cMes) & "'" 'DESMES(VGParamSistem.Mesproceso)      
             If optOpcion1.Checked = True Then
                 Call ImpresionRptProc("ct_LibroDiarioResumido1.rpt", arrform, arrparm)
             Else
@@ -155,24 +101,11 @@ Friend Class frmRepDiarioGeneral
         Me.Close()
     End Sub
 
-    Private Sub optOpcion0_CheckedChanged(sender As Object, e As EventArgs) Handles optOpcion0.CheckedChanged
-        If optOpcion0.Checked = True Then
-            fraDetallado.Visible = True
-            fraResumido.Visible = False
-        End If
+    Private Sub Ctr_Ayuda20_AlDevolverDato(sender As Object, e As Axctrlayuda_f.__Ctr_Ayuda_AlDevolverDatoEvent)
+        Ctr_Ayuda21.Filtro = "asientocodigo='" & Trim(Ctr_Ayuda20.xclave) & "'"
     End Sub
 
-    Private Sub optOpcion1_CheckedChanged(sender As Object, e As EventArgs) Handles optOpcion1.CheckedChanged
-        If optOpcion1.Checked = True Then
-            fraDetallado.Visible = False
-            fraResumido.Visible = True
-        End If
-    End Sub
+    Private Sub CrystalReportViewer2_Load(sender As Object, e As EventArgs)
 
-    Private Sub optOpcion2_CheckedChanged(sender As Object, e As EventArgs) Handles optOpcion2.CheckedChanged
-        If optOpcion0.Checked = True Then
-            fraDetallado.Visible = False
-            fraResumido.Visible = True
-        End If
     End Sub
 End Class
